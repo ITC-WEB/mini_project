@@ -9,6 +9,8 @@
 
 <body>
     <h1>Halaman Frontend</h1>
+
+    <a href="/logout">Logout</a>
 </body>
 
 </html>

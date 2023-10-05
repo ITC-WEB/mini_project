@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <h1> Halaman Admin</h1>
+    <h1>Selamat Datang {{ Auth::user()->name }}</h1>
+    <p>Di Halaman Admin dengan Role: {{ Auth::user()->role->name }}</p>
+    <a href="/logout">Logout</a>
 </body>
 
 </html>

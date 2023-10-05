@@ -18,17 +18,18 @@ use App\Http\Controllers\Backend\HomeController as BackendController;
 
 
 
-////////*******Login **********///////
+////////*******Auth **********///////
 
-Route::get('/', [AuthController::class, 'index'])->name('login');
-Route::post('/', [AuthController::class, 'login'])->name('login');
+Route::get('/', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/', [AuthController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 /////////****** Front end*********///////
 
-Route::get('/user', [FrontendController::class, 'index']);
+Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', 'customer']);
 
 
 
 ///////*******Back End **********///////
 
-Route::get('/auth', [BackendController::class, 'index'])->middleware('auth');
+Route::get('/auth', [BackendController::class, 'index'])->middleware(['auth', 'admin']);

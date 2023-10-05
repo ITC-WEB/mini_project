@@ -37,7 +37,6 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-
                         @endif
                         <h3>Login to <strong>Colorlib</strong></h3>
                         <form action="" method="post">

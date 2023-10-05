@@ -22,11 +22,27 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect()->intended('/auth');
+            if (Auth::user()->role_id == '1') {
+                return redirect()->intended('/auth');
+            } elseif (Auth::user()->role_id == '2') {
+                return redirect()->intended('/auth');
+            } else {
+                return redirect()->intended('/user');
+            }
         }
         Session::flash('status', 'failed');
         Session::flash('message', 'Login Gagal');
+
+        return redirect('/');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
 
         return redirect('/');
     }
