@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController as FrontendController;
 use App\Http\Controllers\Backend\HomeController as BackendController;
@@ -15,15 +16,12 @@ use App\Http\Controllers\Backend\HomeController as BackendController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 ////////*******Login **********///////
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/', [AuthController::class, 'index'])->name('login');
+Route::post('/', [AuthController::class, 'login'])->name('login');
 
 /////////****** Front end*********///////
 
@@ -33,4 +31,4 @@ Route::get('/user', [FrontendController::class, 'index']);
 
 ///////*******Back End **********///////
 
-Route::get('/auth', [BackendController::class, 'index']);
+Route::get('/auth', [BackendController::class, 'index'])->middleware('auth');

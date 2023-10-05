@@ -17,7 +17,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="{{asset('login/css/style.css')}}">
 
-    <title>Login #2</title>
+    <title>Login ITC Trans</title>
 </head>
 
 <body>
@@ -30,16 +30,25 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-7">
+                        @if (Session::has('status'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('message') }}
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        @endif
                         <h3>Login to <strong>Colorlib</strong></h3>
-                        <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
-                        <form action="#" method="post">
+                        <form action="" method="post">
+                            @csrf
                             <div class="form-group first">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" class="form-control" placeholder="your@gmail.com" id="email">
                             </div>
                             <div class="form-group last mb-3">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" placeholder="Your Password" id="password">
+                                <input type="password" name="password" class="form-control" placeholder="Your Password" id="password">
                             </div>
 
                             <div class="d-flex mb-5 align-items-center">
@@ -50,7 +59,7 @@
                                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                             </div>
 
-                            <input type="submit" value="Log In" class="btn btn-block btn-primary">
+                            <input type="submit" class="btn btn-block btn-primary">
 
                         </form>
                     </div>
@@ -60,9 +69,6 @@
 
 
     </div>
-
-
-
     <script src="{{asset('login/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('login/js/popper.min.js')}}"></script>
     <script src="{{asset('login/js/bootstrap.min.js')}}"></script>
