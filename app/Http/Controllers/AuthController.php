@@ -33,7 +33,7 @@ class AuthController extends Controller
         Session::flash('status', 'failed');
         Session::flash('message', 'Login Gagal');
 
-        return redirect('/');
+        return redirect('/log');
     }
 
     public function logout(Request $request)

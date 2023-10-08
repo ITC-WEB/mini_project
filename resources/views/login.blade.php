@@ -38,7 +38,7 @@
                             </button>
                         </div>
                         @endif
-                        <h3>Login to <strong>Colorlib</strong></h3>
+                        <h3>Login To <strong>ITC Trans</strong></h3>
                         <form action="" method="post">
                             @csrf
                             <div class="form-group first">
@@ -55,9 +55,10 @@
                                     <input type="checkbox" checked="checked" />
                                     <div class="control__indicator"></div>
                                 </label>
+                                <span class="ml-auto"><a href="#" class="forgot-pass">Register</a></span>
                                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                             </div>
-
+                            <span class="ml-auto"><a href="/" class="forgot-pass">Back To Home</a></span>
                             <input type="submit" class="btn btn-block btn-primary">
 
                         </form>
