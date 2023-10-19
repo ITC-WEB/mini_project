@@ -59,10 +59,19 @@ Profile
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-3">
+                                                <p class="mb-0">Gender</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted mb-0">{{ Auth::user()->gender }}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
                                                 <p class="mb-0">Phone</p>
                                             </div>
                                             <div class="col-sm-9">
-                                                <p class="text-muted mb-0">(098) 765-4321</p>
+                                                <p class="text-muted mb-0">{{ Auth::user()->phone }}</p>
                                             </div>
                                         </div>
                                         <hr>
@@ -71,7 +80,7 @@ Profile
                                                 <p class="mb-0">Address</p>
                                             </div>
                                             <div class="col-sm-9">
-                                                <p class="text-muted mb-0">KarangPloso,Malang</p>
+                                                <p class="text-muted mb-0">{{ Auth::user()->alamat }}</p>
                                             </div>
                                         </div>
                                     </div>

@@ -55,7 +55,7 @@
                                     <input type="checkbox" checked="checked" />
                                     <div class="control__indicator"></div>
                                 </label>
-                                <span class="ml-auto"><a href="#" class="forgot-pass">Register</a></span>
+                                <span class="ml-auto"><a href="/register" class="forgot-pass">Register</a></span>
                                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                             </div>
                             <span class="ml-auto"><a href="/" class="forgot-pass">Back To Home</a></span>

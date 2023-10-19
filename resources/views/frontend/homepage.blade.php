@@ -9,7 +9,11 @@
 
 <body>
     <h1>Halaman Awal</h1>
-    <a href="/log">Login</a>
+    <div class="row">
+        <a class="col-md-6" href="/log">Login</a>|||||
+        <a class="col-md-6" href="/register">Register</a>
+    </div>
+
 </body>
 
 </html>

@@ -22,6 +22,8 @@ class SuperSeeder extends Seeder
             'email' => 'superadmin@gmail.com',
             'role_id' => '1',
             'password' => Hash::make('12345678'),
+            'phone' => '085330876459',
+            'alamat' => 'Banyuwangi',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

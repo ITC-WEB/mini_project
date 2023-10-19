@@ -1,83 +1,87 @@
 @extends('admin.layout.app')
 @section('title')
-Data Admin
+Data Mobil
 @endsection
+
 @section('content')
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Data Admin</h4>
-                    <a href="/create" class="card-title btn btn-primary text-white" style="font-size: 15px;"> + Tambah Data</a>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
+                    <h4 class="card-title">Data Mobil</h4>
+                    <a href="/create-mobil" class="card-title btn btn-primary text-white" style="font-size: 15px;"> + Tambah Data</a>
+                    <div class="my-2 col-8">
+                        <form action="" method="GET">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="cari" placeholder="Cari">
+                                <button class="input-group-text btn-primary">Search</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="table-responsive pt-3">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>
-                                        User
+                                        No
                                     </th>
                                     <th>
-                                        Full Name
+                                        Noplat
                                     </th>
                                     <th>
-                                        Email
+                                        Name
                                     </th>
                                     <th>
-                                        Role
+                                        Merek
                                     </th>
                                     <th>
-                                        Gender
+                                        Harga Sewa
                                     </th>
                                     <th>
-                                        Phone
+                                        Gambar
                                     </th>
-                                    <th>
-                                        Alamat
-                                    </th>
-
                                     <th>
                                         Status
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data as $item )
+                                @foreach ($mobil as $mobils )
                                 <tr>
-                                    <td class="py-2">
-                                        <img src="{{asset('admin/images/faces/face2.jpg')}}" alt="image" />
+                                    <td>
+                                        {{ $loop->iteration }}
                                     </td>
                                     <td>
-                                        {{ $item->name }}
+                                        {{ $mobils->noplat }}
                                     </td>
                                     <td>
-                                        {{ $item->email }}
+                                        {{ $mobils->name }}
                                     </td>
                                     <td>
-                                        {{ $item->role->name }}
+                                        {{ $mobils->merek->name }}
                                     </td>
                                     <td>
-                                        {{ $item->gender }}
+                                        Rp. {{ $mobils->harga_sewa }}
                                     </td>
                                     <td>
-                                        {{ $item->phone }}
+                                        <img src="{{asset('storage/mobil/'.$mobils->gambar)}}" style="width: 140px;height:80px;border-radius: 10px;" alt="Mobil">
                                     </td>
                                     <td>
-                                        {{ $item->alamat }}
-                                    </td>
-
-                                    <td>
-                                        <label class="badge badge-success">Active</label>
-                                        <form action="/delete/{{ $item->id }}" method="post" class="d-inline">
+                                        <button type="submit" style="border: none;" class="badge badge-primary">Edit</button>
+                                        <form action="/delete-mobil/{{ $mobils->id }}" method="post" class="d-inline">
                                             @csrf
                                             <button type="submit" style="border: none;" class="badge badge-danger">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
+                        <div class="my-5">
+                            {{ $mobil->withQueryString()->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

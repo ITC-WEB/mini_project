@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Data;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
@@ -41,6 +41,9 @@ class HomeController extends Controller
             'email' => 'required',
             'role_id' => '',
             'password' => 'required',
+            'gender' => 'required',
+            'phone' => 'required',
+            'alamat' => 'required',
         ]);
         if (!$request["role_id"]) {
             $request["role_id"] = 2;
@@ -52,6 +55,9 @@ class HomeController extends Controller
             'email' => $request->email,
             'role_id' => $request->role_id,
             'password' => bcrypt($request->password),
+            'gender' => $request->gender,
+            'phone' => $request->phone,
+            'alamat' => $request->alamat,
         ]);
 
         Session::flash('success', 'Data berhasil ditambahkan');
@@ -70,6 +76,10 @@ class HomeController extends Controller
             'email' => 'required',
             'role_id' => '',
             'password' => 'required',
+            'gender' => '',
+            'phone' => 'required',
+            'alamat' => 'required',
+
         ]);
         if (!$request["role_id"]) {
             $request["role_id"] = 3;
@@ -81,6 +91,9 @@ class HomeController extends Controller
             'email' => $request->email,
             'role_id' => $request->role_id,
             'password' => bcrypt($request->password),
+            'gender' => $request->gender,
+            'phone' => $request->phone,
+            'alamat' => $request->alamat,
         ]);
 
         Session::flash('success', 'Data berhasil ditambahkan');
@@ -105,6 +118,9 @@ class HomeController extends Controller
         $dataedit = User::where('id', $request->user()->id)->first();
         $dataedit->name = $request->name;
         $dataedit->email = $request->email;
+        $dataedit->gender = $request->gender;
+        $dataedit->phone = $request->phone;
+        $dataedit->alamat = $request->alamat;
         $dataedit->save();
 
         Session::flash('success', 'Berhasil Mengubah Data');
@@ -112,10 +128,23 @@ class HomeController extends Controller
         return redirect('/profile');
     }
 
+    public function show($id)
+    {
+        $detail = Data::find(21);
+        DD($detail);
+        return view('admin.pages.show', compact('detail'));
+    }
+
     public function delete(Request $request)
     {
         User::where('id', $request->id)->delete();
         Session::flash('success', 'Berhasil Hapus Data');
         return redirect('/add-admin');
+    }
+    public function customer_delete(Request $request)
+    {
+        User::where('id', $request->id)->delete();
+        Session::flash('success', 'Berhasil Hapus Data');
+        return redirect('/add-customer');
     }
 }

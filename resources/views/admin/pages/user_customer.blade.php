@@ -27,6 +27,15 @@ Data Customer
                                         Role
                                     </th>
                                     <th>
+                                        Gender
+                                    </th>
+                                    <th>
+                                        Phone
+                                    </th>
+                                    <th>
+                                        Alamat
+                                    </th>
+                                    <th>
                                         Status
                                     </th>
                                 </tr>
@@ -43,14 +52,30 @@ Data Customer
                                     <td>
                                         {{ $item->email }}
                                     </td>
+
                                     <td>
                                         {{ $item->role->name }}
                                     </td>
+
+                                    <td>
+                                        {{ $item->gender }}
+                                    </td>
+                                    <td>
+                                        {{ $item->phone }}
+                                    </td>
+                                    <td>
+                                        {{ $item->alamat }}
+                                    </td>
                                     <td>
                                         <label class="badge badge-success">Active</label>
-                                        <form action="/delete/{{ $item->id }}" method="post" class="d-inline">
+                                        <form action="/show/{{ $item->id }}" method="Get" class="d-inline">
+                                            @csrf
+                                            <button type="submit" style="border: none;" class="badge badge-primary"><i class="icon-eye menu-icon"></i></button>
+                                        </form>
+                                        <form action="/delete-customer/{{ $item->id }}" method="post" class="d-inline">
                                             @csrf
                                             <button type="submit" style="border: none;" class="badge badge-danger">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
