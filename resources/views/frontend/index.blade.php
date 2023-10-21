@@ -9,8 +9,8 @@
 
 <body>
     <h1>Halaman Frontend</h1>
-
-    <a href="/logout">Logout</a>
+    <a href="/logout">Logout</a><br>
+    <a href="/peminjaman">Peminjaman</a>
 </body>
 
 </html>

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController as FrontendController;
 use App\Http\Controllers\Backend\HomeController as BackendController;
 use App\Http\Controllers\Backend\MobilController as MobilController;
+use App\Http\Controllers\Frontend\PeminjamanController as FrontpinjamController;
+use App\Models\Peminjaman;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,10 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 Route::get('/', function () {
     return view('frontend.homepage');
 });
+
+Route::get('/peminjaman', [FrontpinjamController::class, 'pinjam']);
+Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
+
 Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', 'customer']);
 
 
