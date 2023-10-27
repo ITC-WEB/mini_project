@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Models\Mobil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
@@ -52,6 +53,8 @@ class MobilController extends Controller
             'tahun' => $request->tahun,
             'harga_sewa' => $request->harga_sewa,
             'gambar' => $gambar,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
         Session::flash('success', 'Data berhasil ditambahkan');
 

@@ -195,6 +195,7 @@
                             <li class="nav-item"> <a class="nav-link" href="/add-admin"> Admin </a></li>
                             @endif
                             <li class="nav-item"> <a class="nav-link" href="/add-customer"> Customer </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="/add-sopir"> Sopir </a></li>
                         </ul>
                     </div>
                 </li>
@@ -207,7 +208,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/data-pinjam">
                         <i class="fa fa-cart-plus mr-3" aria-hidden="true"></i>
                         <span class="menu-title">Peminjaman</span>
                     </a>

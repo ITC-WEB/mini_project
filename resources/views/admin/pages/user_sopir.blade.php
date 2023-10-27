@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 @section('title')
-Data Customer
+Data Sopir
 @endsection
 @section('content')
 <div class="main-panel">
@@ -8,28 +8,23 @@ Data Customer
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Data Customer</h4>
+                    <h4 class="card-title">Data Sopir</h4>
+                    <a href="/create-sopir" class="card-title btn btn-primary text-white" style="font-size: 15px;"> + Tambah Data</a>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>
-                                        User
+                                        Name
                                     </th>
                                     <th>
-                                        Full Name
-                                    </th>
-                                    <th>
-                                        Email
-                                    </th>
-                                    <th>
-                                        Role
+                                        Phone
                                     </th>
                                     <th>
                                         Gender
                                     </th>
                                     <th>
-                                        Phone
+                                        Usia
                                     </th>
                                     <th>
                                         Alamat
@@ -42,39 +37,23 @@ Data Customer
                             <tbody>
                                 @foreach ($data as $item )
                                 <tr>
-                                    <td class="py-2">
-                                        <img src="{{asset('admin/images/faces/face6.jpg')}}" alt="image" />
-                                    </td>
                                     <td>
                                         {{ $item->name }}
                                     </td>
                                     <td>
-                                        {{ $item->email }}
+                                        {{ $item->phone }}
                                     </td>
-
-                                    <td>
-                                        {{ $item->role->name }}
-                                    </td>
-
                                     <td>
                                         {{ $item->gender }}
                                     </td>
                                     <td>
-                                        {{ $item->phone }}
+                                        {{ $item->usia }}
                                     </td>
                                     <td>
                                         {{ $item->alamat }}
                                     </td>
                                     <td>
                                         <label class="badge badge-success">Active</label>
-                                        <form action="/show/{{ $item->id }}" method="Get" class="d-inline">
-                                            @csrf
-                                            <button type="submit" style="border: none;" class="badge badge-primary"><i class="icon-eye menu-icon"></i></button>
-                                        </form>
-                                        <form action="/delete-customer/{{ $item->id }}" method="post" class="d-inline">
-                                            @csrf
-                                            <button type="submit" style="border: none;" class="badge badge-danger">Delete</button>
-                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

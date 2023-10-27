@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Data;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -81,6 +82,8 @@ class AuthController extends Controller
             'phone' => $request->phone,
             'alamat' => $request->alamat,
             'data_id' => $data_user->id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
 
         ]);
         Session::flash('success', 'Berhasil');

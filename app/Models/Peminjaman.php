@@ -12,6 +12,7 @@ class Peminjaman extends Model
     protected $fillable = [
         'user_id',
         'mobil_id',
+        'supir_id',
         'biaya',
         'tanggal_mulai',
         'tanggal_selesai',
@@ -25,6 +26,11 @@ class Peminjaman extends Model
     }
     public function mobil()
     {
-        return $this->belongsTo(User::class, 'mobil_id', 'id');
+        return $this->belongsTo(Mobil::class, 'mobil_id', 'id');
+    }
+
+    public function sopir()
+    {
+        return $this->belongsTo(Sopir::class, 'sopir_id', 'id');
     }
 }

@@ -12,7 +12,8 @@ class PeminjamanController extends Controller
 {
     public function pinjam()
     {
-        return view('frontend.peminjaman');
+        $mobil = Mobil::all();
+        return view('frontend.peminjaman', compact('mobil'));
     }
     public function peminjaman(Request $request)
     {

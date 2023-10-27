@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Models\Data;
 use App\Models\User;
+use App\Models\Sopir;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
@@ -27,6 +29,12 @@ class HomeController extends Controller
     {
         $data = User::where('role_id', '3')->get();
         return view('admin.pages.user_customer', compact('data'));
+    }
+
+    public function usersopir()
+    {
+        $data = Sopir::all();
+        return view('admin.pages.user_sopir', compact('data'));
     }
 
     // CRUD 
@@ -58,6 +66,8 @@ class HomeController extends Controller
             'gender' => $request->gender,
             'phone' => $request->phone,
             'alamat' => $request->alamat,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
 
         Session::flash('success', 'Data berhasil ditambahkan');
@@ -65,40 +75,35 @@ class HomeController extends Controller
         return redirect('/add-admin')->with('success', 'Berhasil Menambahkan Data');
     }
 
-    public function create_customer()
+    //Crud Sopir
+    public function create_sopir()
     {
-        return view('admin.crud_customer.create');
+        return view('admin.crud_sopir.create');
     }
-    public function add_customer(Request $request)
+    public function add_sopir(Request $request)
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required',
-            'role_id' => '',
-            'password' => 'required',
-            'gender' => '',
             'phone' => 'required',
+            'gender' => 'required',
+            'usia' => 'required',
             'alamat' => 'required',
-
         ]);
-        if (!$request["role_id"]) {
-            $request["role_id"] = 3;
-        }
 
         // return response()->json($request->all());
-        User::insert([
+        Sopir::insert([
             'name' => $request->name,
-            'email' => $request->email,
-            'role_id' => $request->role_id,
-            'password' => bcrypt($request->password),
-            'gender' => $request->gender,
             'phone' => $request->phone,
+            'gender' => $request->gender,
+            'usia' => $request->usia,
             'alamat' => $request->alamat,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
 
         Session::flash('success', 'Data berhasil ditambahkan');
 
-        return redirect('/add-customer')->with('success', 'Berhasil Menambahkan Data');
+        return redirect('/add-sopir')->with('success', 'Berhasil Menambahkan Data');
     }
 
     //Profile Super Admin & Admin
@@ -130,8 +135,7 @@ class HomeController extends Controller
 
     public function show($id)
     {
-        $detail = Data::find(21);
-        DD($detail);
+        $detail = Data::find($id);
         return view('admin.pages.show', compact('detail'));
     }
 

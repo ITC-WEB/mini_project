@@ -12,11 +12,11 @@
         @csrf
         <div class="form-group">
             <label for="exampleInputName1">Name</label>
-            <input name="user_id" type="text" class="form-control" value="25">
+            <input name="user_id" type="text" class="form-control" placeholder="" value=" {{ Auth::user()->id }}">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail3">Mobil</label>
-            <input name="mobil_id" type="text" class="form-control" value="22">
+            <input name="mobil_id" type="text" class="form-control" placeholder="" value="27">
         </div>
         <div class="form-group">
             <label for="exampleSelectGender">TGL Mulai</label>

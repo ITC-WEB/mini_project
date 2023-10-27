@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 @section('title')
-Create Data Customer
+Create Data Sopir
 @endsection
 @section('content')
 <div class="main-panel">
@@ -8,7 +8,7 @@ Create Data Customer
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Tambah Data Customer</h4>
+                    <h4 class="card-title">Tambah Data Sopir</h4>
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -18,19 +18,15 @@ Create Data Customer
                         </ul>
                     </div>
                     @endif
-                    <form class="forms-sample" method="POST" action="/create-customer">
+                    <form class="forms-sample" method="POST" action="/create-sopir">
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputName1">Name</label>
                             <input name="name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail3">Email address</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleSelectGender">Role</label>
-                            <input name="role_id" type="text" class="form-control" id="exampleInputEmail3" placeholder="Customer" disabled>
+                            <label for="exampleInputEmail3">Phone</label>
+                            <input name="phone" type="number" class="form-control" id="exampleInputEmail3" placeholder="Phone">
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Gender</label>
@@ -41,19 +37,15 @@ Create Data Customer
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Phone</label>
-                            <input name="phone" type="text" class="form-control" id="exampleInputName1" placeholder="085412XXXXXX">
+                            <label for="exampleInputName1">Usia</label>
+                            <input name="usia" type="number" class="form-control" id="exampleInputName1" placeholder="">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Alamat</label>
+                            <label for="exampleInputName1">Address</label>
                             <input name="alamat" type="text" class="form-control" id="exampleInputName1">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword4">Password</label>
-                            <input name="password" type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                        </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <a href="/add-customer" class="btn btn-light">Close</a>
+                        <a href="/add-admin" class="btn btn-light">Close</a>
                     </form>
                 </div>
             </div>

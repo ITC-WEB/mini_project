@@ -6,7 +6,7 @@ use App\Http\Controllers\Frontend\HomeController as FrontendController;
 use App\Http\Controllers\Backend\HomeController as BackendController;
 use App\Http\Controllers\Backend\MobilController as MobilController;
 use App\Http\Controllers\Frontend\PeminjamanController as FrontpinjamController;
-use App\Models\Peminjaman;
+use App\Http\Controllers\Backend\PinjamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +45,7 @@ Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', '
 Route::get('/auth', [BackendController::class, 'index'])->middleware(['auth', 'admin']);
 Route::get('/add-admin', [BackendController::class, 'useradmin'])->middleware(['auth', 'admin']);
 Route::get('/add-customer', [BackendController::class, 'usercustomer'])->middleware(['auth', 'admin']);
+Route::get('/add-sopir', [BackendController::class, 'usersopir'])->middleware(['auth', 'admin']);
 
 // Profile
 Route::get('/profile', [BackendController::class, 'profile']);
@@ -71,11 +72,9 @@ Route::post('/delete-customer/{id}', [BackendController::class, 'customer_delete
 //Delete Mobil
 Route::post('/delete-mobil/{id}', [MobilController::class, 'mobil_delete']);
 
-// CRUD Customer
-
-Route::get('/create-customer', [BackendController::class, 'create_customer'])->middleware(['auth', 'admin']);
-Route::post('/create-customer', [BackendController::class, 'add_customer']);
-
+//Crud Sopir
+Route::get('/create-sopir', [BackendController::class, 'create_sopir'])->middleware(['auth', 'admin']);
+Route::post('/create-sopir', [BackendController::class, 'add_sopir']);
 
 // Data Mobil
 Route::get('/data-mobil', [MobilController::class, 'mobil']);
@@ -83,3 +82,7 @@ Route::get('/data-mobil', [MobilController::class, 'mobil']);
 //Crud Mobil
 Route::get('/create-mobil', [MobilController::class, 'create']);
 Route::post('/create-mobil', [MobilController::class, 'add_mobil']);
+
+// Peminjaman
+
+Route::get('/data-pinjam', [PinjamController::class, 'index']);
