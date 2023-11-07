@@ -18,7 +18,11 @@ return new class extends Migration
             $table->string('gambar');
             $table->unsignedBigInteger('merek_id');
             $table->integer('tahun');
+            $table->string('kapasitas');
+            $table->text('deskripsi')->nullable();
+            $table->enum('type', ['matic', 'persneling']);
             $table->integer('harga_sewa');
+            $table->enum('status', ['tersedia', 'disewa']);
             $table->timestamps();
 
             $table->foreign('merek_id')->references('id')->on('merek')->onDelete('restrict');

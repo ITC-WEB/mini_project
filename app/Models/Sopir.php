@@ -16,4 +16,9 @@ class Sopir extends Model
         'usia',
         'alamat',
     ];
+
+    public function peminjaman()
+    {
+        return $this->hasMany(Peminjaman::class);
+    }
 }

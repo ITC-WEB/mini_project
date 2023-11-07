@@ -67,10 +67,7 @@ Data Customer
                                     </td>
                                     <td>
                                         <label class="badge badge-success">Active</label>
-                                        <form action="/show/{{ $item->id }}" method="Get" class="d-inline">
-                                            @csrf
-                                            <button type="submit" style="border: none;" class="badge badge-primary"><i class="icon-eye menu-icon"></i></button>
-                                        </form>
+                                        <a href="{{ route('show',['id' => $item->id]) }}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="icon-eye menu-icon"></i></button></a>
                                         <form action="/delete-customer/{{ $item->id }}" method="post" class="d-inline">
                                             @csrf
                                             <button type="submit" style="border: none;" class="badge badge-danger">Delete</button>

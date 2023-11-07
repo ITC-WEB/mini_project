@@ -7,6 +7,8 @@ use App\Http\Controllers\Backend\HomeController as BackendController;
 use App\Http\Controllers\Backend\MobilController as MobilController;
 use App\Http\Controllers\Frontend\PeminjamanController as FrontpinjamController;
 use App\Http\Controllers\Backend\PinjamController;
+use App\Http\Controllers\Frontend\KatalogController;
+use App\Http\Controllers\Frontend\PembayaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,14 +31,22 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 /////////****** Front end*********///////
-Route::get('/', function () {
-    return view('frontend.homepage');
-});
-
-Route::get('/peminjaman', [FrontpinjamController::class, 'pinjam']);
-Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
-
+Route::get('/', [FrontendController::class, 'homepage'])->name('homepage');
 Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', 'customer']);
+
+//pages
+Route::get('/tentang', [FrontendController::class, 'tentangKami']);
+Route::get('/syarat', [FrontendController::class, 'syaratKetentuan']);
+Route::get('/kontak', [FrontendController::class, 'kontak']);
+//katalog
+Route::get('/katalog', [KatalogController::class, 'index']);
+Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail');
+//peminjaman
+Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman');
+Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
+//pembayaran
+Route::get('/pembayaran', [PembayaranController::class, 'index']);
+
 
 
 
@@ -61,7 +71,12 @@ Route::get('/edit', [BackendController::class, 'change']);
 Route::post('/update', [BackendController::class, 'update']);
 
 //Show
-Route::get('/show/{id}', [BackendController::class, 'show']);;
+Route::get('/show/{id}', [BackendController::class, 'show'])->name('show');
+
+
+//Edit Mobil
+Route::get('/edit-mobil/{id}', [MobilController::class, 'edit_mobil'])->name('edit-mobil');
+Route::post('/update-mobil', [MobilController::class, 'update_mobil'])->name('mobil.update');
 
 //Delete admin
 Route::post('/delete/{id}', [BackendController::class, 'delete']);

@@ -19,5 +19,5 @@
   <script src="{{asset('admin/js/dashboard.js') }}"></script>
   <script src="{{asset('admin/js/Chart.roundedBarCharts.js') }}"></script>
 
-
+  <script src="{{ asset('path-to-sweetalert2.js') }}"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

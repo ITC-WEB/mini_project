@@ -16,10 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('mobil_id');
             $table->unsignedBigInteger('sopir_id')->nullable();
-            $table->bigInteger('biaya');
-            $table->date('tanggal_mulai');
-            $table->date('tanggal_selesai');
-            $table->enum('status', ['bayar', 'belumbayar']);
+            $table->string('biaya');
+            $table->string('tanggal_mulai');
+            $table->string('tanggal_selesai');
+            $table->enum('status', ['bayar', 'belumbayar'])->nullable()->default('belumbayar');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');

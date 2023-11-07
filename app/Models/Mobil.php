@@ -16,7 +16,11 @@ class Mobil extends Model
         'gambar',
         'merek_id',
         'tahun',
+        'kapasitas',
+        'deskripsi',
+        'type',
         'harga_sewa',
+        'status',
     ];
 
     public function merek()

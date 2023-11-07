@@ -17,15 +17,6 @@ Edit Admin
                     @elseif (Auth::user()->role_id == '2')
                     <h4 class="card-title">Edit Data Admin</h4>
                     @endif
-                    @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $item)
-                            <li>{{ $item }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
                     <form class="forms-sample" method="POST" action="/update">
                         @csrf
                         <div class="form-group">

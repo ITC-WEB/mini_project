@@ -22,15 +22,15 @@ Create Data Sopir
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputName1">Name</label>
-                            <input name="name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                            <input name="name" type="text" class="form-control" id="exampleInputName1" placeholder="Name" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail3">Phone</label>
-                            <input name="phone" type="number" class="form-control" id="exampleInputEmail3" placeholder="Phone">
+                            <input name="phone" type="number" class="form-control" id="exampleInputEmail3" placeholder="Phone" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Gender</label>
-                            <select class="custom-select" name="gender" id="inputGroupSelect01">
+                            <select class="custom-select" name="gender" id="inputGroupSelect01" required>
                                 <option>---Pilih---</option>
                                 <option name="male" value="male">Male</option>
                                 <option name="female" value="female">Female</option>
@@ -38,11 +38,11 @@ Create Data Sopir
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Usia</label>
-                            <input name="usia" type="number" class="form-control" id="exampleInputName1" placeholder="">
+                            <input name="usia" type="number" class="form-control" id="exampleInputName1" placeholder="" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Address</label>
-                            <input name="alamat" type="text" class="form-control" id="exampleInputName1">
+                            <input name="alamat" type="text" class="form-control" id="exampleInputName1" required>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         <a href="/add-admin" class="btn btn-light">Close</a>

@@ -11,8 +11,8 @@ Show
                 <div class="card-body">
                     <div class="py-5">
                         <div class="row">
-                            <img src="{{ asset('storage/ktp/'. $detail->ktp) }}" class="col-6" style="width:300px;height:auto; border-radius:40px" alt="ktp">
-                            <img src="{{ asset('storage/sim/'. $detail->sim) }}" class="col-6" style="width: 300px;height:auto;border-radius:40px" alt="sim">
+                            <img src="{{ asset('storage/ktp/'. $detail->data->ktp) }}" class="col-6" style="width:300px;height:auto; border-radius:40px" alt="ktp">
+                            <img src="{{ asset('storage/sim/'. $detail->data->sim) }}" class="col-6" style="width: 300px;height:auto;border-radius:40px" alt="sim">
                         </div>
                     </div>
                 </div>

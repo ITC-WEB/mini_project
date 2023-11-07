@@ -40,10 +40,19 @@ Data Mobil
                                         Harga Sewa
                                     </th>
                                     <th>
+                                        Kapasitas
+                                    </th>
+                                    <th>
+                                        Type
+                                    </th>
+                                    <th>
                                         Gambar
                                     </th>
                                     <th>
                                         Status
+                                    </th>
+                                    <th>
+                                        Action
                                     </th>
                                 </tr>
                             </thead>
@@ -65,11 +74,23 @@ Data Mobil
                                     <td>
                                         Rp. {{ $mobils->harga_sewa }}
                                     </td>
+
+                                    <td>
+                                        {{ $mobils->kapasitas }}/Penumpang
+                                    </td>
+
+                                    <td>
+                                        {{ $mobils->type }}
+                                    </td>
+
                                     <td>
                                         <img src="{{asset('storage/mobil/'.$mobils->gambar)}}" style="width: 140px;height:80px;border-radius: 10px;" alt="Mobil">
                                     </td>
                                     <td>
-                                        <button type="submit" style="border: none;" class="badge badge-primary">Edit</button>
+                                        {{ $mobils->status }}
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('edit-mobil',['id' => $mobils->id])}}"><button type="submit" style="border: none;" class="badge badge-primary">Edit</button></a>
                                         <form action="/delete-mobil/{{ $mobils->id }}" method="post" class="d-inline">
                                             @csrf
                                             <button type="submit" style="border: none;" class="badge badge-danger">Delete</button>
@@ -79,9 +100,10 @@ Data Mobil
                                 @endforeach
                             </tbody>
                         </table>
-                        <div class="my-5">
-                            {{ $mobil->withQueryString()->links() }}
-                        </div>
+
+                    </div>
+                    <div class="d-flex justify-content-end my-5">
+                        {{ $mobil->withQueryString()->links() }}
                     </div>
                 </div>
             </div>

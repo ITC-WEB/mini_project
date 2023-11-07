@@ -4,18 +4,22 @@ namespace App\Http\Controllers\Backend;
 
 use App\Models\Data;
 use App\Models\User;
+use App\Models\Mobil;
 use App\Models\Sopir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use App\Models\Peminjaman;
 use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $jmlUser = User::count();
+        $jmlMobil = Mobil::count();
 
-        return view('admin.index');
+        return view('admin.index', compact('jmlUser', 'jmlMobil'));
     }
 
     // Pages
@@ -69,10 +73,7 @@ class HomeController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-
-        Session::flash('success', 'Data berhasil ditambahkan');
-
-        return redirect('/add-admin')->with('success', 'Berhasil Menambahkan Data');
+        return redirect('/add-admin')->with('success', 'Data berhasil diubah');
     }
 
     //Crud Sopir
@@ -133,9 +134,9 @@ class HomeController extends Controller
         return redirect('/profile');
     }
 
-    public function show($id)
+    public function show(Request $request)
     {
-        $detail = Data::find($id);
+        $detail = User::find($request->id);
         return view('admin.pages.show', compact('detail'));
     }
 

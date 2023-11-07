@@ -9,8 +9,7 @@ Data Peminjam
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Data Mobil</h4>
-                    <a href="/create-mobil" class="card-title btn btn-primary text-white" style="font-size: 15px;"> + Tambah Data</a>
+                    <h4 class="card-title">Data Peminjaman</h4>
                     <div class="my-2 col-8">
                         <form action="" method="GET">
                             <div class="input-group">
@@ -66,7 +65,7 @@ Data Peminjam
                                         {{ $pinjams->tanggal_selesai }}
                                     </td>
                                     <td>
-                                        Rp.{{ $pinjams->biaya }}
+                                        {{ $pinjams->biaya }}
                                     </td>
                                     <td>
                                         <button type="submit" style="border: none;" class="badge badge-danger">Belum Bayar</button>
