@@ -30,22 +30,22 @@ Route::get('/register', [AuthController::class, 'index_reg']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
-/////////****** Front end*********///////
-Route::get('/', [FrontendController::class, 'homepage'])->name('homepage');
-Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', 'customer']);
-
-//pages
-Route::get('/tentang', [FrontendController::class, 'tentangKami']);
-Route::get('/syarat', [FrontendController::class, 'syaratKetentuan']);
-Route::get('/kontak', [FrontendController::class, 'kontak']);
-//katalog
-Route::get('/katalog', [KatalogController::class, 'index']);
-Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail');
-//peminjaman
-Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman');
-Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
-//pembayaran
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
+///////****** Front end*********///////
+////////*******FRONTEND  **********///////
+// Route::get('/', [FrontendController::class, 'homepage'])->name('homepage');
+// Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', 'customer']);
+// //pages
+// Route::get('/tentang', [FrontendController::class, 'tentangKami']);
+// Route::get('/syarat', [FrontendController::class, 'syaratKetentuan']);
+// Route::get('/kontak', [FrontendController::class, 'kontak']);
+// //katalog
+// Route::get('/katalog', [KatalogController::class, 'index']);
+// Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail');
+// //peminjaman
+// Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman');
+// Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
+// //pembayaran
+// Route::get('/pembayaran', [PembayaranController::class, 'index']);
 
 
 
