@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="frontend/libraries/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="frontend/styles/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Assistant:200,400,700&&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+ <section>
+    <div class="container  p-5">
+        <div class="row">
+            <div class="col-6  px-5" style="display: flex; flex-direction: column; justify-content: center;">
+                <h2 class="font-weight-bold">
+                    SELAMAT DATANG DI INTERMEDIA TRANS 
+                </h2>
+                <h3 class="akun font-weight-light">
+                    sudah memiliki akun? <a href="">masuk</a>
+                </h3>
+<form action="proses_login.php" method="post">
+    <div>
+        <label for="email"></label>
+        <input class="email" type="text" id="email" placeholder="email" required>
+    </div>
+
+    <div>
+        <label for="password"></label>
+        <input class="password" type="password" id="password" placeholder="password" required>
+    </div>
+    <div class="text-center">
+        <input class="masuk mt-3" type="submit" value="masuk">
+    </div>
+</form>
+            </div>
+            <div class="col-6">
+                    <img src="frontend/images/login.jpg" style="width: 660px; height: 650px;">
+            </div>
+        </div>
+    </div>
+ </section>   
+<script src="frontend/libraries/retina/retina.js"></script>
+<script src="frontend/libraries/jquery/jquery-3.4.1.min.js"></script>
+<script src="frontend/libraries/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

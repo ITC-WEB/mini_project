@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Details</title>
+    <link rel="stylesheet" href="frontend/libraries/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="frontend/styles/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Assistant:200,400,700&&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="frontend/libraries/xzoom/dist/xzoom.css" />
+    <link rel="stylesheet" href="frontend/libraries/gijgo/css/gijgo.min.css" />
+</head>
+
+<body>
+    <!-- Semantic elements -->
+    <!-- https://www.w3schools.com/html/html5_semantic_elements.asp -->
+
+    <!-- Bootstrap navbar example -->
+    <!-- https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+    <div class="container">
+        <nav class="row navbar navbar-expand-lg navbar-light bg-white">
+            <div class="navbar-nav ml-auto mr-auto mr-sm-auto mr-lg-0 mr-md-auto">
+                <a class="navbar-brand" href="index.html">
+                    <img src="frontend/images/logo itc.png" alt="" />
+                </a>
+            </div>
+            <ul class="navbar-nav mr-auto d-none d-lg-block">
+                <li>
+                    <span class="text-muted">| &nbsp; Beyond the explorer of the world</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <section class="section-details-header"></section>
+        <section class="section-details-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col p-0 pl-3 pl-lg-0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item" aria-current="page">
+                                    Paket Rental
+                                </li>
+                                <li class="breadcrumb-item" aria-current="page">
+                                    Details
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Checkout
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 pl-lg-0">
+                        <div class="card card-details mb-3">
+                            <h1>Form Perngisian Data Rental</h1>
+                            <p>Malang, Indonesia</p>
+                            <div class="member mt-3">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputUsername" class="font-weight-bold">Nama </label>
+                                        <input type="text" class="form-control" id="inputUsername" placeholder="Username" />
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-6 col-sm-6 mb-3">
+                                            <label for="inputEmail" class="font-weight-bold">Email </label>
+                                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" />
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <label for="inputPhone" class="font-weight-bold">Phone </label>
+                                            <input type="tel" class="form-control" id="inputPhone" placeholder="Phone" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-6 col-sm-6 mb-3">
+                                            <label for="tanggalMulai" class="font-weight-bold">Tanggal Mulai</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control datepicker" id="tanggalMulai" placeholder="Tanggal Mulai" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 mb-3">
+                                            <label for="tanggalSelesai" class="font-weight-bold">Tanggal Selesai</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control datepicker" id="tanggalSelesai" placeholder="Tanggal Selesai" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputKTP" class="font-weight-bold">Upload KTP</label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputKTP" accept=".jpg, .jpeg, .png, .pdf" />
+                                            <label class="custom-file-label" for="inputKTP">Choose file</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputSIM" class="font-weight-bold">Upload SIM</label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputSIM" accept=".jpg, .jpeg, .png, .pdf" />
+                                            <label class="custom-file-label" for="inputSIM">Choose file</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="join-container mt-5">
+                                            <a href="success.html" class="btn btn-block btn-join-now mt-3 py-2">I Have Made Payment</a>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <a href="#" class="text-muted">Cancel Booking</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-details card-right">
+                            <h2>Checkout Information</h2>
+                            <table class="trip-informations">
+                                <tr>
+                                    <th width="50%">Mobil</th>
+                                    <td width="50%" class="text-right">Avanza</td>
+                                </tr>
+                                <tr>
+                                    <th width="50%">Supir</th>
+                                    <td width="50%" class="text-right">Rp. 100.000/hari</td>
+                                </tr>
+                                <tr>
+                                    <th width="50%">Total</th>
+                                    <td width="50%" class="text-right text-total"><span class="text-blue">Rp. 1000.000</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="section-footer mt-5 mb-4 border-top pt-lg-5">
+      <div class=" container pt-5 pb-5">
+          <div class="row justify-content-center">
+              <div class="col-12">
+                  <div class="row">
+                      <div class="col-12">
+                          <div class="row ">
+                              <div class="col-12 col-lg-2">
+                                  <a class="footer-brand" href="index.html">
+                                      <img src="frontend/images/logo itc.png" alt="" />
+                                  </a>
+                                  <div class="social-icons mt-3 ">
+                                      <a href="#" class="social-icon mr-2">
+                                          <i class="fab fa-facebook fa-2x "></i>
+                                      </a>
+                                      <a href="#" class="social-icon">
+                                          <i class="fab fa-whatsapp fa-2x mr-2 "></i>
+                                      </a>
+                                      <a href="#" class="social-icon">
+                                          <i class="fab fa-instagram fa-2x "></i>
+                                      </a>
+                                  </div>
+                              </div>
+
+                              <div class="col-12 col-lg-2">
+                                  <h5 class="footertxt ">BERANDA</h5>
+                                  <ul class="list-unstyled">
+                                      <li>
+                                          <a href="index.html">Mobil Populer </a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html">Our Network</a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html">Testimonial</a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html">FAQ</a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html">CTA Us</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="col-12 col-lg-2">
+                                  <h5 class="footertxt">KATALOG</h5>
+                                  <ul class="list-unstyled">
+                                      <li><a href="katalog.html">Banner</a></li>
+                                      <li><a href="katalog.html">Filtering</a></li>
+                                      <li><a href="katalog.html">Katalog</a></li>
+                                  </ul>
+                              </div>
+                              <div class="col-12 col-lg-2">
+                                  <h5 class="footertxt">S&K</h5>
+                                  <ul class="list-unstyled">
+                                      <li><a href="syaratketentuan.html">Ketentuan Umum </a></li>
+                                      <li><a href="syaratketentuan.html">Ketentuan Khusus</a></li>
+
+                                  </ul>
+                              </div>
+                              <div class="col-12 col-lg-2">
+                                  <h5 class="footertxt">KONTAK KAMI</h5>
+                                  <ul class="list-unstyled footertxt">
+                                      <li>Malang, Indonesia</li>
+                                      <li>0821 - 2222 - 8888</li>
+                                      <li>support@nomads.id</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="container-fluid footerbawah" style="background-color: white;">
+          <div class="row border-top justify-content-center align-items-center pt-4">
+              <div class="col-auto text-black-500 font-weight-light">2019 Copyright Nomads • All rights reserved • Made in Jakarta</div>
+          </div>
+      </div>
+  </footer>
+    <script src="frontend/libraries/retina/retina.js"></script>
+    <script src="frontend/libraries/jquery/jquery-3.4.1.min.js"></script>
+    <script src="frontend/libraries/bootstrap/js/bootstrap.js"></script>
+    <script src="frontend/libraries/xzoom/dist/xzoom.min.js"></script>
+    <script src="frontend/libraries/gijgo/js/gijgo.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".xzoom, .xzoom-gallery").xzoom({
+          zoomWidth: 500,
+          title: false,
+          tint: "#333",
+          Xoffset: 15,
+        });
+
+        $("#tanggalMulai").datepicker({
+          uiLibrary: "bootstrap4",
+          icons: {
+            rightIcon: '<img src="frontend/images/ic_doe.png" alt="" />',
+          },
+        });
+
+        $("#tanggalSelesai").datepicker({
+          uiLibrary: "bootstrap4",
+          icons: {
+            rightIcon: '<img src="frontend/images/ic_doe.png" alt="" />',
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
