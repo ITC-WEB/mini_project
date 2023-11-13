@@ -7,7 +7,7 @@
                         <div class="row ">
                             <div class="col-12 col-lg-2">
                                 <a class="footer-brand" href="index.html">
-                                    <img src="{{asset('frontend/images/logo itc.png')}}" alt="" />
+                                    <img src="frontend/images/logofooter.png" alt="" />
                                 </a>
                                 <div class="social-icons mt-3 ">
                                     <a href="#" class="social-icon mr-2">

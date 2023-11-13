@@ -7,13 +7,14 @@ TentangKami
 @section('content')
 <header class="text-left headertentangkami">
     <h1 class="ml-5">
-        Nikmati Perjalanan Anda
-        <br />Dengan Fasilitas Terbaik dari Kami
+        TENTANG <br /> INTERMEDIA CAR RENT
+
+
     </h1>
     <p class="mt-3 ml-5">
-        Kendaraan Teraman dan Harga Terbaik
+        Kenali perusahaan kami lebih dekat
     </p>
-    <a href="katalog.html" class="btn btn-get-started px-4 mt-4 ml-5"> Get Start </a>
+
 </header>
 <!-- Hero -->
 <!-- Hero -->
@@ -24,7 +25,7 @@ TentangKami
             <div class="container px-3 mt-5">
                 <div class="row mb-md-0 mb-5 justify-content-between">
                     <div class="col-lg-6 py-lg-5">
-                        <div class="text-center text-lg-left mt-3">
+                        <div class="text-center text-lg-left mt-5">
                             <img src="frontend/images/contententangkami.png" class="tentangkami-img img-fluid float-end" />
                         </div>
                     </div>
@@ -32,7 +33,8 @@ TentangKami
                         <div class="tentangkami-content py-5">
                             <h1 class="text-lg-left font-weight-bold tentangkamiconten1">Intermedia Trans</h1>
                             <p class="text-lg-left mt-lg-2 tentangkami-conten pararaf-tentangkami">
-                                layanan yang memungkinkan seseorang atau perusahaan untuk menyewa kendaraan bermotor untuk digunakan dalam jangka waktu tertentu, biasanya dengan membayar biaya sewa
+                                Intermedia Trans, mitra terpercaya Anda dalam menjelajahi Malang dengan gaya dan kenyamanan. Sebagai perusahaan penyewaan mobil terkemuka, kami menawarkan pengalaman tanpa kesulitan, menyediakan kendaraan berkualitas tinggi, sopir profesional, dan layanan
+                                tak tertandingi. Temukan Malang dengan ritme Anda sendiri, dengan keyakinan bahwa Anda berada di tangan para ahli. Perjalanan Anda dimulai bersama kami.
                             </p>
                         </div>
                     </div>
