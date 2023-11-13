@@ -29,17 +29,15 @@
             </ul>
             <!-- Mobile button -->
             <form class="form-inline d-sm-block d-md-none">
-                <a href="{{url('/logout')}}" class="btn btn-login my-2 my-sm-0">Logout</a>
+                <a href="{{url('/logout')}}" class="btn btn-login my-2 my-sm-0">Masuk</a>
             </form>
             <!-- Desktop Button -->
             <form class="form-inline my-2 my-lg-0 d-none d-md-block">
-                <a href="{{url('/logout')}}" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Logout</a>
+                <a href="{{url('/logout')}}" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Masuk</a>
             </form>
 
 
         </div>
     </nav>
 </div>
-
-
 <!-- EndNavbar -->

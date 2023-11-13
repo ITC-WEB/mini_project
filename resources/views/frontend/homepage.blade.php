@@ -1,4 +1,4 @@
-@extends('frontend.layout.appAwal')
+@extends('frontend.layout.app')
 
 @section('title')
 HomePage
