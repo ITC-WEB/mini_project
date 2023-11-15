@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-
-    <title>@yield('title') | ITC-Trans</title>
-    @stack('before-style')
-    <!-- ambil style -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>@yield('title') | ITC-Trans</title> 
     @include('admin.includes.style')
-    @stack('after-style')
+   
 
 </head>
 
@@ -20,9 +20,9 @@
 
 
     <!-- script -->
-    @stack('before-scipt')
+    
     @include('admin.includes.scipt')
-    @stack('after-script')
+   
 
     <!-- page-body-wrapper ends -->
     <!-- container-scroller -->

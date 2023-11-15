@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\HomeController as BackendController;
 use App\Http\Controllers\Backend\MobilController as MobilController;
 use App\Http\Controllers\Frontend\PeminjamanController as FrontpinjamController;
 use App\Http\Controllers\Backend\PinjamController;
+use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\KatalogController;
 use App\Http\Controllers\Frontend\PembayaranController;
 
@@ -40,7 +41,7 @@ Route::get('/syarat', [FrontendController::class, 'syaratKetentuan']);
 Route::get('/kontak', [FrontendController::class, 'kontak']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);
-Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail');
+Route::get('/detail', [DetailController::class, 'detail'])->name('detail');
 //peminjaman
 Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman');
 Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
@@ -53,8 +54,8 @@ Route::get('/pembayaran', [PembayaranController::class, 'index']);
 ///////*******Back End **********///////
 
 Route::get('/auth', [BackendController::class, 'index'])->middleware(['auth', 'admin']);
-Route::get('/add-admin', [BackendController::class, 'useradmin'])->middleware(['auth', 'admin']);
 Route::get('/add-customer', [BackendController::class, 'usercustomer'])->middleware(['auth', 'admin']);
+Route::get('/add-admin', [BackendController::class, 'useradmin'])->middleware(['auth', 'admin']);
 Route::get('/add-sopir', [BackendController::class, 'usersopir'])->middleware(['auth', 'admin']);
 
 // Profile

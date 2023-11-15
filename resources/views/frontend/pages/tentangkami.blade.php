@@ -77,11 +77,9 @@ TentangKami
                             <h4>Silahkan menikmati fasilitas kendaraan Kami</h4>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </div>
 
 </section>

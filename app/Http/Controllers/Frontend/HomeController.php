@@ -41,11 +41,4 @@ class HomeController extends Controller
         return view('frontend.pages.kontak');
     }
 
-    public function detailMobil(Request $request)
-    {
-        $mobil = Mobil::find($request->id);
-        $sopir = Sopir::all();
-        // return response()->json($request);
-        return view('frontend.pages.detail', compact('mobil', 'sopir'));
-    }
 }
