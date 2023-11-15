@@ -11,7 +11,6 @@ class PembayaranController extends Controller
     //
     public function index(Request $request)
     {
-        $id = $request->input('id');
-        return view('frontend.pages.pembayaran', compact('id'));
+        return view('frontend.pages.pembayaran');
     }
 }

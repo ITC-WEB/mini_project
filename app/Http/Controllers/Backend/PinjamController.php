@@ -11,15 +11,15 @@ class PinjamController extends Controller
     public function index()
     {
         $pinjam = Peminjaman::orderBy('id',  'DESC')->get();
-        return view('admin.pages.peminjaman', compact('pinjam'));
+        return view('admin.pages.crud_peminjaman.peminjaman', compact('pinjam'));
     }
 
-    public function edit(Request $request)
+    public function edit_peminjaman(Request $request)
     {
         $pinjam = Peminjaman::find($request->id);
-        return view('admin.pages.edit_peminjaman', compact('pinjam'));
+        return view('admin.pages.crud_peminjaman.edit_peminjaman', compact('pinjam'));
     }
-    public function update(Request $request)
+    public function update_peminjaman(Request $request)
     {
         $data = Peminjaman::find($request->id);
         $data->status = $request->input('status');

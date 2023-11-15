@@ -26,7 +26,7 @@ Data Admin
                                     <th>
                                         Phone
                                     </th>
-                                    <th class="text-truncate" style="max-width: 200px;white-space: normal;"> >
+                                    <th class="text-truncate" style="max-width: 200px;white-space: normal;">
                                         Alamat
                                     </th>
                                     <th>
@@ -37,17 +37,11 @@ Data Admin
                             <tbody>
                                 @foreach ($data as $item )
                                 <tr>
-                                    <td class="py-2">
-                                        <img src="{{asset('admin/images/faces/face2.jpg')}}" alt="image" />
-                                    </td>
                                     <td>
                                         {{ $item->name }}
                                     </td>
                                     <td>
                                         {{ $item->email }}
-                                    </td>
-                                    <td>
-                                        {{ $item->role->name }}
                                     </td>
                                     <td>
                                         {{ $item->gender }}

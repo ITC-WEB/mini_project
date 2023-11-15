@@ -213,12 +213,7 @@
                         <span class="menu-title">Peminjaman</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-credit-card mr-3" aria-hidden="true"></i>
-                        <span class="menu-title">Pembayaran</span>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/profile">
                         <i class="icon-head menu-icon"></i>

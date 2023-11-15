@@ -48,6 +48,6 @@ class PeminjamanController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        return redirect('/pembayaran/{id}');
+        return redirect('/pembayaran');
     }
 }

@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="join-container mt-5">
-                                            <a href="{{ route('pembayaran',['id' => $mobil->id]) }}"><button type="submit" class="btn btn-block btn-join-now mt-3 py-2">Pesan</button></a>
+                                            <button type="submit" class="btn btn-block btn-join-now mt-3 py-2">Pesan</button>
                                         </div>
                                         <div class="text-center mt-3">
                                             <a href="#" class="text-muted">Cancel Booking</a>

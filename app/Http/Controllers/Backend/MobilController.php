@@ -24,12 +24,12 @@ class MobilController extends Controller
                 $query->where('name', 'LIKE', '%' . $cari . '%');
             })
             ->paginate(5);
-        return view('admin.pages.data_mobil', compact('mobil'));
+        return view('admin.pages.crud_mobil.data_mobil', compact('mobil'));
     }
     //Crud Mobil
     public function create()
     {
-        return view('admin.crud_mobil.create');
+        return view('admin.pages.crud_mobil.create');
     }
 
     public function add_mobil(Request $request)
@@ -70,7 +70,7 @@ class MobilController extends Controller
     public function edit_mobil(Request $request)
     {
         $mobil = Mobil::find($request->id);
-        return view('admin.crud_mobil.edit', compact('mobil'));
+        return view('admin.pages.crud_mobil.edit', compact('mobil'));
     }
 
     //status

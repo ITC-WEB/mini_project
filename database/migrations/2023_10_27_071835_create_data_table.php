@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('sim', 255);
             $table->string('ktp', 255);
+            $table->string('bukti_transfer', 255)->nullable();
             $table->timestamps();
         });
     }

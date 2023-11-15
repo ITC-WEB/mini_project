@@ -18,4 +18,20 @@ Show
                 </div>
             </div>
         </div>
+        @if ($detail->data->bukti_transfer !== NULL)
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="py-5">
+                        <div class="row">
+                            <img src="#" class="col-6" style="width:300px;height:auto; border-radius:40px" alt="bukti tranfer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @else
+        <p>Belum Ada Transaksi Sewa</p>
+        @endif
+
         @endsection
