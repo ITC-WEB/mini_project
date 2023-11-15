@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Peminjaman;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PembayaranController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        return view('frontend.pages.pembayaran');
+        $id = $request->input('id');
+        return view('frontend.pages.pembayaran', compact('id'));
     }
 }

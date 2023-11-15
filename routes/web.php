@@ -45,8 +45,7 @@ Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('de
 Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman');
 Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
 //pembayaran
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
-
+Route::get('/pembayaran/{id}', [PembayaranController::class, 'index'])->name('pembayaran');
 
 
 

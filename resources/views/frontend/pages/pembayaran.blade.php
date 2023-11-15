@@ -9,6 +9,7 @@
 
 <body>
     <h1>Silahkan Lakukan Pembayaran</h1>
+    <p>Atas nama {{ Auth::user()->name }}</p>
     <a href="/user">Back To Home</a>
 </body>
 

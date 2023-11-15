@@ -19,6 +19,7 @@ class MobilController extends Controller
             ->where('name', 'LIKE', '%' . $cari . '%')
             ->orWhere('noplat', 'LIKE', '%' . $cari . '%')
             ->orWhere('harga_sewa', $cari)
+            ->orWhere('status', 'LIKE', '%' . $cari . '%')
             ->orWhereHas('merek', function ($query) use ($cari) {
                 $query->where('name', 'LIKE', '%' . $cari . '%');
             })
