@@ -25,8 +25,8 @@ return new class extends Migration
             $table->unsignedBigInteger('data_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('restrict');
-            $table->foreign('data_id')->references('id')->on('data')->onDelete('restrict');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->foreign('data_id')->references('id')->on('data')->onDelete('cascade');
         });
     }
 

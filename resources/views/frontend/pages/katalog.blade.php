@@ -1,5 +1,5 @@
 @extends('frontend.layout.app')
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 @section('title')
 Katalog
 @endsection
@@ -161,13 +161,15 @@ Katalog
 <div class="container mt-5 p-5">
     <div class="row text-left justify-content-between">
         @foreach ($mobil as $mobils)
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 cardkatalog  ">
+        @if ($mobils->status !== 1)
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 cardkatalog ">
             <!-- Added margin-bottom -->
             <div class="shadow  p-4 cardku">
                 <!-- Added padding -->
+
                 <div class="item">
-                    <a href="{{ route('detail',['id' => $mobils->id]) }}" class="">
-                        <img src="{{asset('storage/mobil/'.$mobils->gambar)}}" alt="" class="img-fluid">
+                    <a href="#" id="disewa">
+                        <img src="{{asset('storage/public/mobil/'.$mobils->gambar)}}" alt="" class="img-fluid">
                     </a>
                     <div class="info">
                         <h5>Name :{{ $mobils->name }} </h5>
@@ -176,11 +178,37 @@ Katalog
                         <hr>
                         <p>Kapasitas:{{ $mobils->kapasitas }}</p>
                         <hr>
-                        <p>Harga:{{ $mobils->harga_sewa }}</p>
+                        <p>Status: Disewa</p>
                     </div>
                 </div>
+
             </div>
         </div>
+        @else
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 cardkatalog  ">
+            <!-- Added margin-bottom -->
+            <div class="shadow  p-4 cardku">
+                <!-- Added padding -->
+
+                <div class="item">
+                    <a href="{{ route('detail',['id' => $mobils->id]) }}">
+                        <img src="{{asset('storage/public/mobil/'.$mobils->gambar)}}" alt="" class="img-fluid">
+                    </a>
+                    <div class="info">
+                        <h5>Name :{{ $mobils->name }} </h5>
+                        <hr>
+                        <p>Merek:{{ $mobils->merek->name }}</p>
+                        <hr>
+                        <p>Kapasitas:{{ $mobils->kapasitas }}</p>
+                        <hr>
+                        <p>Harga: Rp.{{ $mobils->harga_sewa }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        @endif
+
         @endforeach
 
     </div>
@@ -192,4 +220,15 @@ Katalog
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<script>
+    document.getElementById('disewa').addEventListener('click', function() {
+        Swal.fire({
+            icon: "error",
+            title: "Ops Mohon Maaf",
+            text: "Mobil Sedang Di Sewakan",
+            footer: '<a href="#">Mohon Maaf</a>'
+        });
+    });
+</script>
 @endsection

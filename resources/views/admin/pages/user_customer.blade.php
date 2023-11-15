@@ -14,16 +14,10 @@ Data Customer
                             <thead>
                                 <tr>
                                     <th>
-                                        User
-                                    </th>
-                                    <th>
-                                        Full Name
+                                        Name
                                     </th>
                                     <th>
                                         Email
-                                    </th>
-                                    <th>
-                                        Role
                                     </th>
                                     <th>
                                         Gender
@@ -42,9 +36,6 @@ Data Customer
                             <tbody>
                                 @foreach ($data as $item )
                                 <tr>
-                                    <td class="py-2">
-                                        <img src="{{asset('admin/images/faces/face6.jpg')}}" alt="image" />
-                                    </td>
                                     <td>
                                         {{ $item->name }}
                                     </td>
@@ -53,24 +44,20 @@ Data Customer
                                     </td>
 
                                     <td>
-                                        {{ $item->role->name }}
-                                    </td>
-
-                                    <td>
                                         {{ $item->gender }}
                                     </td>
                                     <td>
                                         {{ $item->phone }}
                                     </td>
-                                    <td>
+                                    <td class="text-truncate" style="max-width: 200px;white-space: normal;">
                                         {{ $item->alamat }}
                                     </td>
                                     <td>
                                         <label class="badge badge-success">Active</label>
                                         <a href="{{ route('show',['id' => $item->id]) }}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="icon-eye menu-icon"></i></button></a>
-                                        <form action="/delete-customer/{{ $item->id }}" method="post" class="d-inline">
+                                        <form action="{{ route('delete-customer', $item->id) }}" method="POST" id="delete-form-{{ $item->id }}" class="d-inline">
                                             @csrf
-                                            <button type="submit" style="border: none;" class="badge badge-danger">Delete</button>
+                                            <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $item->id }}">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -82,4 +69,5 @@ Data Customer
                 </div>
             </div>
         </div>
+        @include('admin.includes.sweetalert')
         @endsection

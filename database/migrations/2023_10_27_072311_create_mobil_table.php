@@ -22,10 +22,10 @@ return new class extends Migration
             $table->text('deskripsi')->nullable();
             $table->enum('type', ['matic', 'persneling']);
             $table->integer('harga_sewa');
-            $table->enum('status', ['tersedia', 'disewa']);
+            $table->integer('status')->default(1);
             $table->timestamps();
 
-            $table->foreign('merek_id')->references('id')->on('merek')->onDelete('restrict');
+            $table->foreign('merek_id')->references('id')->on('merek')->onDelete('cascade');
         });
     }
 

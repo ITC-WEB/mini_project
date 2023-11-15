@@ -40,15 +40,11 @@ class MobilController extends Controller
             'tahun' => 'required',
             'harga_sewa' => 'required',
             'gambar' => 'mimes:jpg,png,jpeg|image|max:2048',
-            'status' => ''
         ]);
         $extensi = $request->file('gambar')->getClientOriginalExtension();
         $newName = $request->name . '-' . now()->timestamp . "." . $extensi;
         $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
         $gambar = str_replace('public/mobil/', '', $gambar);
-        if (!$request["status"]) {
-            $request["status"] = 'tersedia';
-        }
 
         Mobil::create([
             'noplat' => $request->noplat,
@@ -76,6 +72,20 @@ class MobilController extends Controller
         return view('admin.crud_mobil.edit', compact('mobil'));
     }
 
+    //status
+    public function update_status($mobilId)
+    {
+        $mobils = Mobil::find($mobilId);
+        if ($mobils) {
+            if ($mobils->status) {
+                $mobils->status = 0;
+            } else {
+                $mobils->status = 1;
+            }
+            $mobils->save();
+        }
+        return back();
+    }
     public function update_mobil(Request $request)
     {
 

@@ -62,8 +62,8 @@ Create Data
                             <label for="exampleSelectGender">Status</label>
                             <select class="custom-select" name="status" id="inputGroupSelect01">
                                 <option selected>---Pilih---</option>
-                                <option value="tersedia">tersedia</option>
-                                <option value="disewa">disewa</option>
+                                <option value="1">tersedia</option>
+                                <option value="0">disewa</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>

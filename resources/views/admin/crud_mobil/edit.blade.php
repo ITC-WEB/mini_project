@@ -69,9 +69,9 @@ Edit Data
                             <select class="custom-select" name="status" id="inputGroupSelect01">
                                 <option value="{{ $mobil->status }}">{{$mobil->status}}</option>
                                 @if ($mobil->status == 'disewa')
-                                <option value="tersedia">tersedia</option>
+                                <option value="1">tersedia</option>
                                 @else
-                                <option value="disewa">disewa</option>
+                                <option value="0">disewa</option>
                                 @endif
                             </select>
                         </div>

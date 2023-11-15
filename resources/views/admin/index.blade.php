@@ -34,11 +34,12 @@ Admin
                         <div class="card card-tale">
                             <div class="card-body">
                                 <p class="mb-4">Admin</p>
-                                <p class="fs-30 mb-2">2</p>
+                                <p class="fs-30 mb-2">{{ $jmlAdmin }}</p>
                             </div>
                         </div>
                     </div>
                     @elseif (Auth::user()->role_id == 2)
+
                     <div class="col-md-6 mb-4 stretch-card transparent">
                         <div class="card card-tale">
                             <div class="card-body">
@@ -48,33 +49,42 @@ Admin
                     </div>
                     @endif
 
+
                     <div class="col-md-6 mb-4 stretch-card transparent">
                         <div class="card card-dark-blue">
                             <div class="card-body">
-                                <p class="mb-4">User</p>
-                                <p class="fs-30 mb-2">{{ $jmlUser }}</p>
+                                <a href="/add-customer" style="color:#ffff;text-decoration:none;">
+                                    <p class="mb-4">User</p>
+                                    <p class="fs-30 mb-2">{{ $jmlUser }}</p>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+
                     <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
                         <div class="card card-light-blue">
                             <div class="card-body">
-                                <p class="mb-4">Unit Mobil</p>
-                                <p class="fs-30 mb-2">{{ $jmlMobil }}</p>
-
+                                <a href="/data-mobil" style="color:#ffff;text-decoration:none;">
+                                    <p class="mb-4">Unit Mobil</p>
+                                    <p class="fs-30 mb-2">{{ $jmlMobil }}</p>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 stretch-card transparent">
                         <div class="card card-light-danger">
                             <div class="card-body">
-                                <p class="mb-4">Total Bookings</p>
-                                <p class="fs-30 mb-2">0</p>
+                                <a href="/data-pinjam" style="color:#ffff;text-decoration:none;">
+                                    <p class="mb-4">Total Bookings</p>
+                                    <p class="fs-30 mb-2">{{ $boking }}</p>
+                                </a>
                             </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

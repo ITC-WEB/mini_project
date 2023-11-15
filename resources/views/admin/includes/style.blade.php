@@ -11,3 +11,5 @@
 <link rel="stylesheet" href="{{asset('admin/css/vertical-layout-light/style.css') }}">
 <!-- endinject -->
 <link rel="shortcut icon" href="{{asset('admin/images/icon2.png')}}" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">

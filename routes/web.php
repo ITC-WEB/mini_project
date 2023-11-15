@@ -73,19 +73,20 @@ Route::post('/update', [BackendController::class, 'update']);
 //Show
 Route::get('/show/{id}', [BackendController::class, 'show'])->name('show');
 
+//status mobil
+Route::get('mobil/{id}', [MobilController::class, 'update_status']);
 
 //Edit Mobil
 Route::get('/edit-mobil/{id}', [MobilController::class, 'edit_mobil'])->name('edit-mobil');
 Route::post('/update-mobil', [MobilController::class, 'update_mobil'])->name('mobil.update');
 
 //Delete admin
-Route::post('/delete/{id}', [BackendController::class, 'delete']);
-
+Route::post('/delete/{id}', [BackendController::class, 'delete'])->name('delete');
 //Delete customer
-Route::post('/delete-customer/{id}', [BackendController::class, 'customer_delete']);
+Route::post('/delete-customer/{id}', [BackendController::class, 'customer_delete'])->name('delete-customer');
 
 //Delete Mobil
-Route::post('/delete-mobil/{id}', [MobilController::class, 'mobil_delete']);
+Route::post('/delete-mobil/{id}', [MobilController::class, 'mobil_delete'])->name('delete-mobil');
 
 //Crud Sopir
 Route::get('/create-sopir', [BackendController::class, 'create_sopir'])->middleware(['auth', 'admin']);
@@ -101,3 +102,8 @@ Route::post('/create-mobil', [MobilController::class, 'add_mobil']);
 // Peminjaman
 
 Route::get('/data-pinjam', [PinjamController::class, 'index']);
+
+//update status pinjam
+
+Route::get('/pinjam/{id}', [PinjamController::class, 'edit'])->name('edit');
+Route::post('/update', [PinjamController::class, 'update'])->name('update');

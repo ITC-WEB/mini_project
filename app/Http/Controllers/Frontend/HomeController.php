@@ -18,7 +18,7 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $jmlUser = User::count();
+        $jmlUser = User::where('role_id', '3')->count();
         $jmlMobil = Mobil::count();
         $jmlSopir = Sopir::count();
         $mobil = Mobil::all();

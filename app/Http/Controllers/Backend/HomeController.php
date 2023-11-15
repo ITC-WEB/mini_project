@@ -11,27 +11,35 @@ use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use App\Models\Peminjaman;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $jmlUser = User::count();
+        $jmlUser = User::where('role_id', '3')->count();
+        $jmlAdmin = User::where('role_id', '2')->count();
         $jmlMobil = Mobil::count();
+        $boking = Peminjaman::count();
 
-        return view('admin.index', compact('jmlUser', 'jmlMobil'));
+
+        return view('admin.index', compact('jmlUser', 'jmlMobil', 'jmlAdmin', 'boking'));
     }
 
     // Pages
     public function useradmin()
     {
-        $data = User::where('role_id', '2')->get();
+        $data = User::where('role_id', '2')
+            ->orderBy('id', 'DESC')
+            ->get();
         return view('admin.pages.user_admin', compact('data'));
     }
 
     public function usercustomer()
     {
-        $data = User::where('role_id', '3')->get();
+        $data = User::where('role_id', '3')
+            ->orderBy('id', 'DESC')
+            ->get();
         return view('admin.pages.user_customer', compact('data'));
     }
 
@@ -143,13 +151,11 @@ class HomeController extends Controller
     public function delete(Request $request)
     {
         User::where('id', $request->id)->delete();
-        Session::flash('success', 'Berhasil Hapus Data');
         return redirect('/add-admin');
     }
     public function customer_delete(Request $request)
     {
         User::where('id', $request->id)->delete();
-        Session::flash('success', 'Berhasil Hapus Data');
         return redirect('/add-customer');
     }
 }
