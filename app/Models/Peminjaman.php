@@ -16,6 +16,7 @@ class Peminjaman extends Model
         'biaya',
         'tanggal_mulai',
         'tanggal_selesai',
+        'bukti_id',
         'status',
 
     ];

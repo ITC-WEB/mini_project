@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data', function (Blueprint $table) {
+        Schema::create('bukti_transfer', function (Blueprint $table) {
             $table->id();
-            $table->string('sim', 255);
-            $table->string('ktp', 255);
+            $table->string('bukti');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data');
+        Schema::dropIfExists('bukti_transfer');
     }
 };

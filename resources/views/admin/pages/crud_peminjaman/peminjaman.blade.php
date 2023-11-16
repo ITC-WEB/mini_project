@@ -78,7 +78,7 @@ Data Peminjam
                                         @else
                                         <a href="{{ route('edit',['id' => $pinjams->id])}}"><button type="submit" style="border: none;" class="badge badge-danger">{{ $pinjams->status }}</button></a>
                                         @endif
-
+                                        <a href="{{ route('bukti',['id' => $pinjams->id]) }}"><button type="submit" style="border: none;" class="badge badge-primary">Bukti Transfer</button></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -90,25 +90,4 @@ Data Peminjam
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-    <!-- <script>
-        // document.getElementById('validasi').addEventListener('click', function() {
-        //     Swal.fire({
-        //         title: "Apakah Anda yakin Ingin Merubah Status!!!",
-        //         showDenyButton: true,
-        //         showCancelButton: true,
-        //         confirmButtonText: "Save",
-        //         denyButtonText: `Don't save`
-        //     }).then((result) => {
-        //         /* Read more about isConfirmed, isDenied below */
-        //         if (result.isConfirmed) {
-        //             Swal.fire("Saved!", "", "success");
-        //         } else if (result.isDenied) {
-        //             Swal.fire("Changes are not saved", "", "info");
-        //         }
-        //     });
-        // });
-    </script> -->
-
     @endsection

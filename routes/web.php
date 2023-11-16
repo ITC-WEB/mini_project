@@ -113,3 +113,6 @@ Route::get('/data-pinjam', [PinjamController::class, 'index']);
 
 Route::get('/pinjam/{id}', [PinjamController::class, 'edit_peminjaman'])->name('edit');
 Route::post('/update', [PinjamController::class, 'update_peminjaman'])->name('update');
+
+//bukti_transfer
+Route::get('/bukti/{id}', [PinjamController::class, 'bukti_pinjam'])->name('bukti');
