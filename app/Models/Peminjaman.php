@@ -34,4 +34,8 @@ class Peminjaman extends Model
     {
         return $this->belongsTo(Sopir::class, 'sopir_id', 'id');
     }
+    public function bukti()
+    {
+        return $this->belongsTo(Bukti::class, 'bukti_id', 'id');
+    }
 }

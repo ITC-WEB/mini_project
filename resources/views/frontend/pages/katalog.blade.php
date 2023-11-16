@@ -178,7 +178,7 @@ Katalog
                         <hr>
                         <p>Kapasitas:{{ $mobils->kapasitas }}</p>
                         <hr>
-                        <p>Status: Disewa</p>
+                        <p>Status: <span class="text-danger">Disewa</span></p>
                     </div>
                 </div>
 

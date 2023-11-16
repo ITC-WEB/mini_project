@@ -48,6 +48,9 @@ Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('de
 //peminjaman
 Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman');
 Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
+
+//***************************Pembayaran */
+Route::post('/update-pembayaran', [PembayaranController::class, 'update_pembayaran']);
 //pembayaran
 Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('pembayaran');
 
@@ -115,4 +118,4 @@ Route::get('/pinjam/{id}', [PinjamController::class, 'edit_peminjaman'])->name('
 Route::post('/update', [PinjamController::class, 'update_peminjaman'])->name('update');
 
 //bukti_transfer
-Route::get('/bukti/{id}', [PinjamController::class, 'bukti_pinjam'])->name('bukti');
+Route::get('/bukti/{id}', [PinjamController::class, 'bukti_bayar'])->name('bukti');

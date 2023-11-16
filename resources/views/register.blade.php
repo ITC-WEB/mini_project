@@ -74,7 +74,6 @@
                                             <label for="data_id">KTP</label>
                                             <input type="file" name="ktp">
                                         </div>
-
                                     </div>
                                     <div class="row">
                                         <div class="col md-6 mb-4">

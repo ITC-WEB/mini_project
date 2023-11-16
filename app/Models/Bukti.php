@@ -15,9 +15,4 @@ class Bukti extends Model
         'bukti',
 
     ];
-
-    public function bukti()
-    {
-        return $this->belongsTo(Peminjaman::class, 'bukti_id', 'id');
-    }
 }

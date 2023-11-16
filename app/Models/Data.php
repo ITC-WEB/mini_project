@@ -13,7 +13,6 @@ class Data extends Model
         'id',
         'sim',
         'ktp',
-        'bukti_transfer',
     ];
 
     public function user()
