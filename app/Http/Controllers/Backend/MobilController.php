@@ -38,6 +38,7 @@ class MobilController extends Controller
             'noplat' => 'required',
             'name' => 'required',
             'merek_id' => 'required|integer',
+            'fitur_tersedia' => 'array',
             'tahun' => 'required',
             'harga_sewa' => 'required',
             'gambar' => 'mimes:jpg,png,jpeg|image|max:2048',
@@ -47,13 +48,22 @@ class MobilController extends Controller
         $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
         $gambar = str_replace('public/mobil/', '', $gambar);
 
+        $selectedOptions = $request->input('fitur_tersedia');
+        $selectedArray = json_encode($selectedOptions);
+
+        if (!$request["status"]) {
+            $request["status"] = '1';
+        }
+
         Mobil::create([
             'noplat' => $request->noplat,
             'name' => $request->name,
             'merek_id' => $request->merek_id,
             'tahun' => $request->tahun,
-            'kapasitas' => $request->kapasitas,
-            'deskripsi' => $request->deskripsi,
+            'kapasitas_orang' => $request->kapasitas_orang,
+            'kapasitas_mesin' => $request->kapasitas_mesin,
+            'bahan_bakar' => $request->bahan_bakar,
+            'fitur_tersedia' => $selectedArray,
             'type' => $request->type,
             'harga_sewa' => $request->harga_sewa,
             'gambar' => $gambar,
@@ -63,6 +73,7 @@ class MobilController extends Controller
         ]);
         Session::flash('success', 'Data berhasil ditambahkan');
 
+        // return response()->json($request);
         return redirect('/data-mobil')->with('success', 'Berhasil Menambahkan Data');
     }
 
@@ -108,8 +119,10 @@ class MobilController extends Controller
         $dataedit->name = $request->name;
         $dataedit->merek_id = $request->merek_id;
         $dataedit->tahun = $request->tahun;
-        $dataedit->kapasitas = $request->kapasitas;
-        $dataedit->deskripsi = $request->deskripsi;
+        $dataedit->kapasitas_orang = $request->kapasitas_orang;
+        $dataedit->kapasitas_mesin = $request->kapasitas_mesin;
+        $dataedit->bahan_bakar = $request->bahan_bakar;
+        $dataedit->fitur_tersedia = $request->fitur_tersedia;
         $dataedit->type = $request->type;
         $dataedit->harga_sewa = $request->harga_sewa;
         $dataedit->gambar = $gambar;
@@ -119,6 +132,12 @@ class MobilController extends Controller
         // return response()->json($dataedit);
 
         return redirect('/data-mobil');
+    }
+
+    public function show_mobil(Request $request)
+    {
+        $detail_mobil = Mobil::find($request->id);
+        return view('admin.pages.crud_mobil.show_mobil', compact('detail_mobil'));
     }
 
     //delete mobile

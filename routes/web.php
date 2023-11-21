@@ -26,17 +26,16 @@ use App\Http\Controllers\Frontend\PembayaranController;
 
 //**********************************Auth ***************************/
 
-Route::get('/log', [AuthController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/log', [AuthController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/log', [AuthController::class, 'index'])->name('login');
+Route::post('/log', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'index_reg']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 
-
 //******************************** FRONTEND*************************/
-Route::get('/', [FrontendController::class, 'homepage'])->name('homepage');
-Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', 'customer']);
+// Route::get('/', [FrontendController::class, 'homepage'])->name('homepage');
+Route::get('/', [FrontendController::class, 'index']);
 
 //pages
 Route::get('/tentang', [FrontendController::class, 'tentangKami']);
@@ -44,9 +43,9 @@ Route::get('/syarat', [FrontendController::class, 'syaratKetentuan']);
 Route::get('/kontak', [FrontendController::class, 'kontak']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);
-Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail');
+Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail')->middleware(['auth', 'customer']);
 //peminjaman
-Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman');
+Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman')->middleware(['auth', 'customer']);
 Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
 
 //***************************Pembayaran */
@@ -104,6 +103,9 @@ Route::post('/create-mobil', [MobilController::class, 'add_mobil']);
 //Edit Mobil
 Route::get('/edit-mobil/{id}', [MobilController::class, 'edit_mobil'])->name('edit-mobil');
 Route::post('/update-mobil', [MobilController::class, 'update_mobil'])->name('mobil.update');
+
+//Show Mobil
+Route::get('/show-mobil/{id}', [MobilController::class, 'show_mobil'])->name('show-mobil');
 
 //Delete Mobil
 Route::post('/delete-mobil/{id}', [MobilController::class, 'mobil_delete'])->name('delete-mobil');

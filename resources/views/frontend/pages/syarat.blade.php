@@ -15,36 +15,73 @@
   </header>
   <!-- Hero -->
   <!-- section 2 -->
+  <!-- section 2 -->
   <section>
-      <div class="container mt-5 p-5 ">
-          <div class="row justify-content-between ">
-              <div class="col-md-6 col-lg-7 ">
-                  <iframe width="100% " height="350 " frameborder="0 " style="border: 0 " src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12713.422066100877!2d-122.1239816!3d37.4277374!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbd34928d2b1d%3A0xf9b13b85e8917a6d!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1554311725323!5m2!1sen!2sus " allowfullscreen></iframe>
-              </div>
-              <div class="col-md-6 col-lg-4 about-image mx-sm-auto ">
-                  <div class="d-flex flex-column justify-content-center align-items-center h-100 ">
-                      <div class="d-flex flex-column align-items-start ">
-                          <div class="d-flex align-items-center mb-3 mt-3 ">
-                              <i class="fab fa-whatsapp fa-2x "></i>
-                              <p class="ml-3 mb-0 tulisan ">0858890977654</p>
-                          </div>
-                          <div class="d-flex align-items-center mb-3 ">
-                              <i class="fab fa-instagram fa-2x "></i>
-                              <p class="ml-3 mb-0 tulisan ">intermediatrans</p>
-                          </div>
-                          <div class="d-flex align-items-center mb-3 ">
-                              <i class="fab fa-tiktok fa-2x "></i>
-                              <p class="ml-3 mb-0 tulisan ">intermediatrans</p>
-                          </div>
-                          <div class="d-flex align-items-center mb-3 ">
-                              <i class="far fa-envelope fa-2x "></i>
-                              <p class="ml-3 mb-0 tulisan ">intermediatrans@gmail.com</p>
-                          </div>
-                      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6">
+                  <div class="mt-5 mb-5 text-center">
+                      <img src="frontend/images/sectionsyaratketentuan.png" class="about-image rounded" />
                   </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                  <h1 class="font-weight-bold">Syarat Dan Ketentuan</h1>
+                  <lu>
+                      <li>Fotokopi SIUP dan NPWP</li>
+                      <li>Fotokopi akte pendiri perusahaan</li>
+                      <li>Fotokopi Tanda Daftar perusahaan</li>
+                      <li>Surat keterangan domisili perusahaan</li>
+                      <li>Surat pengesahan keputusan menteri Hukum dan HAM</li>
+                      <li>Fotokopi KTP direksi, dan pejabat yang bertanggung jawab.</li>
+                      <li>Surat kuasa bila bukan direktur perusahaan yang bertanggung jawab.</li>
+                      <li>Fotokopi SIM pengemudi.</li>
+                      <li>Survey lokasi domisili perusahaan.</li>
+                  </lu>
               </div>
           </div>
       </div>
   </section>
+  <!-- section 2 -->
+  <!-- section 3 -->
+  <section>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                  <h1 class="font-weight-bold">Note</h1>
+                  <lu>
+                      <li>Prosedur survey kami harus dilakukan minimal 3 hari sebelum hari H. (Perusahaan memerlukan waktu untuk pengecekan legalitas/keaslian data customer).</li>
+                      <li>Customer wajib membayar uang deposit sebagai jaminan asuransi (dikembalikan di masa akhir sewa).</li>
+                      <li>Kendaraan hanya dapat dikemudikan oleh orang yang memiliki SIM nasional indonesia atau SIM internasional.</li>
+                      <li>Semua data yang disertakan berupa fotokopi. Penyewa wajib menunjukan dokumen asli kepada surveyor ketika disurvey. Guna memcocokan keaslian dokumen dengan fotokopi yang diberikan.</li>
+                      <li>Dilarang meninggalkan STNK, kunci kontak dan karcis parkis didaldam kendaraan yang sedang diparkir.</li>
+                      <li>Penggantian kendaraan tidak berlaku jika kerusakan/kecelakaan diakibatkan kelalaian penyewa.</li>
+                      <li>Penyewa dan driver tambahan harus memiliki usia antara 21 hingga 65 tahun untuk normal kendaraan kategori mobil standar dan berusia 25 hingga 65 tahun untuk kategori mobil mewah.</li>
+                      <li>Penyewaan tanpa supir diwajibkan untuk memonitor perawatan kendaraan.</li>
+                      <li>Hasil survey adalah murni data independen dari perusahaan kami, jika terjadi penolakan hasil survey, maka perusahaan tidak akan memberikan informasi apapun kepada customer mengenai hasil analisa survey.</li>
+                      <li>Sewa motor saat ini kita sementara hanya melayani untuk perusahaan</li>
+                      <li>Deposit sewa Rp 1.000.000,- per motor, pengembalian deposit H+3 dari tanggal motor di kembalikan dan setelah motor di lakukan pengecekan oleh pihak rental.</li>
+                  </lu>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                  <h2 class="font-weight-bold">PERSYARATAN SEWA MOBIL UNTUK PERORANGAN</h2>
+                  <lu>
+                      <li>Fotokopi bukti kepemilikan rumah atau tempat tinggal</li>
+                      <li>Fotokopi PBB</li>
+                      <li>Fotokopi NPWP</li>
+                      <li>Fotokopi KTP atau KITAS (pemohon dan penjamin)</li>
+                      <li>Fotokopi KK</li>
+                      <li>Fotokopi Passport</li>
+                      <li>Fotokopi SIM</li>
+                      <li>Fotokopi ID Card tempat bekerja</li>
+                      <li>Kartu nama</li>
+                      <li>Memiliki penjamin (bila diperlukan)</li>
+                      <li>Ketersediaah lahan parkir yang layak dan aman.</li>
+                  </lu>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- section 3 -->
+
   <!-- section 2 -->
   @endsection

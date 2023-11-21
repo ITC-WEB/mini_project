@@ -30,7 +30,7 @@ class AuthController extends Controller
             } elseif (Auth::user()->role_id == '2') {
                 return redirect()->intended('/auth');
             } else {
-                return redirect()->intended('/user');
+                return redirect()->intended('/');
             }
         }
         Session::flash('status', 'failed');

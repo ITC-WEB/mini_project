@@ -12,7 +12,7 @@
             <ul class="navbar-nav ml-auto mr-3">
 
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link active" href="/user">Beranda</a>
+                    <a class="nav-link active" href="/">Beranda</a>
                 </li>
                 <li class="nav-item mx-md-2">
                     <a class="nav-link " href="/tentang">Tentang Kami</a>
@@ -29,12 +29,20 @@
             </ul>
             <!-- Mobile button -->
             <form class="form-inline d-sm-block d-md-none">
-                <a href="{{url('/logout')}}" class="btn btn-login my-2 my-sm-0">Logout</a>
+                <a href="{{url('/logout')}}" class="btn btn-login my-2 my-sm-0">Masuk</a>
             </form>
-            <!-- Desktop Button -->
+            @if (!Auth::user())
             <form class="form-inline my-2 my-lg-0 d-none d-md-block">
-                <a href="{{url('/logout')}}" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Logout</a>
+                <a href="/log" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Masuk</a>
             </form>
+            @else
+            <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+                <a href="{{url('/logout')}}" class="btn btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">
+                    <img src="{{asset('admin/images/faces/face23.jpg') }}" class="rounded-circle" style="height: 50px;width:50px;" alt="profile" />
+                </a>
+            </form>
+            @endif
+            <!-- Desktop Button -->
 
 
         </div>

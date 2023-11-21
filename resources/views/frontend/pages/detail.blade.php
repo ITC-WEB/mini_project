@@ -33,10 +33,6 @@ Detail
                                     <a href="frontend/images/details-1.jpg "><img class="xzoom-gallery" width="128 " src="frontend/images/details-1.jpg " xpreview="frontend/images/details-1.jpg " /></a>
                                 </div> -->
                             </div>
-                            <h2>Deskripsi</h2>
-                            <p>
-                                {{ $mobil->deskripsi }}
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +43,7 @@ Detail
 
                         <table class="trip-informations">
                             <tr>
-                                <th width="50% ">Mobil</th>
+                                <th width="50% ">Name Mobil</th>
                                 <td width="50% " class="text-right">{{ $mobil->name }}</td>
                             </tr>
 
@@ -56,12 +52,16 @@ Detail
                                 <td width="50% " class="text-right">{{ $mobil->merek->name }}</td>
                             </tr>
                             <tr>
-                                <th width="50% ">Type</th>
-                                <td width="50% " class="text-right">{{ $mobil->type }}</td>
+                                <th width="50% ">Type Transmisi</th>
+                                <td width="50% " class="text-right text-capitalize">{{ $mobil->type }}</td>
                             </tr>
                             <tr>
-                                <th width="50% ">Capasitas</th>
-                                <td width="50% " class="text-right">{{ $mobil->kapasitas }}</td>
+                                <th width="50% ">Kapasitas Orang</th>
+                                <td width="50% " class="text-right">{{ $mobil->kapasitas_orang }}</td>
+                            </tr>
+                            <tr>
+                                <th width="50% ">Kapasitas Mesin</th>
+                                <td width="50% " class="text-right">{{ $mobil->kapasitas_mesin }}</td>
                             </tr>
                             <tr>
                                 <th width="50% ">Harga Sewa</th>
@@ -82,7 +82,7 @@ Detail
 <script src="{{asset('frontend/libraries/jquery/jquery-3.4.1.min.js ') }}"></script>
 <script src="{{asset('frontend/libraries/bootstrap/js/bootstrap.js')}} "></script>
 <script src="{{asset('frontend/libraries/xzoom/dist/xzoom.min.js')}}"></script>
-<script>
+<!-- <script>
     $(document).ready(function() {
         $(".xzoom, .xzoom-gallery").xzoom({
             zoomWidth: 500,
@@ -91,5 +91,5 @@ Detail
             Xoffset: 15,
         });
     });
-</script>
+</script> -->
 @endsection

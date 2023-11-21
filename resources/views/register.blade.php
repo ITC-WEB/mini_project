@@ -1,104 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{asset('login/fonts/icomoon/style.css')}}">
-
-    <link rel="stylesheet" href="{{asset('login/css/owl.carousel.min.css')}}">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('login/css/bootstrap.min.css')}}">
-
-    <!-- Style -->
-    <link rel="stylesheet" href="{{asset('login/css/style.css')}}">
-
-    <title>Register ITC Trans</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Register</title>
+    <link rel="stylesheet" href="frontend/libraries/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="frontend/styles/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Assistant:200,400,700&&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
-    <section style="height: 100vh;">
-        <div class="container py-5">
-            <div class="row d-flex justify-content-start align-items-center h-100">
-                <div class="col-12">
-                    <div class="row g-0">
-                        <div class="col-xl-6 d-none d-xl-block">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp" alt="Sample photo" class="img-fluid">
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="frontend/images/loginsy.png" class="img-fluid" alt="Sample image" />
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mt-5">Silahkan DAFTAR Dahulu</div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Name</label>
+                            <input name="name" type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Masukkan Nama Anda" required />
                         </div>
-                        <div class="col-md-6">
-                            <div class="card-body p-md-5 text-black">
-                                <h3 class="mb-5 text-uppercase">Registration Itc-Trans</h3>
-                                <form action="" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="form-group last mb-3">
-                                        <label for="name">Full Name</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Your Name" id="name">
-                                    </div>
-                                    <div class="form-group last mb-3">
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" class="form-control" placeholder="Your Email" id="email">
-                                    </div>
-                                    <div class="form-group last mb-3">
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password" class="form-control" placeholder="Your Password" id="password">
-                                    </div>
-                                    <div class="form-group last mb-3">
-                                        <label for="phone">Phone</label>
-                                        <input type="number" name="phone" class="form-control">
-                                    </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Email address</label>
+                            <input name="email" type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Masukkan Email Anda" required />
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="form3Example4">Password</label>
+                            <input name="password" type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Masukkan Password" required />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Nomer HP</label>
+                            <input name="phone" type="number" id="form3Example3" class="form-control form-control-lg" placeholder="Masukkan Nomer HP" required />
+                        </div>
 
-                                    <div class="form-group last mb-3">
-                                        <label for="alamat">Address</label>
-                                        <input type="text" name="alamat" class="form-control">
-                                    </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Alamat Lengkap</label>
+                            <input name="alamat" type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Masukkan Alamat Lengkap anda" required />
+                        </div>
 
-                                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-                                        <h6 class="mb-0 me-4">Gender: </h6>
-                                        <div class="form-check form-check-inline mb-0 me-4">
-                                            <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
-                                            <label class="form-check-label" name="gender" for="male">Male</label>
-                                        </div>
-                                        <div class="form-check form-check-inline mb-0 me-4">
-                                            <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female" />
-                                            <label class="form-check-label" name="gender" for="female">Female</label>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col md-6 mb-4">
-                                            <label for="data_id">KTP</label>
-                                            <input type="file" name="ktp">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col md-6 mb-4">
-                                            <label for="data_id">SIM</label>
-                                            <input type="file" name="sim">
-                                        </div>
-                                    </div>
-                                    <span class="ml-auto"><a href="/" class="forgot-pass">Back To Home</a></span>
-                                    <input type="submit" class="btn btn-block btn-primary">
-                                </form>
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="form3Example4">Jenis Kelamin : </label><br>
+                            <div class="form-check form-check-inline mb-0 me-4">
+                                <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
+                                <label class="form-check-label" name="gender" for="male">Laki-Laki</label>
                             </div>
-
-
+                            <div class="form-check form-check-inline mb-0 me-4">
+                                <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female" />
+                                <label class="form-check-label" name="gender" for="female">Perempuan</label>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-outline mb-3">
+                            <label class="form-label sm" for="form3Example4">KTP(Kertu Tanda Penduduk) :</label>
+                            <input name="ktp" type="file" id="form3Example4" class="form-control form-control-sm" placeholder="Enter KTP" required />
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="form3Example4">SIM(Surat Izin Mengemudi) :</label>
+                            <input name="sim" type="file" id="form3Example4" class="form-control form-control-sm" placeholder="Enter SIM" required />
+                        </div>
+
+
+                        <div class="text-center text-lg-start mt-4 mb-4 pt-2">
+                            <button type="submit" id="validasi" class=" btn btn-primary btn-md" style="padding-left: 2.5rem; padding-right: 2.5rem">Daftar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        </div>
-        </div>
     </section>
-    <script src="{{asset('login/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('login/js/popper.min.js')}}"></script>
-    <script src="{{asset('login/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('login/js/main.js')}}"></script>
+    <script src="frontend/libraries/retina/retina.js"></script>
+    <script src="frontend/libraries/jquery/jquery-3.4.1.min.js"></script>
+    <script src="frontend/libraries/bootstrap/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tambahkan event listener pada setiap tombol delete
+            document.querySelectorAll('#validasi').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Tampilkan SweetAlert konfirmasi
+                    Swal.fire({
+                        title: "Anda Berhasil Mendaftar!",
+                        text: "Silahkan Login",
+                        icon: "success"
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

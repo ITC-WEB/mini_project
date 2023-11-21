@@ -15,7 +15,7 @@ class KatalogController extends Controller
         $mobil = Mobil::with('merek')
             ->where('name', 'LIKE', '%' . $cari . '%')
             // ->orWhere('noplat', 'LIKE', '%' . $cari . '%')
-            ->orWhere('kapasitas', 'LIKE', '%' . $cari . '%')
+            ->orWhere('kapasitas_orang', 'LIKE', '%' . $cari . '%')
             ->orWhere('type', 'LIKE', '%' . $cari . '%')
             ->orWhere('harga_sewa', $cari)
             ->orWhereHas('merek', function ($query) use ($cari) {

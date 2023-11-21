@@ -29,25 +29,16 @@ Data Mobil
                                         No
                                     </th>
                                     <th>
-                                        Noplat
+                                        Nomer Kendaraan
                                     </th>
                                     <th>
-                                        Name
+                                        Name Mobil
                                     </th>
                                     <th>
                                         Merek
                                     </th>
                                     <th>
                                         Harga Sewa
-                                    </th>
-                                    <th>
-                                        Kapasitas
-                                    </th>
-                                    <th>
-                                        Type
-                                    </th>
-                                    <th>
-                                        Gambar
                                     </th>
                                     <th>
                                         Status
@@ -75,18 +66,9 @@ Data Mobil
                                     <td>
                                         Rp. {{ $mobils->harga_sewa }}
                                     </td>
-
-                                    <td>
-                                        {{ $mobils->kapasitas }}/Penumpang
-                                    </td>
-
-                                    <td>
-                                        {{ $mobils->type }}
-                                    </td>
-
-                                    <td>
+                                    <!-- <td>
                                         <img src="{{asset('storage/public/mobil/'.$mobils->gambar)}}" style="width: 140px;height:80px;border-radius: 10px;" alt="Mobil">
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <a href="mobil/{{ $mobils->id}}" class="btn btn-sm btn-{{ $mobils->status ? 'success' : 'warning'  }}">
                                             {{ $mobils->status ? 'tersedia' : 'disewa' }}
@@ -94,6 +76,7 @@ Data Mobil
                                     </td>
                                     <td>
                                         <a href="{{ route('edit-mobil',['id' => $mobils->id])}}"><button type="submit" style="border: none;" class="badge badge-primary">Edit</button></a>
+                                        <a href="{{ route('show-mobil',['id' => $mobils->id])}}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>
                                         <form action="{{ route('delete-mobil', $mobils->id) }}" method="POST" id="delete-form-{{ $mobils->id }}" class="d-inline">
                                             @csrf
                                             <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $mobils->id }}">Delete</button>

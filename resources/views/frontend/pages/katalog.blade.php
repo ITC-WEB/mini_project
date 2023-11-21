@@ -176,9 +176,7 @@ Katalog
                         <hr>
                         <p>Merek:{{ $mobils->merek->name }}</p>
                         <hr>
-                        <p>Kapasitas:{{ $mobils->kapasitas }}</p>
-                        <hr>
-                        <p>Status: <span class="text-danger">Disewa</span></p>
+                        <p>Status: <span class="text-danger"><br>Disewa</span></p>
                     </div>
                 </div>
 
@@ -199,9 +197,7 @@ Katalog
                         <hr>
                         <p>Merek:{{ $mobils->merek->name }}</p>
                         <hr>
-                        <p>Kapasitas:{{ $mobils->kapasitas }}</p>
-                        <hr>
-                        <p>Harga: Rp.{{ $mobils->harga_sewa }}</p>
+                        <p>Starting Form: <br> Rp.{{ $mobils->harga_sewa }}</p>
                     </div>
                 </div>
 
