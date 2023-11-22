@@ -13,6 +13,7 @@ class Data extends Model
         'id',
         'sim',
         'ktp',
+        'photo',
     ];
 
     public function user()
