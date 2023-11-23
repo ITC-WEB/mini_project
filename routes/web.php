@@ -31,13 +31,14 @@ Route::get('/register', [AuthController::class, 'index_reg']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
-/////////****** Front end*********///////
+
+
+// ---------------------------FRONTEND-------------------------------------//
 Route::get('/', [FrontendController::class, 'homepage'])->name('homepage');
 Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', 'customer']);
-
 //pages
-Route::get('/tentang', [FrontendController::class, 'tentangKami']);
-Route::get('/syarat', [FrontendController::class, 'syaratKetentuan']);
+Route::get('/tentangkami', [FrontendController::class, 'tentangKami']);
+Route::get('/syaratdankentenuan ', [FrontendController::class, 'syaratKetentuan']);
 Route::get('/kontak', [FrontendController::class, 'kontak']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);

@@ -10,21 +10,20 @@
         <!-- Navbar  -->
         <div class="collapse navbar-collapse" id="navb">
             <ul class="navbar-nav ml-auto mr-3">
-
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link active" href="/user">Beranda</a>
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ route('homepage') }}">Beranda</a>
                 </li>
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link " href="/tentang">Tentang Kami</a>
+                    <a class="nav-link {{ request()->is('tentangkami') ? 'active' : '' }}" href="{{ url('/tentangkami') }}">Tentang Kami</a>
                 </li>
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link" href="/katalog">Katalog</a>
+                    <a class="nav-link {{ request()->is('katalog') ? 'active' : '' }}" href="{{ url('/katalog') }}">Katalog</a>
                 </li>
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link" href="/syarat">S&K</a>
+                    <a class="nav-link {{ request()->is('syaratdankentenuan') ? 'active' : '' }}" href="{{ url('/syaratdankentenuan') }}">S&K</a>
                 </li>
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link" href="/kontak">Kontak</a>
+                    <a class="nav-link {{ request()->is('kontak') ? 'active' : '' }}" href="{{ url('/kontak') }}">Kontak</a>
                 </li>
             </ul>
             <!-- Mobile button -->
