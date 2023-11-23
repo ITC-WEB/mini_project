@@ -41,4 +41,18 @@ class HomeController extends Controller
         return view('frontend.pages.kontak');
     }
 
+    public function sukses()
+    {
+        return view('frontend.pages.sukses');
+    }
+
+    public function eror()
+    {
+        return view('frontend.pages.eror');
+    }
+
+    public function statuscekout()
+    {
+        return view('frontend.pages.statuscekout');
+    }
 }

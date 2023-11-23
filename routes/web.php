@@ -39,6 +39,9 @@ Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', '
 Route::get('/tentang', [FrontendController::class, 'tentangKami']);
 Route::get('/syarat', [FrontendController::class, 'syaratKetentuan']);
 Route::get('/kontak', [FrontendController::class, 'kontak']);
+Route::get('/sukses', [FrontendController::class, 'sukses']);
+Route::get('/eror', [FrontendController::class, 'eror']);
+Route::get('/statuscekout', [FrontendController::class, 'statuscekout']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);
 Route::get('/detail', [DetailController::class, 'detail'])->name('detail');
