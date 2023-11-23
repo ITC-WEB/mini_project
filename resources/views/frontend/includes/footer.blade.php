@@ -6,7 +6,7 @@
                     <div class="col-12">
                         <div class="row ">
                             <div class="col-12 col-lg-2">
-                                <a class="footer-brand" href="index.html">
+                                <a class="footer-brand" href="{{ route('homepage') }}>
                                     <img src="frontend/images/logofooter.png" alt="" />
                                 </a>
                                 <div class="social-icons mt-3 ">
@@ -26,35 +26,36 @@
                                 <h5 class="footertxt ">BERANDA</h5>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="index.html">Mobil Populer </a>
+                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">Mobil Populer</a>
                                     </li>
                                     <li>
-                                        <a href="index.html">Our Network</a>
+                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">Our Network</a>
                                     </li>
                                     <li>
-                                        <a href="index.html">Testimonial</a>
+                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">Testimonial</a>
                                     </li>
                                     <li>
-                                        <a href="index.html">FAQ</a>
+                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">FAQ</a>
                                     </li>
                                     <li>
-                                        <a href="index.html">CTA Us</a>
+                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">CTA Us</a>
                                     </li>
                                 </ul>
+                                
                             </div>
                             <div class="col-12 col-lg-2">
                                 <h5 class="footertxt">KATALOG</h5>
                                 <ul class="list-unstyled">
-                                    <li><a href="katalog.html">Banner</a></li>
-                                    <li><a href="katalog.html">Filtering</a></li>
-                                    <li><a href="katalog.html">Katalog</a></li>
+                                    <li><a href="{{ url('/katalog') }}" style="text-decoration: none;">Banner</a></li>
+                                    <li><a href="{{ url('/katalog') }}" style="text-decoration: none;">Filtering</a></li>
+                                    <li><a href="{{ url('/katalog') }}"style="text-decoration: none;">Katalog</a></li>
                                 </ul>
                             </div>
                             <div class="col-12 col-lg-2">
                                 <h5 class="footertxt">S&K</h5>
                                 <ul class="list-unstyled">
-                                    <li><a href="syaratketentuan.html">Ketentuan Umum </a></li>
-                                    <li><a href="syaratketentuan.html">Ketentuan Khusus</a></li>
+                                    <li><a href="{{ url('/syaratdankentenuan') }}" style="text-decoration: none;">Ketentuan Umum </a></li>
+                                    <li><a href="{{ url('/syaratdankentenuan') }}" style="text-decoration: none;">Ketentuan Khusus</a></li>
 
                                 </ul>
                             </div>

@@ -1,6 +1,6 @@
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="{{ route('home') }}">
+        <a class="navbar-brand" href="{{ route('homepage') }}">
             <img src="{{asset('frontend/images/logo itc.png')}}" alt="" />
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
@@ -34,8 +34,6 @@
             <form class="form-inline my-2 my-lg-0 d-none d-md-block">
                 <a href="{{url('/logout')}}" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Masuk</a>
             </form>
-
-
         </div>
     </nav>
 </div>
