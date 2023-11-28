@@ -1,437 +1,445 @@
 body {
-  background-color: #fff;
-  font-family: "Assistant", sans-serif;
-  color: #071c4d;
+    background-color: #fff;
+    font-family: "Assistant", sans-serif;
+    color: #071c4d;
 }
 
 .navbar-brand img {
-  max-height: 40px;
+    max-height: 40px;
 }
 
 .btn-navbar-right {
-  margin-top: -10px !important;
-  margin-bottom: -8px !important;
-  margin-right: -18px !important;
-  height: 70px;
-  border-radius: 0;
+    margin-top: -10px !important;
+    margin-bottom: -8px !important;
+    margin-right: -18px !important;
+    height: 70px;
+    border-radius: 0;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #000000;
-  font-weight: medium;
+    color: #000000;
+    font-weight: medium;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-  font-weight: bold;
-  color: #ff9e53 !important;
+    font-weight: bold;
+    color: #ff9e53 !important;
 }
 
 .btn-login {
-  background-color: #ff9e53;
-  color: #fff;
+    background-color: #ff9e53;
+    color: #fff;
 }
 
 .btn-login:hover {
-  color: #fff;
+    color: #fff;
 }
 
 header {
-  margin-top: -68px;
-  padding: 180px 0 165px;
-  background-image: url("../images/header-background@2x1.png");
-  background-size: cover;
+    margin-top: -68px;
+    padding: 180px 0 165px;
+    background-image: url("../images/header-background@2x1.png");
+    background-size: cover;
 }
 
 header h1,
 header p {
-  color: #fefefe;
+    color: #fefefe;
 }
 
 header h1 {
-  font-family: "Playfair Display", serif;
-  font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
 }
 
 header p {
-  font-size: 22px;
+    font-size: 22px;
 }
 
 header .btn-get-started {
-  background-color: #ff9e53;
-  color: #fff;
+    background-color: #ff9e53;
+    color: #fff;
 }
 
 header .btn-get-started:hover {
-  color: #fff;
+    color: #fff;
 }
 
 .section-stats {
-  margin-top: -50px;
+    margin-top: -50px;
 }
 
 .section-stats .stats-detail {
-  padding-top: 15px;
-  background: #fff;
-  padding-left: 40px;
+    padding-top: 15px;
+    background: #fff;
+    padding-left: 40px;
 }
 
 .section-stats h2 {
-  font-size: 30px;
-  margin-bottom: 0;
+    font-size: 30px;
+    margin-bottom: 0;
 }
 
 .section-stats p {
-  font-size: 20px;
-  font-weight: lighter;
+    font-size: 20px;
+    font-weight: lighter;
 }
 
 .section-popular {
-  min-height: 540px;
-  background: #051334;
-  margin-top: -50px;
-  margin-bottom: -230px;
+    min-height: 540px;
+    background: #051334;
+    margin-top: -50px;
+    margin-bottom: -230px;
 }
 
 .section-popular .section-popular-heading {
-  margin-top: 150px;
+    margin-top: 150px;
 }
 
 .section-popular .section-popular-heading h2,
 .section-popular .section-popular-heading p {
-  color: #fff;
+    color: #fff;
 }
 
 .section-popular .section-popular-heading h2 {
-  font-family: "Playfair Display", serif;
-  font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
 }
 
 .section-popular-content .section-popular-travel .card-travel {
-  min-height: 380px;
-  background: #fff;
-  color: #fff;
-  padding: 30px;
-  background-size: cover;
-  margin-bottom: 20px;
+    min-height: 380px;
+    background: #fff;
+    color: #fff;
+    padding: 30px;
+    background-size: cover;
+    margin-bottom: 20px;
 }
 
 .section-popular-content .section-popular-travel .card-travel .travel-country {
-  font-size: 18px;
-  color: #ffffff;
+    font-size: 18px;
+    color: #ffffff;
 }
 
 .section-popular-content .section-popular-travel .card-travel .travel-location {
-  font-size: 26px;
-  color: #ffffff;
+    font-size: 26px;
+    color: #ffffff;
 }
 
 /*detail*/
 .fiturtersedia h2 i {
-  font-size: 25px; /* Mengatur ukuran font ikon */
-  color: #0094fe;
+    font-size: 25px; /* Mengatur ukuran font ikon */
+    color: #0094fe;
 }
 
-.section-popular-content .section-popular-travel .card-travel .travel-button .btn-travel-details {
-  background-color: #ff9e53;
-  color: #fff;
+.section-popular-content
+    .section-popular-travel
+    .card-travel
+    .travel-button
+    .btn-travel-details {
+    background-color: #ff9e53;
+    color: #fff;
 }
 
-.section-popular-content .section-popular-travel .card-travel .travel-button .btn-travel-details:hover {
-  color: #fff;
+.section-popular-content
+    .section-popular-travel
+    .card-travel
+    .travel-button
+    .btn-travel-details:hover {
+    color: #fff;
 }
 
 .section-networks {
-  background-color: #fff;
-  margin-top: -170px;
-  padding-top: 240px;
-  padding-bottom: 50px;
+    background-color: #fff;
+    margin-top: -170px;
+    padding-top: 240px;
+    padding-bottom: 50px;
 }
 
 .section-networks h2 {
-  font-family: "Playfair Display", serif;
-  font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
 }
 
 .section-networks img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .section-testimonials-heading {
-  background: #eef4fa;
-  padding-top: 50px;
-  min-height: 506px;
+    background: #eef4fa;
+    padding-top: 50px;
+    min-height: 506px;
 }
 
 .section-testimonials-heading h2 {
-  font-family: "Playfair Display", serif;
-  font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
 }
 
 .section-testimonials-content {
-  margin-top: -300px;
-  padding-bottom: 50px;
+    margin-top: -300px;
+    padding-bottom: 50px;
 }
 
 .section-testimonials-content .card-testimonial {
-  padding: 40px 20px 10px;
-  border-radius: 11px;
-  margin-bottom: 20px;
+    padding: 40px 20px 10px;
+    border-radius: 11px;
+    margin-bottom: 20px;
 }
 
 .section-testimonials-content .card-testimonial .testimonial-content {
-  min-height: 380px;
+    min-height: 380px;
 }
 
 .section-testimonials-content .card-testimonial h3 {
-  font-size: 22px;
+    font-size: 22px;
 }
 
 .section-testimonials-content .card-testimonial .testimonials {
-  font-size: 26px;
-  text-align: center;
-  color: #6e6e6e;
-  font-weight: 200;
+    font-size: 26px;
+    text-align: center;
+    color: #6e6e6e;
+    font-weight: 200;
 }
 
 .section-testimonials-content .card-testimonial .trip-to {
-  font-weight: normal;
-  font-size: 22px;
-  color: #6e6e6e;
+    font-weight: normal;
+    font-size: 22px;
+    color: #6e6e6e;
 }
 
 .section-testimonials-content .card-testimonial hr {
-  margin-left: -20px;
-  margin-right: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
 }
 
 .section-testimonials-content .btn-get-started {
-  background-color: #ff9e53;
-  color: #fff;
+    background-color: #ff9e53;
+    color: #fff;
 }
 
 .section-testimonials-content .btn-get-started:hover {
-  color: #fff;
+    color: #fff;
 }
 
 .section-testimonials-content .btn-need-help {
-  background-color: #f2f2f2;
-  color: #c3c3c3;
+    background-color: #f2f2f2;
+    color: #c3c3c3;
 }
 
 .section-testimonials-content .btn-need-help:hover {
-  color: #c3c3c3;
+    color: #c3c3c3;
 }
 /*footer*/
 .footer-brand img {
-  max-height: 60px;
+    max-height: 60px;
 }
 
 .section-footer {
-  background-color: #071c4d;
+    background-color: #071c4d;
 }
 .footertxt {
-  color: #ffffff;
-  font-weight: bold;
+    color: #ffffff;
+    font-weight: bold;
 }
 .section-footer a {
-  color: #ffffff;
+    color: #ffffff;
 }
 .footerbawah {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
 .section-details-header {
-  min-height: 310px;
-  background: #071c4d;
-  margin-top: -68px;
+    min-height: 310px;
+    background: #071c4d;
+    margin-top: -68px;
 }
 
 .section-details-content {
-  margin-top: -210px;
-  min-height: 100vh;
+    margin-top: -210px;
+    min-height: 100vh;
 }
 
 .section-details-content .breadcrumb {
-  background-color: transparent;
-  padding: 0;
-  margin-bottom: 30px;
-  color: #ffffff;
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 30px;
+    color: #ffffff;
 }
 
 .section-details-content .breadcrumb-item.active {
-  font-weight: bold;
-  color: #ffffff;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .section-details-content .card-details {
-  padding: 30px;
-  border-radius: 11px;
+    padding: 30px;
+    border-radius: 11px;
 }
 
 .section-details-content .card-details .trip-informations th {
-  font-weight: 300;
-  font-size: 18px;
-  color: #071c4d;
+    font-weight: 300;
+    font-size: 18px;
+    color: #071c4d;
 }
 
 .section-details-content .card-details .trip-informations td {
-  font-weight: 300;
-  font-size: 18px;
-  color: #b1b1b1;
+    font-weight: 300;
+    font-size: 18px;
+    color: #b1b1b1;
 }
 
 .section-details-content .card-details .trip-informations .text-blue {
-  color: #071c4d;
-  font-weight: bold;
+    color: #071c4d;
+    font-weight: bold;
 }
 
 .section-details-content .card-details .trip-informations .text-orange {
-  color: #ff9e53;
-  font-weight: bold;
+    color: #ff9e53;
+    font-weight: bold;
 }
 
 .section-details-content .card-details h1 {
-  font-size: 26px;
+    font-size: 26px;
 }
 
 .section-details-content .card-details h2 {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .section-details-content .card-details p {
-  font-size: 18px;
-  color: #b1b1b1;
+    font-size: 18px;
+    color: #b1b1b1;
 }
 
 .section-details-content .card-details .payment-instructions {
-  font-weight: 300;
-  font-size: 14px;
-  color: #b1b1b1;
+    font-weight: 300;
+    font-size: 14px;
+    color: #b1b1b1;
 }
 
 .section-details-content .card-details .disclaimer {
-  font-weight: 300;
-  font-size: 14px;
-  color: #b1b1b1;
+    font-weight: 300;
+    font-size: 14px;
+    color: #b1b1b1;
 }
 
 .section-details-content .card-right {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
 }
 
 .section-details-content .gallery .xzoom-container {
-  display: block;
+    display: block;
 }
 
 .section-details-content .gallery .xzoom-container .xzoom {
-  width: 98%;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  margin-bottom: 10px;
+    width: 98%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-bottom: 10px;
 }
 
 .section-details-content .gallery .xzoom-container .xactive {
-  border: 2px solid #1abc9c;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+    border: 2px solid #1abc9c;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .section-details-content .features {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .section-details-content .features h3 {
-  font-size: 18px;
-  color: #071c4d;
-  margin-bottom: 0;
+    font-size: 18px;
+    color: #071c4d;
+    margin-bottom: 0;
 }
 
 .section-details-content .features p {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .section-details-content .features .description {
-  margin-left: 10px;
-  overflow: hidden;
-  float: left;
+    margin-left: 10px;
+    overflow: hidden;
+    float: left;
 }
 
 .section-details-content .features .features-image {
-  width: 45px;
-  height: 45px;
-  float: left;
+    width: 45px;
+    height: 45px;
+    float: left;
 }
 
 .section-details-content .join-container {
-  margin-top: -16px;
+    margin-top: -16px;
 }
 
 .section-details-content .btn-join-now {
-  background-color: #ff9e53;
-  color: #fff;
-  border-radius: 0;
+    background-color: #ff9e53;
+    color: #fff;
+    border-radius: 0;
 }
 
 .section-details-content .btn-join-now:hover {
-  color: #fff;
+    color: #fff;
 }
 
 .section-details-content .bank .bank-item h3 {
-  font-size: 18px;
-  color: #071c4d;
-  margin-bottom: 0;
+    font-size: 18px;
+    color: #071c4d;
+    margin-bottom: 0;
 }
 
 .section-details-content .bank .bank-item p {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .section-details-content .bank .bank-item .description {
-  margin-left: 10px;
-  overflow: hidden;
-  float: left;
+    margin-left: 10px;
+    overflow: hidden;
+    float: left;
 }
 
 .section-details-content .bank .bank-item .description p {
-  font-family: Assistant;
-  font-weight: normal;
-  font-size: 16px;
-  text-align: left;
-  color: #071c4d;
+    font-family: Assistant;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: left;
+    color: #071c4d;
 }
 
 .section-details-content .bank .bank-item .bank-image {
-  width: 45px;
-  height: 45px;
-  float: left;
+    width: 45px;
+    height: 45px;
+    float: left;
 }
 
 .section-details-content .btn-add-now {
-  background-color: #071c4d;
-  color: #fff;
+    background-color: #071c4d;
+    color: #fff;
 }
 
 .section-details-content .btn-add-now:hover {
-  color: #fff;
+    color: #fff;
 }
 
 .section-details-content .input-group-text {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .section-details-content h3 {
-  font-weight: 400;
-  font-size: 14px;
-  color: #071c4d;
+    font-weight: 400;
+    font-size: 14px;
+    color: #071c4d;
 }
 
 .section-details-content .gj-datepicker .datepicker {
-  border-right: 0;
+    border-right: 0;
 }
 
 .section-details-content .gj-datepicker .input-group-append .btn {
-  padding-right: 30px;
+    padding-right: 30px;
 }
 
 /* .section-success {
@@ -439,201 +447,201 @@ header .btn-get-started:hover {
 } */
 
 .section-success h1 {
-  font-weight: 600;
-  font-size: 26px;
-  color: #071c4d;
+    font-weight: 600;
+    font-size: 26px;
+    color: #071c4d;
 }
 
 .section-success p {
-  font-weight: 300;
-  font-size: 18px;
-  color: #b1b1b1;
+    font-weight: 300;
+    font-size: 18px;
+    color: #b1b1b1;
 }
 
 .section-success .btn-home-page {
-  border-radius: 4px;
-  background: #071c4d;
-  color: #fff;
+    border-radius: 4px;
+    background: #071c4d;
+    color: #fff;
 }
 
 .section-success .btn-home-page:hover {
-  color: #fff;
+    color: #fff;
 }
 /*# sourceMappingURL=main.css.map */
 /*mengapa memilih kami*/
 .about-image {
-  width: 500px;
-  height: 300px;
+    width: 500px;
+    height: 300px;
 }
 .rental {
-  color: #3258e8;
-  font-size: 18px;
+    color: #3258e8;
+    font-size: 18px;
 }
 /*accordion*/
 .accordion1 {
-  font-size: 28px;
+    font-size: 28px;
 }
 .accordion2 {
-  font-size: 16px;
+    font-size: 16px;
 }
 .card-header {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
 .btn-link {
-  font-size: 20px;
-  text-decoration: none;
-  color: #0f0f0f;
-  font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    color: #0f0f0f;
+    font-weight: bold;
 }
 .btn-link:hover {
-  color: #000000;
+    color: #000000;
 }
 .card-body {
-  font-size: 19px;
-  color: #000000;
-  font-weight: light;
+    font-size: 19px;
+    color: #000000;
+    font-weight: light;
 }
 
 /* Gaya untuk tanda buka-tutup di samping */
 .accordion-button::after {
-  content: "\f067"; /* Unicode untuk tanda panah bawah */
-  font-family: "Font Awesome 5 Free";
-  float: right;
+    content: "\f067"; /* Unicode untuk tanda panah bawah */
+    font-family: "Font Awesome 5 Free";
+    float: right;
 }
 .collapsed .accordion-button::after {
-  content: "\f068"; /* Unicode untuk tanda panah atas saat tertutup */
+    content: "\f068"; /* Unicode untuk tanda panah atas saat tertutup */
 }
 
 /*cta*/
 .cta {
-  background-color: #071c4d;
-  border-radius: 20px;
+    background-color: #071c4d;
+    border-radius: 20px;
 }
 .cta-text {
-  font-size: 36px;
-  color: #ffffff;
+    font-size: 36px;
+    color: #ffffff;
 }
 .cta-text1 {
-  font-size: 36px;
-  color: #ff9e53;
-  font-weight: bold;
+    font-size: 36px;
+    color: #ff9e53;
+    font-weight: bold;
 }
 .btncta {
-  background-color: #ff9e53;
-  color: #fefefe;
-  border-radius: 8px;
+    background-color: #ff9e53;
+    color: #fefefe;
+    border-radius: 8px;
 }
 .staspopuler {
-  border-radius: 50px;
+    border-radius: 50px;
 }
 /*tentang kami */
 .headertentangkami {
-  margin-top: -68px;
-  padding: 100px 0 100px;
-  background-image: url("../images/tentangkami.png");
-  background-size: cover;
+    margin-top: -68px;
+    padding: 100px 0 100px;
+    background-image: url("../images/tentangkami.png");
+    background-size: cover;
 }
 .tentangkamiconten1 {
-  font-size: 48px;
+    font-size: 48px;
 }
 .pararaf-tentangkami {
-  font-size: 20px;
+    font-size: 20px;
 }
 .berposes1 {
-  color: #f8981d;
-  font-weight: bold;
-  font-size: 24px;
+    color: #f8981d;
+    font-weight: bold;
+    font-size: 24px;
 }
 .berproses2 {
-  font-size: 32px;
+    font-size: 32px;
 }
 
 .berproses3 {
-  font-size: 24px;
+    font-size: 24px;
 }
 /*Katalog */
 .headerkatalog {
-  margin-top: -68px;
-  padding: 100px 0 100px;
-  background-image: url("../images/katalog.png");
-  background-size: cover;
+    margin-top: -68px;
+    padding: 100px 0 100px;
+    background-image: url("../images/katalog.png");
+    background-size: cover;
 }
 .bestcatalog {
-  color: #071c4d;
-  font-size: 40px;
+    color: #071c4d;
+    font-size: 40px;
 }
 .formfilter {
-  border-radius: 15px;
+    border-radius: 15px;
 }
 .cardkatalog {
-  border-radius: 100%;
+    border-radius: 100%;
 }
 .btndrop {
-  border-radius: 30px;
-  border-color: #071c4d;
+    border-radius: 30px;
+    border-color: #071c4d;
 }
 .info a {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .des-a {
-  font-size: 16px;
+    font-size: 16px;
 }
 .des-b {
-  font-size: 16px;
-  color: #071c4d;
+    font-size: 16px;
+    color: #071c4d;
 }
 .des-a1 {
-  font-size: 16px;
-  color: #f8981d;
+    font-size: 16px;
+    color: #f8981d;
 }
 .icons1 {
-  margin-right: 11px;
+    margin-right: 11px;
 }
 .icons2 {
-  margin-right: 9px;
+    margin-right: 9px;
 }
 .btndrop:hover {
-  background-color: #071c4d;
-  color: white;
+    background-color: #071c4d;
+    color: white;
 }
 .cardku {
-  border-radius: 20px;
+    border-radius: 20px;
 }
 
 /*kontak */
 .headerkontak {
-  margin-top: -68px;
-  padding: 100px 0 100px;
-  background-image: url("../images/bannerkontak.png");
-  background-size: cover;
+    margin-top: -68px;
+    padding: 100px 0 100px;
+    background-image: url("../images/bannerkontak.png");
+    background-size: cover;
 }
 
 /*sdany*/
 .headersdany {
-  margin-top: -68px;
-  padding: 100px 0 100px;
-  background-image: url("../images/benersyaratketentuan.png");
-  background-size: cover;
+    margin-top: -68px;
+    padding: 100px 0 100px;
+    background-image: url("../images/benersyaratketentuan.png");
+    background-size: cover;
 }
 
 /*login */
 .akun {
-  font-size: 14px;
+    font-size: 14px;
 }
 .email {
-  width: 450px;
+    width: 450px;
 }
 .password {
-  width: 450px;
+    width: 450px;
 }
 .masuk {
-  width: 200px;
-  background-color: #ff9e53;
-  border-radius: 20px;
-  border: none;
-  color: #ffffff;
+    width: 200px;
+    background-color: #ff9e53;
+    border-radius: 20px;
+    border: none;
+    color: #ffffff;
 }
 .textlog {
   color: #FD5D3B;
@@ -647,63 +655,66 @@ header .btn-get-started:hover {
 /*login*/
 .divider:after,
 .divider:before {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #eee;
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
 }
 .h-custom {
-  height: calc(100% - 73px);
+    height: calc(100% - 73px);
 }
 @media (max-width: 450px) {
-  .h-custom {
-    height: 100%;
-  }
+    .h-custom {
+        height: 100%;
+    }
 }
 .selamat {
-  font-size: 40px;
-  font-weight: bold;
+    font-size: 40px;
+    font-weight: bold;
 }
 .sudahakun {
-  font-size: 24px;
+    font-size: 24px;
 }
 .link-masuk {
-  color: #f8981d;
-  font-weight: bold;
+    color: #f8981d;
+    font-weight: bold;
 }
 .link-masuk:hover {
-  color: #071c4d;
+    color: #071c4d;
 }
 /*statuscekout*/
 .bri {
-  width: 200px;
+    width: 200px;
 }
 .card-status {
-  width: 650px;
-  height: 430px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    max-width: 650px;
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
+
 .keterangan {
-  font-size: 20px;
+    font-size: 20px;
 }
 .input {
-  width: 700px;
+    width: 700px;
 }
 .btnstatus {
-  background-color: #071c4d;
-  width: 100px;
-  border: none;
-  color: #ffffff;
-  display: flex;
+    background-color: #071c4d;
+    border: none;
+    color: #ffffff;
+    display: flex;
     justify-content: center;
     align-items: center;
-  }
+    padding: 10px 20px;
+    max-width: 200px;
+}
 .center-table {
-  width: 50%;
-  margin: auto;
+    width: 50%;
+    margin: auto;
 }
 .copy-icon {
-  margin-left: 5px;
-  cursor: pointer;
+    margin-left: 5px;
+    cursor: pointer;
 }

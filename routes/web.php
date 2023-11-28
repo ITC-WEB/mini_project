@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\HomeController as BackendController;
 use App\Http\Controllers\Backend\MobilController as MobilController;
 use App\Http\Controllers\Frontend\PeminjamanController as FrontpinjamController;
 use App\Http\Controllers\Backend\PinjamController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\KatalogController;
 use App\Http\Controllers\Frontend\PembayaranController;
@@ -43,6 +44,7 @@ Route::get('/kontak', [FrontendController::class, 'kontak']);
 Route::get('/sukses', [FrontendController::class, 'sukses']);
 Route::get('/eror', [FrontendController::class, 'eror']);
 Route::get('/statuscekout', [FrontendController::class, 'statuscekout']);
+Route::get('/checkout', [CheckoutController::class, 'checkout']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);
 Route::get('/detail', [DetailController::class, 'detail'])->name('detail');
