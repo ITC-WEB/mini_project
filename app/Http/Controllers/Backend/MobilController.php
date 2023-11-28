@@ -114,6 +114,12 @@ class MobilController extends Controller
             }
         }
 
+        if (!$request["status"]) {
+            $request["status"] = '1';
+        }
+        $selectedOptions = $request->input('fitur_tersedia');
+        $selectedArray = json_encode($selectedOptions);
+
         $dataedit = Mobil::where('id', $request->id)->first();
         $dataedit->noplat = $request->noplat;
         $dataedit->name = $request->name;
@@ -122,7 +128,7 @@ class MobilController extends Controller
         $dataedit->kapasitas_orang = $request->kapasitas_orang;
         $dataedit->kapasitas_mesin = $request->kapasitas_mesin;
         $dataedit->bahan_bakar = $request->bahan_bakar;
-        $dataedit->fitur_tersedia = $request->fitur_tersedia;
+        $dataedit->fitur_tersedia = $selectedArray;
         $dataedit->type = $request->type;
         $dataedit->harga_sewa = $request->harga_sewa;
         $dataedit->gambar = $gambar;

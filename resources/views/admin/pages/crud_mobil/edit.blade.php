@@ -36,22 +36,71 @@ Edit Data
                             <input name="tahun" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->tahun }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleSelectGender">Kapasitas</label>
-                            <input name="kapasitas" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->kapasitas }}">
+                            <label for="exampleSelectGender">Kapasitas Orang</label>
+                            <input name="kapasitas_orang" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->kapasitas_orang }}">
                         </div>
+
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Deskripsi</label>
-                            <textarea name="deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="5">{{$mobil->deskripsi}}</textarea>
+                            <label for="exampleSelectGender">Kapasitas Mesin</label>
+                            <input name="kapasitas_mesin" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->kapasitas_mesin }}">
                         </div>
+
                         <div class="form-group">
-                            <label for="exampleSelectGender">Type</label>
+                            <label for="exampleInputName1">Fitur Tersedia<span class="text-danger">*</span></label><br>
+                            <label for="pilihan1">
+                                <input type="checkbox" id="pilihan1" name="fitur_tersedia[]" value="Air Conditioner"> Air Conditioner
+                            </label>
+
+                            <label for="pilihan2">
+                                <input type="checkbox" id="pilihan2" name="fitur_tersedia[]" value="Reverse Parking Camera"> Reverse Parking Camera
+                            </label>
+                            <label for="pilihan3">
+                                <input type="checkbox" id="pilihan1" name="fitur_tersedia[]" value="Post Change"> Post Change
+                            </label>
+
+                            <label for="pilihan4">
+                                <input type="checkbox" id="pilihan2" name="fitur_tersedia[]" value="Anti-lock Breaking System"> Anti-lock Breaking System
+                            </label>
+                            <label for="pilihan5">
+                                <input type="checkbox" id="pilihan1" name="fitur_tersedia[]" value="Aux-in,Radio,DVD,CD,Mp3"> Aux-in,Radio,DVD,CD,Mp3
+                            </label>
+
+                            <label for="pilihan6">
+                                <input type="checkbox" id="pilihan2" name="fitur_tersedia[]" value="Reclining Seat"> Reclining Seat
+                            </label>
+
+                            <label for="pilihan7">
+                                <input type="checkbox" id="pilihan2" name="fitur_tersedia[]" value="Side Impact Beam"> Side Impact Beam
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleSelectGender">Type Transmisi</label>
                             <select class="custom-select" name="type" id="inputGroupSelect01">
                                 <option value="{{$mobil->type}}">{{ $mobil->type }}</option>
                                 @if ($mobil->type == 'matic')
-                                <option value="persneling">persneling</option>
+                                <option value="manual">manual</option>
                                 @else
                                 <option value="matic">matic</option>
                                 @endif
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleSelectGender">Bahan Bakar</label>
+                            <select class="custom-select" name="bahan_bakar" id="inputGroupSelect01">
+                                <option value="{{$mobil->bahan_bakar}}">{{ $mobil->bahan_bakar }}</option>
+                                @if ($mobil->bahan_bakar == 'pertalite')
+                                <option value="pertamax">pertamax</option>
+                                <option value="solar">solar</option>
+                                @elseif($mobil->bahan_bakar == 'pertamax')
+                                <option value="pertalite">pertalite</option>
+                                <option value="solar">solar</option>
+                                @else
+                                <option value="pertalite">pertalite</option>
+                                <option value="pertamax">pertamax</option>
+                                @endif
+
                             </select>
                         </div>
                         <div class="form-group">
@@ -60,20 +109,9 @@ Edit Data
                         </div>
 
                         <div class="form-group">
-                            <label for="gambar">Gambar</label>
+                            <label for="gambar">Gambar <span class="text-danger">*</span></label>
                             <input name="gambar" type="file" class="form-control-file" id="gambar" accept="image/">
                             <input type="hidden" name="current_image" value="{{ $mobil->gambar }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleSelectGender">Status</label>
-                            <select class="custom-select" name="status" id="inputGroupSelect01">
-                                <option value="{{ $mobil->status }}">{{$mobil->status}}</option>
-                                @if ($mobil->status == 'disewa')
-                                <option value="1">tersedia</option>
-                                @else
-                                <option value="0">disewa</option>
-                                @endif
-                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         <a href="/data-mobil" class="btn btn-light">Close</a>

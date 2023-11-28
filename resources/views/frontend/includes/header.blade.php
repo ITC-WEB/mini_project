@@ -32,18 +32,15 @@
                 <a href="{{ url('/logout') }}" class="btn btn-login my-2 my-sm-0">Masuk</a>
             </form>
             @if (!Auth::user())
-                <form class="form-inline my-2 my-lg-0 d-none d-md-block">
-                    <a href="/log" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4"
-                        style="line-height: 40px; padding: 10px 0;">Masuk</a>
-                </form>
+            <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+                <a href="/log" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Masuk</a>
+            </form>
             @else
-                <form class="form-inline my-2 my-lg-0 d-none d-md-block">
-                    <a href="{{ url('/logout') }}" class="btn btn-navbar-right my-2 my-sm-0 px-4"
-                        style="line-height: 40px; padding: 10px 0;">
-                        <img src="{{ asset('storage/photo/' . Auth::user()->data->photo) }}" class="rounded-circle"
-                            style="height: 50px;width:50px;" alt="profile" />
-                    </a>
-                </form>
+            <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+                <a href="{{ url('/logout') }}" class="btn btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">
+                    <img src="{{ asset('storage/public/photo/' . Auth::user()->data->photo) }}" class="rounded-circle" style="height: 50px;width:50px;" alt="profile" />
+                </a>
+            </form>
             @endif
             <!-- Desktop Button -->
 
