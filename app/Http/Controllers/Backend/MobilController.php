@@ -107,11 +107,9 @@ class MobilController extends Controller
             $newName = $request->name . '-' . now()->timestamp . "." . $extensi;
             $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
             $gambar = str_replace('public/mobil/', '', $gambar);
-
-            // Hapus gambar lama jika perlu (jika Anda ingin menggantinya)
-            if ($gambar) {
-                Storage::disk('public')->delete($gambar);
-            }
+            Storage::delete('public/mobil' . $request->oldPhoto);
+        } else {
+            $gambar['gambar'] = $request->oldPhoto;
         }
 
         if (!$request["status"]) {

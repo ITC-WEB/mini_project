@@ -10,7 +10,7 @@ Edit Data
                 <div class="card-body">
                     <form class="forms-sample" method="POST" action="{{ route('mobil.update', ['id' => $mobil->id]) }}" enctype="multipart/form-data">
                         @csrf
-
+                        <input type="hidden" name="oldPhoto" value="{{ $mobil->gambar }}">
                         <h3 class="mb-3">Edit Mobil</h3>
                         <hr>
                         <div class="form-group">
@@ -111,7 +111,7 @@ Edit Data
                         <div class="form-group">
                             <label for="gambar">Gambar <span class="text-danger">*</span></label>
                             <input name="gambar" type="file" class="form-control-file" id="gambar" accept="image/">
-                            <input type="hidden" name="current_image" value="{{ $mobil->gambar }}">
+                            <img src="" class="mt-2" id="img-view" style="width: 100px;">
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         <a href="/data-mobil" class="btn btn-light">Close</a>
@@ -122,3 +122,24 @@ Edit Data
         </div>
     </div>
     @endsection
+    @push('after-script')
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <script>
+        $("#gambar").change(function() {
+            previewImage(this);
+        });
+
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $("#img-view").attr("src", e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    @endpush

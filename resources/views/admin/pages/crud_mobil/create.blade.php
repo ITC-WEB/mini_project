@@ -93,7 +93,8 @@ Create Data
                         <div class="form-group">
 
                             <label for="gambar">Gambar Mobil</label>
-                            <input name="gambar" type="file" class="form-control-file" id="gambar" accept="image/">
+                            <input name="gambar" type="file" class="form-control rounded-pill">
+
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         <a href="/data-mobil" class="btn btn-light">Close</a>
