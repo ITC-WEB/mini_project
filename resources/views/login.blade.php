@@ -17,12 +17,13 @@
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="frontend/images/loginsy.png" class="img-fluid" alt="Sample image" />
+          <img src="frontend/images/login2.png" class="img-fluid" alt="Sample image" />
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <form action="" method="post">
             @csrf
-            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mt-5">SELAMAT DATANG di INTERMEDIA TRANS</div>
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mt-5">Welcome to</div>
+            <div class="textlog d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat">Intermedia Trans !</div>
             <p class="fw-bold mt-2 pt-1 mb-0 sudahakun">sudah memiliki akun? <a href="/register" class="link-masuk text-decoration-none">masuk</a></p>
             <!-- Email input -->
             <div class="form-outline mb-4">
@@ -36,8 +37,8 @@
               <input name="password" type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" required />
             </div>
 
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="submit" class=" btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem">Login</button>
+            <div class=" text-lg-start mt-4 pt-2">
+              <button type="submit" class="butonlog btn btn-primary btn-lg" style="padding-left: 2rem; padding-right: 2rem">Login</button>
             </div>
           </form>
         </div>
