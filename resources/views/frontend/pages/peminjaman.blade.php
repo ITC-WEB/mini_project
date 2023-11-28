@@ -54,7 +54,8 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="inputUsername" class="font-weight-bold">Nama </label>
-                                        <input type="text" class="form-control" id="inputUsername" value="{{ Auth::user()->name }}" />
+                                        <input type="text" class="form-control" id="inputUsername"
+                                            value="{{ Auth::user()->name }}" />
                                     </div>
                                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                     <input type="hidden" name="harga_sewa" value="{{ $mobil->harga_sewa }}">
@@ -62,31 +63,63 @@
                                     <div class="form-group row">
                                         <div class="col-md-6 col-sm-6 mb-3">
                                             <label for="inputEmail" class="font-weight-bold">Email </label>
-                                            <input type="email" class="form-control" id="inputEmail" value="{{ Auth::user()->email }}" />
+                                            <input type="email" class="form-control" id="inputEmail"
+                                                value="{{ Auth::user()->email }}" />
                                         </div>
                                         <div class="col-md-6 col-sm-6">
                                             <label for="inputPhone" class="font-weight-bold">Phone </label>
-                                            <input type="tel" class="form-control" id="inputPhone" value="{{ Auth::user()->phone }}" />
+                                            <input type="tel" class="form-control" id="inputPhone"
+                                                value="{{ Auth::user()->phone }}" />
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-6 col-sm-6 mb-3">
                                             <label for="tanggalMulai" class="font-weight-bold">Tanggal Mulai</label>
                                             <div class="input-group">
-                                                <input type="text" name="tanggal_mulai" class="form-control" id="mystartdate" placeholder="Tanggal Mulai" />
+                                                <input type="text" name="tanggal_mulai" class="form-control"
+                                                    id="mystartdate" placeholder="Tanggal Mulai" />
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 mb-3">
                                             <label for="tanggalSelesai" class="font-weight-bold">Tanggal Selesai</label>
                                             <div class="input-group">
-                                                <input type="text" name="tanggal_selesai" class="form-control" id="myenddate" placeholder="Tanggal Selesai" />
+                                                <input type="text" name="tanggal_selesai" class="form-control"
+                                                    id="myenddate" placeholder="Tanggal Selesai" />
                                             </div>
                                         </div>
+                                        <div class="col-md-6 col-sm-6 mb-3">
+                                            <label for="inputSopir" class="font-weight-bold">Sopir</label>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault1" checked>
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Ya
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault2">
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Tidak
+                                                </label>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 mb-3">
+                                                <div class="form-group row">
+                                                    <label for="inputMetodePmebayaran" class="font-weight-bold">Metode
+                                                        Pembayaran</label>
+                                                    <button type="button" class="btn btn-outline-dark">BRI</button>
+                                                    <button type="button" class="btn btn-outline-dark">BCA</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <input type="hidden" name="biaya" class="num_nights" readonly>
                                     </div>
                                     <div class="form-group">
                                         <div class="join-container mt-5">
-                                            <button type="submit" class="btn btn-block btn-join-now mt-3 py-2">Pesan</button>
+                                            <button type="submit"
+                                                class="btn btn-block btn-join-now mt-3 py-2">Pesan</button>
                                         </div>
                                         <div class="text-center mt-3">
                                             <a href="#" class="text-muted">Cancel Booking</a>
@@ -115,7 +148,8 @@
                                 </tr>
                                 <tr>
                                     <th width="50%">Total</th>
-                                    <td width="50%" class="text-right"><input type="text" style="border-style:none;" class="num_nights" readonly></td>
+                                    <td width="50%" class="text-right"><input type="text"
+                                            style="border-style:none;" class="num_nights" readonly></td>
                                 </tr>
                             </table>
                         </div>

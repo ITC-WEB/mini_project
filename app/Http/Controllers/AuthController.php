@@ -8,12 +8,14 @@ use Illuminate\Support\Carbon;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {
     //
     public function index()
     {
+        
         return view('login');
     }
     public function login(Request $request)
@@ -26,17 +28,15 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if (Auth::user()->role_id == '1') {
-                return redirect()->intended('/auth');
+                return redirect()->intended('/auth')->with('success', 'Berhasil Login');
             } elseif (Auth::user()->role_id == '2') {
                 return redirect()->intended('/auth');
             } else {
-                return redirect()->intended('/');
+                return redirect()->intended('/')->with('success','Berhasil Login');
             }
         }
-        Session::flash('status', 'failed');
-        Session::flash('message', 'Login Gagal');
 
-        return redirect('/log');
+        return redirect('/log')->with('errors', 'Data Belum Terdaftar');
     }
 
     public function index_reg()
@@ -55,7 +55,6 @@ class AuthController extends Controller
             'gender' => 'in:male,female',
             'phone' => 'required',
             'alamat' => 'required',
-            'photo' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
             'ktp' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
             'sim' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
 
@@ -64,17 +63,14 @@ class AuthController extends Controller
         if (!$request["role_id"]) {
             $request["role_id"] = 3;
         }
-        $photo = $request->file('photo')->store('public/photo');
         $ktp = $request->file('ktp')->store('public/ktp');
         $sim = $request->file('sim')->store('public/sim');
-        $photo = str_replace('public/photo/', '', $photo);
         $ktp = str_replace('public/ktp/', '', $ktp);
         $sim = str_replace('public/sim/', '', $sim);
         $data_user = Data::create([
             'id' => $request->id,
             'sim' => $sim,
             'ktp' => $ktp,
-            'photo' => $photo,
         ]);
 
         User::insert([
@@ -90,8 +86,6 @@ class AuthController extends Controller
             'updated_at' => Carbon::now(),
 
         ]);
-        Session::flash('success', 'Berhasil');
-
         return redirect('/log')->with('success', 'Berhasil Register');
     }
 

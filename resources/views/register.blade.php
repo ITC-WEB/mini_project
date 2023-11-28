@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="frontend/styles/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Assistant:200,400,700&&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -68,14 +67,9 @@
                             </div>
                         </div>
                         <div class="form-outline mb-3">
-                            <label class="form-label sm" for="form3Example4">Profile Picture :</label>
-                            <input name="photo" type="file" id="form3Example4" class="form-control form-control-sm"
-                                placeholder="Enter Profile Picture" required />
-                        </div>
-                        <div class="form-outline mb-3">
                             <label class="form-label sm" for="form3Example4">KTP(Kartu Tanda Penduduk) :</label>
-                            <input name="ktp" type="file" id="form3Example4"
-                                class="form-control form-control-sm" placeholder="Enter KTP" required />
+                            <input name="ktp" type="file" id="form3Example4" class="form-control form-control-sm"
+                                placeholder="Enter KTP" required />
                         </div>
                         <div class="form-outline mb-3">
                             <label class="form-label" for="form3Example4">SIM(Surat Izin Mengemudi) :</label>
@@ -85,7 +79,7 @@
 
 
                         <div class="text-center text-lg-start mt-4 mb-4 pt-2">
-                            <button type="submit" id="validasi" class=" btn btn-primary btn-md"
+                            <button type="submit" class=" btn btn-primary btn-md"
                                 style="padding-left: 2.5rem; padding-right: 2.5rem">Daftar</button>
                         </div>
                     </form>
@@ -96,22 +90,7 @@
     <script src="frontend/libraries/retina/retina.js"></script>
     <script src="frontend/libraries/jquery/jquery-3.4.1.min.js"></script>
     <script src="frontend/libraries/bootstrap/js/bootstrap.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tambahkan event listener pada setiap tombol delete
-            document.querySelectorAll('#validasi').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    // Tampilkan SweetAlert konfirmasi
-                    Swal.fire({
-                        title: "Anda Berhasil Mendaftar!",
-                        text: "Silahkan Login",
-                        icon: "success"
-                    });
-                });
-            });
-        });
-    </script>
+    @include('sweetalert::alert')
 </body>
 
 </html>
