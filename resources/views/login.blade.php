@@ -23,23 +23,26 @@
           <form action="" method="post">
             @csrf
             <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mt-5">Welcome to</div>
-            <div class="textlog d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat">Intermedia Trans !</div>
-            <p class="fw-bold mt-2 pt-1 mb-0 sudahakun">sudah memiliki akun? <a href="/register" class="link-masuk text-decoration-none">masuk</a></p>
+            <div class="textlog d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mb-4">Intermedia Trans !</div>
             <!-- Email input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example3">Email address</label>
-              <input name="email" type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address" required />
+            <div class="form-outline mb-4 ">
+              <input name="email" type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Email address" required />
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <label class="form-label" for="form3Example4">Password</label>
-              <input name="password" type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" required />
+              <input name="password" type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Password" required />
             </div>
+            <div class="form-group form-check mt-2">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember Me ! <a href="#" class="link-masuk ">forgot password</a></label>
+                      </div>
 
             <div class=" text-lg-start mt-4 pt-2">
               <button type="submit" class="butonlog btn btn-primary btn-lg" style="padding-left: 2rem; padding-right: 2rem">Login</button>
             </div>
+            <p class=mt-4>
+              Dont have an account ? <a href="#" class="link-masuk ">sign up</a></p>
           </form>
         </div>
       </div>

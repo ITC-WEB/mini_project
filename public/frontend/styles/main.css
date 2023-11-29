@@ -636,13 +636,7 @@ header .btn-get-started:hover {
 .password {
     width: 450px;
 }
-.masuk {
-    width: 200px;
-    background-color: #ff9e53;
-    border-radius: 20px;
-    border: none;
-    color: #ffffff;
-}
+
 .textlog {
   color: #FD5D3B;
 }
@@ -651,7 +645,6 @@ header .btn-get-started:hover {
   border-radius: 20px;
   border: none;
 }
-
 /*login*/
 .divider:after,
 .divider:before {
@@ -676,9 +669,8 @@ header .btn-get-started:hover {
     font-size: 24px;
 }
 .link-masuk {
-    color: #f8981d;
-    font-weight: bold;
-}
+    color: #FD5D3B;
+}    
 .link-masuk:hover {
     color: #071c4d;
 }
