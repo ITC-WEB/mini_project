@@ -61,12 +61,13 @@ checkout
                                         </div>
                                     </div>
                                 </div>
+                                <label for="inputUsername" class="font-weight-bold">Supir</label>
                                 <div class="row">
                                     <div class="col-auto">
                                       <div class="form-check">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                                         <label class="form-check-label" for="flexRadioDefault1">
-                                          Default radio
+                                          Iya
                                         </label>
                                       </div>
                                     </div>
@@ -75,10 +76,28 @@ checkout
                                       <div class="form-check">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                                         <label class="form-check-label" for="flexRadioDefault2">
-                                          Default checked radio
+                                          Tidak
                                         </label>
                                       </div>
                                     </div>
+                                  </div>
+                                  <label for="inputUsername" class="font-weight-bold mt-3">Pembayaran Bank </label>
+                                  <div class="grid">
+                                    <label class="card-button">
+                                      <input name="plan" class="radio" type="radio" checked>
+                                      <span class="plan-details">
+                                        <span class="plan-type">BCA</span>
+                                        <span class="mt-2 text-center">5321-09-77654-90-8</span>
+                                      </span>
+                                    </label>
+                                    <label class="card-button">
+                                      <input name="plan" class="radio" type="radio">
+                                      <span class="plan-details" aria-hidden="true">
+                                        <span class="plan-type">BRI</span>
+                                        <span class="mt-2 text-center">52281-09-009868-90-8</span>
+                                      </span>
+                                    </label>
+                                   
                                   </div>
                                   
                                
