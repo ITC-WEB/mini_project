@@ -653,8 +653,25 @@ header .btn-get-started:hover {
 }
 .butonlog {
   background-color: #FD5D3B;
-  border-radius: 20px;
+  border-radius: 15px;
   border: none;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  max-width: 100px;
+}
+
+.custom-input {
+    border: none;
+    border-bottom: 1px solid #656565; /* Atur warna garis bawah sesuai kebutuhan */
+    border-radius: 0; /* Opsional: hilangkan sudut pada garis bawah */
+    outline: none; /* Hilangkan outline pada focus */
+}
+
+.custom-input:focus {
+    box-shadow: none; /* Hilangkan shadow pada focus jika diperlukan */
 }
 /*login*/
 .divider:after,
@@ -681,9 +698,33 @@ header .btn-get-started:hover {
 }
 .link-masuk {
     color: #FD5D3B;
-}    
+} 
+.link-masuk2 {
+    color: #FD5D3B;
+    margin-right: 5px;
+    
+}     
 .link-masuk:hover {
     color: #071c4d;
+}
+/*register*/
+.registra{
+    font-size: 40px;
+    font-weight: bold;
+}
+.registra2 {
+    font-size: 40px;
+    color: #FD5D3B;
+    font-weight: bold;
+}
+.input-group-text {
+    cursor: pointer;
+}
+.have-account {
+    color: #000000;
+}
+.gender {
+    color: #FD5D3B;
 }
 /*statuscekout*/
 .bri {

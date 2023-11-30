@@ -25,21 +25,21 @@
             <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mt-5">Welcome to</div>
             <div class="textlog d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mb-4">Intermedia Trans !</div>
             <!-- Email input -->
-            <div class="form-outline mb-4 ">
-              <input name="email" type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Email address" required />
+            <div class="form-outline mb-4">
+            <input name="email" type="email" id="form3Example3" class="form-control form-control-lg custom-input" placeholder="email address" required />
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input name="password" type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Password" required />
+              <input name="password" type="password" id="form3Example4" class="form-control form-control-lg custom-input" placeholder="Password" required />
             </div>
             <div class="form-group form-check mt-2">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Remember Me ! <a href="#" class="link-masuk ">forgot password</a></label>
+                        <label class="form-check-label" for="exampleCheck1">Remember Me ! <a href="#" class="link-masuk2 ml-5 ">forgot password</a></label>
                       </div>
 
-            <div class=" text-lg-start mt-4 pt-2">
-              <button type="submit" class="butonlog btn btn-primary btn-lg" style="padding-left: 2rem; padding-right: 2rem">Login</button>
+            <div class=" text-lg-start mt-4 pt-2 ">
+              <button type="submit" class="butonlog btn btn-lg" style="padding-left: 2rem; padding-right: 2rem">Login</button>
             </div>
             <p class=mt-4>
               Dont have an account ? <a href="#" class="link-masuk ">sign up</a></p>
