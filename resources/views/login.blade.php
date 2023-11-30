@@ -28,7 +28,7 @@
             <div class="form-outline mb-4">
               <label class="form-label" for="form3Example3">Email address</label>
               <input name="email" type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address" required />
-            </div>
+          </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
