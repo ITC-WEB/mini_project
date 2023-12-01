@@ -46,7 +46,6 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        // return response()->json($request->all());
         $request->validate([
             'name' => 'required',
             'email' => 'required',

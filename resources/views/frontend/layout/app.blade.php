@@ -19,7 +19,6 @@
     @yield('content')
     @include('frontend.includes.footer')
 
-
     @stack('prepend-script')
     @include('frontend.includes.scripts')
     @stack('addon-scripts')

@@ -1,6 +1,6 @@
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="{{ route('homepage') }}">
+        <a class="navbar-brand" href=" ">
             <img src="{{asset('frontend/images/logo itc.png')}}" alt="" />
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navb">
             <ul class="navbar-nav ml-auto mr-3">
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ route('homepage') }}">Beranda</a>
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href=" ">Beranda</a>
                 </li>
                 <li class="nav-item mx-md-2">
                     <a class="nav-link {{ request()->is('tentangkami') ? 'active' : '' }}" href="{{ url('/tentangkami') }}">Tentang Kami</a>
@@ -27,13 +27,25 @@
                 </li>
             </ul>
             <!-- Mobile button -->
-            <form class="form-inline d-sm-block d-md-none">
+            <!-- <form class="form-inline d-sm-block d-md-none">
                 <a href="{{url('/logout')}}" class="btn btn-login my-2 my-sm-0">Masuk</a>
-            </form>
+            </form> -->
             <!-- Desktop Button -->
-            <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+            <!-- <form class="form-inline my-2 my-lg-0 d-none d-md-block">
                 <a href="{{url('/logout')}}" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Masuk</a>
+            </form> -->
+
+            @if (!Auth::user())
+            <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+                <a href="/log" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Masuk</a>
             </form>
+            @else
+            <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+                <a href="{{ url('/logout') }}" class="btn btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">
+                    <img src="{{asset('frontend/images/avatar-4.png')}}" alt="">
+                </a>
+            </form>
+            @endif
         </div>
     </nav>
 </div>

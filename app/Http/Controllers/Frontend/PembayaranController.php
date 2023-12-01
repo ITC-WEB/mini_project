@@ -13,7 +13,7 @@ class PembayaranController extends Controller
     public function index(Request $request)
     {
         $peminjaman = Peminjaman::latest('id')->first();
-        return view('frontend.pages.pembayaran', compact('peminjaman'));
+        return view('frontend.pages.statuscekout', compact('peminjaman'));
     }
 
     public function update_pembayaran(Request $request)

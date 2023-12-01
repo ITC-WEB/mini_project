@@ -6,8 +6,8 @@
                     <div class="col-12">
                         <div class="row ">
                             <div class="col-12 col-lg-2">
-                                <a class="footer-brand" href="{{ route('homepage') }}>
-                                    <img src="frontend/images/logofooter.png" alt="" />
+                                <a class="footer-brand" href=" >
+                                    <img src=" frontend/images/logofooter.png" alt="" />
                                 </a>
                                 <div class="social-icons mt-3 ">
                                     <a href="#" class="social-icon mr-2">
@@ -26,29 +26,29 @@
                                 <h5 class="footertxt ">BERANDA</h5>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">Mobil Populer</a>
+                                        <a href=" " style="text-decoration: none;">Mobil Populer</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">Our Network</a>
+                                        <a href=" " style="text-decoration: none;">Our Network</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">Testimonial</a>
+                                        <a href=" " style="text-decoration: none;">Testimonial</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">FAQ</a>
+                                        <a href=" " style="text-decoration: none;">FAQ</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('homepage') }}" style="text-decoration: none;">CTA Us</a>
+                                        <a href=" " style="text-decoration: none;">CTA Us</a>
                                     </li>
                                 </ul>
-                                
+
                             </div>
                             <div class="col-12 col-lg-2">
                                 <h5 class="footertxt">KATALOG</h5>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ url('/katalog') }}" style="text-decoration: none;">Banner</a></li>
                                     <li><a href="{{ url('/katalog') }}" style="text-decoration: none;">Filtering</a></li>
-                                    <li><a href="{{ url('/katalog') }}"style="text-decoration: none;">Katalog</a></li>
+                                    <li><a href="{{ url('/katalog') }}" style="text-decoration: none;">Katalog</a></li>
                                 </ul>
                             </div>
                             <div class="col-12 col-lg-2">

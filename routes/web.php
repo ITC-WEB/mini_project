@@ -1,16 +1,20 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\CustomerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController as FrontendController;
-use App\Http\Controllers\Backend\HomeController as BackendController;
-use App\Http\Controllers\Backend\MobilController as MobilController;
+use App\Http\Controllers\Backend\MobilController;
 use App\Http\Controllers\Frontend\PeminjamanController as FrontpinjamController;
 use App\Http\Controllers\Backend\PinjamController;
-use App\Http\Controllers\Frontend\CheckoutController;
-use App\Http\Controllers\Frontend\DetailController;
+use App\Http\Controllers\Backend\SopirController;
 use App\Http\Controllers\Frontend\KatalogController;
+use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\PembayaranController;
+use App\Http\Controllers\Frontend\CheckoutController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,19 +28,19 @@ use App\Http\Controllers\Frontend\PembayaranController;
 */
 
 
-////////*******Auth **********///////
+//**********************************Auth ***************************/
 
-Route::get('/log', [AuthController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/log', [AuthController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/log', [AuthController::class, 'index'])->name('login');
+Route::post('/log', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'index_reg']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 
+//******************************** FRONTEND*************************/
 
-// ---------------------------FRONTEND-------------------------------------//
-Route::get('/', [FrontendController::class, 'homepage'])->name('homepage');
-Route::get('/user', [FrontendController::class, 'index'])->middleware(['auth', 'customer']);
+Route::get('/', [FrontendController::class, 'index']);
+
 //pages
 Route::get('/tentangkami', [FrontendController::class, 'tentangKami']);
 Route::get('/syaratdankentenuan ', [FrontendController::class, 'syaratKetentuan']);
@@ -47,64 +51,81 @@ Route::get('/statuscekout', [FrontendController::class, 'statuscekout']);
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);
-Route::get('/detail', [DetailController::class, 'detail'])->name('detail');
+// Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail')->middleware(['auth', 'customer']);
+Route::get('/detail/{id}', [DetailController::class, 'detail'])->name('detail')->middleware(['auth', 'customer']);
 //peminjaman
-Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman');
+Route::get('/peminjaman/{id}', [FrontpinjamController::class, 'pinjam'])->name('peminjaman')->middleware(['auth', 'customer']);
 Route::post('/peminjaman', [FrontpinjamController::class, 'peminjaman']);
+
+//***************************Pembayaran */
+Route::post('/update-pembayaran', [PembayaranController::class, 'update_pembayaran']);
 //pembayaran
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('pembayaran');
 
 
+//********************************BACK END **************************/
 
-
-///////*******Back End **********///////
-
-Route::get('/auth', [BackendController::class, 'index'])->middleware(['auth', 'admin']);
-Route::get('/add-customer', [BackendController::class, 'usercustomer'])->middleware(['auth', 'admin']);
-Route::get('/add-admin', [BackendController::class, 'useradmin'])->middleware(['auth', 'admin']);
-Route::get('/add-sopir', [BackendController::class, 'usersopir'])->middleware(['auth', 'admin']);
+//****************************ADMIN */
+Route::get('/auth', [AdminController::class, 'index'])->middleware(['auth', 'admin']);
+Route::get('/add-admin', [AdminController::class, 'useradmin'])->middleware(['auth', 'admin']);
 
 // Profile
-Route::get('/profile', [BackendController::class, 'profile']);
-
+Route::get('/profile', [AdminController::class, 'profile']);
 
 // CRUD Admin
-//Create
-Route::get('/create', [BackendController::class, 'create_admin'])->middleware(['auth', 'admin']);
-Route::post('/create', [BackendController::class, 'add']);
+Route::get('/create', [AdminController::class, 'create_admin'])->middleware(['auth', 'admin']);
+Route::post('/create', [AdminController::class, 'add']);
 
-//Edit
-Route::get('/edit', [BackendController::class, 'change']);
-Route::post('/update', [BackendController::class, 'update']);
+Route::get('/edit', [AdminController::class, 'change']);
+Route::post('/update-admin', [AdminController::class, 'update_admin']);
 
+Route::post('/delete/{id}', [AdminController::class, 'delete'])->name('delete');
+
+//***************************Customer */
+
+Route::get('/add-customer', [CustomerController::class, 'usercustomer'])->middleware(['auth', 'admin']);
 //Show
-Route::get('/show/{id}', [BackendController::class, 'show'])->name('show');
+Route::get('/show/{id}', [CustomerController::class, 'show'])->name('show');
 
+//Delete customer
+Route::post('/delete-customer/{id}', [CustomerController::class, 'customer_delete'])->name('delete-customer');
+
+
+//**************************Sopir */
+
+Route::get('/add-sopir', [SopirController::class, 'usersopir'])->middleware(['auth', 'admin']);
+//Crud Sopir
+Route::get('/create-sopir', [SopirController::class, 'create_sopir'])->middleware(['auth', 'admin']);
+Route::post('/create-sopir', [SopirController::class, 'add_sopir']);
+
+//*************************Mobil */
+// Data Mobil
+Route::get('/data-mobil', [MobilController::class, 'mobil']);
+//status mobil
+Route::get('mobil/{id}', [MobilController::class, 'update_status']);
+
+//Create Mobil
+Route::get('/create-mobil', [MobilController::class, 'create']);
+Route::post('/create-mobil', [MobilController::class, 'add_mobil']);
 
 //Edit Mobil
 Route::get('/edit-mobil/{id}', [MobilController::class, 'edit_mobil'])->name('edit-mobil');
 Route::post('/update-mobil', [MobilController::class, 'update_mobil'])->name('mobil.update');
 
-//Delete admin
-Route::post('/delete/{id}', [BackendController::class, 'delete']);
-
-//Delete customer
-Route::post('/delete-customer/{id}', [BackendController::class, 'customer_delete']);
+//Show Mobil
+Route::get('/show-mobil/{id}', [MobilController::class, 'show_mobil'])->name('show-mobil');
 
 //Delete Mobil
-Route::post('/delete-mobil/{id}', [MobilController::class, 'mobil_delete']);
+Route::post('/delete-mobil/{id}', [MobilController::class, 'mobil_delete'])->name('delete-mobil');
 
-//Crud Sopir
-Route::get('/create-sopir', [BackendController::class, 'create_sopir'])->middleware(['auth', 'admin']);
-Route::post('/create-sopir', [BackendController::class, 'add_sopir']);
 
-// Data Mobil
-Route::get('/data-mobil', [MobilController::class, 'mobil']);
-
-//Crud Mobil
-Route::get('/create-mobil', [MobilController::class, 'create']);
-Route::post('/create-mobil', [MobilController::class, 'add_mobil']);
-
-// Peminjaman
+//***************************Peminjaman */
 
 Route::get('/data-pinjam', [PinjamController::class, 'index']);
+//update status pinjam
+
+Route::get('/pinjam/{id}', [PinjamController::class, 'edit_peminjaman'])->name('edit');
+Route::post('/update', [PinjamController::class, 'update_peminjaman'])->name('update');
+
+//bukti_transfer
+Route::get('/bukti/{id}', [PinjamController::class, 'bukti_bayar'])->name('bukti');
