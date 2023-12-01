@@ -73,7 +73,7 @@
                     <a href="/" class="forgot-pass"></a>
                                 <input type="submit" class="btn butonlog btn-block btn-primary">
 
-                  <p class="have-account mt-4" > have an account ? <a href="#" class="link-masuk ">login</a></p>
+                  <p class="have-account mt-4" > have an account ? <a href="{{ url('/log') }}" class="link-masuk ">login</a></p>
                                
             </div>
         </form>

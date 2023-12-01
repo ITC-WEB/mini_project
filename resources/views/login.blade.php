@@ -42,7 +42,7 @@
               <button type="submit" class="butonlog btn btn-lg" style="padding-left: 2rem; padding-right: 2rem">Login</button>
             </div>
             <p class=mt-4>
-              Dont have an account ? <a href="#" class="link-masuk ">sign up</a></p>
+              Dont have an account ? <a href="{{ url('/register') }}" class="link-masuk ">sign up</a></p>
           </form>
         </div>
       </div>
