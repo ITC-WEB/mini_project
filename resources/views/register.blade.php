@@ -26,7 +26,7 @@
     <div class="container">
         <form action="">
         <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-12 col-sm-12">
             <h3 class="mb-2 mt-5 registra">Registration to</h3>
             <h3 class="mb-5 registra2">Intermedia Trans</h3>
             <div class="form-group last mb-5">
@@ -43,7 +43,7 @@
                 </div>
 
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-md-12 col-sm-12">
             <div class="form-group last mt-5">
                 <input type="text" name="alamat" class="form-control custom-input" placeholder="Alamat" id="alamat">
                 </div>
