@@ -59,13 +59,13 @@
                     </div>
 
                     <div class="row">
-                        <div class="col md-6 mt-5">
+                        <div class="col-md-6 mt-5">
                         <label for="data_id">Unggah Kartu Tanda Penduduk (KTP)</label>
                         <input class="mt-3" type="file" name="ktp">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col md-6 mb-4">
+                        <div class="col-md-6 mb-4">
                         <label class="mt-4" for="data_id">Unggah Surat Izin Mengemudi (SIM - A)</label>
                         <input class="mt-3" type="file" name="sim">
                          </div>
