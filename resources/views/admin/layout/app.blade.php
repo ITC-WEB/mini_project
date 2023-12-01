@@ -26,8 +26,6 @@
 
     <!-- page-body-wrapper ends -->
     <!-- container-scroller -->
-
-
     <!-- End custom js for this page-->
 </body>
 

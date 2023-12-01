@@ -11,6 +11,8 @@ class KatalogController extends Controller
     //
     public function index(Request $request)
     {
+
         return view('frontend.pages.katalog');
+
     }
 }

@@ -17,7 +17,7 @@ Edit Admin
                     @elseif (Auth::user()->role_id == '2')
                     <h4 class="card-title">Edit Data Admin</h4>
                     @endif
-                    <form class="forms-sample" method="POST" action="/update">
+                    <form class="forms-sample" method="POST" action="/update-admin">
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputName1">Name</label>

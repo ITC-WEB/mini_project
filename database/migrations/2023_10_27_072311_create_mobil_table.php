@@ -18,14 +18,16 @@ return new class extends Migration
             $table->string('gambar');
             $table->unsignedBigInteger('merek_id');
             $table->integer('tahun');
-            $table->string('kapasitas');
-            $table->text('deskripsi')->nullable();
-            $table->enum('type', ['matic', 'persneling']);
+            $table->string('kapasitas_orang');
+            $table->enum('bahan_bakar', ['pertalite', 'pertamax', 'solar']);
+            $table->string('kapasitas_mesin', 255);
+            $table->string('fitur_tersedia', 255);
+            $table->enum('type', ['matic', 'manual']);
             $table->integer('harga_sewa');
-            $table->enum('status', ['tersedia', 'disewa']);
+            $table->integer('status')->default(1);
             $table->timestamps();
 
-            $table->foreign('merek_id')->references('id')->on('merek')->onDelete('restrict');
+            $table->foreign('merek_id')->references('id')->on('merek')->onDelete('cascade');
         });
     }
 

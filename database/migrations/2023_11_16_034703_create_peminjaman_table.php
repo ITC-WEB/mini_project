@@ -19,12 +19,13 @@ return new class extends Migration
             $table->string('biaya');
             $table->string('tanggal_mulai');
             $table->string('tanggal_selesai');
-            $table->enum('status', ['bayar', 'belumbayar'])->nullable()->default('belumbayar');
+            $table->enum('status', ['sedangdisewa', 'belumbayar', 'selesai'])->nullable()->default('belumbayar');
+            $table->unsignedBigInteger('bukti_id')->nullable();
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
-            $table->foreign('mobil_id')->references('id')->on('mobil')->onDelete('restrict');
-            $table->foreign('sopir_id')->references('id')->on('sopir')->onDelete('restrict');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('mobil_id')->references('id')->on('mobil')->onDelete('cascade');
+            $table->foreign('sopir_id')->references('id')->on('sopir')->onDelete('cascade');
+            $table->foreign('bukti_id')->references('id')->on('bukti_transfer')->onDelete('cascade');
         });
     }
 

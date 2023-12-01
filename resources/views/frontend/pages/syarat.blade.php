@@ -14,12 +14,15 @@
   </header>
   <!-- Hero -->
   <!-- section 2 -->
+  <!-- section 2 -->
   <section>
+
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
           <div class="mt-5 mb-5 text-center">
             <img src="frontend/images/sectionsyaratketentuan.png" class="about-image rounded" />
+
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
@@ -41,7 +44,6 @@
   </section>
   <!-- section 2 -->
   <!-- section 3 -->
-  <section>
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
@@ -80,4 +82,5 @@
     </div>
   </section>
   <!-- section 3 -->
+
   @endsection

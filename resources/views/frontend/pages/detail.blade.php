@@ -5,7 +5,7 @@ Detail
 @section('content')
 <main>
     <section class="section-details-header"></section>
-    <section class="section-details-content">
+
       <div class="container">
         <div class="row">
           <div class="col p-0 pl-3 pl-lg-0">
@@ -25,8 +25,8 @@ Detail
               <div class="gallery">
                 <div class="xzoom-container">
                   <img class="xzoom" id="xzoom-default " src="/frontend/images/details.png " xoriginal="/frontend/images/details.png " />
-                </div>
 
+                </div>
                 <div class="container mt-4">
                   <div class="row justify-content-between">
                     <div class="col-6">
@@ -90,10 +90,6 @@ Detail
  @push('prepend-style')
  <link rel="stylesheet" href="frontend/libraries/xzoom/dist/xzoom.css" />
  @endpush
-
-
-
-
 @push('addon-scripts')
 <script src="{{ url('frontend/libraries/xzoom/dist/xzoom.min.js') }}"></script>
 <script>
@@ -107,3 +103,5 @@ Detail
   });
 </script>
 @endpush
+
+

@@ -15,16 +15,10 @@ Data Admin
                             <thead>
                                 <tr>
                                     <th>
-                                        User
-                                    </th>
-                                    <th>
-                                        Full Name
+                                        Name
                                     </th>
                                     <th>
                                         Email
-                                    </th>
-                                    <th>
-                                        Role
                                     </th>
                                     <th>
                                         Gender
@@ -32,10 +26,9 @@ Data Admin
                                     <th>
                                         Phone
                                     </th>
-                                    <th>
+                                    <th class="text-truncate" style="max-width: 200px;white-space: normal;">
                                         Alamat
                                     </th>
-
                                     <th>
                                         Status
                                     </th>
@@ -44,17 +37,11 @@ Data Admin
                             <tbody>
                                 @foreach ($data as $item )
                                 <tr>
-                                    <td class="py-2">
-                                        <img src="{{asset('admin/images/faces/face2.jpg')}}" alt="image" />
-                                    </td>
                                     <td>
                                         {{ $item->name }}
                                     </td>
                                     <td>
                                         {{ $item->email }}
-                                    </td>
-                                    <td>
-                                        {{ $item->role->name }}
                                     </td>
                                     <td>
                                         {{ $item->gender }}
@@ -68,14 +55,13 @@ Data Admin
 
                                     <td>
                                         <label class="badge badge-success">Active</label>
-                                        <form action="/delete/{{ $item->id }}" method="post" class="d-inline">
+                                        <form action="{{ route('delete', $item->id) }}" method="POST" id="delete-form-{{ $item->id }}" class="d-inline">
                                             @csrf
-                                            <button type="submit" style="border: none;" class="badge badge-danger">Delete</button>
+                                            <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $item->id }}">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>
@@ -83,4 +69,5 @@ Data Admin
             </div>
         </div>
     </div>
+    @include('admin.includes.sweetalert')
     @endsection

@@ -16,6 +16,7 @@ class Peminjaman extends Model
         'biaya',
         'tanggal_mulai',
         'tanggal_selesai',
+        'bukti_id',
         'status',
 
     ];
@@ -32,5 +33,9 @@ class Peminjaman extends Model
     public function sopir()
     {
         return $this->belongsTo(Sopir::class, 'sopir_id', 'id');
+    }
+    public function bukti()
+    {
+        return $this->belongsTo(Bukti::class, 'bukti_id', 'id');
     }
 }

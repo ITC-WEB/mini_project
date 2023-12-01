@@ -1,4 +1,7 @@
 @extends('admin.layout.app')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="{{ asset('node_modules/@fortawesome/fontawesome-free/css/all.min.css') }}">
 @section('title')
 Data Mobil
 @endsection
@@ -19,7 +22,21 @@ Data Mobil
                             </div>
                         </form>
                     </div>
-
+                    @if (Session::has('status'))
+                    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                        {{ Session::get('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @elseif (Session::has('update'))
+                    <div class="alert alert-primary alert-dismissible fade show text-center" role="alert">
+                        {{ Session::get('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
                     <div class="table-responsive pt-3">
                         <table class="table table-bordered">
                             <thead>
@@ -28,25 +45,16 @@ Data Mobil
                                         No
                                     </th>
                                     <th>
-                                        Noplat
+                                        Nomer Kendaraan
                                     </th>
                                     <th>
-                                        Name
+                                        Name Mobil
                                     </th>
                                     <th>
                                         Merek
                                     </th>
                                     <th>
                                         Harga Sewa
-                                    </th>
-                                    <th>
-                                        Kapasitas
-                                    </th>
-                                    <th>
-                                        Type
-                                    </th>
-                                    <th>
-                                        Gambar
                                     </th>
                                     <th>
                                         Status
@@ -74,26 +82,20 @@ Data Mobil
                                     <td>
                                         Rp. {{ $mobils->harga_sewa }}
                                     </td>
-
+                                    <!-- <td>
+                                        <img src="{{asset('storage/public/mobil/'.$mobils->gambar)}}" style="width: 140px;height:80px;border-radius: 10px;" alt="Mobil">
+                                    </td> -->
                                     <td>
-                                        {{ $mobils->kapasitas }}/Penumpang
-                                    </td>
-
-                                    <td>
-                                        {{ $mobils->type }}
-                                    </td>
-
-                                    <td>
-                                        <img src="{{asset('storage/mobil/'.$mobils->gambar)}}" style="width: 140px;height:80px;border-radius: 10px;" alt="Mobil">
+                                        <a href="mobil/{{ $mobils->id}}" class="btn btn-sm btn-{{ $mobils->status ? 'success' : 'warning'  }}">
+                                            {{ $mobils->status ? 'tersedia' : 'disewa' }}
+                                        </a>
                                     </td>
                                     <td>
-                                        {{ $mobils->status }}
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('edit-mobil',['id' => $mobils->id])}}"><button type="submit" style="border: none;" class="badge badge-primary">Edit</button></a>
-                                        <form action="/delete-mobil/{{ $mobils->id }}" method="post" class="d-inline">
+                                        <a href="{{ route('edit-mobil',['id' => $mobils->id])}}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="bi bi-pencil-square"></i></button></a>
+                                        <a href="{{ route('show-mobil',['id' => $mobils->id])}}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>
+                                        <form action="{{ route('delete-mobil', $mobils->id) }}" method="POST" id="delete-form-{{ $mobils->id }}" class="d-inline">
                                             @csrf
-                                            <button type="submit" style="border: none;" class="badge badge-danger">Delete</button>
+                                            <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $mobils->id }}"><i class="bi bi-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -109,4 +111,7 @@ Data Mobil
             </div>
         </div>
     </div>
+    <script src="{{ asset('node_modules/@fortawesome/fontawesome-free/js/all.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    @include('admin.includes.sweetalert')
     @endsection

@@ -19,16 +19,17 @@ class MobilController extends Controller
             ->where('name', 'LIKE', '%' . $cari . '%')
             ->orWhere('noplat', 'LIKE', '%' . $cari . '%')
             ->orWhere('harga_sewa', $cari)
+            ->orWhere('status', 'LIKE', '%' . $cari . '%')
             ->orWhereHas('merek', function ($query) use ($cari) {
                 $query->where('name', 'LIKE', '%' . $cari . '%');
             })
             ->paginate(5);
-        return view('admin.pages.data_mobil', compact('mobil'));
+        return view('admin.pages.crud_mobil.data_mobil', compact('mobil'));
     }
     //Crud Mobil
     public function create()
     {
-        return view('admin.crud_mobil.create');
+        return view('admin.pages.crud_mobil.create');
     }
 
     public function add_mobil(Request $request)
@@ -37,26 +38,36 @@ class MobilController extends Controller
             'noplat' => 'required',
             'name' => 'required',
             'merek_id' => 'required|integer',
+            'fitur_tersedia' => 'array',
             'tahun' => 'required',
             'harga_sewa' => 'required',
             'gambar' => 'mimes:jpg,png,jpeg|image|max:2048',
-            'status' => ''
         ]);
-        $extensi = $request->file('gambar')->getClientOriginalExtension();
-        $newName = $request->name . '-' . now()->timestamp . "." . $extensi;
-        $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
-        $gambar = str_replace('public/mobil/', '', $gambar);
+
+        if ($request->hasFile('gambar')) {
+            $gambar = $request->file('gambar')->store('mobil');
+        }
+        // $extensi = $request->file('gambar')->getClientOriginalExtension();
+        // $newName = $request->name . '-' . now()->timestamp . "." . $extensi;
+        // $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
+        // $gambar = str_replace('public/mobil/', '', $gambar);
+
+        $selectedOptions = $request->input('fitur_tersedia');
+        $selectedArray = json_encode($selectedOptions);
+
         if (!$request["status"]) {
-            $request["status"] = 'tersedia';
+            $request["status"] = '1';
         }
 
-        Mobil::create([
+        $addMobil = Mobil::create([
             'noplat' => $request->noplat,
             'name' => $request->name,
             'merek_id' => $request->merek_id,
             'tahun' => $request->tahun,
-            'kapasitas' => $request->kapasitas,
-            'deskripsi' => $request->deskripsi,
+            'kapasitas_orang' => $request->kapasitas_orang,
+            'kapasitas_mesin' => $request->kapasitas_mesin,
+            'bahan_bakar' => $request->bahan_bakar,
+            'fitur_tersedia' => $selectedArray,
             'type' => $request->type,
             'harga_sewa' => $request->harga_sewa,
             'gambar' => $gambar,
@@ -64,57 +75,96 @@ class MobilController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        Session::flash('success', 'Data berhasil ditambahkan');
+        if ($addMobil) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Berhasil Menambahkan Data');
+        }
 
-        return redirect('/data-mobil')->with('success', 'Berhasil Menambahkan Data');
+
+        // return response()->json($request);
+        return redirect('/data-mobil');
     }
 
     //edit mobil
-    public function edit_mobil(Request $request)
+    public function edit_mobil(Request $request, $id)
     {
-        $mobil = Mobil::find($request->id);
-        return view('admin.crud_mobil.edit', compact('mobil'));
+        $mobil = Mobil::findOrFail($id);
+        return view('admin.pages.crud_mobil.edit', compact('mobil'));
     }
 
+    //status
+    public function update_status($mobilId)
+    {
+        $mobils = Mobil::find($mobilId);
+        if ($mobils) {
+            if ($mobils->status) {
+                $mobils->status = 0;
+            } else {
+                $mobils->status = 1;
+            }
+            $mobils->save();
+        }
+        return back();
+    }
     public function update_mobil(Request $request)
     {
-
-        if ($request->hasFile('gambar')) {
-            // Pengguna mengunggah gambar baru
-            $extensi = $request->file('gambar')->getClientOriginalExtension();
-            $newName = $request->name . '-' . now()->timestamp . "." . $extensi;
-            $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
-            $gambar = str_replace('public/mobil/', '', $gambar);
-
-            // Hapus gambar lama jika perlu (jika Anda ingin menggantinya)
-            if ($gambar) {
-                Storage::disk('public')->delete($gambar);
-            }
+        // Pengguna mengunggah gambar baru
+        // $extensi = $request->file('gambar')->getClientOriginalExtension();
+        // $newName = $request->name . $extensi;
+        // $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
+        // $gambar = str_replace('mobil/', '', $gambar);
+        if (!$request["status"]) {
+            $request["status"] = '1';
         }
 
-        $dataedit = Mobil::where('id', $request->id)->first();
+        $selectedOptions = $request->input('fitur_tersedia');
+        $selectedArray = json_encode($selectedOptions);
+        $dataedit = Mobil::find($request->id);
+
+        if ($request->hasFile('gambar')) {
+            if (Storage::exists($dataedit->gambar)) {
+                Storage::delete($dataedit->gambar);
+            }
+            $gambar = $request->file('gambar')->store('mobil');
+        }
         $dataedit->noplat = $request->noplat;
         $dataedit->name = $request->name;
         $dataedit->merek_id = $request->merek_id;
         $dataedit->tahun = $request->tahun;
-        $dataedit->kapasitas = $request->kapasitas;
-        $dataedit->deskripsi = $request->deskripsi;
+        $dataedit->kapasitas_orang = $request->kapasitas_orang;
+        $dataedit->kapasitas_mesin = $request->kapasitas_mesin;
+        $dataedit->bahan_bakar = $request->bahan_bakar;
+        $dataedit->fitur_tersedia = $selectedArray;
         $dataedit->type = $request->type;
         $dataedit->harga_sewa = $request->harga_sewa;
         $dataedit->gambar = $gambar;
         $dataedit->status = $request->status;
         $dataedit->save();
 
-        // return response()->json($dataedit);
+        if ($dataedit) {
+            Session::flash('update', 'success');
+            Session::flash('message', 'Mobil Berhasil Di Update');
+        }
 
+        // return response()->json($dataedit);
         return redirect('/data-mobil');
+    }
+
+    public function show_mobil(Request $request)
+    {
+        $detail_mobil = Mobil::find($request->id);
+        return view('admin.pages.crud_mobil.show_mobil', compact('detail_mobil'));
     }
 
     //delete mobile
     public function mobil_delete(Request $request)
     {
-        Mobil::where('id', $request->id)->delete();
-        Session::flash('success', 'Berhasil Hapus Data');
+        $data = Mobil::find($request->id)->delete();
+        if ($request->hasFile('gambar')) {
+            if (Storage::exists($data->gambar)) {
+                Storage::delete($data->gambar);
+            }
+        }
         return redirect('/data-mobil');
     }
 }
