@@ -9,7 +9,18 @@
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                 <span class="icon-menu"></span>
             </button>
+            @if (Auth::user()->role_id == 1)
+            <div class="d-inline mx-auto">
+                <strong class="text-black">SUPERADMIN INTERMEDIA TRANS</strong>
+            </div>
+            @else
+            <div class="d-inline mx-auto">
+                <strong class="text-black">ADMIN INTERMEDIA TRANS</strong>
+            </div>
+            @endif
+
             <ul class="navbar-nav navbar-nav-right">
+
                 <li class="nav-item dropdown">
                     <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                         <i class="icon-bell mx-0"></i>
@@ -79,11 +90,7 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item nav-settings d-none d-lg-flex">
-                    <a class="nav-link" href="#">
-                        <i class="icon-ellipsis"></i>
-                    </a>
-                </li>
+
             </ul>
             <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                 <span class="icon-menu"></span>

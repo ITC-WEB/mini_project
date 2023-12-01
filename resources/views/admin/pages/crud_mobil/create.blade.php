@@ -8,19 +8,35 @@ Create Data
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                    <a href="/data-mobil">
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </a>
+
                     <h4 class="card-title">Tambah Data Mobil</h4>
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <form class="forms-sample" method="POST" action="/create-mobil" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputName1">Nomer Kendaraan</label>
+                            <label for="exampleInputName1">Nomer Kendaraan<span class="text-danger">*</span></label>
                             <input name="noplat" type="text" class="form-control rounded-pill" id="exampleInputName1" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail3">Name / Jenis Mobil</label>
+                            <label for="exampleInputEmail3">Name / Jenis Mobil<span class="text-danger">*</span></label>
                             <input name="name" type="text" class="form-control  rounded-pill" id="exampleInputEmail3" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleSelectGender">Merek Mobil</label>
+                            <label for="exampleSelectGender">Merek Mobil<span class="text-danger">*</span></label>
                             <select class="custom-select  rounded-pill" name="merek_id" id="inputGroupSelect01" required>
                                 <option selected>---Pilih---</option>
                                 <option value="1">honda</option>
@@ -30,15 +46,15 @@ Create Data
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Tahun Pembuatan</label>
+                            <label for="exampleInputName1">Tahun Pembuatan<span class="text-danger">*</span></label>
                             <input name="tahun" type="text" class="form-control  rounded-pill" id="exampleInputName1" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleSelectGender">Kapasitas Penumpang</label>
+                            <label for="exampleSelectGender">Kapasitas Penumpang<span class="text-danger">*</span></label>
                             <input name="kapasitas_orang" type="text" class="form-control  rounded-pill" id="exampleInputName1" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleSelectGender">Type Transmisi</label>
+                            <label for="exampleSelectGender">Type Transmisi<span class="text-danger">*</span></label>
                             <select class="custom-select  rounded-pill" name="type" id="inputGroupSelect01" required>
                                 <option selected>---Pilih---</option>
                                 <option value="matic">matic</option>
@@ -46,7 +62,7 @@ Create Data
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleSelectGender">Jenis Bahan Bakar</label>
+                            <label for="exampleSelectGender">Jenis Bahan Bakar<span class="text-danger">*</span></label>
                             <select class="custom-select  rounded-pill" name="bahan_bakar" id="inputGroupSelect01" required>
                                 <option selected>---Pilih---</option>
                                 <option value="pertalite">pertalite</option>
@@ -55,15 +71,15 @@ Create Data
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Kapasitas Mesin</label>
+                            <label for="exampleInputName1">Kapasitas Mesin<span class="text-danger">*</span></label>
                             <input name="kapasitas_mesin" type="text" class="form-control  rounded-pill" id="exampleInputName1" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Harga Sewa</label>
+                            <label for="exampleInputName1">Harga Sewa/Hari<span class="text-danger">*</span></label>
                             <input name="harga_sewa" type="text" class="form-control  rounded-pill" id="exampleInputName1" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Fitur Tersedia</label><br>
+                            <label for="exampleInputName1">Fitur Tersedia<span class="text-danger">*</span></label><br>
                             <label for="pilihan1">
                                 <input type="checkbox" id="pilihan1" name="fitur_tersedia[]" value="Air Conditioner"> Air Conditioner
                             </label>
@@ -92,12 +108,12 @@ Create Data
                         </div>
                         <div class="form-group">
 
-                            <label for="gambar">Gambar Mobil</label>
-                            <input name="gambar" type="file" class="form-control rounded-pill">
+                            <label for="gambar">Gambar Mobil<span class="text-danger">*</span></label>
+                            <input name="gambar" type="file" class="form-control-file" required>
 
                         </div>
-                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <a href="/data-mobil" class="btn btn-light">Close</a>
+                        <button type="submit" class="btn mr-2" style="background-color: #FD5D3B;color:#fff">SUBMIT</button>
+                        <a href="/data-mobil" class="btn border" style="background-color: #fff;color:#000000">CLOSE</a>
                     </form>
                 </div>
             </div>

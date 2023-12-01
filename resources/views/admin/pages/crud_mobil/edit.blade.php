@@ -10,9 +10,10 @@ Edit Data
                 <div class="card-body">
                     <form class="forms-sample" method="POST" action="{{ route('mobil.update', ['id' => $mobil->id]) }}" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="oldPhoto" value="{{ $mobil->gambar }}">
+                        @method('PUT')
                         <h3 class="mb-3">Edit Mobil</h3>
                         <hr>
+
                         <div class="form-group">
                             <label for="exampleInputName1">Noplat</label>
                             <input name="noplat" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->noplat }}">
@@ -110,10 +111,10 @@ Edit Data
 
                         <div class="form-group">
                             <label for="gambar">Gambar <span class="text-danger">*</span></label>
-                            <input name="gambar" type="file" class="form-control-file" id="gambar" accept="image/">
+                            <input name="gambar" type="file" class="form-control-file" id="gambar" accept="image/" required>
                             <img src="" class="mt-2" id="img-view" style="width: 100px;">
                         </div>
-                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button type="submit" class="btn btn-primary mr-2">Update</button>
                         <a href="/data-mobil" class="btn btn-light">Close</a>
                     </form>
 

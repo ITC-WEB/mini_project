@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Bukti;
 use App\Models\Peminjaman;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

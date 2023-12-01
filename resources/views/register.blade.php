@@ -22,65 +22,54 @@
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form action="" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div
-                            class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mt-5">
+                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mt-5">
                             Silahkan DAFTAR Dahulu</div>
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example3">Name</label>
-                            <input name="name" type="text" id="form3Example3" class="form-control form-control-lg"
-                                placeholder="Masukkan Nama Anda" required />
+                            <input name="name" type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Masukkan Nama Anda" required />
                         </div>
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example3">Email address</label>
-                            <input name="email" type="email" id="form3Example3" class="form-control form-control-lg"
-                                placeholder="Masukkan Email Anda" required />
+                            <input name="email" type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Masukkan Email Anda" required />
                         </div>
                         <div class="form-outline mb-3">
                             <label class="form-label" for="form3Example4">Password</label>
-                            <input name="password" type="password" id="form3Example4"
-                                class="form-control form-control-lg" placeholder="Masukkan Password" required />
+                            <input name="password" type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Masukkan Password" required />
                         </div>
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example3">Nomer HP</label>
-                            <input name="phone" type="number" id="form3Example3" class="form-control form-control-lg"
-                                placeholder="Masukkan Nomer HP" required />
+                            <input name="phone" type="number" id="form3Example3" class="form-control form-control-lg" placeholder="Masukkan Nomer HP" required />
                         </div>
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example3">Alamat Lengkap</label>
-                            <input name="alamat" type="text" id="form3Example3" class="form-control form-control-lg"
-                                placeholder="Masukkan Alamat Lengkap anda" required />
+                            <input name="alamat" type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Masukkan Alamat Lengkap anda" required />
                         </div>
 
                         <div class="form-outline mb-3">
                             <label class="form-label" for="form3Example4">Jenis Kelamin : </label><br>
                             <div class="form-check form-check-inline mb-0 me-4">
-                                <input class="form-check-input" type="radio" name="gender" id="maleGender"
-                                    value="male" />
+                                <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
                                 <label class="form-check-label" name="gender" for="male">Laki-Laki</label>
                             </div>
                             <div class="form-check form-check-inline mb-0 me-4">
-                                <input class="form-check-input" type="radio" name="gender" id="femaleGender"
-                                    value="female" />
+                                <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female" />
                                 <label class="form-check-label" name="gender" for="female">Perempuan</label>
                             </div>
                         </div>
                         <div class="form-outline mb-3">
                             <label class="form-label sm" for="form3Example4">KTP(Kartu Tanda Penduduk) :</label>
-                            <input name="ktp" type="file" id="form3Example4" class="form-control form-control-sm"
-                                placeholder="Enter KTP" required />
+                            <input name="ktp" type="file" id="form3Example4" class="form-control form-control-sm" placeholder="Enter KTP" required />
                         </div>
                         <div class="form-outline mb-3">
                             <label class="form-label" for="form3Example4">SIM(Surat Izin Mengemudi) :</label>
-                            <input name="sim" type="file" id="form3Example4"
-                                class="form-control form-control-sm" placeholder="Enter SIM" required />
+                            <input name="sim" type="file" id="form3Example4" class="form-control form-control-sm" placeholder="Enter SIM" required />
                         </div>
 
 
                         <div class="text-center text-lg-start mt-4 mb-4 pt-2">
-                            <button type="submit" class=" btn btn-primary btn-md"
-                                style="padding-left: 2.5rem; padding-right: 2.5rem">Daftar</button>
+                            <button type="submit" class=" btn btn-primary btn-md" style="padding-left: 2.5rem; padding-right: 2.5rem">Daftar</button>
                         </div>
                     </form>
                 </div>
@@ -90,7 +79,6 @@
     <script src="frontend/libraries/retina/retina.js"></script>
     <script src="frontend/libraries/jquery/jquery-3.4.1.min.js"></script>
     <script src="frontend/libraries/bootstrap/js/bootstrap.js"></script>
-    @include('sweetalert::alert')
 </body>
 
 </html>

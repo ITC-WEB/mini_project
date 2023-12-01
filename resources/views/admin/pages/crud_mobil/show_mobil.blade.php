@@ -12,7 +12,7 @@ Show
                     <div class="py-5">
                         <div class="row justify-content-center">
                             <div class="card" style="width: 50rem;">
-                                <img src="{{asset('storage/public/mobil/'.$detail_mobil->gambar)}}" class="card-img-top" alt="...">
+                                <img src="{{asset('storage/'.$detail_mobil->gambar)}}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5>Name Mobil: <span class="font-weight-bold">{{ $detail_mobil->name }}</span></h5>
                                     <hr>

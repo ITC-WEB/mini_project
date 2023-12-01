@@ -24,7 +24,7 @@ Detail
                         <p>{{ $mobil->merek->name }}</p>
                         <div class="gallery">
                             <div class="xzoom-container">
-                                <img class="xzoom" id="xzoom-default " src="{{asset('storage/public/mobil/'.$mobil->gambar)}} " xoriginal="{{asset('storage/mobil/'.$mobil->gambar)}} " />
+                                <img class="xzoom" id="xzoom-default " src="{{asset('storage/'.$mobil->gambar)}} " xoriginal="{{asset('storage/mobil/'.$mobil->gambar)}} " />
                                 <!-- <div class="xzoom-thumbs">
                                     <a href="frontend/images/details-1.jpg "><img class="xzoom-gallery" width="128 " src="frontend/images/details-1.jpg " xpreview="frontend/images/details-1.jpg " /></a>
                                     <a href="frontend/images/details-1.jpg "><img class="xzoom-gallery" width="128 " src="frontend/images/details-1.jpg " xpreview="frontend/images/details-1.jpg " /></a>

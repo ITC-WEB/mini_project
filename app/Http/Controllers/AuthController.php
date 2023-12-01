@@ -15,7 +15,7 @@ class AuthController extends Controller
     //
     public function index()
     {
-        
+
         return view('login');
     }
     public function login(Request $request)
@@ -32,7 +32,7 @@ class AuthController extends Controller
             } elseif (Auth::user()->role_id == '2') {
                 return redirect()->intended('/auth');
             } else {
-                return redirect()->intended('/')->with('success','Berhasil Login');
+                return redirect()->intended('/')->with('success', 'Berhasil Login');
             }
         }
 
@@ -63,10 +63,10 @@ class AuthController extends Controller
         if (!$request["role_id"]) {
             $request["role_id"] = 3;
         }
-        $ktp = $request->file('ktp')->store('public/ktp');
-        $sim = $request->file('sim')->store('public/sim');
-        $ktp = str_replace('public/ktp/', '', $ktp);
-        $sim = str_replace('public/sim/', '', $sim);
+        $ktp = $request->file('ktp')->store('ktp');
+        $sim = $request->file('sim')->store('sim');
+        // $ktp = str_replace('public/ktp/', '', $ktp);
+        // $sim = str_replace('public/sim/', '', $sim);
         $data_user = Data::create([
             'id' => $request->id,
             'sim' => $sim,

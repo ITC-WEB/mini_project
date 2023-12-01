@@ -24,7 +24,7 @@
         </div>
         <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
     </form>
-    <a href="/user">Back To Home</a>
+    <a href="/">Back To Home</a>
 </body>
 
 </html>

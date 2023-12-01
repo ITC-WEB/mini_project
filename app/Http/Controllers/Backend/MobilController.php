@@ -43,10 +43,14 @@ class MobilController extends Controller
             'harga_sewa' => 'required',
             'gambar' => 'mimes:jpg,png,jpeg|image|max:2048',
         ]);
-        $extensi = $request->file('gambar')->getClientOriginalExtension();
-        $newName = $request->name . '-' . now()->timestamp . "." . $extensi;
-        $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
-        $gambar = str_replace('public/mobil/', '', $gambar);
+
+        if ($request->hasFile('gambar')) {
+            $gambar = $request->file('gambar')->store('mobil');
+        }
+        // $extensi = $request->file('gambar')->getClientOriginalExtension();
+        // $newName = $request->name . '-' . now()->timestamp . "." . $extensi;
+        // $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
+        // $gambar = str_replace('public/mobil/', '', $gambar);
 
         $selectedOptions = $request->input('fitur_tersedia');
         $selectedArray = json_encode($selectedOptions);
@@ -55,7 +59,7 @@ class MobilController extends Controller
             $request["status"] = '1';
         }
 
-        Mobil::create([
+        $addMobil = Mobil::create([
             'noplat' => $request->noplat,
             'name' => $request->name,
             'merek_id' => $request->merek_id,
@@ -71,16 +75,20 @@ class MobilController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        Session::flash('success', 'Data berhasil ditambahkan');
+        if ($addMobil) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Berhasil Menambahkan Data');
+        }
+
 
         // return response()->json($request);
-        return redirect('/data-mobil')->with('success', 'Berhasil Menambahkan Data');
+        return redirect('/data-mobil');
     }
 
     //edit mobil
-    public function edit_mobil(Request $request)
+    public function edit_mobil(Request $request, $id)
     {
-        $mobil = Mobil::find($request->id);
+        $mobil = Mobil::findOrFail($id);
         return view('admin.pages.crud_mobil.edit', compact('mobil'));
     }
 
@@ -100,25 +108,25 @@ class MobilController extends Controller
     }
     public function update_mobil(Request $request)
     {
-
-        if ($request->hasFile('gambar')) {
-            // Pengguna mengunggah gambar baru
-            $extensi = $request->file('gambar')->getClientOriginalExtension();
-            $newName = $request->name . '-' . now()->timestamp . "." . $extensi;
-            $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
-            $gambar = str_replace('public/mobil/', '', $gambar);
-            Storage::delete('public/mobil' . $request->oldPhoto);
-        } else {
-            $gambar['gambar'] = $request->oldPhoto;
-        }
-
+        // Pengguna mengunggah gambar baru
+        // $extensi = $request->file('gambar')->getClientOriginalExtension();
+        // $newName = $request->name . $extensi;
+        // $gambar = $request->file('gambar')->storeAs('public/mobil', $newName);
+        // $gambar = str_replace('mobil/', '', $gambar);
         if (!$request["status"]) {
             $request["status"] = '1';
         }
+
         $selectedOptions = $request->input('fitur_tersedia');
         $selectedArray = json_encode($selectedOptions);
+        $dataedit = Mobil::find($request->id);
 
-        $dataedit = Mobil::where('id', $request->id)->first();
+        if ($request->hasFile('gambar')) {
+            if (Storage::exists($dataedit->gambar)) {
+                Storage::delete($dataedit->gambar);
+            }
+            $gambar = $request->file('gambar')->store('mobil');
+        }
         $dataedit->noplat = $request->noplat;
         $dataedit->name = $request->name;
         $dataedit->merek_id = $request->merek_id;
@@ -133,8 +141,12 @@ class MobilController extends Controller
         $dataedit->status = $request->status;
         $dataedit->save();
 
-        // return response()->json($dataedit);
+        if ($dataedit) {
+            Session::flash('update', 'success');
+            Session::flash('message', 'Mobil Berhasil Di Update');
+        }
 
+        // return response()->json($dataedit);
         return redirect('/data-mobil');
     }
 
@@ -147,8 +159,12 @@ class MobilController extends Controller
     //delete mobile
     public function mobil_delete(Request $request)
     {
-        Mobil::where('id', $request->id)->delete();
-        Session::flash('success', 'Berhasil Hapus Data');
+        $data = Mobil::find($request->id)->delete();
+        if ($request->hasFile('gambar')) {
+            if (Storage::exists($data->gambar)) {
+                Storage::delete($data->gambar);
+            }
+        }
         return redirect('/data-mobil');
     }
 }

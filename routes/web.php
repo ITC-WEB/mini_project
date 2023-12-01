@@ -102,7 +102,7 @@ Route::post('/create-mobil', [MobilController::class, 'add_mobil']);
 
 //Edit Mobil
 Route::get('/edit-mobil/{id}', [MobilController::class, 'edit_mobil'])->name('edit-mobil');
-Route::post('/update-mobil', [MobilController::class, 'update_mobil'])->name('mobil.update');
+Route::put('/update-mobil', [MobilController::class, 'update_mobil'])->name('mobil.update');
 
 //Show Mobil
 Route::get('/show-mobil/{id}', [MobilController::class, 'show_mobil'])->name('show-mobil');

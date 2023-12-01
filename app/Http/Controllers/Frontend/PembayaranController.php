@@ -18,8 +18,7 @@ class PembayaranController extends Controller
 
     public function update_pembayaran(Request $request)
     {
-        $bayar = $request->file('bukti')->store('public/bukti');
-        $bayar = str_replace('public/bukti/', '', $bayar);
+        $bayar = $request->file('bukti')->store('bukti');
         $bukti_bayar = Bukti::create([
             'id' => $request->id,
             'bukti' => $bayar,
