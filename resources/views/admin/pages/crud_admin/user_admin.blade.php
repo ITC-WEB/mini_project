@@ -10,10 +10,21 @@ Data Admin
                 <div class="card-body">
                     <h4 class="card-title">Data Admin</h4>
                     <a href="/create" class="card-title btn btn-primary text-white" style="font-size: 15px;"> + Tambah Data</a>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
+                    @if (Session::has('status'))
+                    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                        {{ Session::get('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
+                    <div class="table-responsive pt-3">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>
+                                        No
+                                    </th>
                                     <th>
                                         Name
                                     </th>
@@ -21,10 +32,10 @@ Data Admin
                                         Email
                                     </th>
                                     <th>
-                                        Gender
+                                        Jenis Kelamin
                                     </th>
                                     <th>
-                                        Phone
+                                        Nomor Hp
                                     </th>
                                     <th class="text-truncate" style="max-width: 200px;white-space: normal;">
                                         Alamat
@@ -38,6 +49,9 @@ Data Admin
                                 @foreach ($data as $item )
                                 <tr>
                                     <td>
+                                        {{ $loop->iteration }}
+                                    </td>
+                                    <td>
                                         {{ $item->name }}
                                     </td>
                                     <td>
@@ -49,15 +63,15 @@ Data Admin
                                     <td>
                                         {{ $item->phone }}
                                     </td>
-                                    <td>
+                                    <td class="text-truncate" style="max-width: 200px;white-space: normal;">
                                         {{ $item->alamat }}
                                     </td>
 
                                     <td>
-                                        <label class="badge badge-success">Active</label>
+                                        <label class="badge badge-primary"><i class="bi bi-pencil-square"></i></label>
                                         <form action="{{ route('delete', $item->id) }}" method="POST" id="delete-form-{{ $item->id }}" class="d-inline">
                                             @csrf
-                                            <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $item->id }}">Delete</button>
+                                            <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $item->id }}"><i class="bi bi-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -69,5 +83,8 @@ Data Admin
             </div>
         </div>
     </div>
-    @include('admin.includes.sweetalert')
     @endsection
+
+    @push('addon-style')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    @endpush

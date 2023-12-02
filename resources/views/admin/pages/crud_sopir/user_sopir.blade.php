@@ -10,10 +10,13 @@ Data Sopir
                 <div class="card-body">
                     <h4 class="card-title">Data Sopir</h4>
                     <a href="/create-sopir" class="card-title btn btn-primary text-white" style="font-size: 15px;"> + Tambah Data</a>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
+                    <div class="table-responsive pt-3">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>
+                                        No
+                                    </th>
                                     <th>
                                         Name
                                     </th>
@@ -38,6 +41,9 @@ Data Sopir
                                 @foreach ($data as $item )
                                 <tr>
                                     <td>
+                                        {{ $loop->iteration }}
+                                    </td>
+                                    <td>
                                         {{ $item->name }}
                                     </td>
                                     <td>
@@ -53,11 +59,10 @@ Data Sopir
                                         {{ $item->alamat }}
                                     </td>
                                     <td>
-                                        <label class="badge badge-success">Active</label>
+                                        <label class="badge badge-danger"><i class="bi bi-trash"></i></label>
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>
@@ -65,3 +70,7 @@ Data Sopir
             </div>
         </div>
         @endsection
+
+        @push('addon-style')
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        @endpush

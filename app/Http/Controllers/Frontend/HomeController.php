@@ -12,10 +12,6 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    public function homepage()
-    {
-        return view('frontend.homepage');
-    }
     public function index()
     {
         $jmlUser = User::where('role_id', '3')->count();
@@ -49,10 +45,5 @@ class HomeController extends Controller
     public function eror()
     {
         return view('frontend.pages.eror');
-    }
-
-    public function statuscekout()
-    {
-        return view('frontend.pages.statuscekout');
     }
 }

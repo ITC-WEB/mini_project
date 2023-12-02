@@ -9,10 +9,13 @@ Data Customer
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Data Customer</h4>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
+                    <div class="table-responsive pt-3">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>
+                                        No
+                                    </th>
                                     <th>
                                         Name
                                     </th>
@@ -37,6 +40,9 @@ Data Customer
                                 @foreach ($data as $item )
                                 <tr>
                                     <td>
+                                        {{ $loop->iteration }}
+                                    </td>
+                                    <td>
                                         {{ $item->name }}
                                     </td>
                                     <td>
@@ -53,21 +59,22 @@ Data Customer
                                         {{ $item->alamat }}
                                     </td>
                                     <td>
-                                        <label class="badge badge-success">Active</label>
-                                        <a href="{{ route('show',['id' => $item->id]) }}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="icon-eye menu-icon"></i></button></a>
+                                        <a href="{{ route('show',['id' => $item->id]) }}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>
                                         <form action="{{ route('delete-customer', $item->id) }}" method="POST" id="delete-form-{{ $item->id }}" class="d-inline">
                                             @csrf
-                                            <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $item->id }}">Delete</button>
+                                            <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $item->id }}"><i class="bi bi-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-        @include('admin.includes.sweetalert')
         @endsection
+
+        @push('addon-style')
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        @endpush

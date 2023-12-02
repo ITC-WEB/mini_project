@@ -10,17 +10,24 @@
 
                 // Tampilkan SweetAlert konfirmasi
                 Swal.fire({
-                    title: 'Yakin Ingin Menghapus?',
-                    text: 'Data Yang Dihapus tidak dapat di kembalikan!',
+                    title: 'Apakah Anda Ingin Menghapus Data Ini?',
+                    text: 'Data Yang Terhapus Akan Menghilang',
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: 'Yes, delete !'
                 }).then((result) => {
+
                     // Jika user mengkonfirmasi, kirim form delete
                     if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Anda Berhasil",
+                            icon: "success"
+                        });
                         document.getElementById('delete-form-' + itemId).submit();
+
                     }
                 });
             });

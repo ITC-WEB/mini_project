@@ -53,7 +53,7 @@ class AdminController extends Controller
         }
 
         // return response()->json($request->all());
-        User::insert([
+        $addAdmin = User::insert([
             'name' => $request->name,
             'email' => $request->email,
             'role_id' => $request->role_id,
@@ -64,7 +64,11 @@ class AdminController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        return redirect('/add-admin')->with('success', 'Data berhasil diubah');
+        if ($addAdmin) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Berhasil Menambahkan Data');
+        }
+        return redirect('/add-admin');
     }
 
     //Profile Super Admin & Admin

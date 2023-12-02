@@ -1,9 +1,6 @@
 @extends('admin.layout.app')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 @section('title')
-
-Data Peminjam
+Data Peminjaman
 @endsection
 
 @section('content')
@@ -78,13 +75,12 @@ Data Peminjam
                                         @else
                                         <a href="{{ route('edit',['id' => $pinjams->id])}}"><button type="submit" style="border: none;" class="badge badge-danger">{{ $pinjams->status }}</button></a>
                                         @endif
-                                        <a href="{{ route('bukti',['id' => $pinjams->id]) }}"><button type="submit" style="border: none;" class="badge badge-primary">Bukti Transfer</button></a>
+                                        <a href="{{ route('bukti',['id' => $pinjams->id]) }}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
