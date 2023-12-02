@@ -1,6 +1,6 @@
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href=" ">
+        <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{asset('frontend/images/logo itc.png')}}" alt="" />
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navb">
             <ul class="navbar-nav ml-auto mr-3">
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href=" ">Beranda</a>
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{url('/')}}">Beranda</a>
                 </li>
                 <li class="nav-item mx-md-2">
                     <a class="nav-link {{ request()->is('tentangkami') ? 'active' : '' }}" href="{{ url('/tentangkami') }}">Tentang Kami</a>
@@ -42,7 +42,7 @@
             @else
             <form class="form-inline my-2 my-lg-0 d-none d-md-block">
                 <a href="{{ url('/logout') }}" class="btn btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">
-                    <img src="{{asset('frontend/images/avatar-4.png')}}" alt="">
+                    <img src="{{asset('frontend/images/avatar-0.png')}}" style="width:50px;" alt="">
                 </a>
             </form>
             @endif

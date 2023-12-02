@@ -12,7 +12,7 @@ Katalog
     <p class="mt-3 ml-5">
         Kendaraan Teraman dan Harga Terbaik
     </p>
-    <a href="#" class="btn btn-get-started px-4 mt-4 ml-5"> Get Start </a>
+    <a href="{{url('/log')}}" class="btn btn-get-started px-4 mt-4 ml-5"> Get Start </a>
 </header>
 <!-- Hero -->
 <!--conten catalog -->

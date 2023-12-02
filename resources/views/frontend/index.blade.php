@@ -12,7 +12,7 @@ Halaman Utama
     <p class="mt-3 ml-5">
         Kendaraan Teraman dan Harga Terbaik
     </p>
-    <a href="index.html" class="btn btn-get-started px-4 mt-4 ml-5"> Get Start </a>
+    <a href="{{url('/log')}}" class="btn btn-get-started px-4 mt-4 ml-5"> Get Start </a>
 </header>
 <!-- Hero -->
 
@@ -33,7 +33,7 @@ Halaman Utama
                 <p>customer</p>
             </div>
             <div class="col-3 col-md-2 stats-detail">
-                <h2>10</h2>
+                <h2>{{ $peminjam }}</h2>
                 <p>Partners</p>
             </div>
         </section>
@@ -55,18 +55,17 @@ Halaman Utama
     <section class="section-popular-content" id="popularContent">
         <div class="container">
             <div class="section-popular-travel row justify-content-center">
+                @foreach ($mobil as $mobils)
                 <div class="col-sm-6 col-md-4 col-lg-4">
-                    @foreach ($mobil as $mobils)
-                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('frontend/images/populer1.png')">
-                        <div class="travel-country">Kabupaten Malang</div>
-                        <div class="travel-location">{{ $mobils->name }}</div>
+                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{ asset('storage/' . $mobils->gambar) }}');">
+                        <div class="travel-country bg-dark">Kabupaten Malang</div>
+                        <div class="travel-location bg-dark">{{ $mobils->name }}</div>
                         <div class="travel-button mt-auto">
                             <a href="{{ route('detail', ['id' => $mobils->id]) }}" class="btn btn-travel-details px-4"> View Details </a>
                         </div>
                     </div>
-                    @endforeach
-
                 </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -283,7 +282,7 @@ Halaman Utama
                     <h1 class="cta-text1 mt-4 mb-4 ml-5">
                         Intermedia Trans
                     </h1>
-                    <a href="katalog.html" class="btncta btn-get-started px-4 mt-5 ml-5 p-2 text-decoration-none btnpesan"> Pesan Sekarang
+                    <a href="{{ url('/katalog') }} " class="btncta btn-get-started px-4 mt-5 ml-5 p-2 text-decoration-none btnpesan"> Pesan Sekarang
                     </a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 mt-5">
@@ -294,7 +293,5 @@ Halaman Utama
     </section>
 
     <!-- end cta -->
-
-    @include('sweetalert::alert')
 </main>
 @endsection

@@ -6,8 +6,8 @@
                     <div class="col-12">
                         <div class="row ">
                             <div class="col-12 col-lg-2">
-                                <a class="footer-brand" href=" >
-                                    <img src=" frontend/images/logofooter.png" alt="" />
+                                <a class="footer-brand" href="{{url('/')}}">
+                                    <img src="{{asset('frontend/images/logofooter.png')}} ">
                                 </a>
                                 <div class="social-icons mt-3 ">
                                     <a href="#" class="social-icon mr-2">
@@ -26,19 +26,19 @@
                                 <h5 class="footertxt ">BERANDA</h5>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href=" " style="text-decoration: none;">Mobil Populer</a>
+                                        <a href="{{url('/')}}" style="text-decoration: none;">Mobil Populer</a>
                                     </li>
                                     <li>
-                                        <a href=" " style="text-decoration: none;">Our Network</a>
+                                        <a href="{{url('/')}}" style="text-decoration: none;">Our Network</a>
                                     </li>
                                     <li>
-                                        <a href=" " style="text-decoration: none;">Testimonial</a>
+                                        <a href="{{url('/')}}" style="text-decoration: none;">Testimonial</a>
                                     </li>
                                     <li>
-                                        <a href=" " style="text-decoration: none;">FAQ</a>
+                                        <a href="{{url('/')}}" style="text-decoration: none;">FAQ</a>
                                     </li>
                                     <li>
-                                        <a href=" " style="text-decoration: none;">CTA Us</a>
+                                        <a href="{{url('/')}}" style="text-decoration: none;">CTA Us</a>
                                     </li>
                                 </ul>
 

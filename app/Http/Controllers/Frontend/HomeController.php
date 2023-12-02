@@ -17,9 +17,12 @@ class HomeController extends Controller
         $jmlUser = User::where('role_id', '3')->count();
         $jmlMobil = Mobil::count();
         $jmlSopir = Sopir::count();
-        $mobil = Mobil::all();
+        $peminjam = Peminjaman::count();
+        $mobil = Mobil::orderBy('name', 'desc')
+            ->take(3)
+            ->get();
 
-        return view('frontend.index', compact('mobil', 'jmlUser', 'jmlMobil', 'jmlSopir'));
+        return view('frontend.index', compact('mobil', 'jmlUser', 'jmlMobil', 'jmlSopir', 'peminjam'));
     }
 
     public function tentangKami()
