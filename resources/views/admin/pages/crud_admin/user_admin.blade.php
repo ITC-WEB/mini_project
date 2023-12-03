@@ -68,7 +68,7 @@ Data Admin
                                     </td>
 
                                     <td>
-                                        <label class="badge badge-primary"><i class="bi bi-pencil-square"></i></label>
+                                        <a href="{{route('editadmin',['id' => $item->id])}}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="bi bi-pencil-square"></i></button></a>
                                         <form action="{{ route('delete', $item->id) }}" method="POST" id="delete-form-{{ $item->id }}" class="d-inline">
                                             @csrf
                                             <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $item->id }}"><i class="bi bi-trash"></i></button>

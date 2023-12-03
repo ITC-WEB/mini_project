@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Login</title>
   <link rel="stylesheet" href="frontend/libraries/bootstrap/css/bootstrap.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="frontend/styles/main.css" />
   <link href="https://fonts.googleapis.com/css?family=Assistant:200,400,700&&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet" />
@@ -25,6 +26,14 @@
             <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mt-5">Welcome to</div>
             <div class="textlog d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mb-4">Intermedia Trans !</div>
             <!-- Email input -->
+            @if (Session::has('errors'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Login Gagal!!!</strong> Masukkan Email dan Password dengan Benar.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            @endif
             <div class="form-outline mb-4">
               <input name="email" type="email" id="form3Example3" class="form-control form-control-lg custom-input" placeholder="email address" required />
             </div>
@@ -51,6 +60,7 @@
   <script src="frontend/libraries/retina/retina.js"></script>
   <script src="frontend/libraries/jquery/jquery-3.4.1.min.js"></script>
   <script src="frontend/libraries/bootstrap/js/bootstrap.js"></script>
+
 </body>
 
 </html>

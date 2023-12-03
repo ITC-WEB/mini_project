@@ -10,7 +10,7 @@ Edit Data
                 <div class="card-body">
                     <form class="forms-sample" method="POST" action="{{ route('mobil.update', ['id' => $mobil->id]) }}" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
+
                         <h3 class="mb-3">Edit Mobil</h3>
                         <hr>
 

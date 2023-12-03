@@ -10,6 +10,14 @@ Data Sopir
                 <div class="card-body">
                     <h4 class="card-title">Data Sopir</h4>
                     <a href="/create-sopir" class="card-title btn btn-primary text-white" style="font-size: 15px;"> + Tambah Data</a>
+                    @if (Session::has('status'))
+                    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                        {{ Session::get('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
                     <div class="table-responsive pt-3">
                         <table class="table table-bordered">
                             <thead>

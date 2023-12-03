@@ -48,6 +48,7 @@ statuscekout
         </div>
         <form action="/update-pembayaran" method="post" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
             <div class="input mt-4 mx-auto">
                 <label for="inputSIM" class="font-weight-light">*Silahkan Unggah Bukti Pembayaran</label>
                 <div class="custom-file">
@@ -60,7 +61,7 @@ statuscekout
                     <label class="form-check-label" for="exampleCheck1">Saya sudah melakukan Pembayaran dan mengunggah Bukti Pembayaran</label>
                 </div>
         </form>
-        <a href="index.html" class="btn btnstatus p-2  mt-4 ml-5 mx-auto"> Hubungi Kami!</a>
+        <a href="{{ url('') }}" class="btn btnstatus p-2  mt-4 ml-5 mx-auto"> Hubungi Kami!</a>
     </div>
     </div>
     </div>

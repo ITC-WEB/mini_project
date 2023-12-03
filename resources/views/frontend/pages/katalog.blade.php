@@ -145,6 +145,32 @@ Katalog
             <!-- Added margin-bottom -->
             <div class="shadow  p-4 cardku">
                 <!-- Added padding -->
+
+                @if ($mobils->status != '1')
+                <div class="item">
+                    <a href="">
+                        <img src="{{asset('storage/'.$mobils->gambar) }}" alt="" class="img-fluid">
+                    </a>
+                    <div class="info">
+                        <a href="{{ route('detail', ['id' => $mobils->id]) }}">
+                            <h3>{{ $mobils->name }}</h3>
+                            <div class="descripsi">
+                                <div class="row justify-content-between">
+                                    <div class="col-6 des-a">Status </div>
+                                    <div class="col-4 des-b"><i class="fas fa-user  icons1"></i> : {{$mobils->kapasitas_orang}}</div>
+                                </div>
+                            </div>
+                            <div class="descripsi1">
+                                <div class="row justify-content-between">
+                                    <div class="col-6 des-a1">SEDANG DI SEWA</div>
+                                    <div class="col-4 des-b"><i class="fas fa-suitcase  icons2"></i> : {{ $mobils->type }}</div>
+                                </div>
+                            </div>
+                            <!-- Corrected typo -->
+                        </a>
+                    </div>
+                </div>
+                @else
                 <div class="item">
                     <a href="{{ route('detail', ['id' => $mobils->id]) }}" class="">
                         <img src="{{asset('storage/'.$mobils->gambar) }}" alt="" class="img-fluid">
@@ -168,6 +194,8 @@ Katalog
                         </a>
                     </div>
                 </div>
+                @endif
+
             </div>
         </div>
         @endforeach

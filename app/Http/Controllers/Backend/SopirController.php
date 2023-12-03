@@ -34,7 +34,7 @@ class SopirController extends Controller
         ]);
 
         // return response()->json($request->all());
-        Sopir::insert([
+        $addSupir = Sopir::insert([
             'name' => $request->name,
             'phone' => $request->phone,
             'gender' => $request->gender,
@@ -43,9 +43,10 @@ class SopirController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-
-        Session::flash('success', 'Data berhasil ditambahkan');
-
-        return redirect('/add-sopir')->with('success', 'Berhasil Menambahkan Data');
+        if ($addSupir) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Berhasil Menambahkan Data');
+        }
+        return redirect('/add-sopir');
     }
 }

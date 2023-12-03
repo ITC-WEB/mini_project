@@ -75,7 +75,7 @@ Data Peminjaman
                                         @else
                                         <a href="{{ route('edit',['id' => $pinjams->id])}}"><button type="submit" style="border: none;" class="badge badge-danger">{{ $pinjams->status }}</button></a>
                                         @endif
-                                        <a href="{{ route('bukti',['id' => $pinjams->id]) }}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>
+                                        <a href="{{ route('detail_pinjam',['id' => $pinjams->id]) }}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>
                                     </td>
                                 </tr>
                                 @endforeach

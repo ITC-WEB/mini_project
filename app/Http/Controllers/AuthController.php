@@ -30,12 +30,11 @@ class AuthController extends Controller
             if (Auth::user()->role_id == '1') {
                 return redirect()->intended('/auth')->with('success', 'Berhasil Login');
             } elseif (Auth::user()->role_id == '2') {
-                return redirect()->intended('/auth');
+                return redirect()->intended('/auth')->with('success', 'Berhasil Login');
             } else {
                 return redirect()->intended('/')->with('success', 'Berhasil Login');
             }
         }
-
         return redirect('/log')->with('errors', 'Data Belum Terdaftar');
     }
 

@@ -21,9 +21,12 @@ Profile
                                         @endif
                                         <h5 class="my-3">{{ Auth::user()->name }}</h5>
                                         <p class="text-muted mb-1">{{ Auth::user()->role->name }}</p>
+                                        @if (Auth::user()->role_id == '1')
                                         <div class="d-flex justify-content-center mb-2">
-                                            <a href="/edit"><button type="button" class="btn btn-primary">Edit</button></a>
+                                            <a href="/edit"><button type="button" class="btn" style="background-color: #FD5D3B;color:#fff">EDIT</button></a>
                                         </div>
+                                        @endif
+
                                     </div>
                                 </div>
                             </div>

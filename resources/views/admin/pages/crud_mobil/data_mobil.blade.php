@@ -86,8 +86,8 @@ Data Mobil
                                             {{ $mobils->status ? 'tersedia' : 'disewa' }}
                                         </a>
                                     </td>
-                                    <td>
-                                        <a href="{{ route('edit-mobil',['id' => $mobils->id])}}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="bi bi-pencil-square"></i></button></a>
+                                    <td><a href="{{ route('edit-mobil',['id' => $mobils->id])}}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="bi bi-pencil-square"></i></button></a>
+
                                         <a href="{{ route('show-mobil',['id' => $mobils->id])}}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>
                                         <form action="{{ route('delete-mobil', $mobils->id) }}" method="POST" id="delete-form-{{ $mobils->id }}" class="d-inline">
                                             @csrf

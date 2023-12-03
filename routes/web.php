@@ -76,6 +76,9 @@ Route::get('/profile', [AdminController::class, 'profile']);
 Route::get('/create', [AdminController::class, 'create_admin'])->middleware(['auth', 'admin']);
 Route::post('/create', [AdminController::class, 'add']);
 
+Route::get('/edit-admin/{id}', [AdminController::class, 'edit_admin'])->name('editadmin');
+Route::post('/updating', [AdminController::class, 'updating'])->name('updating');
+
 Route::get('/edit', [AdminController::class, 'change']);
 Route::post('/update-admin', [AdminController::class, 'update_admin']);
 
@@ -127,5 +130,8 @@ Route::get('/data-pinjam', [PinjamController::class, 'index']);
 Route::get('/pinjam/{id}', [PinjamController::class, 'edit_peminjaman'])->name('edit');
 Route::post('/update', [PinjamController::class, 'update_peminjaman'])->name('update');
 
+
+//show
+Route::get('/detail_pinjam/{id}', [PinjamController::class, 'detail_pinjam'])->name('detail_pinjam');
 //bukti_transfer
 Route::get('/bukti/{id}', [PinjamController::class, 'bukti_bayar'])->name('bukti');

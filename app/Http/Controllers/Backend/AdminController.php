@@ -14,13 +14,13 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $jmlUser = User::where('role_id', '3')->count();
-        $jmlAdmin = User::where('role_id', '2')->count();
-        $jmlMobil = Mobil::count();
+        $disewa = Peminjaman::where('status', 'sedang disewa')->count();
+        $validasi = Peminjaman::where('status', 'belumbayar')->count();
+        $selesai = Peminjaman::where('status', 'selesai')->count();
         $boking = Peminjaman::count();
 
 
-        return view('admin.index', compact('jmlUser', 'jmlMobil', 'jmlAdmin', 'boking'));
+        return view('admin.index', compact('disewa', 'validasi', 'selesai', 'boking'));
     }
 
     // *********************CRUD ADMIN********************************
@@ -71,6 +71,26 @@ class AdminController extends Controller
         return redirect('/add-admin');
     }
 
+    //edit admin di super admin
+    public function edit_admin(Request $request, $id)
+    {
+        $item = User::find($request->id);
+        return view('admin.pages.crud_admin.edit_admin', compact('item'));
+    }
+
+    public function updating(Request $request)
+    {
+        $editadmin = User::find($request->id);
+        $editadmin->name = $request->name;
+        $editadmin->email = $request->email;
+        $editadmin->gender = $request->gender;
+        $editadmin->phone = $request->phone;
+        $editadmin->alamat = $request->alamat;
+        $editadmin->save();
+
+        return redirect('/add-admin');
+    }
+
     //Profile Super Admin & Admin
     public function profile()
     {
@@ -78,7 +98,7 @@ class AdminController extends Controller
     }
 
     //Edit Super Admin & Admin
-    public function change(Request $request)
+    public function change()
     {
         return view('admin.pages.crud_admin.edit_profile');
     }
@@ -93,10 +113,10 @@ class AdminController extends Controller
         $dataedit->alamat = $request->alamat;
         $dataedit->save();
 
-        Session::flash('success', 'Berhasil Mengubah Data');
-
         return redirect('/profile');
     }
+
+
 
     public function delete(Request $request)
     {

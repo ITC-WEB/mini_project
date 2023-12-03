@@ -29,6 +29,12 @@ class PinjamController extends Controller
         return redirect('/data-pinjam');
     }
 
+    public function detail_pinjam(Request $request)
+    {
+        $dataPinjam = Peminjaman::find($request->id);
+        return view('admin.pages.crud_peminjaman.detail_pinjam', compact('dataPinjam'));
+    }
+
     public function bukti_bayar(Request $request)
     {
         $bukti = Peminjaman::find($request->id);

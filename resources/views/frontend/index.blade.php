@@ -56,6 +56,7 @@ Halaman Utama
         <div class="container">
             <div class="section-popular-travel row justify-content-center">
                 @foreach ($mobil as $mobils)
+                @if ($mobils->status != 0)
                 <div class="col-sm-6 col-md-4 col-lg-4">
                     <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{ asset('storage/' . $mobils->gambar) }}');">
                         <div class="travel-country bg-dark">Kabupaten Malang</div>
@@ -65,6 +66,8 @@ Halaman Utama
                         </div>
                     </div>
                 </div>
+                @endif
+
                 @endforeach
             </div>
         </div>
