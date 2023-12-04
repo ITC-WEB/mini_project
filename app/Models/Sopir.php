@@ -15,6 +15,8 @@ class Sopir extends Model
         'gender',
         'usia',
         'alamat',
+        'ktp',
+        'sim'
     ];
 
     public function peminjaman()

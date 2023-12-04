@@ -13,8 +13,7 @@ use App\Http\Controllers\Frontend\KatalogController;
 use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\PembayaranController;
 use App\Http\Controllers\Frontend\CheckoutController;
-
-
+use App\Models\Sopir;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +99,13 @@ Route::get('/add-sopir', [SopirController::class, 'usersopir'])->middleware(['au
 //Crud Sopir
 Route::get('/create-sopir', [SopirController::class, 'create_sopir'])->middleware(['auth', 'admin']);
 Route::post('/create-sopir', [SopirController::class, 'add_sopir']);
+
+// Delete Sopir
+Route::post('/delete-sopir/{id}', [SopirController::class, 'sopir_delete'])->name('delete-sopir');
+
+//  Data Sopir
+Route::get('/data-sopir/{id}', [SopirController::class, 'detail_sopir'])->name('data-sopir');
+
 
 //*************************Mobil */
 // Data Mobil

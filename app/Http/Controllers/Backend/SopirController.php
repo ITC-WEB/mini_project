@@ -43,10 +43,30 @@ class SopirController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
         if ($addSupir) {
             Session::flash('status', 'success');
             Session::flash('message', 'Berhasil Menambahkan Data');
         }
         return redirect('/add-sopir');
+
+        
     }
+
+    public function edit_sopir(Request $request, $id)
+    {
+        $sopir = Sopir::findOrFail($id);
+        return view('admin.pages.crud_sopir.edit_sopir', compact('sopir'));
+    }
+    public function detail_sopir(Request $request)
+    {
+        $dataSopir = Sopir::find($request->id);
+        return view('admin.pages.crud_sopir.data_sopir', compact('dataSopir'));
+    }
+    public function sopir_delete(Request $request)
+    {
+        Sopir::where('id', $request->id)->delete();
+        return redirect('/add-sopir');
+    }
+
 }
