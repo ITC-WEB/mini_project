@@ -83,9 +83,16 @@ Detail Peminjam
                                             <div class="col-sm-12">
                                                 <p class="mb-0">Bukti Pembayaran</p>
                                             </div>
+                                            @if ($dataPinjam->bukti_id != NULL)
                                             <div class="col-sm-12 mx-4"><br>
                                                 <a href="{{url('storage/'.$dataPinjam->bukti->bukti)}}" class="mb-0 text-primary"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 4rem;"></i></a>
                                             </div>
+                                            @else
+                                            <div class="col-sm-12 mx-4"><br>
+                                                <a href="" class="mb-0 text-danger"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 4rem;"></i></a>
+                                            </div>
+                                            @endif
+
                                         </div>
 
                                     </div>
