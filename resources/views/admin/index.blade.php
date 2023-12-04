@@ -13,8 +13,8 @@ Admin
             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card tale-bg">
                     <div class="card-people mt-auto">
-                        <img src="{{ asset('admin/images/dashboard/bg-admin.svg') }}" alt="people">
-                        <div class="weather-info font-weight-bold text-white bg-dark">
+                        <img src="{{ asset('admin/images/dashboard/poeple-bg.svg') }}" height="200px" alt="people">
+                        <div class="weather-info font-weight-bold text-dark">
                             <div class="d-flex">
                                 <div>
                                     <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
@@ -66,7 +66,7 @@ Admin
                             <div class="card-body">
                                 <a href="/data-pinjam" style="color:#ffff;text-decoration:none;">
                                     <p class="mb-4">Sewa Selesai</p>
-                                    <p class="fs-30 mb-2">{{ $boking }}</p>
+                                    <p class="fs-30 mb-2">{{ $selesai }}</p>
                                 </a>
                             </div>
 
