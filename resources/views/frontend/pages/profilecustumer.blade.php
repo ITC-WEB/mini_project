@@ -21,7 +21,7 @@ ProfileCustumer
                                         {{ Auth::user()->name }}
                                     </h5>
                                     <div class="mb-2">
-                                        <a href="/edit">
+                                        <a href="/editcustomer">
                                             <button type="button" class="btn" style="background-color: #FD5D3B;color:#fff">EDIT</button>
                                         </a>
                                     </div>
