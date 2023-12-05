@@ -14,7 +14,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $disewa = Peminjaman::where('status', 'sedang disewa')->count();
+        $disewa = Peminjaman::where('status', 'sedangdisewa')->count();
         $validasi = Peminjaman::where('status', 'belumbayar')->count();
         $selesai = Peminjaman::where('status', 'selesai')->count();
         $boking = Peminjaman::count();
