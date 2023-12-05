@@ -49,6 +49,7 @@ Route::get('/sukses', [FrontendController::class, 'sukses']);
 Route::get('/eror', [FrontendController::class, 'eror']);
 Route::get('/statuscekout', [FrontendController::class, 'statuscekout']);
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
+Route::get('/editcustomer', [FrontendController::class, 'editcustomer']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);
 // Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail')->middleware(['auth', 'customer']);

@@ -49,4 +49,9 @@ class HomeController extends Controller
     {
         return view('frontend.pages.eror');
     }
+
+    public function editcustomer()
+    {
+        return view('frontend.pages.editcustomer');
+    }
 }
