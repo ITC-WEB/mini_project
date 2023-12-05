@@ -19,6 +19,7 @@ Halaman Utama
 <!-- 3 Poluler  -->
 <main>
     <div class="container ">
+        @include('sweetalert::alert')
         <section class="section-stats row justify-content-center" id="stats">
             <div class="col-3 col-md-2 stats-detail">
                 <h2>{{ $jmlMobil }}</h2>

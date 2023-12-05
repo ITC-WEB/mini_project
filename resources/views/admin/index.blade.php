@@ -11,20 +11,15 @@ Admin
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
-                <div class="card tale-bg">
-                    <div class="card-people mt-auto">
-                        <img src="{{ asset('admin/images/dashboard/poeple-bg.svg') }}" height="200px" alt="people">
-                        <div class="weather-info font-weight-bold text-dark">
-                            <div class="d-flex">
-                                <div>
-                                    <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
-                                </div>
-                                <div class="ml-2">
-                                    <h4 class="location font-weight-normal">Bangalore</h4>
-                                    <h6 class="font-weight-normal">India</h6>
-                                </div>
+                <div class="card card-dark-blue">
+                    <div class="card-people  ">
+                        <div class="d-flex">
+                            <div class="mx-4 text-white">
+                                <h1 class="mb-4 font-weight-bold ">Intermedia <br>Trans</h1>
+                                <h2 class="font-weight-normal" id="tanggalContainer"> </h2>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -41,7 +36,7 @@ Admin
                         </div>
                     </div>
                     <div class="col-md-6 mb-4 stretch-card transparent">
-                        <div class="card card-dark-blue">
+                        <div class="card " style="background-color: #0094FE;">
                             <div class="card-body">
                                 <a href="/data-pinjam" style="color:#ffff;text-decoration:none;">
                                     <p class="mb-4">Butuh Validasi</p>
@@ -90,3 +85,22 @@ Admin
         </div>
     </div>
     @endsection
+
+    @push('addon-script')
+    <script>
+        // Membuat objek Date yang merepresentasikan tanggal hari ini
+        var hariIni = new Date();
+
+        // Mendapatkan informasi tahun, bulan, dan tanggal
+        var tahun = hariIni.getFullYear();
+        var bulan = hariIni.getMonth() + 1; // Ingat, bulan dimulai dari 0
+        var tanggal = hariIni.getDate();
+
+        // Format informasi tanggal
+        var tanggalFormatted = tanggal + "/" + bulan + "/" + tahun;
+
+        // Menampilkan informasi tanggal dalam elemen HTML
+        var elemenTanggal = document.getElementById("tanggalContainer");
+        elemenTanggal.innerHTML = "Hari ini: " + tanggalFormatted;
+    </script>
+    @endpush

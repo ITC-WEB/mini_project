@@ -16,6 +16,7 @@
 <body>
   <section class="vh-100">
     <div class="container-fluid h-custom">
+      @include('sweetalert::alert')
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-9 col-lg-6 col-xl-5">
           <img src="frontend/images/login2.png" class="img-fluid" alt="Sample image" />
@@ -43,7 +44,7 @@
               <input name="password" type="password" id="form3Example4" class="form-control form-control-lg custom-input" placeholder="Password" required />
             </div>
             <div class="form-group form-check mt-2">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
               <label class="form-check-label" for="exampleCheck1">Remember Me ! <a href="#" class="link-masuk2 ml-5 ">forgot password</a></label>
             </div>
 

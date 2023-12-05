@@ -17,6 +17,8 @@
     <!-- Style -->
     <link rel="stylesheet" href="{{asset('login/css/style.css')}}">
     <link rel=" stylesheet" href="{{asset('frontend/styles/main.css')}}" />
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 
     <title>Register ITC Trans</title>
 </head>
@@ -31,22 +33,23 @@
                         <h3 class="mb-2 mt-5 registra">Registration to</h3>
                         <h3 class="mb-5 registra2">Intermedia Trans</h3>
                         <div class="form-group last mb-5">
-                            <input type="text" name="name" class="form-control custom-input" placeholder="Nama" id="name">
+                            <input type="text" name="name" class="form-control custom-input" placeholder="Nama" id="name" required>
                         </div>
                         <div class="form-group last mb-5">
-                            <input type="email" name="email" class="form-control custom-input" placeholder="Alamat Email" id="email">
+                            <input type="email" name="email" class="form-control custom-input" placeholder="Alamat Email" id="email" required>
                         </div>
                         <div class="form-group last mb-5">
-                            <input type="password" name="password" class="form-control custom-input" placeholder="Kata Sandi" id="password">
+                            <input type="password" name="password" class="form-control custom-input" placeholder="Kata Sandi" id="password" required>
                         </div>
                         <div class="form-group last mb-5">
-                            <input type="number" name="phone" class="form-control custom-input " placeholder="Nomor Hp/WhatsApp" id="phone">
+                            <input type="number" name="phone" class="form-control custom-input " placeholder="Nomor Hp/WhatsApp" id="phone" required>
                         </div>
 
                     </div>
+
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="form-group last mt-5">
-                            <input type="text" name="alamat" class="form-control custom-input" placeholder="Alamat" id="alamat">
+                            <input type="text" name="alamat" class="form-control custom-input" placeholder="Alamat" id="alamat" required>
                         </div>
                         <div class=" mb-5 py-2">
                             <h6 class="mb-0 me-4">Jenis Kelamin </h6>
@@ -62,7 +65,7 @@
                             <div class="row">
                                 <div class="col md-6 mt-5">
                                     <label for="data_id">Unggah Kartu Tanda Penduduk (KTP)</label>
-                                    <input class="mt-3" type="file" name="ktp">
+                                    <input class="mt-3" type="file" name="ktp" required>
                                 </div>
                             </div>
                             <div class="row">
@@ -71,8 +74,8 @@
                                     <input class="mt-3" type="file" name="sim">
                                 </div>
                             </div>
-                            <a href="/" class="forgot-pass"></a>
-                            <input type="submit" class="btn butonlog btn-block btn-primary">
+                            <div class="g-recaptcha" data-sitekey="{{env('NOCAPTCHA_SITEKEY')}}" data-callback="recaptchaDataCallbackRegister" data-expired-callback="recaptchaExpireCallbackRegister" aria-required="true"></div>
+                            <input type="submit" class="btn butonlog btn-block btn-primary mt-4">
 
                             <p class="have-account mt-4"> have an account ? <a href="{{ url('/log') }}" class="link-masuk ">login</a></p>
 
