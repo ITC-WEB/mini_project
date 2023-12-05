@@ -49,17 +49,15 @@ class HomeController extends Controller
     {
         return view('frontend.pages.eror');
     }
-<<<<<<< HEAD
 
     public function editcustomer()
     {
         return view('frontend.pages.editcustomer');
     }
-}
-=======
+
+
     public function profilecustumer()
     {
         return view('frontend.pages.profilecustumer');
     }
 }
->>>>>>> 8878cc5d8e7cf08fca8162714f599a2d07355395
