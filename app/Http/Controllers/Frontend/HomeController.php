@@ -49,4 +49,8 @@ class HomeController extends Controller
     {
         return view('frontend.pages.eror');
     }
+    public function profilecustumer()
+    {
+        return view('frontend.pages.profilecustumer');
+    }
 }

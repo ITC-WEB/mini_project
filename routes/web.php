@@ -13,7 +13,7 @@ use App\Http\Controllers\Frontend\KatalogController;
 use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\PembayaranController;
 use App\Http\Controllers\Frontend\CheckoutController;
-use App\Http\Controllers\Frontend\ProfileCustumerController;
+
 
 
 
@@ -51,7 +51,7 @@ Route::get('/sukses', [FrontendController::class, 'sukses']);
 Route::get('/eror', [FrontendController::class, 'eror']);
 Route::get('/statuscekout', [FrontendController::class, 'statuscekout']);
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
-Route::get('/profilecustumer',[ProfileCustumerController::class, 'profilecustumer']);
+Route::get('/profilecustumer',[FrontendController::class, 'profilecustumer']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);
 // Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail')->middleware(['auth', 'customer']);

@@ -1,7 +1,7 @@
 @extends('frontend.layout.app')
 
 @section('title')
-Kontak
+ProfileCustumer
 @endsection
 
 @section('content')
@@ -12,19 +12,24 @@ Kontak
                 <div class="card-body">
                     <div class="py-5">
                         <div class="row ">
-                            <div class="col-lg-4 ">
-                                <div class="card-body">
-                                    <img src="{{asset('admin/images/faces/face23.jpg') }}" alt="avatar" class="rounded-circle img-fluid ml-5" style="width: 150px;">
+                            <div class="col-lg-4">
+                                <div class="card-body ml-5 d-flex flex-column align-items-center">
+                                    <a href="/edit">
+                                        <img src="{{asset('admin/images/faces/face23.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                    </a>
                                     <h5 class="my-3">
                                         Kharismatara
                                     </h5>
-                                </div>
-                                <div class="d-flex justify-content-center mb-2">
-                                    <div class="d-flex justify-content-center mb-2">
-                                        <a href="/edit"><button type="button" class="btn" style="background-color: #FD5D3B;color:#fff">EDIT</button></a>
+                                    <div class="mb-2">
+                                        <a href="/edit">
+                                            <button type="button" class="btn" style="background-color: #FD5D3B;color:#fff">EDIT</button>
+                                        </a>
                                     </div>
                                 </div>
+
                             </div>
+                            
+                            
                             <div class="col-lg-8">
                                 <div class="card mb-4">
                                     <div class="card-body">
