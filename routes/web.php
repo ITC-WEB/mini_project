@@ -16,6 +16,8 @@ use App\Http\Controllers\Frontend\CheckoutController;
 
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,7 +51,11 @@ Route::get('/sukses', [FrontendController::class, 'sukses']);
 Route::get('/eror', [FrontendController::class, 'eror']);
 Route::get('/statuscekout', [FrontendController::class, 'statuscekout']);
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
+<<<<<<< HEAD
 Route::get('/editcustomer', [FrontendController::class, 'editcustomer']);
+=======
+Route::get('/profilecustumer',[FrontendController::class, 'profilecustumer']);
+>>>>>>> 8878cc5d8e7cf08fca8162714f599a2d07355395
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);
 // Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail')->middleware(['auth', 'customer']);
