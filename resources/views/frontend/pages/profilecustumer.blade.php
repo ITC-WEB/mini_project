@@ -14,11 +14,11 @@ ProfileCustumer
                         <div class="row ">
                             <div class="col-lg-4">
                                 <div class="card-body ml-5 d-flex flex-column align-items-center">
-                                    <a href="/edit">
+                                    <a href="/">
                                         <img src="{{asset('admin/images/faces/face23.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                                     </a>
                                     <h5 class="my-3">
-                                        Kharismatara
+                                        {{ Auth::user()->name }}
                                     </h5>
                                     <div class="mb-2">
                                         <a href="/edit">
@@ -28,8 +28,8 @@ ProfileCustumer
                                 </div>
 
                             </div>
-                            
-                            
+
+
                             <div class="col-lg-8">
                                 <div class="card mb-4">
                                     <div class="card-body">
@@ -84,7 +84,7 @@ ProfileCustumer
                                             </div>
                                             <div class="col-sm-9">
                                                 <p class="text-muted mb-0">
-                                                    <a href="/sim-details" style="color: red">Lihat Selengkapnya</a>
+                                                    <a href="{{url('storage/'. Auth::user()->data->ktp)}}" style="color: red">Lihat Selengkapnya</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -95,16 +95,16 @@ ProfileCustumer
                                             </div>
                                             <div class="col-sm-9">
                                                 <p class="text-muted mb-0">
-                                                    <a href="/sim-details" style="color: red">Lihat Selengkapnya</a>
+                                                    <a href="{{url('storage/'. Auth::user()->data->sim)}}" style="color: red">Lihat Selengkapnya</a>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+        @endsection
