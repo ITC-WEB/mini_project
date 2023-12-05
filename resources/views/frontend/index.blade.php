@@ -12,7 +12,11 @@ Halaman Utama
     <p class="mt-3 ml-5">
         Kendaraan Teraman dan Harga Terbaik
     </p>
+    @if (!Auth::user()) 
     <a href="{{url('/log')}}" class="btn btn-get-started px-4 mt-4 ml-5"> Get Start </a>
+    @else
+    <a href="" class="btn btn-get-started px-4 mt-4 ml-5"> Get Start </a>
+    @endif
 </header>
 <!-- Hero -->
 
