@@ -36,9 +36,13 @@ editcustomer
               <label for="exampleInputEmail3">Address</label>
               <input name="alamat" value="" type="text" class="form-control rounded-pill" id="exampleInputEmail3" placeholder="Alamat">
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword4">Password</label>
-              <input name="password" type="password" class="form-control rounded-pill" id="exampleInputPassword4" placeholder="Password">
+            <div class="form-group1 mb-3">
+            <label for="exampleInputEmail3">Upload SIM</label>
+            <input type="file" class="form-control  rounded-pill" id="inputGroupFile02">
+            </div>
+            <div class="form-group1 mb-3">
+            <label for="exampleInputEmail3">Upload KTP</label>
+            <input type="file" class="form-control  rounded-pill" id="inputGroupFile02">
             </div>
             <button type="submit" class="btn mr-2" style="background-color: #FD5D3B;color:#fff">UPDATE</button>
             <a href="{{ url('/profilecustumer') }}" class="btn border" style="background-color: #fff;color:#000000">CLOSE</a>
