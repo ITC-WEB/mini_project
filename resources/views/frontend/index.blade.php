@@ -129,10 +129,10 @@ Halaman Utama
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <h2>They Are Loving Us</h2>
+                    <h2>Apa Tanggapan Mereka ?</h2>
                     <p>
-                        Moments were giving them
-                        <br /> the best experience
+                        Beberapa Momen Terbaik yang
+                        <br /> Kami bantu untuk Wujudkan 
                     </p>
                 </div>
             </div>
@@ -183,10 +183,12 @@ Halaman Utama
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center mb-3">
                     <h1 class="accordion1">
-                        Frequently Asked Questions
+                        <b>Frequently Asked Questions</b>
                     </h1>
                     <h2 class="accordion2">
-                        Masih bingung atau ragu? Hubungi kami di nomor +6288 999 222 333
+                        Ingin lebih Mengenal Kami?, 
+                        Hubungi kami di nomor 
+                        <h2><b>+6288 999 222 333</b></h2>
                     </h2>
                 </div>
                 <div class="col-lg-8 col-md-6 col-sm-12">

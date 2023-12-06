@@ -7,7 +7,7 @@ TentangKami
 @section('content')
 <header class="text-left headertentangkami">
     <h1 class="ml-5">
-        TENTANG <br /> INTERMEDIA CAR RENT
+        Tentang <br /> Intermedia Trans
 
 
     </h1>
