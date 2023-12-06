@@ -39,17 +39,22 @@
                 <a href="/log" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Masuk</a>
             </form>
             @else
-            
+
             <div class="dropdown" id="avatarDropdown">
                 <span style="cursor: pointer;" onclick="toggleDropdown()">
-                    <img src="{{ asset('frontend/images/avatar-0.png') }}" style="width: 50px;" alt="">
+                    @if (Auth::user()->gender == 'male')
+                    <img src="{{ asset('frontend/images/man.png') }}" style="width: 50px;" alt="">
+                    @else
+                    <img src="{{ asset('frontend/images/woman.png') }}" style="width: 50px;" alt="">
+                    @endif
+
                 </span>
                 <div class="dropdown-menu" aria-labelledby="avatarDropdown" id="avatarDropdownMenu">
                     <a class="dropdown-item" href="{{ url('/profilecustumer') }}">Profile</a>
                     <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
                 </div>
             </div>
-            
+
             @endif
         </div>
     </nav>

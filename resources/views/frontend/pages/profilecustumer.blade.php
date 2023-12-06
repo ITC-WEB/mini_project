@@ -15,7 +15,12 @@ ProfileCustumer
                             <div class="col-lg-4">
                                 <div class="card-body ml-5 d-flex flex-column align-items-center">
                                     <a href="/">
-                                        <img src="{{asset('admin/images/faces/face23.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                        @if (Auth::user()->gender == 'male')
+                                        <img src="{{asset('frontend/images/man.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                        @else
+                                        <img src="{{asset('frontend/images/woman.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                        @endif
+
                                     </a>
                                     <h5 class="my-3">
                                         {{ Auth::user()->name }}
