@@ -36,7 +36,7 @@ Detail Customer
 
                                         <div class="row mb-2">
                                             <div class="col-sm-3">
-                                                <p class="mb-0">Nomer Hp</p>
+                                                <p class="mb-0">Nomer Hp/WhatsApp</p>
                                             </div>
                                             <div class="col-sm-9">
                                                 <p class=" mb-0">: {{ $detail->phone }}</p>

@@ -32,8 +32,8 @@ Create Data Admin
                             <label for="exampleSelectGender">Jenis Kelamin <span class="text-danger">*</span></label>
                             <select class="custom-select rounded-pill" name="gender" id="inputGroupSelect01" required>
                                 <option>---Pilih---</option>
-                                <option name="male" value="male">Male</option>
-                                <option name="female" value="female">Female</option>
+                                <option name="male" value="male">Laki - Laki</option>
+                                <option name="female" value="female">Perempuan</option>
                             </select>
                         </div>
                         <div class="form-group">

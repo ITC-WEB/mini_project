@@ -7,8 +7,8 @@
   <!-- Hero -->
   <header class="text-left mb-5 headersdany">
     <h1 class="ml-5">
-      SYARAT DAN KETENTUAN <br />
-      INTERMEDIA CAR RENT
+      Syarat & Ketentuan <br />
+      Intermedia Trans
     </h1>
     <p class="mt-3 ml-5">Silakan Baca Syarat dan Kententuan Peminjaman Mobil</p>
   </header>
