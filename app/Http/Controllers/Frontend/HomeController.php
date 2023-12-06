@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use Carbon\Carbon;
+use App\Models\Data;
 use App\Models\User;
 use App\Models\Mobil;
 use App\Models\Sopir;
@@ -50,13 +51,16 @@ class HomeController extends Controller
         return view('frontend.pages.eror');
     }
 
-    public function editcustomer()
+    public function editcustomer(Request $request)
     {
         return view('frontend.pages.editcustomer');
     }
 
+    public function update_customer(Request $request)
+    {
+    }
 
-    public function profilecustumer()
+    public function profilecustumer(Request $request)
     {
         return view('frontend.pages.profilecustumer');
     }

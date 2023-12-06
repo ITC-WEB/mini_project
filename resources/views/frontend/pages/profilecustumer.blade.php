@@ -40,7 +40,7 @@ ProfileCustumer
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-3">
-                                                <p class="mb-0">Full Name</p>
+                                                <p class="mb-0">Username</p>
                                             </div>
                                             <div class="col-sm-9">
                                                 <p class="text-muted mb-0">{{ Auth::user()->name }}</p>
@@ -89,7 +89,7 @@ ProfileCustumer
                                             </div>
                                             <div class="col-sm-9">
                                                 <p class="text-muted mb-0">
-                                                    <a href="{{url('storage/'. Auth::user()->data->ktp)}}" style="color: red">Lihat Selengkapnya</a>
+                                                    <a href="{{url('storage/'. Auth::user()->data->ktp)}}" style="color: blue">Lihat Selengkapnya</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -100,7 +100,11 @@ ProfileCustumer
                                             </div>
                                             <div class="col-sm-9">
                                                 <p class="text-muted mb-0">
-                                                    <a href="{{url('storage/'. Auth::user()->data->sim)}}" style="color: red">Lihat Selengkapnya</a>
+                                                    @if (Auth::user()->data->sim != NUll)
+                                                    <a href="{{url('storage/'. Auth::user()->data->sim)}}" style="color: blue">Lihat Selengkapnya</a>
+                                                    @else
+                                                    <a href="#" style="color: red">Lihat Selengkapnya</a>
+                                                    @endif
                                                 </p>
                                             </div>
                                         </div>

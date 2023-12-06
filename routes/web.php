@@ -52,6 +52,7 @@ Route::get('/eror', [FrontendController::class, 'eror']);
 Route::get('/statuscekout', [FrontendController::class, 'statuscekout']);
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
 Route::get('/editcustomer', [FrontendController::class, 'editcustomer']);
+Route::post('/update-customer', [FrontendController::class, 'update_customer']);
 Route::get('/profilecustumer', [FrontendController::class, 'profilecustumer']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);

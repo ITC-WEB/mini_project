@@ -17,7 +17,7 @@ Edit Admin
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputName1">Name</label>
-                            <input name="name" value="{{ Auth::user()->name }}" type="text" class="form-control rounded-pill" id="exampleInputName1" placeholder="Name">
+                            <input name="name" value="{{ $data }}" type="text" class="form-control rounded-pill" id="exampleInputName1" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail3">Email address</label>
@@ -30,6 +30,7 @@ Edit Admin
                         <div class="form-group">
                             <label for="exampleSelectGender">Gender</label>
                             <select class="custom-select rounded-pill" name="gender" value="{{ Auth::user()->gender }}" id="inputGroupSelect01">
+                                <option selected>{{Auth::user()->gender}}</option>
                                 <option name="male" value="male">Male</option>
                                 <option name="female" value="female">Female</option>
                             </select>
