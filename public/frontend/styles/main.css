@@ -908,3 +908,9 @@ header .btn-get-started:hover {
     white-space: nowrap;
     width: 1px;
 }
+/*editcustomer */
+.form-group1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
