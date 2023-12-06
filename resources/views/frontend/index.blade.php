@@ -27,15 +27,15 @@ Halaman Utama
         <section class="section-stats row justify-content-center" id="stats">
             <div class="col-3 col-md-2 stats-detail">
                 <h2>{{ $jmlMobil }}</h2>
-                <p>car</p>
+                <p>Cars</p>
             </div>
             <div class="col-3 col-md-2 stats-detail">
                 <h2>{{ $jmlSopir }}</h2>
-                <p>driver</p>
+                <p>Driver</p>
             </div>
             <div class="col-3 col-md-2 stats-detail">
                 <h2>{{ $jmlUser }}</h2>
-                <p>customer</p>
+                <p>Customer</p>
             </div>
             <div class="col-3 col-md-2 stats-detail">
                 <h2>{{ $peminjam }}</h2>
@@ -85,8 +85,8 @@ Halaman Utama
                 <div class="col-md-4">
                     <h2>Our Networks</h2>
                     <p>
-                        Companies are trusted us
-                        <br /> more than just a trip
+                    Perusahaan yang Mempercayai Kami     
+                        <br />Lebih dari Sekadar Perjalanan
                     </p>
                 </div>
                 <div class="col-md-8 text-center">
@@ -115,9 +115,9 @@ Halaman Utama
                             Mengapa Memilih Perusahaan Kami ?
                         </h1>
                         <p class=" main-content">
-                            Keamanan Anda adalah prioritas utama kami. Semua kendaraan kami menjalani pemeliharaan
-                            berkala dan pemeriksaan ketat sehingga Anda dapat mengemudi dengan percaya diri. Kami selalu
-                            berkomitmen untuk memberikan kualitas terbaik kepada Anda.
+                            Keamanan Anda adalah Prioritas Utama Kami. Semua kendaraan kami memiliki Kualitas Pemeliharaan
+                            dan Pemeriksaan yang Bersertifikasi, sehingga dapat Menciptakan Pengalaman mengemudi 
+                            yang Aman dan Nyaman. Komitmen kami tersebut demi Kualitas terbaik untuk Anda.
                         </p>
                     </div>
                 </div>

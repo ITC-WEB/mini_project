@@ -23,7 +23,7 @@ Data Customer
                                         Email
                                     </th>
                                     <th>
-                                        Gender
+                                        Jenis Kelamin
                                     </th>
                                     <th>
                                         Phone

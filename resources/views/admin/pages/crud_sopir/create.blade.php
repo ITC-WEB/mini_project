@@ -29,11 +29,11 @@ Create Data Sopir
                             <input name="phone" type="number" class="form-control rounded-pill" id="exampleInputEmail3" placeholder="Phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleSelectGender">Gender</label>
+                            <label for="exampleSelectGender">Jenis Kelamin</label>
                             <select class="custom-select rounded-pill" name="gender" id="inputGroupSelect01" required>
                                 <option>---Pilih---</option>
-                                <option name="male" value="male">Male</option>
-                                <option name="female" value="female">Female</option>
+                                <option name="male" value="male">Laki-laki</option>
+                                <option name="female" value="female">Perempuan</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -41,7 +41,7 @@ Create Data Sopir
                             <input name="usia" type="number" class="form-control rounded-pill" id="exampleInputName1" placeholder="" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Address</label>
+                            <label for="exampleInputName1">Alamat</label>
                             <input name="alamat" type="text" class="form-control rounded-pill" id="exampleInputName1" required>
                         </div>
                         <button type="submit" class="btn mr-2" style="background-color: #FD5D3B;color:#fff">SUBMIT</button>

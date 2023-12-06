@@ -39,10 +39,10 @@ Create Data
                             <label for="exampleSelectGender">Merek Mobil<span class="text-danger">*</span></label>
                             <select class="custom-select  rounded-pill" name="merek_id" id="inputGroupSelect01" required>
                                 <option selected>---Pilih---</option>
-                                <option value="1">honda</option>
-                                <option value="2">toyota</option>
-                                <option value="3">suzuki</option>
-                                <option value="4">daihatsu</option>
+                                <option value="1">Honda</option>
+                                <option value="2">Toyota</option>
+                                <option value="3">Suzuki</option>
+                                <option value="4">Daihatsu</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -57,17 +57,17 @@ Create Data
                             <label for="exampleSelectGender">Type Transmisi<span class="text-danger">*</span></label>
                             <select class="custom-select  rounded-pill" name="type" id="inputGroupSelect01" required>
                                 <option selected>---Pilih---</option>
-                                <option value="matic">matic</option>
-                                <option value="manual">manual</option>
+                                <option value="matic">Matic</option>
+                                <option value="manual">Manual</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Jenis Bahan Bakar<span class="text-danger">*</span></label>
                             <select class="custom-select  rounded-pill" name="bahan_bakar" id="inputGroupSelect01" required>
                                 <option selected>---Pilih---</option>
-                                <option value="pertalite">pertalite</option>
-                                <option value="pertamax">pertamax</option>
-                                <option value="solar">solar</option>
+                                <option value="pertalite">Pertalite</option>
+                                <option value="pertamax">Pertamax</option>
+                                <option value="solar">Solar</option>
                             </select>
                         </div>
                         <div class="form-group">

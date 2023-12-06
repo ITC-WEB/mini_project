@@ -55,11 +55,11 @@
                             <h6 class="mb-0 me-4">Jenis Kelamin </h6>
                             <div class="gender form-check form-check-inline mb-0 me-4 mt-5">
                                 <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
-                                <label class="form-check-label" name="gender" for="male">laki-laki</label>
+                                <label class="form-check-label" name="gender" for="male">Laki-laki</label>
                             </div>
                             <div class="gender form-check form-check-inline mb-0 me-4 mt-5">
                                 <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female" />
-                                <label class="form-check-label" name="gender" for="female">perempuan</label>
+                                <label class="form-check-label" name="gender" for="female">Perempuan</label>
                             </div>
 
                             <div class="row">
