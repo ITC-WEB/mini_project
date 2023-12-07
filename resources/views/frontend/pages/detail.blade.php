@@ -123,6 +123,7 @@ Detail
           thousand: '.',
           decimal: ','
         });
+        console.log(numericValue)
       } else {
         console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
       }

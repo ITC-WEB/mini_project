@@ -152,26 +152,23 @@ Katalog
 
                 @if ($mobils->status != '1')
                 <div class="item">
-                    <a href="">
-                        <img src="{{asset('storage/'.$mobils->gambar) }}" alt="" class="img-fluid">
-                    </a>
+                    <img src="{{asset('storage/'.$mobils->gambar) }}" alt="" class="img-fluid">
                     <div class="info">
-                        <a href="">
-                            <h3><b>{{ $mobils->name }}</b></h3>
-                            <div class="descripsi">
-                                <div class="row justify-content-between">
-                                    <div class="col-6 des-a">Status </div>
-                                    <div class="col-4 des-b"><i class="fas fa-user  icons1"></i> : {{$mobils->kapasitas_orang}}</div>
-                                </div>
+                        <h3><b>{{ $mobils->name }}</b></h3>
+                        <div class="descripsi">
+                            <div class="row justify-content-between">
+                                <div class="col-6 des-a">Status </div>
+                                <div class="col-4 des-b"><i class="fas fa-user  icons1"></i> : {{$mobils->kapasitas_orang}}</div>
                             </div>
-                            <div class="descripsi1">
-                                <div class="row justify-content-between">
-                                    <div class="col-6 des-a1"><b>SEDANG DI SEWA</b></div>
-                                    <div class="col-4 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
-                                </div>
+                        </div>
+                        <div class="descripsi1">
+                            <div class="row justify-content-between">
+                                <div class="col-6 des-a1 btn"><b>SEDANG DI SEWA</b></div>
+
+                                <div class="col-4 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
                             </div>
-                            <!-- Corrected typo -->
-                        </a>
+                        </div>
+                        <!-- Corrected typo -->
                     </div>
                 </div>
                 @else
