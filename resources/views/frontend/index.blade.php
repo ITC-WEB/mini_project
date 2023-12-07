@@ -109,12 +109,12 @@ Halaman Utama
                 <div class="col-lg-6 mt-lg-0 mt-4">
                     <div class="text-lg-left text-center">
                         <h5 class="rental ">
-                            Rental mobil
+                            <b>Rental Mobil</b>
                         </h5>
                         <h1 class=" main-title">
                             Mengapa Memilih Perusahaan Kami ?
                         </h1>
-                        <p class=" main-content">
+                        <p class="main-content">
                             Keamanan Anda adalah Prioritas Utama Kami. Semua kendaraan kami memiliki Kualitas Pemeliharaan
                             dan Pemeriksaan yang Bersertifikasi, sehingga dapat Menciptakan Pengalaman mengemudi 
                             yang Aman dan Nyaman. Komitmen kami tersebut demi Kualitas terbaik untuk Anda.
@@ -132,7 +132,7 @@ Halaman Utama
                     <h2>Apa Tanggapan Mereka ?</h2>
                     <p>
                         Beberapa Momen Terbaik yang
-                        <br /> Kami bantu untuk Wujudkan 
+                        <br /> Kami Bantu Untuk Wujudkan 
                     </p>
                 </div>
             </div>
@@ -166,8 +166,8 @@ Halaman Utama
                         <div class="testimonial-content mb-auto">
                             <img src="{{ asset('frontend/images/avatar-3.png') }}" alt="" class="mb-4 rounded-circle" />
                             <h3 class="mb-4">Shabrina</h3>
-                            <p class="testimonials">“intermedia Trans memberikan solusi yang cepat dan Saya sangat
-                                menghargai keramahan dan kerja keras tim mereka. ”</p>
+                            <p class="testimonials">“intermedia Trans memberikan service yang kompeten dan Saya sangat
+                                menghargai keramahan dan standar kerja tim mereka. ”</p>
                         </div>
                     </div>
                 </div>
@@ -187,7 +187,7 @@ Halaman Utama
                     </h1>
                     <h2 class="accordion2">
                         Ingin lebih Mengenal Kami?, 
-                        Hubungi kami di nomor 
+                        Hubungi Kami Sekarang 
                         <h2><b>+6288 999 222 333</b></h2>
                     </h2>
                 </div>

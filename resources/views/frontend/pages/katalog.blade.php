@@ -58,7 +58,7 @@ Katalog
             </div>
             <div class="dropdown ml-2 mr-2 my-3">
                 <button class="btn btn-outline btndrop" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Kapasitas Orang
+                    Kapasitas Penumpang
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -157,7 +157,7 @@ Katalog
                     </a>
                     <div class="info">
                         <a href="">
-                            <h3>{{ $mobils->name }}</h3>
+                            <h3><b>{{ $mobils->name }}</b></h3>
                             <div class="descripsi">
                                 <div class="row justify-content-between">
                                     <div class="col-6 des-a">Status </div>
@@ -166,8 +166,8 @@ Katalog
                             </div>
                             <div class="descripsi1">
                                 <div class="row justify-content-between">
-                                    <div class="col-6 des-a1">SEDANG DI SEWA</div>
-                                    <div class="col-4 des-b"><i class="fas fa-suitcase  icons2"></i> : {{ $mobils->type }}</div>
+                                    <div class="col-6 des-a1"><b>SEDANG DI SEWA</b></div>
+                                    <div class="col-4 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
                                 </div>
                             </div>
                             <!-- Corrected typo -->
@@ -181,7 +181,7 @@ Katalog
                     </a>
                     <div class="info">
                         <a href="{{ route('detail', ['id' => $mobils->id]) }}">
-                            <h3>{{ $mobils->name }}</h3>
+                            <h3><b>{{ $mobils->name }}</b></h3>
                             <div class="descripsi">
                                 <div class="row justify-content-between">
                                     <div class="col-6 des-a">Starting From </div>
@@ -190,8 +190,8 @@ Katalog
                             </div>
                             <div class="descripsi1">
                                 <div class="row justify-content-between">
-                                    <div class="col-6 des-a1">Rp. {{ $mobils->harga_sewa }} / Hari </div>
-                                    <div class="col-4 des-b"><i class="fas fa-suitcase  icons2"></i> : {{ $mobils->type }}</div>
+                                    <div class="col-6 des-a1"><b>Rp. {{ $mobils->harga_sewa }}</b> / Hari </div>
+                                    <div class="col-4 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
                                 </div>
                             </div>
                             <!-- Corrected typo -->
@@ -213,7 +213,9 @@ Katalog
 <!--end pagination-->
 @endsection
 
-
+@push('prepend-style')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+@endpush
 @push('addon-scripts')
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

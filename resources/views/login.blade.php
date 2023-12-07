@@ -37,14 +37,14 @@
             </div>
             <div class="form-group form-check mt-2">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Remember Me ! <a href="#" class="link-masuk2 ml-5 ">forgot password</a></label>
+              <label class="form-check-label" for="exampleCheck1">Remember Me ! <a href="#" class="link-masuk2 ml-5 ">Forgot Password</a></label>
             </div>
 
             <div class=" text-lg-start mt-4 pt-2 ">
               <button type="submit" class="butonlog btn btn-lg" style="padding-left: 2rem; padding-right: 2rem">Login</button>
             </div>
             <p class=mt-4>
-              Dont have an account ? <a href="{{ url('/register') }}" class="link-masuk ">sign up</a></p>
+              Dont have an account ? <a href="{{ url('/register') }}" class="link-masuk ">Sign Up</a></p>
           </form>
         </div>
       </div>

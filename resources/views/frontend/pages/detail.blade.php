@@ -48,7 +48,7 @@ Detail
                     <h2 class=" "><i class="fas fa-check"></i> Reclining Seat</h2>
                     <h2 class=" "><i class="fas fa-check"></i> Port Charge</h2>
                     <h2 class=" "><i class="fas fa-check"></i> Side Impact Beam</h2>
-                    <h2 class=" "><i class="fas fa-check"></i>Anti-lock Braking System</h2>
+                    <h2 class=" "><i class="fas fa-check"></i> Anti-lock Braking System</h2>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@ Detail
             </table>
           </div>
           <div class="join-container">
-            <a href="{{ route('peminjaman',['id' => $mobil->id]) }}" class="btn btn-block btn-join-now mt-3 py-2">CheckOut Sekarang</a>
+            <a href="{{ route('peminjaman',['id' => $mobil->id]) }}" class="btn btn-block btn-join-now mt-3 py-2">Check-Out Sekarang</a>
           </div>
         </div>
       </div>
