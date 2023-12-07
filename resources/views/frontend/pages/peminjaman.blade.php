@@ -64,45 +64,42 @@ Peminjaman
                                     </div>
                                 </div>
                                 <input type="hidden" name="biaya" class="num_nights" readonly>
-
-                                <label for="inputUsername" class="font-weight-bold">Supir</label>
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Iya
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Tidak
-                                            </label>
-                                        </div>
+                                <div class="supir">
+                                    <label for="inputUsername" class="font-weight-bold">Supir</label>
+                                    <div class="supir-option d-flex justify-between">
+                                       <div class="ya mr-5">
+                                        <input type="radio" id="flexRadioDefault1" name="flexRadioDefault" value="ya" />
+                                        <label for="flexRadioDefault1">Ya</label>
+                                       </div>
+                                       <div class="tidak">
+                                        <input type="radio" id="flexRadioDefault2" name="flexRadioDefault" value="tidak" />
+                                        <label for="flexRadioDefault2">Tidak</label>
+                                       </div>
+                                      
+                                      </div>
+                                </div>
+                              
+                                <div class="pembayaran">
+                                    <label for="inputUsername" class="font-weight-bold mt-3">Pembayaran Bank </label>
+                                    <div class="grid">
+                                        <label class="card-button">
+                                            <input name="plan" class="radio" type="radio" checked>
+                                            <span class="plan-details">
+                                                <span class="plan-type">BCA</span>
+                                                <span class="mt-2 text-center">5321-09-77654-90-8</span>
+                                            </span>
+                                        </label>
+                                        <label class="card-button">
+                                            <input name="plan" class="radio" type="radio">
+                                            <span class="plan-details" aria-hidden="true">
+                                                <span class="plan-type">BRI</span>
+                                                <span class="mt-2 text-center">52281-09-009868-90-8</span>
+                                            </span>
+                                        </label>
+    
                                     </div>
                                 </div>
-                                <label for="inputUsername" class="font-weight-bold mt-3">Pembayaran Bank </label>
-                                <div class="grid">
-                                    <label class="card-button">
-                                        <input name="plan" class="radio" type="radio" checked>
-                                        <span class="plan-details">
-                                            <span class="plan-type">BCA</span>
-                                            <span class="mt-2 text-center">5321-09-77654-90-8</span>
-                                        </span>
-                                    </label>
-                                    <label class="card-button">
-                                        <input name="plan" class="radio" type="radio">
-                                        <span class="plan-details" aria-hidden="true">
-                                            <span class="plan-type">BRI</span>
-                                            <span class="mt-2 text-center">52281-09-009868-90-8</span>
-                                        </span>
-                                    </label>
-
-                                </div>
+                               
 
 
 
@@ -127,8 +124,9 @@ Peminjaman
                                 <td width="50%" class="text-right">{{$mobil->name}}</td>
                             </tr>
                             <tr>
-                                <th width="50%">Supir</th>
-                                <td width="50%" class="text-right">Rp. 100.000/hari</td>
+                                <tr>
+                                    <th width="50%">Supir</th>
+                                    <td width="50%" class="text-right supir-td"></td> 
                             </tr>
                             <tr>
                                 <th width="50%">Harga</th>
@@ -198,3 +196,34 @@ Peminjaman
     });
 </script>
 @endpush
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const supirOptionYes = document.getElementById("flexRadioDefault1");
+      const supirOptionNo = document.getElementById("flexRadioDefault2");
+      const supirTd = document.querySelector(".supir-td");
+      let hasSelectedYes = false;
+  
+      calculateTotal();
+  
+      supirOptionYes.addEventListener("change", calculateTotal);
+      supirOptionNo.addEventListener("change", calculateTotal);
+  
+      function calculateTotal() {
+        const selectedSupirOption = supirOptionYes.checked;
+  
+        if (selectedSupirOption) {
+          supirTd.textContent = "Rp. 100.000";
+          hasSelectedYes = true;
+        } else {
+          if (hasSelectedYes) {
+            supirTd.textContent = "Rp. 0";
+          } else {
+            supirTd.textContent = "Rp. 0";
+            hasSelectedYes = false;
+          }
+        }
+      }
+    });
+  </script>
+  

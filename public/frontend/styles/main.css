@@ -649,18 +649,18 @@ header .btn-get-started:hover {
 }
 
 .textlog {
-  color: #FD5D3B;
+    color: #fd5d3b;
 }
 .butonlog {
-  background-color: #FD5D3B;
-  border-radius: 15px;
-  border: none;
-  color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  max-width: 100px;
+    background-color: #fd5d3b;
+    border-radius: 15px;
+    border: none;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 100px;
 }
 
 .custom-input {
@@ -697,24 +697,23 @@ header .btn-get-started:hover {
     font-size: 24px;
 }
 .link-masuk {
-    color: #FD5D3B;
-} 
+    color: #fd5d3b;
+}
 .link-masuk2 {
-    color: #FD5D3B;
+    color: #fd5d3b;
     margin-right: 5px;
-    
-}     
+}
 .link-masuk:hover {
     color: #071c4d;
 }
 /*register*/
-.registra{
+.registra {
     font-size: 40px;
     font-weight: bold;
 }
 .registra2 {
     font-size: 40px;
-    color: #FD5D3B;
+    color: #fd5d3b;
     font-weight: bold;
 }
 .input-group-text {
@@ -724,7 +723,7 @@ header .btn-get-started:hover {
     color: #000000;
 }
 .gender {
-    color: #FD5D3B;
+    color: #fd5d3b;
 }
 /*statuscekout*/
 .bri {
