@@ -295,7 +295,7 @@ header .btn-get-started:hover {
 .section-details-content .card-details .trip-informations td {
     font-weight: 300;
     font-size: 18px;
-    color: #b1b1b1;
+    color: #5e5e5e;
 }
 
 .section-details-content .card-details .trip-informations .text-blue {
@@ -318,19 +318,19 @@ header .btn-get-started:hover {
 
 .section-details-content .card-details p {
     font-size: 18px;
-    color: #b1b1b1;
+    color: #8a8a8a;
 }
 
 .section-details-content .card-details .payment-instructions {
     font-weight: 300;
     font-size: 14px;
-    color: #b1b1b1;
+    color: #8a8a8a;
 }
 
 .section-details-content .card-details .disclaimer {
     font-weight: 300;
     font-size: 14px;
-    color: #b1b1b1;
+    color: #8a8a8a;
 }
 
 .section-details-content .card-right {
@@ -610,7 +610,7 @@ header .btn-get-started:hover {
 .icons1 {
     margin-right: 11px;
 }
-.icons2 {
+.bi-car-front-fill {
     margin-right: 9px;
 }
 .btndrop:hover {

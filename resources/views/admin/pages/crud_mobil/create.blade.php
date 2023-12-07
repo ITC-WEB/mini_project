@@ -76,7 +76,7 @@ Create Data
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Harga Sewa/Hari<span class="text-danger">*</span></label>
-                            <input name="harga_sewa" type="text" class="form-control  rounded-pill" id="exampleInputName1" required>
+                            <input name="harga_sewa" type="text" class="form-control rounded-pill" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Fitur Tersedia<span class="text-danger">*</span></label><br>

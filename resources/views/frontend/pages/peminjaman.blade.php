@@ -64,19 +64,26 @@ Peminjaman
                                     </div>
                                 </div>
                                 <input type="hidden" name="biaya" class="num_nights" readonly>
-                                <div class="supir">
-                                    <label for="inputUsername" class="font-weight-bold">Supir</label>
-                                    <div class="supir-option d-flex justify-between">
-                                       <div class="ya mr-5">
-                                        <input type="radio" id="flexRadioDefault1" name="flexRadioDefault" value="ya" />
-                                        <label for="flexRadioDefault1">Ya</label>
-                                       </div>
-                                       <div class="tidak">
-                                        <input type="radio" id="flexRadioDefault2" name="flexRadioDefault" value="tidak" />
-                                        <label for="flexRadioDefault2">Tidak</label>
-                                       </div>
-                                      
-                                      </div>
+
+                                <label for="inputUsername" class="font-weight-bold">Supir</label>
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Iya
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Tidak
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                               
                                 <div class="pembayaran">
@@ -172,6 +179,10 @@ Peminjaman
                     showDays(el);
                 }
             });
+
+            $('#sopir').submit({
+
+            })
         });
 
         function showDays() {

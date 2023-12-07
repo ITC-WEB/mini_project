@@ -64,7 +64,7 @@ Data Peminjaman
                                     <td>
                                         {{ $pinjams->tanggal_selesai }}
                                     </td>
-                                    <td>
+                                    <td class="harga">
                                         {{ $pinjams->biaya }}
                                     </td>
                                     <td>
@@ -87,3 +87,32 @@ Data Peminjaman
         </div>
     </div>
     @endsection
+
+    @push('addon-script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mendapatkan semua elemen dengan kelas 'harga'
+            const hargaElements = document.querySelectorAll('.harga');
+
+            // Mengubah setiap elemen dengan kelas 'harga' menjadi format uang Rupiah
+            hargaElements.forEach(function(elem) {
+                // Memastikan nilai dapat diubah menjadi angka
+                const numericValue = parseFloat(elem.textContent);
+
+                if (!isNaN(numericValue)) {
+                    // Menggunakan accounting.js untuk memformat angka
+                    elem.textContent = accounting.formatMoney(numericValue, {
+                        symbol: 'Rp ',
+                        precision: 0,
+                        thousand: '.',
+                        decimal: ','
+                    });
+                    console.log(numericValue)
+                } else {
+                    console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
+                }
+            });
+        });
+    </script>
+    @endpush
