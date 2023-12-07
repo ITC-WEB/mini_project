@@ -66,7 +66,8 @@ Detail Peminjam
                                                 <p class="mb-0">Data KTP</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="{{url('storage/'.$dataPinjam->user->data->ktp)}}" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                                <a href="{{url('storage/'.$dataPinjam->user->data->ktp)}}"
+                                                target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
                                             </div>
                                         </div>
 
@@ -75,7 +76,7 @@ Detail Peminjam
                                                 <p class="mb-0">Data SIM</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="{{url('storage/'.$dataPinjam->user->data->sim)}}" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                                <a href="{{url('storage/'.$dataPinjam->user->data->sim)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
                                             </div>
                                         </div>
 
@@ -85,7 +86,8 @@ Detail Peminjam
                                             </div>
                                             @if ($dataPinjam->bukti_id != NULL)
                                             <div class="col-sm-12 mx-4"><br>
-                                                <a href="{{url('storage/'.$dataPinjam->bukti->bukti)}}" class="mb-0 text-primary"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 4rem;"></i></a>
+                                                <a href="{{url('storage/'.$dataPinjam->bukti->bukti)}}" 
+                                                target="_blank" class="mb-0 text-primary"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 4rem;"></i></a>
                                             </div>
                                             @else
                                             <div class="col-sm-12 mx-4"><br>
