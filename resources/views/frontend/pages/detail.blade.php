@@ -75,7 +75,7 @@ Detail
               </tr>
               <tr>
                 <th width="50% ">Harga Sewa Perhari</th>
-                <td width="50% " class="text-right">Rp.{{ $mobil->harga_sewa }}</td>
+                <td width="50% " class="text-right"><span class="harga">{{ $mobil->harga_sewa }}</span></td>
               </tr>
             </table>
           </div>
@@ -93,6 +93,7 @@ Detail
 <link rel="stylesheet" href="{{url('frontend/libraries/xzoom/dist/xzoom.css')}}" />
 @endpush
 @push('addon-scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
 <script src="{{ url('frontend/libraries/xzoom/dist/xzoom.min.js') }}"></script>
 <script>
   $(document).ready(function() {
@@ -101,6 +102,30 @@ Detail
       title: false,
       tint: "#333 ",
       Xoffset: 15,
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Mendapatkan semua elemen dengan kelas 'harga'
+    const hargaElements = document.querySelectorAll('.harga');
+
+    // Mengubah setiap elemen dengan kelas 'harga' menjadi format uang Rupiah
+    hargaElements.forEach(function(elem) {
+      // Memastikan nilai dapat diubah menjadi angka
+      const numericValue = parseFloat(elem.textContent);
+
+      if (!isNaN(numericValue)) {
+        // Menggunakan accounting.js untuk memformat angka
+        elem.textContent = accounting.formatMoney(numericValue, {
+          symbol: 'Rp ',
+          precision: 0,
+          thousand: '.',
+          decimal: ','
+        });
+      } else {
+        console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
+      }
     });
   });
 </script>

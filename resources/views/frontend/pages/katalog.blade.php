@@ -190,7 +190,7 @@ Katalog
                             </div>
                             <div class="descripsi1">
                                 <div class="row justify-content-between">
-                                    <div class="col-6 des-a1"><b>Rp. {{ $mobils->harga_sewa }}</b> / Hari </div>
+                                    <div class="col-6 des-a1"><b><span class="harga">{{ $mobils->harga_sewa }} / Hari </span></b></div>
                                     <div class="col-4 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
                                 </div>
                             </div>
@@ -218,6 +218,33 @@ Katalog
 @endpush
 @push('addon-scripts')
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Mendapatkan semua elemen dengan kelas 'harga'
+        const hargaElements = document.querySelectorAll('.harga');
+
+        // Mengubah setiap elemen dengan kelas 'harga' menjadi format uang Rupiah
+        hargaElements.forEach(function(elem) {
+            // Memastikan nilai dapat diubah menjadi angka
+            const numericValue = parseFloat(elem.textContent);
+
+            if (!isNaN(numericValue)) {
+                // Menggunakan accounting.js untuk memformat angka
+                elem.textContent = accounting.formatMoney(numericValue, {
+                    symbol: 'Rp ',
+                    precision: 0,
+                    thousand: '.',
+                    decimal: ','
+                });
+            } else {
+                console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
+            }
+        });
+    });
+</script>
+
 @endpush

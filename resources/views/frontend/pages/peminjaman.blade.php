@@ -69,7 +69,7 @@ Peminjaman
                                 <div class="row">
                                     <div class="col-auto">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="sopir">
                                             <label class="form-check-label" for="flexRadioDefault1">
                                                 Iya
                                             </label>
@@ -174,6 +174,10 @@ Peminjaman
                     showDays(el);
                 }
             });
+
+            $('#sopir').submit({
+
+            })
         });
 
         function showDays() {
