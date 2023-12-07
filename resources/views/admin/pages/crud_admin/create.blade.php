@@ -17,7 +17,7 @@ Create Data Admin
                     <form class="forms-sample" method="POST" action="/create">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputName1">Name Lengkap <span class="text-danger">*</span></label>
+                            <label for="exampleInputName1">Nama Lengkap <span class="text-danger">*</span></label>
                             <input name="name" type="text" class="form-control rounded-pill" id="exampleInputName1" placeholder="Name" required>
                         </div>
                         <div class="form-group">

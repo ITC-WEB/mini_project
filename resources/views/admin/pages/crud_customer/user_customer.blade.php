@@ -17,7 +17,7 @@ Data Customer
                                         No
                                     </th>
                                     <th>
-                                        Name
+                                        Nama
                                     </th>
                                     <th>
                                         Email
@@ -26,13 +26,13 @@ Data Customer
                                         Jenis Kelamin
                                     </th>
                                     <th>
-                                        Phone
+                                        Nomor HP/WhatsApp
                                     </th>
                                     <th>
-                                        Alamat
+                                        Alamat Lengkap
                                     </th>
                                     <th>
-                                        Status
+                                        Aksi
                                     </th>
                                 </tr>
                             </thead>
@@ -42,7 +42,7 @@ Data Customer
                                     <td>
                                         {{ $loop->iteration }}
                                     </td>
-                                    <td>
+                                    <td class="text-truncate" style="min-width: 100px;white-space: normal;">
                                         {{ $item->name }}
                                     </td>
                                     <td>
@@ -55,7 +55,7 @@ Data Customer
                                     <td>
                                         {{ $item->phone }}
                                     </td>
-                                    <td class="text-truncate" style="max-width: 200px;white-space: normal;">
+                                    <td class="text-truncate" style="min-width: 200px;white-space: normal;">
                                         {{ $item->alamat }}
                                     </td>
                                     <td>

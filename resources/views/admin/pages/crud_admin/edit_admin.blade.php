@@ -12,7 +12,7 @@ Edit Admin
                     <form class="forms-sample" method="POST" action="{{route('updating',['id' => $item->id])}}">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputName1">Name</label>
+                            <label for="exampleInputName1">Nama Lengkap</label>
                             <input name="name" value="{{$item->name}}" type="text" class="form-control rounded-pill" id="exampleInputName1" placeholder="Name">
                         </div>
                         <div class="form-group">
@@ -24,18 +24,18 @@ Edit Admin
                             <input name="role_id" type="text" value="{{$item->role->name}}" class="form-control rounded-pill" id="exampleInputEmail3" disabled>
                         </div>
                         <div class="form-group">
-                            <label for="exampleSelectGender">Gender</label>
+                            <label for="exampleSelectGender">Jenis Kelamin</label>
                             <select class="custom-select rounded-pill" name="gender" value="{{$item->gender}}" id="inputGroupSelect01">
-                                <option name="male" value="male">Male</option>
-                                <option name="female" value="female">Female</option>
+                                <option name="male" value="male">Laki-laki</option>
+                                <option name="female" value="female">Perempuan</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail3">Phone</label>
+                            <label for="exampleInputEmail3">Nomor HP/WhatsApp</label>
                             <input name="phone" value="{{$item->phone}}" type="text" class="form-control rounded-pill" id="exampleInputEmail3">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail3">Address</label>
+                            <label for="exampleInputEmail3">Alamat</label>
                             <input name="alamat" value="{{$item->alamat}}" type="text" class="form-control rounded-pill" id="exampleInputEmail3" placeholder="Alamat">
                         </div>
                         <div class="form-group">
