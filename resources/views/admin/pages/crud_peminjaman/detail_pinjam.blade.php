@@ -17,65 +17,66 @@ Detail Peminjam
                                     <div class="card-body font-weight-bold">
 
                                         <div class="row mb-2">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-6">
                                                 <p class="mb-0">Name Peminjam</p>
                                             </div>
-                                            <div class="col-sm-9">
+                                            <div class="col-sm-6">
                                                 <p class=" mb-0">: {{$dataPinjam->user->name}}</p>
                                             </div>
                                         </div>
 
                                         <div class="row mb-2">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-6">
                                                 <p class="mb-0">Email</p>
                                             </div>
-                                            <div class="col-sm-9">
+                                            <div class="col-sm-6">
                                                 <p class=" mb-0">: {{ $dataPinjam->user->email }}</p>
                                             </div>
                                         </div>
 
                                         <div class="row mb-2">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-6">
                                                 <p class="mb-0">Nomer Hp</p>
                                             </div>
-                                            <div class="col-sm-9">
+                                            <div class="col-sm-6">
                                                 <p class=" mb-0">: {{ $dataPinjam->user->phone }}</p>
                                             </div>
                                         </div>
 
                                         <div class="row mb-2">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-6">
                                                 <p class="mb-0">Jenis Kelamin</p>
                                             </div>
-                                            <div class="col-sm-9">
+                                            <div class="col-sm-6">
                                                 <p class=" mb-0">: {{ $dataPinjam->user->gender }}</p>
                                             </div>
                                         </div>
 
                                         <div class="row mb-2">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-6">
                                                 <p class="mb-0">Alamat Lengkap</p>
                                             </div>
-                                            <div class="col-sm-9">
+                                            <div class="col-sm-6">
                                                 <p class=" mb-0 text-truncate" style="max-width: 300px;white-space: normal;">: {{ $dataPinjam->user->alamat }}</p>
                                             </div>
                                         </div>
 
                                         <div class="row mb-2">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-6">
                                                 <p class="mb-0">Data KTP</p>
                                             </div>
-                                            <div class="col-sm-9">
-                                                <a href="{{url('storage/'.$dataPinjam->user->data->ktp)}}" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                            <div class="col-sm-6">
+                                                <a href="{{url('storage/'.$dataPinjam->user->data->ktp)}}"
+                                                target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
                                             </div>
                                         </div>
 
                                         <div class="row mb-2">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-6">
                                                 <p class="mb-0">Data SIM</p>
                                             </div>
-                                            <div class="col-sm-9">
-                                                <a href="{{url('storage/'.$dataPinjam->user->data->sim)}}" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                            <div class="col-sm-6">
+                                                <a href="{{url('storage/'.$dataPinjam->user->data->sim)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
                                             </div>
                                         </div>
 
@@ -85,7 +86,8 @@ Detail Peminjam
                                             </div>
                                             @if ($dataPinjam->bukti_id != NULL)
                                             <div class="col-sm-12 mx-4"><br>
-                                                <a href="{{url('storage/'.$dataPinjam->bukti->bukti)}}" class="mb-0 text-primary"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 4rem;"></i></a>
+                                                <a href="{{url('storage/'.$dataPinjam->bukti->bukti)}}" 
+                                                target="_blank" class="mb-0 text-primary"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 4rem;"></i></a>
                                             </div>
                                             @else
                                             <div class="col-sm-12 mx-4"><br>

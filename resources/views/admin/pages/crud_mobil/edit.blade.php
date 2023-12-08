@@ -15,29 +15,29 @@ Edit Data
                         <hr>
 
                         <div class="form-group">
-                            <label for="exampleInputName1">Noplat</label>
+                            <label for="exampleInputName1">Nomor Kendaraan</label>
                             <input name="noplat" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->noplat }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail3">Name</label>
+                            <label for="exampleInputEmail3">Nama Mobil</label>
                             <input name="name" type="text" class="form-control" id="exampleInputEmail3" value="{{ $mobil->name }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Merek</label>
                             <select class="custom-select" name="merek_id" id="inputGroupSelect01">
                                 <option value="{{ $mobil->merek->id }}">{{ $mobil->merek->name }}</option>
-                                <option value="1">honda</option>
-                                <option value="2">toyota</option>
-                                <option value="3">suzuki</option>
-                                <option value="4">daihatsu</option>
+                                <option value="1">Honda</option>
+                                <option value="2">Toyota</option>
+                                <option value="3">Suzuki</option>
+                                <option value="4">Daihatsu</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Tahun Dibuat</label>
+                            <label for="exampleInputName1">Tahun Pembuatan</label>
                             <input name="tahun" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->tahun }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleSelectGender">Kapasitas Orang</label>
+                            <label for="exampleSelectGender">Kapasitas Penumpang</label>
                             <input name="kapasitas_orang" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->kapasitas_orang }}">
                         </div>
 
@@ -76,7 +76,7 @@ Edit Data
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleSelectGender">Type Transmisi</label>
+                            <label for="exampleSelectGender">Tipe Transmisi</label>
                             <select class="custom-select" name="type" id="inputGroupSelect01">
                                 <option value="{{$mobil->type}}">{{ $mobil->type }}</option>
                                 @if ($mobil->type == 'matic')

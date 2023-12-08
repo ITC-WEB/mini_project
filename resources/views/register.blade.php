@@ -77,7 +77,7 @@
                             <div class="g-recaptcha" data-sitekey="6LeZSSYpAAAAAF72fUhe4WhtUY4ILtm8IQSXKWZu" data-callback="recaptchaDataCallbackRegister" data-expired-callback="recaptchaExpireCallbackRegister" aria-required="true"></div>
                             <input type="submit" class="btn butonlog btn-block btn-primary mt-4">
 
-                            <p class="have-account mt-4"> have an account ? <a href="{{ url('/log') }}" class="link-masuk ">login</a></p>
+                            <p class="have-account mt-4"> have an account ? <a href="{{ url('/log') }}" class="link-masuk "><b>Login</b></a></p>
 
                         </div>
             </form>
