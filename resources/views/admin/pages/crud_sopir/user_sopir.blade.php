@@ -26,22 +26,22 @@ Data Sopir
                                         No
                                     </th>
                                     <th>
-                                        Name
+                                        Nama
                                     </th>
                                     <th>
-                                        Phone
+                                        Nomor HP/WhatsApp
                                     </th>
                                     <th>
-                                        Gender
+                                        Jenis Kelamin
                                     </th>
                                     <th>
                                         Usia
                                     </th>
                                     <th>
-                                        Alamat
+                                        Alamat Lengkap
                                     </th>
                                     <th>
-                                        Status
+                                        Aksi
                                     </th>
                                 </tr>
                             </thead>

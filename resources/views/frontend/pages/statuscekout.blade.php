@@ -41,7 +41,7 @@ statuscekout
                         <td class="text-left harga">{{$peminjaman->biaya}}</td>
                     </tr>
                 </table>
-                <h1 class="keterangan font-weight-light mt-5">
+                <h1 class="keterangan font-weight-bold mt-5, text-danger">
                     Silahkan lakukan pembayaran, Lalu Screen Capture <br> Bukti Pembayaran.
                 </h1>
             </div>
@@ -50,7 +50,7 @@ statuscekout
             @csrf
             <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
             <div class="input mt-4 mx-auto">
-                <label for="inputSIM" class="font-weight-light">*Silahkan Unggah Bukti Pembayaran</label>
+                <label for="inputSIM" class="font-weight-medium"><span class="text-danger">*</span></label> Silahkan Unggah Bukti Pembayaran</label>
                 <div class="custom-file">
                     <input type="file" name="bukti" class="custom-file-input" id="inputSIM" accept=".jpg, .jpeg, .png, .pdf" />
                     <label class="custom-file-label" for="inputSIM">img.png</label>

@@ -21,11 +21,11 @@ Create Data Sopir
                     <form class="forms-sample" method="POST" action="/create-sopir">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputName1">Name</label>
+                            <label for="exampleInputName1">Nama Lengkap</label>
                             <input name="name" type="text" class="form-control rounded-pill" id="exampleInputName1" placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail3">Phone</label>
+                            <label for="exampleInputEmail3">Nomor HP/WhatsApp</label>
                             <input name="phone" type="number" class="form-control rounded-pill" id="exampleInputEmail3" placeholder="Phone" required>
                         </div>
                         <div class="form-group">
@@ -41,7 +41,7 @@ Create Data Sopir
                             <input name="usia" type="number" class="form-control rounded-pill" id="exampleInputName1" placeholder="" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Alamat</label>
+                            <label for="exampleInputName1">Alamat Lengkap</label>
                             <input name="alamat" type="text" class="form-control rounded-pill" id="exampleInputName1" required>
                         </div>
                         <button type="submit" class="btn mr-2" style="background-color: #FD5D3B;color:#fff">SUBMIT</button>
