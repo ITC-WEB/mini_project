@@ -26,9 +26,6 @@ Edit Data
                                 <option value="selesai">Selesai</option>
                                 <option value="sedangdisewa">Sedang Di Sewa</option>
                                 @endif
-
-
-
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Simpan</button>

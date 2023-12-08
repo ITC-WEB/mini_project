@@ -33,7 +33,7 @@ Peminjaman
                             <form method="POST" action="/peminjaman">
                                 @csrf
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                <input type="hidden" name="harga_sewa" value="{{ $mobil->harga_sewa }}">
+                                <input type="hidden" name="harga_sewa" value="{{ ($mobil->harga_sewa) }}">
                                 <input type="hidden" name="mobil_id" value="{{ $mobil->id }}">
                                 <div class="form-group">
                                     <label for="inputUsername" class="font-weight-bold">Nama </label>
@@ -67,18 +67,18 @@ Peminjaman
                                 <div class="supir">
                                     <label for="inputUsername" class="font-weight-bold">Supir</label>
                                     <div class="supir-option d-flex justify-between">
-                                       <div class="ya mr-4">
-                                        <input type="radio" id="flexRadioDefault1" name="flexRadioDefault" value="ya" />
-                                        <label for="flexRadioDefault1">Ya</label>
-                                       </div>
-                                       <div class="tidak">
-                                        <input type="radio" id="flexRadioDefault2" name="flexRadioDefault" value="tidak" />
-                                        <label for="flexRadioDefault2">Tidak</label>
-                                       </div>
-                                      
-                                      </div>
+                                        <div class="ya mr-4">
+                                            <input type="radio" id="flexRadioDefault1" name="flexRadioDefault" value="ya" />
+                                            <label for="flexRadioDefault1">Ya</label>
+                                        </div>
+                                        <div class="tidak">
+                                            <input type="radio" id="flexRadioDefault2" name="flexRadioDefault" value="tidak" />
+                                            <label for="flexRadioDefault2">Tidak</label>
+                                        </div>
+
+                                    </div>
                                 </div>
-                              
+
                                 <div class="pembayaran">
                                     <label for="inputUsername" class="font-weight-bold mt-3">Pembayaran Bank </label>
                                     <div class="grid">
@@ -96,13 +96,9 @@ Peminjaman
                                                 <span class="mt-2 text-center">52281-09-009868-90-8</span>
                                             </span>
                                         </label>
-    
+
                                     </div>
                                 </div>
-                               
-
-
-
                                 <div class="form-group">
                                     <div class="join-container mt-5">
                                         <button type="submit" class="btn btn-block btn-join-now mt-3 py-2"> Checkout</button>
@@ -124,13 +120,13 @@ Peminjaman
                                 <td width="50%" class="text-right">{{$mobil->name}}</td>
                             </tr>
                             <tr>
-                                <tr>
-                                    <th width="50%">Supir</th>
-                                    <td width="50%" class="text-right supir-td"></td> 
+                            <tr>
+                                <th width="50%">Supir</th>
+                                <td width="50%" class="text-right supir-td"></td>
                             </tr>
                             <tr>
                                 <th width="50%">Harga</th>
-                                <td width="50%" class="text-right"> Rp.{{ $mobil->harga_sewa }}/Hari</td>
+                                <td width="50%" class="text-right harga">{{ $mobil->harga_sewa }}/Hari</td>
                             </tr>
                             <tr>
                                 <th width="50%">Total</th>
@@ -149,6 +145,33 @@ Peminjaman
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Datepicker/dist/css/default/zebra_datepicker.min.css">
 @endpush
 @push('addon-scripts')
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Mendapatkan semua elemen dengan kelas 'harga'
+        const hargaElements = document.querySelectorAll('.harga');
+
+        // Mengubah setiap elemen dengan kelas 'harga' menjadi format uang Rupiah
+        hargaElements.forEach(function(elem) {
+            // Memastikan nilai dapat diubah menjadi angka
+            const numericValue = parseFloat(elem.textContent);
+
+            if (!isNaN(numericValue)) {
+                // Menggunakan accounting.js untuk memformat angka
+                elem.textContent = accounting.formatMoney(numericValue, {
+                    symbol: 'Rp ',
+                    precision: 0,
+                    thousand: '.',
+                    decimal: ','
+                });
+            } else {
+                console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
+            }
+        });
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Datepicker/dist/zebra_datepicker.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -176,6 +199,15 @@ Peminjaman
 
         function showDays() {
             var harga_sewa = $('input[name="harga_sewa"]').val();
+            // Ubah string harga_sewa ke dalam format angka (integer atau float)
+            var harga_sewa_numeric = parseInt(harga_sewa);
+
+            // Pastikan bahwa harga_sewa_numeric adalah angka yang valid
+            if (isNaN(harga_sewa_numeric)) {
+                console.error('Harga sewa tidak valid');
+                return;
+            }
+
             // get date
             var start = $('#mystartdate').val();
             var end = $('#myenddate').val();
@@ -189,41 +221,41 @@ Peminjaman
 
             // calculate days
             var days = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
-
-            $('.num_nights').val('     ' + '    ' + '       ' + '   ' + '    ' + ('Rp.') + days * harga_sewa);
+            // Update the value with the formatted currency
+            $('.num_nights').val('   ' + '    ' + '       ' + '   ' + '    ' + 'Rp' + ' ' + (days * harga_sewa).toLocaleString('id-ID', {}));
         };
+    });
+</script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const supirOptionYes = document.getElementById("flexRadioDefault1");
+        const supirOptionNo = document.getElementById("flexRadioDefault2");
+        const supirTd = document.querySelector(".supir-td");
+        let hasSelectedYes = false;
+        const harga = 'Rp.100.000';
+
+        calculateTotal();
+
+        supirOptionYes.addEventListener("change", calculateTotal);
+        supirOptionNo.addEventListener("change", calculateTotal);
+
+        function calculateTotal() {
+            const selectedSupirOption = supirOptionYes.checked;
+
+            if (selectedSupirOption) {
+                supirTd.textContent = harga;
+                hasSelectedYes = true;
+            } else {
+                if (hasSelectedYes) {
+                    supirTd.textContent = "Rp. 0";
+                } else {
+                    supirTd.textContent = "Rp. 0";
+                    hasSelectedYes = false;
+                }
+            }
+        }
+        console.log();
     });
 </script>
 @endpush
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const supirOptionYes = document.getElementById("flexRadioDefault1");
-      const supirOptionNo = document.getElementById("flexRadioDefault2");
-      const supirTd = document.querySelector(".supir-td");
-      let hasSelectedYes = false;
-  
-      calculateTotal();
-  
-      supirOptionYes.addEventListener("change", calculateTotal);
-      supirOptionNo.addEventListener("change", calculateTotal);
-  
-      function calculateTotal() {
-        const selectedSupirOption = supirOptionYes.checked;
-  
-        if (selectedSupirOption) {
-          supirTd.textContent = "Rp. 100.000";
-          hasSelectedYes = true;
-        } else {
-          if (hasSelectedYes) {
-            supirTd.textContent = "Rp. 0";
-          } else {
-            supirTd.textContent = "Rp. 0";
-            hasSelectedYes = false;
-          }
-        }
-      }
-    });
-  </script>
-  

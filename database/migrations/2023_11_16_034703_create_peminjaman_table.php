@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('mobil_id');
             $table->unsignedBigInteger('sopir_id')->nullable();
-            $table->string('biaya');
+            $table->integer('biaya');
             $table->string('tanggal_mulai');
             $table->string('tanggal_selesai');
             $table->enum('status', ['sedangdisewa', 'belumbayar', 'selesai'])->nullable()->default('belumbayar');

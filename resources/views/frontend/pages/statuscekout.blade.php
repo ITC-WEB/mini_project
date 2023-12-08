@@ -38,7 +38,7 @@ statuscekout
                     </tr>
                     <tr>
                         <th>Total Pembayaran</th>
-                        <td class="text-left">{{$peminjaman->biaya}}</td>
+                        <td class="text-left harga">{{$peminjaman->biaya}}</td>
                     </tr>
                 </table>
                 <h1 class="keterangan font-weight-light mt-5">
@@ -61,13 +61,49 @@ statuscekout
                     <label class="form-check-label" for="exampleCheck1">Saya sudah melakukan Pembayaran dan mengunggah Bukti Pembayaran</label>
                 </div>
         </form>
+        @if ($peminjaman->status == 'belumbayar')
+        <button class="btn btnstatus ml-5 mx-auto" disabled>Hubungi Kami!</button>
+        @else
         <a href="{{ url('') }}" class="btn btnstatus p-2  mt-4 ml-5 mx-auto"> Hubungi Kami!</a>
+        @endif
+
     </div>
     </div>
     </div>
     </div>
 </main>
 
+
+</body>
+@endsection
+
+@push('addon-scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Mendapatkan semua elemen dengan kelas 'harga'
+        const hargaElements = document.querySelectorAll('.harga');
+
+        // Mengubah setiap elemen dengan kelas 'harga' menjadi format uang Rupiah
+        hargaElements.forEach(function(elem) {
+            // Memastikan nilai dapat diubah menjadi angka
+            const numericValue = parseFloat(elem.textContent);
+
+            if (!isNaN(numericValue)) {
+                // Menggunakan accounting.js untuk memformat angka
+                elem.textContent = accounting.formatMoney(numericValue, {
+                    symbol: 'Rp ',
+                    precision: 0,
+                    thousand: '.',
+                    decimal: ','
+                });
+                console.log(numericValue)
+            } else {
+                console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
+            }
+        });
+    });
+</script>
 <script>
     function copyTextToClipboard(elementId) {
         var textToCopy = document.getElementById(elementId);
@@ -81,5 +117,5 @@ statuscekout
 </script>
 
 <script src="frontend/libraries/gijgo/js/gijgo.min.js"></script>
-</body>
-@endsection
+
+@endpush
