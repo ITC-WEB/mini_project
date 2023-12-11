@@ -68,7 +68,8 @@
                                                     <p class="mb-0">Data KTP</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <a href="" class="text-decoration-none mb-0">: <span
+                                                    <a href="{{ asset('storage/' . $dataSopir->ktp) }}"
+                                                        class="text-decoration-none mb-0">: <span
                                                             class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
                                                 </div>
                                             </div>
@@ -78,7 +79,8 @@
                                                     <p class="mb-0">Data SIM</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <a href="" class="text-decoration-none mb-0">: <span
+                                                    <a href="{{ asset('storage/' . $dataSopir->sim) }}"
+                                                        class="text-decoration-none mb-0">: <span
                                                             class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
                                                 </div>
                                             </div>

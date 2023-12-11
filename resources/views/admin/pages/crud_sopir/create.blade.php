@@ -50,11 +50,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="gambar">Foto KTP<span class="text-danger">*</span></label>
-                                <input name="gambar" type="file" class="form-control-file" required>
+                                <input name="ktp" type="file" class="form-control-file" required>
                             </div>
                             <div class="form-group">
                                 <label for="gambar">Foto SIM<span class="text-danger">*</span></label>
-                                <input name="gambar" type="file" class="form-control-file" required>
+                                <input name="sim" type="file" class="form-control-file" required>
                             </div>
                             <button type="submit" class="btn mr-2"
                                 style="background-color: #FD5D3B;color:#fff">SUBMIT</button>

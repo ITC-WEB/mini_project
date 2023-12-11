@@ -111,6 +111,9 @@ Route::post('/delete-sopir/{id}', [SopirController::class, 'sopir_delete'])->nam
 //  Data Sopir
 Route::get('/data-sopir/{id}', [SopirController::class, 'detail_sopir'])->name('data-sopir');
 
+//Edit Mobil
+Route::get('/edit-sopir/{id}', [SopirController::class, 'edit_sopir'])->name('edit-sopir');
+Route::post('/update-sopir', [SopirController::class, 'update_sopir'])->name('sopir.update');
 
 //*************************Mobil */
 // Data Mobil
