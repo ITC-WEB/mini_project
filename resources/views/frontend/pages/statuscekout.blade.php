@@ -55,17 +55,24 @@ statuscekout
                     <input type="file" name="bukti" class="custom-file-input" id="inputSIM" accept=".jpg, .jpeg, .png, .pdf" />
                     <label class="custom-file-label" for="inputSIM">img.png</label>
                 </div>
-                <button type="submit" class="btn btn-block btn-primary mt-4">Upload</button>
+
+                <div class="alert alert-success font-weight-medium mt-2" id="AlertSukses">
+                <h3>Pesanan Berhasil Terkirim</h3>
+                    <p>Silahkan <a href="https://wa.me/08989392968" target="_blank" class="alert-link">Klik disini</a> untuk menghubungi Admin kami bahwa anda Sudah Melakukan Pembayaran !</p>
+                </div>
+
                 <div class="form-group form-check mt-2">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="toggleUploadButton()">
                     <label class="form-check-label" for="exampleCheck1">Saya sudah melakukan Pembayaran dan mengunggah Bukti Pembayaran</label>
+                    </div>
+                
+               
+                <div class="btn-container">
+                    <button type="submit" onclick="submitWithLoading()" class="btn btn-block btn-primary mt-4" id="uploadButton" disabled>
+                        Kirim
+                        </button>
                 </div>
         </form>
-        @if ($peminjaman->status == 'belumbayar')
-        <button class="btn btnstatus ml-5 mx-auto" disabled>Hubungi Kami!</button>
-        @else
-        <a href="{{ url('') }}" class="btn btnstatus p-2  mt-4 ml-5 mx-auto"> Hubungi Kami!</a>
-        @endif
 
     </div>
     </div>
@@ -116,6 +123,39 @@ statuscekout
     }
 </script>
 
-<script src="frontend/libraries/gijgo/js/gijgo.min.js"></script>
+<script>
+    var AlertSukses = document.getElementById('AlertSukses');
+    var uploadButton = document.getElementById('uploadButton');
+    var loadingIndicator = document.getElementById('loadingIndicator');
 
+    AlertSukses.style.display = 'none';
+
+    function toggleUploadButton() {
+        var checkbox = document.getElementById('exampleCheck1');
+
+        // Jika checkbox dicentang, aktifkan tombol
+        if (checkbox.checked) {
+            uploadButton.removeAttribute('disabled');
+        } else {
+            // Jika checkbox tidak dicentang, nonaktifkan tombol
+            uploadButton.setAttribute('disabled', 'disabled');
+        }
+    }
+
+    function submitWithLoading() {
+        // Sembunyikan tombol dan tampilkan animasi loading
+        uploadButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
+        loadingIndicator.style.display = 'inline-block';
+        uploadButton.setAttribute('disabled', 'disabled');
+
+        setTimeout(function () {
+            // Hentikan animasi loading, tampilkan alert, dan jalankan fungsi MyAlertSukses
+            AlertSukses.style.display = 'block';
+            uploadButton.innerHTML = 'Kirim';
+            loadingIndicator.style.display = 'none';
+            uploadButton.removeAttribute('disabled');
+        }, 3000);
+    }
+</script>
+<script src="frontend/libraries/gijgo/js/gijgo.min.js"></script>
 @endpush
