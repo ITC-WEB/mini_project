@@ -18,6 +18,8 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female']);
             $table->integer('usia');
             $table->string('alamat');
+            $table->string('ktp');
+            $table->string('sim');
             $table->timestamps();
         });
     }
