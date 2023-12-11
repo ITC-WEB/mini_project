@@ -26,7 +26,7 @@ Data Admin
                                         No
                                     </th>
                                     <th>
-                                        Name
+                                        Nama
                                     </th>
                                     <th>
                                         Email
@@ -35,7 +35,7 @@ Data Admin
                                         Jenis Kelamin
                                     </th>
                                     <th>
-                                        Nomor Hp
+                                        Nomor Hp/WhatsApp
                                     </th>
                                     <th class="text-truncate" style="max-width: 200px;white-space: normal;">
                                         Alamat
@@ -51,7 +51,7 @@ Data Admin
                                     <td>
                                         {{ $loop->iteration }}
                                     </td>
-                                    <td>
+                                    <td class="text-truncate" style="min-width: 200px;white-space: normal;">
                                         {{ $item->name }}
                                     </td>
                                     <td>
@@ -63,7 +63,7 @@ Data Admin
                                     <td>
                                         {{ $item->phone }}
                                     </td>
-                                    <td class="text-truncate" style="max-width: 200px;white-space: normal;">
+                                    <td class="text-truncate" style="min-width: 200px;white-space: normal;">
                                         {{ $item->alamat }}
                                     </td>
 

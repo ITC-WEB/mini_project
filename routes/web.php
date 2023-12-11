@@ -15,6 +15,8 @@ use App\Http\Controllers\Frontend\PembayaranController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Models\Sopir;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +50,9 @@ Route::get('/sukses', [FrontendController::class, 'sukses']);
 Route::get('/eror', [FrontendController::class, 'eror']);
 Route::get('/statuscekout', [FrontendController::class, 'statuscekout']);
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
+Route::get('/editcustomer', [FrontendController::class, 'editcustomer']);
+Route::post('/update-customer', [FrontendController::class, 'update_customer']);
+Route::get('/profilecustumer', [FrontendController::class, 'profilecustumer']);
 //katalog
 Route::get('/katalog', [KatalogController::class, 'index']);
 // Route::get('/detail/{id}', [FrontendController::class, 'detailMobil'])->name('detail')->middleware(['auth', 'customer']);

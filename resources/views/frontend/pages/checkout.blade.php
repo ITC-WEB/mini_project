@@ -128,7 +128,7 @@ checkout
                             </tr>
                             <tr>
                                 <th width="50%">Total</th>
-                                <td width="50%" class="text-right text-total"><span class="text-blue">Rp. 1000.000</td>
+                                <td width="50%" class="text-right text-total"><span class="text-blue">Rp. 1.000.000</td>
               </tr>
             </table>
           </div>

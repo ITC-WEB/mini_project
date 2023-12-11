@@ -12,25 +12,30 @@ Halaman Utama
     <p class="mt-3 ml-5">
         Kendaraan Teraman dan Harga Terbaik
     </p>
+    @if (!Auth::user())
     <a href="{{url('/log')}}" class="btn btn-get-started px-4 mt-4 ml-5"> Get Start </a>
+    @else
+    <a href="" class="px-4 mt-4 ml-5"></a>
+    @endif
 </header>
 <!-- Hero -->
 
 <!-- 3 Poluler  -->
 <main>
     <div class="container ">
+        @include('sweetalert::alert')
         <section class="section-stats row justify-content-center" id="stats">
             <div class="col-3 col-md-2 stats-detail">
                 <h2>{{ $jmlMobil }}</h2>
-                <p>car</p>
+                <p>Cars</p>
             </div>
             <div class="col-3 col-md-2 stats-detail">
                 <h2>{{ $jmlSopir }}</h2>
-                <p>driver</p>
+                <p>Driver</p>
             </div>
             <div class="col-3 col-md-2 stats-detail">
                 <h2>{{ $jmlUser }}</h2>
-                <p>customer</p>
+                <p>Customer</p>
             </div>
             <div class="col-3 col-md-2 stats-detail">
                 <h2>{{ $peminjam }}</h2>
@@ -80,8 +85,8 @@ Halaman Utama
                 <div class="col-md-4">
                     <h2>Our Networks</h2>
                     <p>
-                        Companies are trusted us
-                        <br /> more than just a trip
+                    Perusahaan yang Mempercayai Kami     
+                        <br />Lebih dari Sekadar Perjalanan
                     </p>
                 </div>
                 <div class="col-md-8 text-center">
@@ -104,15 +109,15 @@ Halaman Utama
                 <div class="col-lg-6 mt-lg-0 mt-4">
                     <div class="text-lg-left text-center">
                         <h5 class="rental ">
-                            Rental mobil
+                            <b>Rental Mobil</b>
                         </h5>
                         <h1 class=" main-title">
                             Mengapa Memilih Perusahaan Kami ?
                         </h1>
-                        <p class=" main-content">
-                            Keamanan Anda adalah prioritas utama kami. Semua kendaraan kami menjalani pemeliharaan
-                            berkala dan pemeriksaan ketat sehingga Anda dapat mengemudi dengan percaya diri. Kami selalu
-                            berkomitmen untuk memberikan kualitas terbaik kepada Anda.
+                        <p class="main-content">
+                            Keamanan Anda adalah Prioritas Utama Kami. Semua kendaraan kami memiliki Kualitas Pemeliharaan
+                            dan Pemeriksaan yang Bersertifikasi, sehingga dapat Menciptakan Pengalaman mengemudi 
+                            yang Aman dan Nyaman. Komitmen kami tersebut demi Kualitas terbaik untuk Anda.
                         </p>
                     </div>
                 </div>
@@ -124,10 +129,10 @@ Halaman Utama
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <h2>They Are Loving Us</h2>
+                    <h2>Apa Tanggapan Mereka ?</h2>
                     <p>
-                        Moments were giving them
-                        <br /> the best experience
+                        Beberapa Momen Terbaik yang
+                        <br /> Kami Bantu Untuk Wujudkan 
                     </p>
                 </div>
             </div>
@@ -161,8 +166,8 @@ Halaman Utama
                         <div class="testimonial-content mb-auto">
                             <img src="{{ asset('frontend/images/avatar-3.png') }}" alt="" class="mb-4 rounded-circle" />
                             <h3 class="mb-4">Shabrina</h3>
-                            <p class="testimonials">“intermedia Trans memberikan solusi yang cepat dan Saya sangat
-                                menghargai keramahan dan kerja keras tim mereka. ”</p>
+                            <p class="testimonials">“intermedia Trans memberikan service yang kompeten dan Saya sangat
+                                menghargai keramahan dan standar kerja tim mereka. ”</p>
                         </div>
                     </div>
                 </div>
@@ -178,10 +183,12 @@ Halaman Utama
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center mb-3">
                     <h1 class="accordion1">
-                        Frequently Asked Questions
+                        <b>Frequently Asked Questions</b>
                     </h1>
                     <h2 class="accordion2">
-                        Masih bingung atau ragu? Hubungi kami di nomor +6288 999 222 333
+                        Ingin lebih Mengenal Kami?, 
+                        Hubungi Kami Sekarang 
+                        <h2><b>+6288 999 222 333</b></h2>
                     </h2>
                 </div>
                 <div class="col-lg-8 col-md-6 col-sm-12">

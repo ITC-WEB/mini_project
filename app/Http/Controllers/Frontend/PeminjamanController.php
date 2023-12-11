@@ -37,11 +37,13 @@ class PeminjamanController extends Controller
         if (!$request["sopir_id"]) {
             $request["sopir_id"] = 0;
         }
+
+        $cleanedString = preg_replace('/[^0-9]/', '', $request->biaya);
         Peminjaman::create([
             'user_id' => $request->user_id,
             'mobil_id' => $request->mobil_id,
             'sopir_id' => $request->sopir_id,
-            'biaya' => $request->biaya,
+            'biaya' => intval($cleanedString),
             'tanggal_mulai' => $request->tanggal_mulai,
             'tanggal_selesai' => $request->tanggal_selesai,
             'status' => $request->status,

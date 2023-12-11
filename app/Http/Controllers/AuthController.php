@@ -35,7 +35,7 @@ class AuthController extends Controller
                 return redirect()->intended('/')->with('success', 'Berhasil Login');
             }
         }
-        return redirect('/log')->with('errors', 'Data Belum Terdaftar');
+        return redirect('/log')->with('errors', 'Pastikan Email & Password Benar!!!');
     }
 
     public function index_reg()

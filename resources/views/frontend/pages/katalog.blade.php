@@ -12,7 +12,11 @@ Katalog
     <p class="mt-3 ml-5">
         Kendaraan Teraman dan Harga Terbaik
     </p>
+    @if (!Auth::user())
     <a href="{{url('/log')}}" class="btn btn-get-started px-4 mt-4 ml-5"> Get Start </a>
+    @else
+    <a href="" class="px-4 mt-4 ml-5"></a>
+    @endif
 </header>
 <!-- Hero -->
 <!--conten catalog -->
@@ -54,7 +58,7 @@ Katalog
             </div>
             <div class="dropdown ml-2 mr-2 my-3">
                 <button class="btn btn-outline btndrop" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Kapasitas Orang
+                    Kapasitas Penumpang
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -148,26 +152,23 @@ Katalog
 
                 @if ($mobils->status != '1')
                 <div class="item">
-                    <a href="">
-                        <img src="{{asset('storage/'.$mobils->gambar) }}" alt="" class="img-fluid">
-                    </a>
+                    <img src="{{asset('storage/'.$mobils->gambar) }}" alt="" class="img-fluid">
                     <div class="info">
-                        <a href="{{ route('detail', ['id' => $mobils->id]) }}">
-                            <h3>{{ $mobils->name }}</h3>
-                            <div class="descripsi">
-                                <div class="row justify-content-between">
-                                    <div class="col-6 des-a">Status </div>
-                                    <div class="col-4 des-b"><i class="fas fa-user  icons1"></i> : {{$mobils->kapasitas_orang}}</div>
-                                </div>
+                        <h3><b>{{ $mobils->name }}</b></h3>
+                        <div class="descripsi">
+                            <div class="row justify-content-between">
+                                <div class="col-6 des-a">Status </div>
+                                <div class="col-4 des-b"><i class="fas fa-user  icons1"></i> : {{$mobils->kapasitas_orang}}</div>
                             </div>
-                            <div class="descripsi1">
-                                <div class="row justify-content-between">
-                                    <div class="col-6 des-a1">SEDANG DI SEWA</div>
-                                    <div class="col-4 des-b"><i class="fas fa-suitcase  icons2"></i> : {{ $mobils->type }}</div>
-                                </div>
+                        </div>
+                        <div class="descripsi1">
+                            <div class="row justify-content-between">
+                                <div class="col-6 des-a1 btn"><b>SEDANG DI SEWA</b></div>
+
+                                <div class="col-4 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
                             </div>
-                            <!-- Corrected typo -->
-                        </a>
+                        </div>
+                        <!-- Corrected typo -->
                     </div>
                 </div>
                 @else
@@ -177,7 +178,7 @@ Katalog
                     </a>
                     <div class="info">
                         <a href="{{ route('detail', ['id' => $mobils->id]) }}">
-                            <h3>{{ $mobils->name }}</h3>
+                            <h3><b>{{ $mobils->name }}</b></h3>
                             <div class="descripsi">
                                 <div class="row justify-content-between">
                                     <div class="col-6 des-a">Starting From </div>
@@ -186,8 +187,8 @@ Katalog
                             </div>
                             <div class="descripsi1">
                                 <div class="row justify-content-between">
-                                    <div class="col-6 des-a1">Rp. {{ $mobils->harga_sewa }} / Hari </div>
-                                    <div class="col-4 des-b"><i class="fas fa-suitcase  icons2"></i> : {{ $mobils->type }}</div>
+                                    <div class="col-6 des-a1"><b><span class="harga">{{ $mobils->harga_sewa }} / Hari </span></b></div>
+                                    <div class="col-4 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
                                 </div>
                             </div>
                             <!-- Corrected typo -->
@@ -209,9 +210,38 @@ Katalog
 <!--end pagination-->
 @endsection
 
-
+@push('prepend-style')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+@endpush
 @push('addon-scripts')
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Mendapatkan semua elemen dengan kelas 'harga'
+        const hargaElements = document.querySelectorAll('.harga');
+
+        // Mengubah setiap elemen dengan kelas 'harga' menjadi format uang Rupiah
+        hargaElements.forEach(function(elem) {
+            // Memastikan nilai dapat diubah menjadi angka
+            const numericValue = parseFloat(elem.textContent);
+
+            if (!isNaN(numericValue)) {
+                // Menggunakan accounting.js untuk memformat angka
+                elem.textContent = accounting.formatMoney(numericValue, {
+                    symbol: 'Rp ',
+                    precision: 0,
+                    thousand: '.',
+                    decimal: ','
+                });
+            } else {
+                console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
+            }
+        });
+    });
+</script>
+
 @endpush

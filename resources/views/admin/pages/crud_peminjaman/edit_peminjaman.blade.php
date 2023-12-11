@@ -17,18 +17,15 @@ Edit Data
                             <select class="custom-select" name="status" id="inputGroupSelect01">
                                 <option value="{{ $pinjam->status }}">{{ $pinjam->status }}</option>
                                 @if ($pinjam->status == 'sedangdisewa')
-                                <option value="belumbayar">BelumBayar</option>
+                                <option value="belumbayar">Belum Bayar</option>
                                 <option value="selesai">Selesai</option>
                                 @elseif ($pinjam->status == 'selesai')
                                 <option value="sedangdisewa">Sedang Di Sewa</option>
-                                <option value="belumbayar">BelumBayar</option>
+                                <option value="belumbayar">Belum Bayar</option>
                                 @else
                                 <option value="selesai">Selesai</option>
                                 <option value="sedangdisewa">Sedang Di Sewa</option>
                                 @endif
-
-
-
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Simpan</button>
