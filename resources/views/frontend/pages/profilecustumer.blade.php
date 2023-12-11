@@ -26,7 +26,7 @@ ProfileCustumer
                                         {{ Auth::user()->name }}
                                     </h5>
                                     <div class="mb-2">
-                                        <a href="/editcustomer">
+                                        <a href="{{ route('edit.customer',['id' => Auth::user()->id])}}">
                                             <button type="button" class="btn" style="background-color: #FD5D3B;color:#fff">EDIT</button>
                                         </a>
                                     </div>
