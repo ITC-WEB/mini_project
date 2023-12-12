@@ -24,8 +24,8 @@ Halaman Utama
 <main>
     <div class="container ">
         @include('sweetalert::alert')
-        <section class="section-stats row justify-content-center" id="stats">
-            <div class="col-3 col-md-2 stats-detail">
+        <section class="section-stats row justify-content-center"   id="stats">
+            <div class="col-3 col-md-2 stats-detail" >
                 <h2>{{ $jmlMobil }}</h2>
                 <p>Cars</p>
             </div>
@@ -59,10 +59,10 @@ Halaman Utama
     </section>
     <section class="section-popular-content" id="popularContent">
         <div class="container">
-            <div class="section-popular-travel row justify-content-center">
+            <div class="section-popular-travel row justify-content-center" >
                 @foreach ($mobil as $mobils)
                 @if ($mobils->status != 0)
-                <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="col-sm-6 col-md-4 col-lg-4" data-aos="fade-up">
                     <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{ asset('storage/' . $mobils->gambar) }}');">
                         <div class="travel-country bg-dark">Kabupaten Malang</div>
                         <div class="travel-location bg-dark">{{ $mobils->name }}</div>
@@ -80,16 +80,16 @@ Halaman Utama
     <!--end 3 Poluler  -->
     <!--patner kami -->
     <section class="section-networks" id="networks">
-        <div class="container">
+        <div class="container ">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4"  data-aos="fade-right">
                     <h2>Our Networks</h2>
                     <p>
                     Perusahaan yang Mempercayai Kami     
                         <br />Lebih dari Sekadar Perjalanan
                     </p>
                 </div>
-                <div class="col-md-8 text-center">
+                <div class="col-md-8 text-center" data-aos="fade-left">
                     <img src="{{ asset('frontend/images/partner.png') }}" class="img-patner" />
                 </div>
             </div>
@@ -100,13 +100,13 @@ Halaman Utama
     <!--menagapa memilih kami  -->
     <section class=" mengapamimilihkami  mt-5 mb-5" id="">
         <div class="container mengapamimilihkami" id="mengapamimilihkami">
-            <div class="row">
-                <div class="col-lg-6">
+            <div class="row"  data-aos="zoom-in">
+                <div class="col-lg-6" >
                     <div class="mt-6 mb-5 text-center">
                         <img src="{{ asset('frontend/images/mengapamelih kami .jpg') }}" class="about-image rounded">
                     </div>
                 </div>
-                <div class="col-lg-6 mt-lg-0 mt-4">
+                <div class="col-lg-6 mt-lg-0 mt-4" >
                     <div class="text-lg-left text-center">
                         <h5 class="rental ">
                             <b>Rental Mobil</b>
@@ -141,7 +141,7 @@ Halaman Utama
     <section class="section-testimonials-content pb-5 " id="testimonialsContent">
         <div class="container mb-5">
             <div class="section-popular-travel row justify-content-center match-height">
-                <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="col-sm-6 col-md-6 col-lg-4"  data-aos="zoom-in">
                     <div class="card card-testimonial text-center">
                         <div class="testimonial-content">
                             <img src="{{ asset('frontend/images/avatar-1.png') }}" alt="" class="mb-4 rounded-circle" />
@@ -151,7 +151,7 @@ Halaman Utama
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="col-sm-6 col-md-6 col-lg-4"  data-aos="zoom-in">
                     <div class="card card-testimonial text-center">
                         <div class="testimonial-content">
                             <img src="{{ asset('frontend/images/avatar-2.png') }}" alt="" class="mb-4 rounded-circle" />
@@ -161,7 +161,7 @@ Halaman Utama
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="col-sm-6 col-md-6 col-lg-4"  data-aos="zoom-in">
                     <div class="card card-testimonial text-center">
                         <div class="testimonial-content mb-auto">
                             <img src="{{ asset('frontend/images/avatar-3.png') }}" alt="" class="mb-4 rounded-circle" />
@@ -179,8 +179,8 @@ Halaman Utama
     <!-- accordion -->
 
     <section class="mt-5 pt-5">
-        <div class="container ">
-            <div class="row">
+        <div class="container" data-aos="fade-up">
+            <div class="row" >
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center mb-3">
                     <h1 class="accordion1">
                         <b>Frequently Asked Questions</b>
@@ -283,9 +283,9 @@ Halaman Utama
     <!-- end accorion -->
     <!-- cta -->
     <section class="mt-5 p-5 mb-5">
-        <div class="container cta mt-5 pt-5 pb-3">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 text-left">
+        <div class="container cta mt-5 pt-5 pb-3" >
+            <div class="row" >
+                <div class="col-lg-6 col-md-6 col-sm-6 text-left" data-aos="zoom-in-up">
                     <h3 class="cta-text mt-4 mb-4 ml-5">
                         Sewa mobil terpercaya hanya di
                     </h3>
@@ -295,7 +295,7 @@ Halaman Utama
                     <a href="{{ url('/katalog') }} " class="btncta btn-get-started px-4 mt-5 ml-5 p-2 text-decoration-none btnpesan"> Pesan Sekarang
                     </a>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 mt-5">
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-5" data-aos="zoom-in-up">
                     <img src="frontend/images/cta.png" class="about-image rounded img-fluid">
                 </div>
             </div>
