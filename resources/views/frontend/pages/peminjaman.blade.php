@@ -197,65 +197,108 @@ Peminjaman
             });
         });
 
-        function showDays() {
-            var harga_sewa = $('input[name="harga_sewa"]').val();
-            // Ubah string harga_sewa ke dalam format angka (integer atau float)
-            var harga_sewa_numeric = parseInt(harga_sewa);
+    function showDays() {
+    var harga_sewa = parseInt($('input[name="harga_sewa"]').val());
 
-            // Pastikan bahwa harga_sewa_numeric adalah angka yang valid
-            if (isNaN(harga_sewa_numeric)) {
-                console.error('Harga sewa tidak valid');
-                return;
-            }
+    var start = $('#mystartdate').val();
+    var end = $('#myenddate').val();
+    if (!start || !end) return;
 
-            // get date
-            var start = $('#mystartdate').val();
-            var end = $('#myenddate').val();
-            if (!start || !end) return;
+    var startArr = start.split("/");
+    var endArr = end.split("/");
+    var startDate = new Date(startArr[2], startArr[0] - 1, startArr[1]);
+    var endDate = new Date(endArr[2], endArr[0] - 1, endArr[1]);
 
-            // parse date
-            var startArr = start.split("/");
-            var endArr = end.split("/");
-            var startDate = new Date(startArr[2], startArr[0] - 1, startArr[1]);
-            var endDate = new Date(endArr[2], endArr[0] - 1, endArr[1]);
+    var timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
+    var days = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-            // calculate days
-            var days = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
-            // Update the value with the formatted currency
-            $('.num_nights').val('   ' + '    ' + '       ' + '   ' + '    ' + 'Rp' + ' ' + (days * harga_sewa).toLocaleString('id-ID', {}));
-        };
+    var totalBiaya = days * harga_sewa;
+
+    // Update tampilan harga sesuai dengan totalBiaya
+    $('.harga').text('Rp. ' + totalBiaya.toLocaleString('id-ID'));
+
+    // Tambahan logika biaya supir
+    var sopirSelected = $('input[name="flexRadioDefault"]:checked').val();
+    var biayaSopir = 0;
+
+    if (sopirSelected === "ya") {
+        biayaSopir = 100000; // Biaya supir tambahan
+    }
+
+    var totalBiayaSopir = totalBiaya + biayaSopir;
+
+    // Update tampilan harga dengan biaya supir (jika ada)
+    $('.supir-td').text('Rp. ' + biayaSopir.toLocaleString('id-ID'));
+    $('.num_nights').val('Rp. ' + totalBiayaSopir.toLocaleString('id-ID'));
+
+    // Tambahan logika biaya asuransi
+    var asuransiSelected = $('input[name="asuransi"]:checked').val();
+    var biayaAsuransi = 0;
+
+    if (asuransiSelected === "ya") {
+        biayaAsuransi = 50000; // Biaya asuransi tambahan
+    }
+
+    var totalBiayaKeseluruhan = totalBiayaSopir + biayaAsuransi;
+
+    // Update tampilan harga dengan biaya asuransi (jika ada)
+    $('.asuransi-td').text('Rp. ' + biayaAsuransi.toLocaleString('id-ID'));
+    $('.total-biaya').text('Rp. ' + totalBiayaKeseluruhan.toLocaleString('id-ID'));
+
+    // ... (bagian lain dari logika perhitungan biaya, jika ada)
+}
+
     });
 </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const supirOptionYes = document.getElementById("flexRadioDefault1");
-        const supirOptionNo = document.getElementById("flexRadioDefault2");
-        const supirTd = document.querySelector(".supir-td");
-        let hasSelectedYes = false;
-        const harga = 'Rp.100.000';
+document.addEventListener("DOMContentLoaded", function() {
+    const supirOptionYes = document.getElementById("flexRadioDefault1");
+    const supirOptionNo = document.getElementById("flexRadioDefault2");
+    const supirTd = document.querySelector(".supir-td");
+    const totalBiayaElem = document.querySelector('.num_nights');
+    const hargaSewa = parseInt($('input[name="harga_sewa"]').val());
 
-        calculateTotal();
+    supirOptionYes.addEventListener("change", calculateTotal);
+    supirOptionNo.addEventListener("change", calculateTotal);
 
-        supirOptionYes.addEventListener("change", calculateTotal);
-        supirOptionNo.addEventListener("change", calculateTotal);
+    function calculateTotal() {
+        const selectedSupirOption = supirOptionYes.checked;
 
-        function calculateTotal() {
-            const selectedSupirOption = supirOptionYes.checked;
+        if (selectedSupirOption) {
+            supirTd.textContent = 'Rp. 100.000';
 
-            if (selectedSupirOption) {
-                supirTd.textContent = harga;
-                hasSelectedYes = true;
-            } else {
-                if (hasSelectedYes) {
-                    supirTd.textContent = "Rp. 0";
-                } else {
-                    supirTd.textContent = "Rp. 0";
-                    hasSelectedYes = false;
-                }
-            }
+            // Hitung total biaya dengan tambahan biaya supir
+            const totalBiaya = calculateTotalBiaya();
+
+            // Tampilkan total biaya dengan tambahan biaya supir
+            totalBiayaElem.value = 'Rp. ' + totalBiaya.toLocaleString('id-ID');
+        } else {
+            supirTd.textContent = 'Rp. 0';
+
+            // Tampilkan kembali total biaya tanpa biaya supir
+            totalBiayaElem.value = 'Rp. ' + hargaSewa.toLocaleString('id-ID');
         }
-        console.log();
-    });
+    }
+
+    function calculateTotalBiaya() {
+        const start = $('#mystartdate').val();
+        const end = $('#myenddate').val();
+        
+        if (!start || !end) return 0;
+
+        const startArr = start.split("/");
+        const endArr = end.split("/");
+        const startDate = new Date(startArr[2], startArr[0] - 1, startArr[1]);
+        const endDate = new Date(endArr[2], endArr[0] - 1, endArr[1]);
+
+        const timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
+        const days = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+        const totalBiaya = days * hargaSewa;
+        return totalBiaya + 100000; // Tambahkan biaya supir 100,000
+    }
+});
+
 </script>
 @endpush
