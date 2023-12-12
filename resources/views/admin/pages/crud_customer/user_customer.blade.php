@@ -9,6 +9,14 @@ Data Customer
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Data Customer</h4>
+                    <div class="my-2 col-8">
+                        <form action="" method="GET">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="cari" placeholder="Cari">
+                                <button class="input-group-text btn-primary">Search</button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="table-responsive pt-3">
                         <table class="table table-bordered">
                             <thead>
@@ -69,6 +77,9 @@ Data Customer
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div class="d-flex justify-content-center my-5">
+                        {{ $data->withQueryString()->links() }}
                     </div>
                 </div>
             </div>

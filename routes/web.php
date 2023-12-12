@@ -149,3 +149,6 @@ Route::post('/update', [PinjamController::class, 'update_peminjaman'])->name('up
 Route::get('/detail_pinjam/{id}', [PinjamController::class, 'detail_pinjam'])->name('detail_pinjam');
 //bukti_transfer
 Route::get('/bukti/{id}', [PinjamController::class, 'bukti_bayar'])->name('bukti');
+
+//delete
+Route::post('/delete-peminjam/{id}', [PinjamController::class, 'delete_peminjam'])->name('delete.peminjam');

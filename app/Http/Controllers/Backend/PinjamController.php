@@ -8,9 +8,21 @@ use App\Http\Controllers\Controller;
 
 class PinjamController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $pinjam = Peminjaman::orderBy('id',  'DESC')->get();
+        $cari = $request->cari;
+        $pinjam = Peminjaman::with(['user', 'mobil'])
+            ->where('user_id', 'LIKE', '%' . $cari . '%')
+            ->orWhere('biaya', $cari)
+            ->orWhere('status', $cari)
+            ->orWhereHas('user', function ($query) use ($cari) {
+                $query->where('name', 'LIKE', '%' . $cari . '%');
+            })
+            ->orWhereHas('mobil', function ($query) use ($cari) {
+                $query->where('name', 'LIKE', '%' . $cari . '%');
+            })
+            ->orderBy('id', 'DESC')
+            ->paginate(5);
 
         return view('admin.pages.crud_peminjaman.peminjaman', compact('pinjam'));
     }
@@ -39,5 +51,11 @@ class PinjamController extends Controller
     {
         $bukti = Peminjaman::find($request->id);
         return view('admin.pages.crud_peminjaman.bukti', compact('bukti'));
+    }
+
+    public function delete_peminjam(Request $request)
+    {
+        Peminjaman::where('id', $request->id)->delete();
+        return redirect('/data-pinjam');
     }
 }

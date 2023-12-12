@@ -10,11 +10,16 @@ class CustomerController extends Controller
 {
     //
     //*************************CRUD CUSTOMER******************************* */
-    public function usercustomer()
+    public function usercustomer(Request $request)
     {
-        $data = User::where('role_id', '3')
+        $cari = $request->cari;
+        $data = User::where(function ($query) use ($cari) {
+            $query->where('role_id', '3')
+                ->orWhere('name', 'like', "%$cari%")
+                ->orWhere('email', 'like', "%$cari%");
+        })
             ->orderBy('id', 'DESC')
-            ->get();
+            ->paginate(5);
         return view('admin.pages.crud_customer.user_customer', compact('data'));
     }
 

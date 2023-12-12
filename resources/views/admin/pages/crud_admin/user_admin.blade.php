@@ -51,7 +51,7 @@ Data Admin
                                     <td>
                                         {{ $loop->iteration }}
                                     </td>
-                                    <td class="text-truncate" style="min-width: 200px;white-space: normal;">
+                                    <td class="text-truncate" style="min-width: 150px;white-space: normal;">
                                         {{ $item->name }}
                                     </td>
                                     <td>

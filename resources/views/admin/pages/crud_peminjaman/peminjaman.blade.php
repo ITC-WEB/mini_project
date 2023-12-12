@@ -52,10 +52,10 @@ Data Peminjaman
                                     <td>
                                         {{ $loop->iteration }}
                                     </td>
-                                    <td>
+                                    <td class="text-truncate" style="min-width: 150px;white-space: normal;">
                                         {{ $pinjams->user->name }}
                                     </td>
-                                    <td>
+                                    <td class="text-truncate" style="min-width: 100px;white-space: normal;">
                                         {{ $pinjams->mobil->name }}
                                     </td>
                                     <td>
@@ -76,17 +76,28 @@ Data Peminjaman
                                         <a href="{{ route('edit',['id' => $pinjams->id])}}"><button type="submit" style="border: none;" class="badge badge-danger">{{ $pinjams->status }}</button></a>
                                         @endif
                                         <a href="{{ route('detail_pinjam',['id' => $pinjams->id]) }}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>
+                                        <form action="{{ route('delete.peminjam', $pinjams->id) }}" method="POST" id="delete-form-{{ $pinjams->id }}" class="d-inline">
+                                            @csrf
+                                            <button type="button" class="badge badge-danger delete" style="border:none;" data-id="{{ $pinjams->id }}"><i class="bi bi-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
+                    <div class="d-flex justify-content-center my-5">
+                        {{ $pinjam->withQueryString()->links() }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     @endsection
+
+    @push('addon-style')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    @endpush
 
     @push('addon-script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
