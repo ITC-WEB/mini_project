@@ -60,18 +60,52 @@ class HomeController extends Controller
 
     public function update_customer(Request $request)
     {
-
-        $photo = $request->file('photo')->store('photo');
-        $upload = Data::create([
-            'id' => $request->id,
-            'photo' => $photo,
+        // Validasi data yang diterima, termasuk foto yang diunggah
+        $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan jenis file dan ukurannya sesuai kebutuhan
+            'ktp' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'sim' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-        $upload_id = $upload->id;
-        $user = User::where('data_id', (int)$request->data->id)->latest('id')->first();
-        $user->update(['data_id' => $upload_id]);
-        return response()->json($user);
+
+        // Dapatkan user yang sedang diautentikasi
+        $user = Auth::user();
+
+        // Perbarui model 'Data' dengan foto baru (jika ada)
+        if ($request->hasFile('photo')) {
+            // Simpan foto yang diunggah
+            $photo = $request->file('photo')->store('photo');
+
+            // Perbarui tabel 'data'
+            $data = Data::updateOrCreate(['id' => $user->data_id], ['photo' => $photo]);
+        }
+
+        if ($request->hasFile('ktp')) {
+            // Simpan foto yang diunggah
+            $ktp = $request->file('ktp')->store('ktp');
+
+            // Perbarui tabel 'data'
+            $data = Data::updateOrCreate(['id' => $user->data_id], ['ktp' => $ktp]);
+        }
+        if ($request->hasFile('sim')) {
+            // Simpan foto yang diunggah
+            $ktp = $request->file('sim')->store('sim');
+
+            // Perbarui tabel 'data'
+            $data = Data::updateOrCreate(['id' => $user->data_id], ['sim' => $ktp]);
+        }
+
+
+        $user = User::find($request->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->gender = $request->gender;
+        $user->phone = $request->phone;
+        $user->alamat = $request->alamat;
+        $user->save();
+        // Kembalikan respons JSON dengan user yang diperbarui
         return redirect('/profilecustumer');
     }
+
 
     public function profilecustumer(Request $request)
     {

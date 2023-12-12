@@ -37,18 +37,22 @@ editcustomer
               <label for="exampleInputEmail3">Alamat Lengkap</label>
               <input name="alamat" value="{{Auth::user()->alamat}}" type="text" class="form-control rounded-pill" id="exampleInputEmail3" placeholder="Alamat">
             </div>
-            <div class="form-group1 mb-3">
-              <label for="exampleInputEmail3">Upload KTP</label>
-              <input type="file" class="form-control  rounded-pill" name="ktp" id="inputGroupFile02">
+            <div class="row">
+              <div class="form-group1 col-4 ">
+                <label for="exampleInputEmail3">Upload Photo</label>
+                <input type="file" name="photo">
+              </div>
+              <div class="form-group1 col-4">
+                <label for="exampleInputEmail3">Upload KTP</label>
+                <input type="file" name="ktp">
+              </div>
+              <div class="form-group1 col-4 mb-4">
+                <label for="exampleInputEmail3">Upload SIM</label>
+                <input type="file" name="sim">
+              </div>
+
             </div>
-            <div class="form-group1 mb-3">
-              <label for="exampleInputEmail3">Upload SIM</label>
-              <input type="file" class="form-control  rounded-pill" name="sim" id="inputGroupFile02">
-            </div>
-            <div class="form-group1 mb-3">
-              <label for="exampleInputEmail3">Upload Photo</label>
-              <input type="file" class="form-control  rounded-pill" name="photo" id="inputGroupFile02">
-            </div>
+
             <button type="submit" class="btn mr-2" style="background-color: #FD5D3B;color:#fff">UPDATE</button>
             <a href="{{ url('/profilecustumer') }}" class="btn border" style="background-color: #fff;color:#000000">CLOSE</a>
           </form>
