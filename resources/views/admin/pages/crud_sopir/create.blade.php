@@ -26,7 +26,7 @@
                                     id="exampleInputName1" placeholder="Name" required>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Nomor HP/Whatsapp</label>
+                                <label for="exampleInputEmail3">Nomor HP/WhatAapp</label>
                                 <input name="phone" type="number" class="form-control rounded-pill"
                                     id="exampleInputEmail3" placeholder="Phone" required>
                             </div>
@@ -34,8 +34,8 @@
                                 <label for="exampleSelectGender">Jenis Kelamin</label>
                                 <select class="custom-select rounded-pill" name="gender" id="inputGroupSelect01" required>
                                     <option>---Pilih---</option>
-                                    <option name="male" value="male">Male</option>
-                                    <option name="female" value="female">Female</option>
+                                    <option name="male" value="male">Laki-laki</option>
+                                    <option name="female" value="female">Perempuan</option>
                                 </select>
                             </div>
                             <div class="form-group">

@@ -16,12 +16,12 @@
                             <hr>
 
                             <div class="form-group">
-                                <label for="exampleInputName1">Nama</label>
+                                <label for="exampleInputName1">Nama Lengkap</label>
                                 <input name="name" type="text" class="form-control" id="exampleInputName1"
                                     value="{{ $sopir->name }}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Nomer Hanphone/Whatsapp </label>
+                                <label for="exampleInputEmail3">Nomer Hanphone/WhatsApp </label>
                                 <input name="phone" type="text" class="form-control" id="exampleInputEmail3"
                                     value="{{ $sopir->phone }}">
                             </div>

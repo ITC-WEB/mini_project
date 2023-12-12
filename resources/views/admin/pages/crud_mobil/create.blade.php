@@ -28,17 +28,17 @@
                         <form class="forms-sample" method="POST" action="/create-mobil" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputName1">Nomer Kendaraan<span class="text-danger">*</span></label>
+                                <label for="exampleInputName1">Nomor Kendaraan<span class="text-danger">*</span></label>
                                 <input name="noplat" type="text" class="form-control rounded-pill"
                                     id="exampleInputName1" required>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Name / Jenis Mobil<span class="text-danger">*</span></label>
+                                <label for="exampleInputEmail3">Merek / Jenis Mobil<span class="text-danger">*</span></label>
                                 <input name="name" type="text" class="form-control  rounded-pill"
                                     id="exampleInputEmail3" required>
                             </div>
                             <div class="form-group">
-                                <label for="exampleSelectGender">Merek Mobil<span class="text-danger">*</span></label>
+                                <label for="exampleSelectGender">Pabrikan Mobil<span class="text-danger">*</span></label>
                                 <select class="custom-select  rounded-pill" name="merek_id" id="inputGroupSelect01"
                                     required>
                                     <option selected>---Pilih---</option>

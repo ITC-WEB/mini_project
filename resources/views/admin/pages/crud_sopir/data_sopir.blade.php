@@ -27,7 +27,7 @@
 
                                             <div class="row mb-2">
                                                 <div class="col-sm-3">
-                                                    <p class="mb-0">Nomor HP/Whatsapp</p>
+                                                    <p class="mb-0">Nomor HP/WhatsApp</p>
                                                 </div>
                                                 <div class="col-sm-9">
                                                     <p class=" mb-0">: {{ $dataSopir->phone }}</p>

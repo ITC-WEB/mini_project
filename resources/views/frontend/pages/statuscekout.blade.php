@@ -56,11 +56,6 @@ statuscekout
                     <label class="custom-file-label" for="inputSIM">img.png</label>
                 </div>
 
-                <!-- <div class="alert alert-success font-weight-medium mt-2" id="AlertSukses">
-                <h3>Pesanan Berhasil Terkirim</h3>
-                    <p>Silahkan <a href="https://wa.me/08989392968" target="_blank" class="alert-link">Klik disini</a> untuk menghubungi Admin kami bahwa anda Sudah Melakukan Pembayaran !</p>
-                </div> -->
-
                 <div class="form-group form-check mt-2">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="toggleUploadButton()">
                     <label class="form-check-label" for="exampleCheck1">Saya sudah melakukan Pembayaran dan mengunggah Bukti Pembayaran</label>
@@ -134,13 +129,11 @@ statuscekout
                     console.log(result);
                     if (result.isConfirmed) {
                         document.getElementById("myForm").submit()
-                        // e.preventDefault()
                         // Kembalikan tampilan tombol
                         console.log("t");
                         uploadButton.innerHTML = 'Kirim';
                         loadingIndicator.style.display = 'none';
                         uploadButton.removeAttribute('disabled');
-                        location.href = "https://wa.me/08989392968"
 
                     }
 
