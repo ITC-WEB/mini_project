@@ -15,7 +15,9 @@ ProfileCustumer
                             <div class="col-lg-4">
                                 <div class="card-body ml-5 d-flex flex-column align-items-center">
                                     <a href="/">
-                                        @if (Auth::user()->gender == 'male')
+                                        @if (Auth::user()->data->photo)
+                                        <img src="{{asset('storage/'. Auth::user()->data->photo) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                        @elseif (Auth::user()->gender == 'male')
                                         <img src="{{asset('frontend/images/man.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                                         @else
                                         <img src="{{asset('frontend/images/woman.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
@@ -26,7 +28,7 @@ ProfileCustumer
                                         {{ Auth::user()->name }}
                                     </h5>
                                     <div class="mb-2">
-                                        <a href="/editcustomer">
+                                        <a href="{{ route('edit.customer',['id' => Auth::user()->id])}}">
                                             <button type="button" class="btn" style="background-color: #FD5D3B;color:#fff">EDIT</button>
                                         </a>
                                     </div>

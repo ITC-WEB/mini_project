@@ -1,19 +1,18 @@
 @extends('admin.layout.app')
 @section('title')
-    Edit Data
+Edit Data
 @endsection
 @section('content')
-    <div class="main-panel">
-        <div class="content-wrapper">
-            <div class="col-12 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <form class="forms-sample" method="POST" action="{{ route('sopir.update', ['id' => $sopir->id]) }}"
-                            enctype="multipart/form-data">
-                            @csrf
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form class="forms-sample" method="POST" action="{{ route('sopir.update', ['id' => $sopir->id]) }}" enctype="multipart/form-data">
+                        @csrf
 
-                            <h3 class="mb-3">Edit Driver</h3>
-                            <hr>
+                        <h3 class="mb-3">Edit Driver</h3>
+                        <hr>
 
                             <div class="form-group">
                                 <label for="exampleInputName1">Nama Lengkap</label>
@@ -56,31 +55,8 @@
                             <a href="/add-sopir" class="btn btn-light">Close</a>
                         </form>
 
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     @endsection
-    @push('after-script')
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-
-        <script>
-            $("#gambar").change(function() {
-                previewImage(this);
-            });
-
-            function previewImage(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        $("#img-view").attr("src", e.target.result);
-                    };
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-        </script>
-    @endpush

@@ -42,7 +42,9 @@
 
             <div class="dropdown" id="avatarDropdown">
                 <span style="cursor: pointer;" onclick="toggleDropdown()">
-                    @if (Auth::user()->gender == 'male')
+                    @if (Auth::user()->data->photo)
+                    <img src="{{ asset('storage/'. Auth::user()->data->photo) }}" class="rounded-circle" style="width: 50px;" alt="">
+                    @elseif (Auth::user()->gender == 'male')
                     <img src="{{ asset('frontend/images/man.png') }}" style="width: 50px;" alt="">
                     @else
                     <img src="{{ asset('frontend/images/woman.png') }}" style="width: 50px;" alt="">
