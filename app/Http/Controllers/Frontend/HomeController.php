@@ -76,7 +76,7 @@ class HomeController extends Controller
             $photo = $request->file('photo')->store('photo');
 
             // Perbarui tabel 'data'
-            $data = Data::updateOrCreate(['id' => $user->data_id], ['photo' => $photo]);
+            Data::updateOrCreate(['id' => $user->data_id], ['photo' => $photo]);
         }
 
         if ($request->hasFile('ktp')) {
@@ -84,14 +84,14 @@ class HomeController extends Controller
             $ktp = $request->file('ktp')->store('ktp');
 
             // Perbarui tabel 'data'
-            $data = Data::updateOrCreate(['id' => $user->data_id], ['ktp' => $ktp]);
+            Data::updateOrCreate(['id' => $user->data_id], ['ktp' => $ktp]);
         }
         if ($request->hasFile('sim')) {
             // Simpan foto yang diunggah
             $ktp = $request->file('sim')->store('sim');
 
             // Perbarui tabel 'data'
-            $data = Data::updateOrCreate(['id' => $user->data_id], ['sim' => $ktp]);
+            Data::updateOrCreate(['id' => $user->data_id], ['sim' => $ktp]);
         }
 
 
