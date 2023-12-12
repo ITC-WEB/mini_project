@@ -80,7 +80,7 @@ Detail
             </table>
           </div>
           <div class="join-container">
-            <a href="{{ route('peminjaman',['id' => $mobil->id]) }}" class="btn btn-block btn-join-now mt-3 py-2">Check-Out Sekarang</a>
+            <a href="{{ route('peminjaman',['id' => $mobil->id]) }}" target="_blank" class="btn btn-block btn-join-now mt-3 py-2">Check-Out Sekarang</a>
           </div>
         </div>
       </div>

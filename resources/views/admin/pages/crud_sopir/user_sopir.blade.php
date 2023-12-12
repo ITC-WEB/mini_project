@@ -27,22 +27,22 @@
                                             No
                                         </th>
                                         <th>
-                                            Name
+                                            Nama Lengkap
                                         </th>
                                         <th>
-                                            Phone
+                                            Nomor Hp/WhataApp
                                         </th>
                                         <th>
-                                            Gender
+                                            Jenis Kelamin
                                         </th>
                                         <th>
                                             Usia
                                         </th>
                                         <th>
-                                            Alamat
+                                            Alamat Lengkap
                                         </th>
                                         <th>
-                                            Action
+                                            Aksi
                                         </th>
                                     </tr>
                                 </thead>

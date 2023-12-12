@@ -42,13 +42,13 @@
                                             No
                                         </th>
                                         <th>
-                                            Nomer Kendaraan
+                                            Nomor Kendaraan
                                         </th>
                                         <th>
-                                            Name Mobil
+                                            Merek Mobil
                                         </th>
                                         <th>
-                                            Merek
+                                            Pabrikan
                                         </th>
                                         <th>
                                             Harga Sewa

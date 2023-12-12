@@ -46,7 +46,7 @@ statuscekout
                 </h1>
             </div>
         </div>
-        <form action="/update-pembayaran" method="post" enctype="multipart/form-data">
+        <form action="/update-pembayaran" id="myForm" method="post" enctype="multipart/form-data" >
             @csrf
             <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
             <div class="input mt-4 mx-auto">
@@ -56,11 +56,6 @@ statuscekout
                     <label class="custom-file-label" for="inputSIM">img.png</label>
                 </div>
 
-                <div class="alert alert-success font-weight-medium mt-2" id="AlertSukses">
-                <h3>Pesanan Berhasil Terkirim</h3>
-                    <p>Silahkan <a href="https://wa.me/08989392968" target="_blank" class="alert-link">Klik disini</a> untuk menghubungi Admin kami bahwa anda Sudah Melakukan Pembayaran !</p>
-                </div>
-
                 <div class="form-group form-check mt-2">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="toggleUploadButton()">
                     <label class="form-check-label" for="exampleCheck1">Saya sudah melakukan Pembayaran dan mengunggah Bukti Pembayaran</label>
@@ -68,9 +63,14 @@ statuscekout
                 
                
                 <div class="btn-container">
-                    <button type="submit" onclick="submitWithLoading()" class="btn btn-block btn-primary mt-4" id="uploadButton" disabled>
-                        Kirim
-                        </button>
+                    <button type="submit"  class="btn btn-block btn-primary mt-4" id="uploadButton" disabled>
+                    <!-- <span id="loadingIndicator" style="display:none;">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </span> -->
+                    Kirim</button>
+                </div>
+                <div>
+                
                 </div>
         </form>
 
@@ -109,6 +109,37 @@ statuscekout
                 console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
             }
         });
+        
+        var uploadButton = document.getElementById('uploadButton');
+        
+        if (uploadButton) {
+            console.log("q");
+            uploadButton.addEventListener("click", function(e) {
+                // Sembunyikan tombol dan tampilkan animasi loading
+                uploadButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
+                // loadingIndicator.style.display = 'inline-block';
+                uploadButton.setAttribute('disabled', 'disabled');
+                e.preventDefault()
+                
+                Swal.fire({
+                    title: 'Pesanan Berhasil Terkirim',
+                    html: '<p>Silahkan menghubungi Admin kami bahwa Anda sudah melakukan Pembayaran!</p>',
+                    icon: 'success',
+                }).then(function(result){
+                    console.log(result);
+                    if (result.isConfirmed) {
+                        document.getElementById("myForm").submit()
+                        // Kembalikan tampilan tombol
+                        console.log("t");
+                        uploadButton.innerHTML = 'Kirim';
+                        loadingIndicator.style.display = 'none';
+                        uploadButton.removeAttribute('disabled');
+
+                    }
+
+                })
+            })
+        }
     });
 </script>
 <script>
@@ -148,14 +179,19 @@ statuscekout
         loadingIndicator.style.display = 'inline-block';
         uploadButton.setAttribute('disabled', 'disabled');
 
-        setTimeout(function () {
-            // Hentikan animasi loading, tampilkan alert, dan jalankan fungsi MyAlertSukses
-            AlertSukses.style.display = 'block';
-            uploadButton.innerHTML = 'Kirim';
-            loadingIndicator.style.display = 'none';
-            uploadButton.removeAttribute('disabled');
-        }, 3000);
+        Swal.fire({
+            title: 'Pesanan Berhasil Terkirim',
+            html: '<p>Silahkan <a href="https://wa.me/08989392968" target="_blank">Klik disini</a> untuk menghubungi Admin kami bahwa Anda sudah melakukan Pembayaran!</p>',
+            icon: 'success',
+        }).then(()=> {
+            $("#myform").submit();
+        });
+
+        
     }
 </script>
 <script src="frontend/libraries/gijgo/js/gijgo.min.js"></script>
+<!-- Tambahkan pustaka SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 @endpush
