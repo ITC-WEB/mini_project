@@ -130,7 +130,9 @@ Peminjaman
                             </tr>
                             <tr>
                                 <th width="50%">Total</th>
-                                <td width="50%" class="text-right"><input type="text" style="border-style:none;" class="num_nights" readonly></td>
+                                <td width="50%" class="text-right total-harga">
+                                   
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -230,11 +232,11 @@ Peminjaman
     // Update tampilan harga dengan biaya supir (jika ada)
     $('.supir-td').text('Rp. ' + biayaSopir.toLocaleString('id-ID'));
     $('.num_nights').val('Rp. ' + totalBiayaSopir.toLocaleString('id-ID'));
-
+    
     // Tambahan logika biaya asuransi
     var asuransiSelected = $('input[name="asuransi"]:checked').val();
     var biayaAsuransi = 0;
-
+    
     if (asuransiSelected === "ya") {
         biayaAsuransi = 50000; // Biaya asuransi tambahan
     }
@@ -252,53 +254,51 @@ Peminjaman
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const supirOptionYes = document.getElementById("flexRadioDefault1");
-    const supirOptionNo = document.getElementById("flexRadioDefault2");
-    const supirTd = document.querySelector(".supir-td");
-    const totalBiayaElem = document.querySelector('.num_nights');
-    const hargaSewa = parseInt($('input[name="harga_sewa"]').val());
-
-    supirOptionYes.addEventListener("change", calculateTotal);
-    supirOptionNo.addEventListener("change", calculateTotal);
-
-    function calculateTotal() {
-        const selectedSupirOption = supirOptionYes.checked;
-
-        if (selectedSupirOption) {
-            supirTd.textContent = 'Rp. 100.000';
-
-            // Hitung total biaya dengan tambahan biaya supir
+    document.addEventListener("DOMContentLoaded", function() {
+        const supirOptionYes = document.getElementById("flexRadioDefault1");
+        const supirOptionNo = document.getElementById("flexRadioDefault2");
+        const supirTd = document.querySelector(".supir-td");
+        const totalBiayaElem = document.querySelector('.total-harga');
+        let hargaSewa = parseInt($('input[name="harga_sewa"]').val());
+        let biayaSupir = 0;
+    
+        supirOptionYes.addEventListener("change", calculateTotal);
+        supirOptionNo.addEventListener("change", calculateTotal);
+    
+        function calculateTotal() {
+            if (supirOptionYes.checked) {
+                supirTd.textContent = 'Rp. 100.000';
+                biayaSupir += 100000;
+            } else if (supirOptionNo.checked) {
+                supirTd.textContent = 'Rp. 0';
+                biayaSupir -= 100000;
+            }
+            
             const totalBiaya = calculateTotalBiaya();
-
-            // Tampilkan total biaya dengan tambahan biaya supir
-            totalBiayaElem.value = 'Rp. ' + totalBiaya.toLocaleString('id-ID');
-        } else {
-            supirTd.textContent = 'Rp. 0';
-
-            // Tampilkan kembali total biaya tanpa biaya supir
-            totalBiayaElem.value = 'Rp. ' + hargaSewa.toLocaleString('id-ID');
+            $(".total-harga").text('Rp. ' + totalBiaya.toLocaleString('id-ID'));
+            $('.num_nights').val('Rp. ' + totalBiaya.toLocaleString('id-ID'));
         }
-    }
-
-    function calculateTotalBiaya() {
-        const start = $('#mystartdate').val();
-        const end = $('#myenddate').val();
         
-        if (!start || !end) return 0;
-
-        const startArr = start.split("/");
-        const endArr = end.split("/");
-        const startDate = new Date(startArr[2], startArr[0] - 1, startArr[1]);
-        const endDate = new Date(endArr[2], endArr[0] - 1, endArr[1]);
-
-        const timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
-        const days = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-        const totalBiaya = days * hargaSewa;
-        return totalBiaya + 100000; // Tambahkan biaya supir 100,000
-    }
-});
-
+        function calculateTotalBiaya() {
+            const start = $('#mystartdate').val();
+            const end = $('#myenddate').val();
+    
+            if (!start || !end) return 0;
+    
+            const startArr = start.split("/");
+            const endArr = end.split("/");
+            const startDate = new Date(startArr[2], startArr[0] - 1, startArr[1]);
+            const endDate = new Date(endArr[2], endArr[0] - 1, endArr[1]);
+    
+            const timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
+            const days = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    
+            const totalBiayaSewa = days * hargaSewa;
+            const totalBiaya = totalBiayaSewa + biayaSupir;
+    
+            return totalBiaya;
+        }
+    });
+    
 </script>
 @endpush
