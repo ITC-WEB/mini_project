@@ -23,7 +23,7 @@ statuscekout
     <div class="container ">
         <div class="card card-status shadow mx-auto mt-4 col-lg-12 col-md-6 col-sm-6">
             <div class=" st text-center mt-4 mb-4">
-                <img class="bri" src="frontend/images/Logo-Bank-BRI.png" alt="" />
+                <img class="bri" src="" alt="" />
                 <table class="statuscekout text-left mt-5 mb-5 mx-auto center-table justify-content-around">
                     <tr>
                         <th>Nomor Rekening</th>
@@ -189,6 +189,28 @@ statuscekout
 
         
     }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Mendapatkan informasi terkait pilihan bank dari halaman peminjaman (contoh: dari local storage)
+        const selectedBank = localStorage.getItem('selectedBank'); // Pastikan Anda sudah menyimpan informasi ini saat pilihan bank dipilih
+    
+        // Mendapatkan elemen gambar bank dan nomor rekening dari halaman status checkout
+        const bankLogo = document.querySelector('.bri'); // Ganti dengan selector yang sesuai dengan gambar bank
+        const nomorRekening = document.getElementById('nomorRekening'); // Ganti dengan ID yang sesuai dengan nomor rekening
+    
+        // Mengganti gambar bank dan nomor rekening berdasarkan pilihan dari halaman peminjaman
+        if (selectedBank === 'BRI') {
+            bankLogo.src = 'frontend/images/Logo-Bank-BRI.png'; // Ganti dengan URL gambar Bank BRI
+            nomorRekening.textContent = '52281-09-009868-90-8'; // Ganti dengan nomor rekening Bank BRI
+        } else if (selectedBank === 'BCA') {
+            bankLogo.src = 'frontend/images/Logo-Bank-BCA.jpg'; // Ganti dengan URL gambar Bank BCA
+            nomorRekening.textContent = '5321-09-77654-90-8'; // Ganti dengan nomor rekening Bank BCA
+        }
+        // Tambahkan else if lain jika terdapat opsi bank lainnya
+    });
+    
+    
 </script>
 <script src="frontend/libraries/gijgo/js/gijgo.min.js"></script>
 <!-- Tambahkan pustaka SweetAlert -->

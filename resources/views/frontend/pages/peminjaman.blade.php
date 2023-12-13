@@ -301,4 +301,20 @@ Peminjaman
     });
     
 </script>
+<script>
+    // Mendapatkan semua elemen radio yang memiliki class 'radio' pada halaman pembayaran
+const radioButtons = document.querySelectorAll('.radio');
+
+// Menambahkan event listener untuk setiap tombol radio
+radioButtons.forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        // Mengambil nilai dari radio button yang dipilih pada halaman pembayaran
+        const selectedBank = document.querySelector('input[name="plan"]:checked').nextElementSibling.querySelector('.plan-type').textContent;
+
+        // Menyimpan informasi pilihan bank ke local storage
+        localStorage.setItem('selectedBank', selectedBank);
+    });
+});
+
+</script>
 @endpush

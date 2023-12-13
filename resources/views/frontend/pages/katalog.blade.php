@@ -244,4 +244,6 @@ Katalog
     });
 </script>
 
+
+
 @endpush
