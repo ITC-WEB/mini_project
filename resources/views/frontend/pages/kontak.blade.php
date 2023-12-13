@@ -18,7 +18,7 @@
     <section>
       <div class="container mt-5 p-5">
         <div class="row justify-content-between">
-          <div class="col-md-6 col-lg-7">
+          <div class="col-md-6 col-lg-7" data-aos="fade-right">
             <iframe
               width="100% "
               height="350 "
@@ -30,7 +30,7 @@
           </div>
           <div class="col-md-6 col-lg-4 about-image mx-sm-auto">
             <div class="d-flex flex-column justify-content-center align-items-center h-100">
-              <div class="d-flex flex-column align-items-start">
+              <div class="d-flex flex-column align-items-start" data-aos="fade-left">
                 <div class="d-flex align-items-center mb-3 mt-3">
                   <i class="fab fa-whatsapp fa-2x"></i>
                   <p class="ml-3 mb-0 tulisan">+6288 999 222 333</p>

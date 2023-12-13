@@ -143,7 +143,8 @@ Katalog
 <!--end button-->
 <!--catalog1 -->
 <div class="container mt-5 p-5">
-    <div class="row text-left justify-content-between">
+    <div class="row text-left justify-content-between" data-aos="fade-up"
+    data-aos-duration="900">
         @foreach ($mobil as $mobils)
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4 cardkatalog  ">
             <!-- Added margin-bottom -->
