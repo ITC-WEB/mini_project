@@ -109,6 +109,9 @@ $(function () {
             animateRotate: true,
         },
     };
+
+    //statistik yang digunakan
+
     var areaData = {
         labels: [
             "Jan",
@@ -127,25 +130,31 @@ $(function () {
         datasets: [
             {
                 label: "Statistik 1 Tahun",
-                data: [12, 19, 3, 5, 2, 3],
+                data: [4, 4, 6, 8, 8, 5, 4, 6, 3, 6, 7, 12],
                 backgroundColor: [
-                    "rgba(25, 99, 132, 0.2)",
-                    "rgba(54, 162, 235, 0.2)",
-                    "rgba(255, 206, 86, 0.2)",
-                    "rgba(75, 192, 192, 0.2)",
-                    "rgba(153, 102, 255, 0.2)",
-                    "rgba(255, 159, 64, 0.2)",
+                    "rgba(52,4,245,0.6)",
+                    "rgba(4, 4, 4, 0.7)",
+                    "rgba(255, 206, 86, 0.7)",
+                    "rgba(75, 192, 192, 0.7)",
+                    "rgba(153, 102, 255, 0.7)",
+                    "rgba(255, 159, 64, 0.7)",
+                    "rgba(255, 159, 64, 0.7)",
+                    "rgba(153, 102, 255, 0.7)",
+                    "rgba(75, 192, 192, 0.7)",
+                    "rgba(4, 4, 4, 0.7)",
+                    "rgba(255, 159, 64, 0.7)",
+                    "rgba(255, 159, 64, 0.7)",
                 ],
                 borderColor: [
-                    "rgba(255,99,132,1)",
-                    "rgba(54, 162, 235, 1)",
-                    "rgba(255, 206, 86, 1)",
-                    "rgba(75, 192, 192, 1)",
-                    "rgba(153, 102, 255, 1)",
-                    "rgba(255, 159, 64, 1)",
+                    "rgba(4,4,4,0.5)",
+                    "rgba(54, 162, 235)",
+                    "rgba(255, 206, 86)",
+                    "rgba(75, 192, 192)",
+                    "rgba(153, 102, 255)",
+                    "rgba(255, 159, 64)",
                 ],
-                borderWidth: 1,
-                fill: true, // 3: no fill
+                borderWidth: 2,
+                fill: true,
             },
         ],
     };
@@ -348,6 +357,8 @@ $(function () {
             options: doughnutPieOptions,
         });
     }
+
+    //statis yang digunakan
 
     if ($("#areaChart").length) {
         var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
