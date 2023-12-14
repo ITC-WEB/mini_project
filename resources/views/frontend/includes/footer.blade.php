@@ -13,7 +13,7 @@
                                     <a href="#" class="social-icon mr-2">
                                         <i class="fab fa-facebook fa-2x "></i>
                                     </a>
-                                    <a href="{{url('https://wa.me/08989392968')}}" class="social-icon">
+                                    <a href="{{url('https://wa.me/08989392968')}}t" class="social-icon">
                                         <i class="fab fa-whatsapp fa-2x mr-2 "></i>
                                     </a>
                                     <a href="#" class="social-icon">
