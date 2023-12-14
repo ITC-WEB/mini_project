@@ -83,7 +83,7 @@ Peminjaman
                                     <label for="inputUsername" class="font-weight-bold mt-3">Pembayaran Bank </label>
                                     <div class="grid">
                                         <label class="card-button">
-                                            <input name="plan" class="radio" type="radio" checked>
+                                            <input name="plan" class="radio" type="radio">
                                             <span class="plan-details">
                                                 <span class="plan-type">BCA</span>
                                                 <span class="mt-2 text-center">5321-09-77654-90-8</span>
