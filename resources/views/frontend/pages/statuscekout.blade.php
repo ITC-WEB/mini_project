@@ -46,7 +46,7 @@ statuscekout
                 </h1>
             </div>
         </div>
-        <form action="/update-pembayaran" id="myForm" method="post" enctype="multipart/form-data" >
+        <form action="/update-pembayaran" id="myForm" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
             <div class="input mt-4 mx-auto">
@@ -59,18 +59,18 @@ statuscekout
                 <div class="form-group form-check mt-2">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="toggleUploadButton()">
                     <label class="form-check-label" for="exampleCheck1">Saya sudah melakukan Pembayaran dan mengunggah Bukti Pembayaran</label>
-                    </div>
-                
-               
+                </div>
+
+
                 <div class="btn-container">
-                    <button type="submit"  class="btn btn-block btn-primary mt-4" id="uploadButton" disabled>
-                    <!-- <span id="loadingIndicator" style="display:none;">
+                    <button type="submit" class="btn btn-block btn-primary mt-4" id="uploadButton" disabled>
+                        <!-- <span id="loadingIndicator" style="display:none;">
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     </span> -->
-                    Kirim</button>
+                        Kirim</button>
                 </div>
                 <div>
-                
+
                 </div>
         </form>
 
@@ -109,9 +109,9 @@ statuscekout
                 console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
             }
         });
-        
+
         var uploadButton = document.getElementById('uploadButton');
-        
+
         if (uploadButton) {
             console.log("q");
             uploadButton.addEventListener("click", function(e) {
@@ -120,12 +120,12 @@ statuscekout
                 // loadingIndicator.style.display = 'inline-block';
                 uploadButton.setAttribute('disabled', 'disabled');
                 e.preventDefault()
-                
+
                 Swal.fire({
                     title: 'Pesanan Berhasil Terkirim',
                     html: '<p>Silahkan menghubungi Admin kami bahwa Anda sudah melakukan Pembayaran!</p>',
                     icon: 'success',
-                }).then(function(result){
+                }).then(function(result) {
                     console.log(result);
                     if (result.isConfirmed) {
                         document.getElementById("myForm").submit()
@@ -183,34 +183,32 @@ statuscekout
             title: 'Pesanan Berhasil Terkirim',
             html: '<p>Silahkan <a href="https://wa.me/08989392968" target="_blank">Klik disini</a> untuk menghubungi Admin kami bahwa Anda sudah melakukan Pembayaran!</p>',
             icon: 'success',
-        }).then(()=> {
+        }).then(() => {
             $("#myform").submit();
         });
 
-        
+
     }
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Mendapatkan informasi terkait pilihan bank dari halaman peminjaman (contoh: dari local storage)
         const selectedBank = localStorage.getItem('selectedBank'); // Pastikan Anda sudah menyimpan informasi ini saat pilihan bank dipilih
-    
+
         // Mendapatkan elemen gambar bank dan nomor rekening dari halaman status checkout
         const bankLogo = document.querySelector('.bri'); // Ganti dengan selector yang sesuai dengan gambar bank
         const nomorRekening = document.getElementById('nomorRekening'); // Ganti dengan ID yang sesuai dengan nomor rekening
-    
+
         // Mengganti gambar bank dan nomor rekening berdasarkan pilihan dari halaman peminjaman
         if (selectedBank === 'BRI') {
-            bankLogo.src = '{{asset('frontend/images/Logo-Bank-BRI.png')}}'; // Ganti dengan URL gambar Bank BRI
+            bankLogo.src = 'frontend/images/Logo-Bank-BRI.png'; // Ganti dengan URL gambar Bank BRI
             nomorRekening.textContent = '52281-09-009868-90-8'; // Ganti dengan nomor rekening Bank BRI
         } else if (selectedBank === 'BCA') {
-            bankLogo.src = '{{ asset('frontend/images/Logo-Bank-BCA.png') }}'; // Ganti dengan URL gambar Bank BCA
+            bankLogo.src = 'frontend/images/Logo-Bank-BCA.png'; // Ganti dengan URL gambar Bank BCA
             nomorRekening.textContent = '5321-09-77654-90-8'; // Ganti dengan nomor rekening Bank BCA
         }
         // Tambahkan else if lain jika terdapat opsi bank lainnya
     });
-    
-    
 </script>
 <script src="frontend/libraries/gijgo/js/gijgo.min.js"></script>
 <!-- Tambahkan pustaka SweetAlert -->
