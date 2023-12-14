@@ -65,7 +65,7 @@ TentangKami
                         <div class="text-center text-lg-center mt-3">
                             <img src="frontend/images/verifikasi.png" class="bp-img img-fluid " style="height: 64px; width: 64px;" />
                             <h3 class="font-weight-bold">Verifikasi</h3>
-                            <h4>Anda akan mendapatkan notifikasi melalui email untuk persetujuan reservasi</h4>
+                            <h4>Menghubungi Admin untuk Verifikasi Pemesanan</h4>
                         </div>
                     </div>
                     <div class="col-lg-4 py-lg-5"  data-aos="zoom-in-right">
