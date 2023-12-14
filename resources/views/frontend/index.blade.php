@@ -48,7 +48,7 @@ Halaman Utama
         <div class="container">
             <div class="row">
                 <div class="col text-center section-popular-heading">
-                    <h2>Mobil Popular</h2>
+                    <h2>Mobil Populer</h2>
                     <p>
                         Eksplorasi Tanpa Batas, Dengan Mobil
                         <br /> Sewaan
