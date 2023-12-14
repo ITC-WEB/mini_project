@@ -19,13 +19,13 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-down">
           <div class="mt-5 mb-5 text-center">
             <img src="frontend/images/sectionsyaratketentuan.png" class="about-image rounded" />
 
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-5" data-aos="fade-down">
           <h1 class="font-weight-bold">Syarat Dan Ketentuan</h1>
           <lu>
             <li>Fotokopi SIUP dan NPWP</li>
@@ -46,7 +46,7 @@
   <!-- section 3 -->
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-5" data-aos="fade-right">
           <h1 class="font-weight-bold">Note</h1>
           <lu>
             <li>Prosedur survey kami harus dilakukan minimal 3 hari sebelum hari H. (Perusahaan memerlukan waktu untuk pengecekan legalitas/keaslian data customer).</li>
@@ -62,7 +62,7 @@
             <li>Deposit sewa Rp 1.000.000,- per motor, pengembalian deposit H+3 dari tanggal motor di kembalikan dan setelah motor di lakukan pengecekan oleh pihak rental.</li>
           </lu>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-5" data-aos="fade-left">
           <h2 class="font-weight-bold">PERSYARATAN SEWA MOBIL UNTUK PERORANGAN</h2>
           <lu>
             <li>Fotokopi bukti kepemilikan rumah atau tempat tinggal</li>
