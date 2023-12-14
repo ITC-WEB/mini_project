@@ -201,10 +201,10 @@ statuscekout
     
         // Mengganti gambar bank dan nomor rekening berdasarkan pilihan dari halaman peminjaman
         if (selectedBank === 'BRI') {
-            bankLogo.src = 'frontend/images/Logo-Bank-BRI.png'; // Ganti dengan URL gambar Bank BRI
+            bankLogo.src = '{{asset('frontend/images/Logo-Bank-BRI.png')}}'; // Ganti dengan URL gambar Bank BRI
             nomorRekening.textContent = '52281-09-009868-90-8'; // Ganti dengan nomor rekening Bank BRI
         } else if (selectedBank === 'BCA') {
-            bankLogo.src = 'frontend/images/Logo-Bank-BCA.jpg'; // Ganti dengan URL gambar Bank BCA
+            bankLogo.src = '{{ asset('frontend/images/Logo-Bank-BCA.png') }}'; // Ganti dengan URL gambar Bank BCA
             nomorRekening.textContent = '5321-09-77654-90-8'; // Ganti dengan nomor rekening Bank BCA
         }
         // Tambahkan else if lain jika terdapat opsi bank lainnya
