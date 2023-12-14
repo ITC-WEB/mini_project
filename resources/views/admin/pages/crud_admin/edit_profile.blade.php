@@ -17,7 +17,7 @@ Edit Admin
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputName1">Name</label>
-                            <input name="name" value="{{ $data }}" type="text" class="form-control rounded-pill" id="exampleInputName1" placeholder="Name">
+                            <input name="name" value="{{ Auth::user()->name  }}" type="text" class="form-control rounded-pill" id="exampleInputName1" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail3">Email address</label>
