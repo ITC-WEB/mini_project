@@ -10,19 +10,9 @@ class PinjamController extends Controller
 {
     public function index(Request $request)
     {
-        $cari = $request->cari;
-        $pinjam = Peminjaman::with(['user', 'mobil'])
-            ->where('user_id', 'LIKE', '%' . $cari . '%')
-            ->orWhere('biaya', $cari)
-            ->orWhere('status', $cari)
-            ->orWhereHas('user', function ($query) use ($cari) {
-                $query->where('name', 'LIKE', '%' . $cari . '%');
-            })
-            ->orWhereHas('mobil', function ($query) use ($cari) {
-                $query->where('name', 'LIKE', '%' . $cari . '%');
-            })
-            ->orderBy('id', 'DESC')
-            ->paginate(5);
+
+        $pinjam = Peminjaman::orderBy('id', 'DESC')
+            ->get();
 
         return view('admin.pages.crud_peminjaman.peminjaman', compact('pinjam'));
     }
