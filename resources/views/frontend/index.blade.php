@@ -64,8 +64,8 @@ Halaman Utama
                 @if ($mobils->status != 0)
                 <div class="col-sm-6 col-md-4 col-lg-4" data-aos="fade-up">
                     <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{ asset('storage/' . $mobils->gambar) }}');">
-                        <div class="travel-country bg-dark">Kabupaten Malang</div>
-                        <div class="travel-location bg-dark">{{ $mobils->name }}</div>
+                        <div class="travel-country bg-dark" style="opacity:0.7">Kabupaten Malang</div>
+                        <div class="travel-location bg-dark" style="opacity:0.7">{{ $mobils->name }}</div>
                         <div class="travel-button mt-auto">
                             <a href="{{ route('detail', ['id' => $mobils->id]) }}" class="btn btn-travel-details px-4"> View Details </a>
                         </div>
@@ -188,7 +188,7 @@ Halaman Utama
                     <h2 class="accordion2">
                         Ingin lebih Mengenal Kami?, 
                         Hubungi Kami Sekarang 
-                        <h2><b>+6288 999 222 333</b></h2>
+                    <h2 class="accordion3"><b>+6288 999 222 333</b></h2>
                     </h2>
                 </div>
                 <div class="col-lg-8 col-md-6 col-sm-12">

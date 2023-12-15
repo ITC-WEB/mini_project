@@ -183,13 +183,13 @@ Katalog
                             <div class="descripsi">
                                 <div class="row justify-content-between">
                                     <div class="col-6 des-a">Starting From </div>
-                                    <div class="col-4 des-b"><i class="fas fa-user  icons1"></i> : {{$mobils->kapasitas_orang}}</div>
+                                    <div class="col-5 des-b"><i class="fas fa-user  icons1"></i> : {{$mobils->kapasitas_orang}}</div>
                                 </div>
                             </div>
                             <div class="descripsi1">
                                 <div class="row justify-content-between">
                                     <div class="col-6 des-a1"><b><span class="harga">{{ $mobils->harga_sewa }} / Hari </span></b></div>
-                                    <div class="col-4 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
+                                    <div class="col-5 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
                                 </div>
                             </div>
                             <!-- Corrected typo -->

@@ -134,6 +134,7 @@ header .btn-get-started:hover {
 .section-popular-content .section-popular-travel .card-travel .travel-location {
     font-size: 26px;
     color: #ffffff;
+
 }
 
 /*detail*/
@@ -494,6 +495,10 @@ header .btn-get-started:hover {
 }
 .accordion2 {
     font-size: 16px;
+}
+.accordion3 {
+    font-size: 30px;
+    color: #fd5d3b;
 }
 .card-header {
     background-color: #ffffff;
