@@ -24,6 +24,17 @@ Detail Peminjam
                                                 <p class=" mb-0">: {{$dataPinjam->user->name}}</p>
                                             </div>
                                         </div>
+                                        @if ($dataPinjam->sopir !=NULL)
+                                        <div class="row mb-2">
+                                            <div class="col-sm-6">
+                                                <p class="mb-0">Name Sopir</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class=" mb-0">: {{$dataPinjam->sopir->name}}</p>
+                                            </div>
+                                        </div>
+
+                                        @endif
 
                                         <div class="row mb-2">
                                             <div class="col-sm-6">
@@ -83,12 +94,14 @@ Detail Peminjam
                                                 <p class="mb-0">Bukti Pembayaran</p>
                                             </div>
                                             @if ($dataPinjam->bukti_id != NULL)
-                                            <div class="col-sm-6  ">
+                                            <div class="col-sm-6">
                                                 <a href="{{url('storage/'.$dataPinjam->bukti->bukti)}}" target="_blank" class="mb-0 text-primary"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 2rem;"></i></a>
                                             </div>
                                             @else
-                                            <div class="col-sm-6  ">
-                                                <a href="" class="mb-0 text-danger"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 2rem;"></i></a>
+                                            <div class="col-sm-6">
+                                                <button type="button" class="text-danger" style="border: none;background-color:#ffff;" data-toggle="tooltip" data-placement="right" title="File Kosong">
+                                                    <i class="bi bi-file-earmark-richtext-fill" style="font-size: 2rem;"></i>
+                                                </button>
                                             </div>
                                             @endif
 
