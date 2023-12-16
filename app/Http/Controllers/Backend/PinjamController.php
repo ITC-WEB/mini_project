@@ -25,8 +25,14 @@ class PinjamController extends Controller
     public function update_peminjaman(Request $request)
     {
         $data = Peminjaman::find($request->id);
-        $data->status = $request->input('status');
+        if ($data->mobil) {
+            $data->mobil->status_mobil = $request->input('status_mobil');
+            $data->status = $request->input('status');
+            $data->mobil->save();
+        }
+
         $data->save();
+
 
         return redirect('/data-pinjam');
     }

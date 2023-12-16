@@ -31,6 +31,7 @@ class SopirController extends Controller
             'phone' => 'required',
             'gender' => 'required',
             'usia' => 'required',
+            'tarif' => 'required',
             'alamat' => 'required',
             'ktp' => 'required',
             'sim' => 'required',
@@ -48,6 +49,7 @@ class SopirController extends Controller
             'phone' => $request->phone,
             'gender' => $request->gender,
             'usia' => $request->usia,
+            'tarif' => $request->tarif,
             'alamat' => $request->alamat,
             'ktp' => $ktp_sopir,
             'sim' => $sim_sopir,
@@ -59,7 +61,7 @@ class SopirController extends Controller
             Session::flash('status', 'success');
             Session::flash('message', 'Berhasil Menambahkan Data');
         }
-        return redirect('/add-sopir');        
+        return redirect('/add-sopir');
     }
 
     public function edit_sopir(Request $request, $id)
@@ -115,5 +117,4 @@ class SopirController extends Controller
         Sopir::where('id', $request->id)->delete();
         return redirect('/add-sopir');
     }
-
 }

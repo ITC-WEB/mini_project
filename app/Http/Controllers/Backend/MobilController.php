@@ -14,7 +14,7 @@ class MobilController extends Controller
     public function mobil(Request $request)
     {
 
-        $cari = $request->cari;
+
         $mobil = Mobil::all();
 
         return view('admin.pages.crud_mobil.data_mobil', compact('mobil'));
@@ -48,8 +48,8 @@ class MobilController extends Controller
         $selectedOptions = $request->input('fitur_tersedia');
         $selectedArray = json_encode($selectedOptions);
 
-        if (!$request["status"]) {
-            $request["status"] = '1';
+        if (!$request["status_mobil"]) {
+            $request["status_mobil"] = 'tersedia';
         }
 
         $addMobil = Mobil::create([
@@ -64,7 +64,7 @@ class MobilController extends Controller
             'type' => $request->type,
             'harga_sewa' => $request->harga_sewa,
             'gambar' => $gambar,
-            'status' => $request->status,
+            'status_mobil' => $request->status_mobil,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
@@ -85,20 +85,6 @@ class MobilController extends Controller
         return view('admin.pages.crud_mobil.edit', compact('mobil'));
     }
 
-    //status
-    public function update_status($mobilId)
-    {
-        $mobils = Mobil::find($mobilId);
-        if ($mobils) {
-            if ($mobils->status) {
-                $mobils->status = 0;
-            } else {
-                $mobils->status = 1;
-            }
-            $mobils->save();
-        }
-        return back();
-    }
     public function update_mobil(Request $request)
     {
         // Pengguna mengunggah gambar baru
@@ -131,7 +117,7 @@ class MobilController extends Controller
         $dataedit->type = $request->type;
         $dataedit->harga_sewa = $request->harga_sewa;
         $dataedit->gambar = $gambar;
-        $dataedit->status = $request->status;
+        $dataedit->status_mobil = $request->status;
         $dataedit->save();
 
         if ($dataedit) {

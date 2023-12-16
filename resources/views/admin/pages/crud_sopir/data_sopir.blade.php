@@ -25,14 +25,14 @@ Data Driver
                                             </div>
                                         </div>
 
-                                            <div class="row mb-2">
-                                                <div class="col-sm-3">
-                                                    <p class="mb-0">Nomor HP/Whatsapp</p>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <p class=" mb-0">: {{ $dataSopir->phone }}</p>
-                                                </div>
+                                        <div class="row mb-2">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Nomor HP/Whatsapp</p>
                                             </div>
+                                            <div class="col-sm-9">
+                                                <p class=" mb-0">: {{ $dataSopir->phone }}</p>
+                                            </div>
+                                        </div>
 
                                         <div class="row mb-2">
                                             <div class="col-sm-3">
@@ -54,10 +54,19 @@ Data Driver
 
                                         <div class="row mb-2">
                                             <div class="col-sm-3">
+                                                <p class="mb-0">Tarif Perhari</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class=" mb-0">: {{ $dataSopir->tarif }}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <div class="col-sm-3">
                                                 <p class="mb-0">Alamat Lengkap</p>
                                             </div>
                                             <div class="col-sm-9">
-                                                <p class=" mb-0 text-truncate" style="max-width: 300px;white-space: normal;">:
+                                                <p class=" mb-0 text-truncate" style="min-width: 200px;white-space: normal;">:
                                                     {{ $dataSopir->alamat }}
                                                 </p>
                                             </div>

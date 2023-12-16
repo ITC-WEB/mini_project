@@ -35,13 +35,18 @@ Data Peminjaman
                                 <td>{{ $pinjams->tanggal_selesai }}</td>
                                 <td class="harga">{{ $pinjams->biaya }}</td>
                                 <td>
-                                    @if ($pinjams->status == 'selesai')
-                                    <a href="{{ route('edit',['id' => $pinjams->id])}}"><button type="submit" style="border: none;" class="badge badge-success">{{ $pinjams->status }}</button></a>
+                                    @if ($pinjams->status == 'belumbayar')
+                                    <p class="badge badge-warning">{{ $pinjams->status }}</p>
                                     @elseif ($pinjams->status == 'sedangdisewa')
-                                    <a href="{{ route('edit',['id' => $pinjams->id])}}"><button type="submit" style="border: none;" class="badge badge-warning">{{ $pinjams->status }}</button></a>
+                                    <p class="badge badge-primary">{{ $pinjams->status }}</p>
+                                    @elseif ($pinjams->status == 'tidakvalid')
+                                    <p class="badge badge-danger">{{ $pinjams->status }}</p>
+                                    @elseif ($pinjams->status == 'terlambat')
+                                    <p class="badge badge-secondary">{{ $pinjams->status }}</p>
                                     @else
-                                    <a href="{{ route('edit',['id' => $pinjams->id])}}"><button type="submit" style="border: none;" class="badge badge-danger">{{ $pinjams->status }}</button></a>
+                                    <p class="badge badge-success">{{ $pinjams->status }}</p>
                                     @endif
+
                                 </td>
                                 <td>
                                     <a href="{{ route('detail_pinjam',['id' => $pinjams->id]) }}"><button type="submit" style="border: none;" class="badge badge-success "><i class="icon-eye menu-icon"></i></button></a>

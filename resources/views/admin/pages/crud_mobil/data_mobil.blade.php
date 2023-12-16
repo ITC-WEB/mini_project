@@ -48,9 +48,11 @@ Data Mobil
                                 <td> {{ $mobils->merek->name }}</td>
                                 <td class="harga">{{ $mobils->harga_sewa }}</td>
                                 <td>
-                                    <a href="mobil/{{ $mobils->id }}" class="btn btn-sm btn-{{ $mobils->status ? 'success' : 'warning' }}">
-                                        {{ $mobils->status ? 'tersedia' : 'disewa' }}
-                                    </a>
+                                    @if ($mobils->status_mobil == 'tersedia')
+                                    <p class="badge badge-success">{{ $mobils->status_mobil }}</p>
+                                    @else
+                                    <p class="badge badge-warning">{{ $mobils->status_mobil }}</p>
+                                    @endif
                                 </td>
                                 <td>
                                     <a href="{{ route('edit-mobil', ['id' => $mobils->id]) }}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="bi bi-pencil-square"></i></button></a>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('phone');
             $table->enum('gender', ['male', 'female']);
             $table->integer('usia');
+            $table->integer('tarif');
             $table->string('alamat');
             $table->string('ktp');
             $table->string('sim');

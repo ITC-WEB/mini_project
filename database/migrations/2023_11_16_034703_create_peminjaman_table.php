@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('biaya');
             $table->string('tanggal_mulai');
             $table->string('tanggal_selesai');
-            $table->enum('status', ['sedangdisewa', 'belumbayar', 'selesai'])->nullable()->default('belumbayar');
+            $table->enum('status', ['sedangdisewa', 'belumbayar', 'selesai', 'terlambat', 'tidakvalid'])->nullable()->default('belumbayar');
             $table->unsignedBigInteger('bukti_id')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -66,8 +66,7 @@ Detail Peminjam
                                                 <p class="mb-0">Data KTP</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="{{url('storage/'.$dataPinjam->user->data->ktp)}}"
-                                                target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                                <a href="{{url('storage/'.$dataPinjam->user->data->ktp)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
                                             </div>
                                         </div>
 
@@ -79,21 +78,114 @@ Detail Peminjam
                                                 <a href="{{url('storage/'.$dataPinjam->user->data->sim)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
                                             </div>
                                         </div>
-
                                         <div class="row mb-2">
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-6">
                                                 <p class="mb-0">Bukti Pembayaran</p>
                                             </div>
                                             @if ($dataPinjam->bukti_id != NULL)
-                                            <div class="col-sm-12 mx-4"><br>
-                                                <a href="{{url('storage/'.$dataPinjam->bukti->bukti)}}" 
-                                                target="_blank" class="mb-0 text-primary"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 4rem;"></i></a>
+                                            <div class="col-sm-6  ">
+                                                <a href="{{url('storage/'.$dataPinjam->bukti->bukti)}}" target="_blank" class="mb-0 text-primary"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 2rem;"></i></a>
                                             </div>
                                             @else
-                                            <div class="col-sm-12 mx-4"><br>
-                                                <a href="" class="mb-0 text-danger"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 4rem;"></i></a>
+                                            <div class="col-sm-6  ">
+                                                <a href="" class="mb-0 text-danger"><i class="bi bi-file-earmark-richtext-fill" style="font-size: 2rem;"></i></a>
                                             </div>
                                             @endif
+
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <div class="col-sm-6">
+                                                <p class="mb-0">Status</p>
+                                            </div>
+                                            <!-- Button trigger modal -->
+                                            @if ($dataPinjam->status == 'belumbayar')
+                                            <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal">
+                                                {{ $dataPinjam->status }}
+                                            </button>
+                                            @elseif ($dataPinjam->status == 'sedangdisewa')
+                                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                {{ $dataPinjam->status }}
+                                            </button>
+                                            @elseif ($dataPinjam->status == 'tidakvalid')
+                                            <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                                {{ $dataPinjam->status }}
+                                            </button>
+                                            @elseif ($dataPinjam->status == 'terlambat')
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                                                {{ $dataPinjam->status }}
+                                            </button>
+                                            @else
+                                            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#exampleModal">
+                                                {{ $dataPinjam->status }}
+                                            </button>
+                                            @endif
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Validasi</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form class="forms-sample" method="POST" action="{{ route('update', ['id' => $dataPinjam->id]) }}" enctype="multipart/form-data">
+                                                                @csrf
+
+                                                                <div class="form-group">
+                                                                    <label for="">Status Peminjaman</label>
+                                                                    <select class="custom-select" name="status" id="inputGroupSelect01">
+                                                                        <option value="{{ $dataPinjam->status }}">{{ $dataPinjam->status }}</option>
+                                                                        @if ($dataPinjam->status == 'sedangdisewa')
+                                                                        <option value="belumbayar">Belum Bayar</option>
+                                                                        <option value="tidakvalid">Tidak Valid</option>
+                                                                        <option value="terlambat">Terlambat</option>
+                                                                        <option value="selesai">Selesai</option>
+                                                                        @elseif ($dataPinjam->status == 'selesai')
+                                                                        <option value="sedangdisewa">Sedang Di Sewa</option>
+                                                                        <option value="belumbayar">Belum Bayar</option>
+                                                                        <option value="tidakvalid">Tidak Valid</option>
+                                                                        <option value="terlambat">Terlambat</option>
+                                                                        @elseif ($dataPinjam->status == 'tidakvalid')
+                                                                        <option value="sedangdisewa">Sedang Di Sewa</option>
+                                                                        <option value="belumbayar">Belum Bayar</option>
+                                                                        <option value="selesai">Selesai</option>
+                                                                        <option value="terlambat">Terlambat</option>
+                                                                        @elseif ($dataPinjam->status == 'terlambat')
+                                                                        <option value="sedangdisewa">Sedang Di Sewa</option>
+                                                                        <option value="belumbayar">Belum Bayar</option>
+                                                                        <option value="selesai">Selesai</option>
+                                                                        <option value="tidakvalid">Tidak Valid</option>
+                                                                        @else
+                                                                        <option value="selesai">Selesai</option>
+                                                                        <option value="tidakvalid">Tidak Valid</option>
+                                                                        <option value="terlambat">Terlambat</option>
+                                                                        <option value="sedangdisewa">Sedang Di Sewa</option>
+                                                                        @endif
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="">Status Mobil</label>
+                                                                    <select class="custom-select" name="status_mobil" id="inputGroupSelect01">
+                                                                        <option value="{{ $dataPinjam->mobil->status_mobil }}">{{ $dataPinjam->mobil->status_mobil }}</option>
+                                                                        @if ($dataPinjam->mobil->status_mobil == 'tersedia')
+                                                                        <option value="disewa">disewa</option>
+                                                                        @else
+                                                                        <option value="tersedia">tersedia</option>
+                                                                        @endif
+                                                                    </select>
+                                                                </div>
+                                                                <button type="submit" class="btn btn-sm btn-primary mr-2">Simpan</button>
+                                                                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                         </div>
 

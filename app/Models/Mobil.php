@@ -22,7 +22,7 @@ class Mobil extends Model
         'fitur_tersedia',
         'type',
         'harga_sewa',
-        'status',
+        'status_mobil',
     ];
 
     public function merek()

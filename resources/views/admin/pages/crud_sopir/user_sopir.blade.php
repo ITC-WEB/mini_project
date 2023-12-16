@@ -27,6 +27,7 @@ Data Driver
                                 <th>Nomor Hp</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Usia</th>
+                                <th>Tarif Perhari</th>
                                 <th class="text-truncate" style="max-width: 150px;white-space: normal;">
                                     Alamat
                                 </th>
@@ -38,9 +39,10 @@ Data Driver
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td> {{ $item->name }}</td>
-                                <td>{{ $item->email }}</td>
-                                <td> {{ $item->gender }}</td>
                                 <td>{{ $item->phone }}</td>
+                                <td> {{ $item->gender }}</td>
+                                <td> {{ $item->usia }}</td>
+                                <td class="harga"> {{ $item->tarif }}</td>
                                 <td>{{ $item->alamat }}</td>
                                 <td>
                                     <a href="{{ route('edit-sopir', ['id' => $item->id]) }}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="bi bi-pencil-square"></i></button></a>
@@ -67,5 +69,32 @@ Data Driver
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script>
             new DataTable('#dataSopir');
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Mendapatkan semua elemen dengan kelas 'harga'
+                const hargaElements = document.querySelectorAll('.harga');
+
+                // Mengubah setiap elemen dengan kelas 'harga' menjadi format uang Rupiah
+                hargaElements.forEach(function(elem) {
+                    // Memastikan nilai dapat diubah menjadi angka
+                    const numericValue = parseFloat(elem.textContent);
+
+                    if (!isNaN(numericValue)) {
+                        // Menggunakan accounting.js untuk memformat angka
+                        elem.textContent = accounting.formatMoney(numericValue, {
+                            symbol: 'Rp ',
+                            precision: 0,
+                            thousand: '.',
+                            decimal: ','
+                        });
+                        console.log(numericValue)
+                    } else {
+                        console.error('Nilai tidak valid untuk elemen dengan kelas "harga"');
+                    }
+                });
+            });
         </script>
         @endpush

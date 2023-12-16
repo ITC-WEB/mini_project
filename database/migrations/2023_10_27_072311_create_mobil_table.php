@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('fitur_tersedia', 255);
             $table->enum('type', ['matic', 'manual']);
             $table->integer('harga_sewa');
-            $table->integer('status')->default(1);
+            $table->enum('status_mobil', ['tersedia', 'disewa']);
             $table->timestamps();
 
             $table->foreign('merek_id')->references('id')->on('merek')->onDelete('cascade');
