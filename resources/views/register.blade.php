@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    <!-- Required meta tags -->
+    
+    <head>
+        <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
@@ -21,24 +21,25 @@
     <link rel="stylesheet" href="{{asset('login/css/style.css')}}">
     <link rel=" stylesheet" href="{{asset('frontend/styles/main.css')}}" />
     <script src='https://www.google.com/recaptcha/api.js'></script>
-
+    
     <title>Register ITC Trans</title>
 </head>
+
 <body>
     <div class="mathead" style="background-color: #071c4d;">
         <div class="color-overlay d-flex justify-content-center align-items-center">
-            <section>
+            <section class="vh-100">
                 <div class="container">
                     <form action="" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-lg-7 col-md-6 col-sm-6">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
                                 <h3 class="mb-2 mt-5 registra2">Registration to</h3>
                                 <h3 class="mb-5 registra2">Intermedia Trans</h3>
 
                                 <div class="form-floating rounded-form mb-3">
                                     <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Nama Lengkap">
+                                        placeholder="Nama Lengkap" autofocus>
                                     <label class="floating-label" for="floatingInput"><span class="text-danger">*</span> Nama Lengkap</label>
                                 </div>
 
@@ -67,7 +68,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-5 col-md-6 col-sm-6">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="mb-5 py-2 ">
                                     <h6 class="registra3 mt-5 mb-0 me-4"><span class="text-danger">*</span><b> Jenis Kelamin </b></h6>
                                     <div class="gender form-check form-check-inline mb-0 me-4 mt-3">
