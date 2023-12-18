@@ -109,7 +109,7 @@ Halaman Utama
                 <div class="col-lg-6 mt-lg-0 mt-4" >
                     <div class="text-lg-left text-center">
                         <h5 class="rental ">
-                            <b>Rental Mobil</b>
+                            <b>Intermedia Trans</b>
                         </h5>
                         <h1 class=" main-title">
                             Mengapa Memilih Perusahaan Kami ?

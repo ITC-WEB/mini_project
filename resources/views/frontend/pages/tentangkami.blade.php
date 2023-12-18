@@ -20,12 +20,12 @@ TentangKami
         <div class="text-center">
             <div class="container px-3 mt-5">
                 <div class="row mb-md-0 mb-5 justify-content-between">
-                    <div class="col-lg-6 py-lg-5" data-aos="fade-right">>
+                    <div class="col-lg-6 py-lg-5" data-aos="fade-right">
                         <div class="text-center text-lg-left mt-5">
                             <img src="frontend/images/contententangkami.png" class="tentangkami-img img-fluid float-end" />
                         </div>
                     </div>
-                    <div class="col-lg-6 py-lg-5" data-aos="fade-left">>
+                    <div class="col-lg-6 py-lg-5" data-aos="fade-left">
                         <div class="tentangkami-content py-5">
                             <h1 class="text-lg-left font-weight-bold tentangkamiconten1">Intermedia Trans</h1>
                             <p class="text-lg-left mt-lg-2 tentangkami-conten pararaf-tentangkami">

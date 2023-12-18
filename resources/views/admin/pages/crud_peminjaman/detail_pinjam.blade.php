@@ -103,8 +103,13 @@ Detail Peminjam
                             <div class=" col-lg-4">
                                 <div class="card py-4 ">
                                     <div class="card-body text-center">
-                                        <img src="{{asset('admin/images/faces/face2.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 250px;">
-
+                                        @if($dataPinjam->user->data->photo != NULL )
+                                        <img src="{{asset('storage/'.$dataPinjam->user->data->photo) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 250px;">
+                                        @elseif($dataPinjam->user->gender == 'male' )
+                                        <img src="{{asset('frontend/images/man.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 250px;">
+                                        @else
+                                        <img src="{{asset('frontend/images/woman.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 250px;">
+                                        @endif
                                     </div>
                                 </div>
                             </div>
