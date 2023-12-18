@@ -16,15 +16,15 @@ Edit Data
 
                         <div class="form-group">
                             <label for="exampleInputName1">Nomor Kendaraan</label>
-                            <input name="noplat" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->noplat }}">
+                            <input name="noplat" type="text" class="form-control rounded-pill" id="exampleInputName1" value="{{ $mobil->noplat }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail3">Nama Mobil</label>
-                            <input name="name" type="text" class="form-control" id="exampleInputEmail3" value="{{ $mobil->name }}">
+                            <input name="name" type="text" class="form-control rounded-pill" id="exampleInputEmail3" value="{{ $mobil->name }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Merek</label>
-                            <select class="custom-select" name="merek_id" id="inputGroupSelect01">
+                            <select class="custom-select rounded-pill" name="merek_id" id="inputGroupSelect01">
                                 <option value="{{ $mobil->merek->id }}">{{ $mobil->merek->name }}</option>
                                 <option value="1">Honda</option>
                                 <option value="2">Toyota</option>
@@ -34,16 +34,16 @@ Edit Data
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Tahun Pembuatan</label>
-                            <input name="tahun" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->tahun }}">
+                            <input name="tahun" type="text" class="form-control rounded-pill" id="exampleInputName1" value="{{ $mobil->tahun }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Kapasitas Penumpang</label>
-                            <input name="kapasitas_orang" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->kapasitas_orang }}">
+                            <input name="kapasitas_orang" type="text" class="form-control rounded-pill" id="exampleInputName1" value="{{ $mobil->kapasitas_orang }}">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleSelectGender">Kapasitas Mesin</label>
-                            <input name="kapasitas_mesin" type="text" class="form-control" id="exampleInputName1" value="{{ $mobil->kapasitas_mesin }}">
+                            <input name="kapasitas_mesin" type="text" class="form-control rounded-pill" id="exampleInputName1" value="{{ $mobil->kapasitas_mesin }}">
                         </div>
 
                         <div class="form-group">
@@ -77,7 +77,7 @@ Edit Data
 
                         <div class="form-group">
                             <label for="exampleSelectGender">Tipe Transmisi</label>
-                            <select class="custom-select" name="type" id="inputGroupSelect01">
+                            <select class="custom-select rounded-pill" name="type" id="inputGroupSelect01">
                                 <option value="{{$mobil->type}}">{{ $mobil->type }}</option>
                                 @if ($mobil->type == 'matic')
                                 <option value="manual">manual</option>
@@ -89,7 +89,7 @@ Edit Data
 
                         <div class="form-group">
                             <label for="exampleSelectGender">Bahan Bakar</label>
-                            <select class="custom-select" name="bahan_bakar" id="inputGroupSelect01">
+                            <select class="custom-select rounded-pill" name="bahan_bakar" id="inputGroupSelect01">
                                 <option value="{{$mobil->bahan_bakar}}">{{ $mobil->bahan_bakar }}</option>
                                 @if ($mobil->bahan_bakar == 'pertalite')
                                 <option value="pertamax">pertamax</option>
@@ -106,7 +106,7 @@ Edit Data
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Harga Sewa</label>
-                            <input name="harga_sewa" type="text" class="form-control" id="exampleInputName1" value="{{$mobil->harga_sewa}}">
+                            <input name="harga_sewa" type="text" class="form-control rounded-pill" id="exampleInputName1" value="{{$mobil->harga_sewa}}">
                         </div>
 
                         <div class="form-group">

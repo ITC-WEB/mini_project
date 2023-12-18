@@ -14,6 +14,7 @@ class Sopir extends Model
         'phone',
         'gender',
         'usia',
+        'tarif',
         'alamat',
         'ktp',
         'sim',

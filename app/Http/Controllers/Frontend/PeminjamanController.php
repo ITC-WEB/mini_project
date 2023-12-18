@@ -25,7 +25,7 @@ class PeminjamanController extends Controller
         $request->validate([
             'user_id' => 'required',
             'biaya' => 'required',
-            'sopir_id' => '',
+
             'tanggal_mulai' => 'date',
             'tanggal_selesai' => 'date',
             'status' => '',
@@ -34,9 +34,7 @@ class PeminjamanController extends Controller
             $request["status"] = 'belumbayar';
         }
 
-        if (!$request["sopir_id"]) {
-            $request["sopir_id"] = 0;
-        }
+
 
         $cleanedString = preg_replace('/[^0-9]/', '', $request->biaya);
         Peminjaman::create([
@@ -50,6 +48,8 @@ class PeminjamanController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
+        return response()->json($request->all());
         return redirect('/pembayaran');
     }
 }

@@ -143,15 +143,14 @@ Katalog
 <!--end button-->
 <!--catalog1 -->
 <div class="container mt-5 p-5">
-    <div class="row text-left justify-content-between" data-aos="fade-up"
-    data-aos-duration="900">
+    <div class="row text-left justify-content-between" data-aos="fade-up" data-aos-duration="900">
         @foreach ($mobil as $mobils)
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4 cardkatalog  ">
             <!-- Added margin-bottom -->
             <div class="shadow  p-4 cardku">
                 <!-- Added padding -->
 
-                @if ($mobils->status != '1')
+                @if ($mobils->status_mobil != 'tersedia')
                 <div class="item">
                     <img src="{{asset('storage/'.$mobils->gambar) }}" alt="" class="img-fluid">
                     <div class="info">
@@ -159,14 +158,14 @@ Katalog
                         <div class="descripsi">
                             <div class="row justify-content-between">
                                 <div class="col-6 des-a">Status </div>
-                                <div class="col-4 des-b"><i class="fas fa-user  icons1"></i> : {{$mobils->kapasitas_orang}}</div>
+                                <div class="col-5 des-b"><i class="fas fa-user  icons1"></i> : {{$mobils->kapasitas_orang}}</div>
                             </div>
                         </div>
                         <div class="descripsi1">
                             <div class="row justify-content-between">
                                 <div class="col-6 des-a1 btn"><b>SEDANG DI SEWA</b></div>
 
-                                <div class="col-4 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
+                                <div class="col-5 des-b text-capitalize"><i class="bi bi-car-front-fill"></i> : {{ $mobils->type }}</div>
                             </div>
                         </div>
                         <!-- Corrected typo -->
