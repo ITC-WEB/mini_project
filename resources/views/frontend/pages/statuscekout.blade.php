@@ -52,7 +52,7 @@ statuscekout
             <div class="input mt-4 mx-auto">
                 <label for="inputSIM" class="font-weight-medium"><span class="text-danger">*</span></label> Silahkan Unggah Bukti Pembayaran</label>
                 <div class="custom-file">
-                    <input type="file" name="bukti" class="custom-file-input" id="inputSIM" accept=".jpg, .jpeg, .png, .pdf" />
+                    <input type="file" name="bukti" class="custom-file-input" id="inputSIM" required accept=".jpg, .jpeg, .png, .pdf" />
                     <label class="custom-file-label" for="inputSIM">img.png</label>
                 </div>
 

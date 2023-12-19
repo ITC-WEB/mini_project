@@ -91,7 +91,7 @@ ProfileCustumer
                                             </div>
                                             <div class="col-sm-9">
                                                 <p class="text-muted mb-0">
-                                                    <a href="{{url('storage/'. Auth::user()->data->ktp)}}" style="color: blue">Lihat Selengkapnya</a>
+                                                    <a href="{{url('storage/'. Auth::user()->data->ktp)}}" target=_blank style="color: blue">Lihat Selengkapnya</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -103,7 +103,7 @@ ProfileCustumer
                                             <div class="col-sm-9">
                                                 <p class="text-muted mb-0">
                                                     @if (Auth::user()->data->sim != NUll)
-                                                    <a href="{{url('storage/'. Auth::user()->data->sim)}}" style="color: blue">Lihat Selengkapnya</a>
+                                                    <a href="{{url('storage/'. Auth::user()->data->sim)}}" target=_blank style="color: blue">Lihat Selengkapnya</a>
                                                     @else
                                                     <a href="#" style="color: red">Lihat Selengkapnya</a>
                                                     @endif

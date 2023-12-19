@@ -13,6 +13,9 @@ body {
     background-color: #fff;
     font-family: "Assistant", sans-serif;
     color: #071c4d;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
 }
 
 .navbar-brand img {
@@ -721,11 +724,16 @@ header .btn-get-started:hover {
     color: #fd5d3b;
     font-weight: bold;
 }
+.registra3 {
+    font-size: 16px;
+    color: #fff;
+}
+
 .input-group-text {
     cursor: pointer;
 }
 .have-account {
-    color: #000000;
+    color: #fff;
 }
 .gender {
     color: #fd5d3b;
@@ -918,3 +926,27 @@ header .btn-get-started:hover {
     flex-direction: column;
     margin-top: 20px;
 }
+
+.form-control{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    
+}
+
+.form-floating {
+    position: relative;
+    border: none;
+    border-radius: 15px;
+  }
+
+/*Register Background*/
+
+.fotolog {
+    width: 100%;
+    height: auto;
+    
+}
+
+    
+
