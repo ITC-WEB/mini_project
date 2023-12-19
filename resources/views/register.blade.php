@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <section style="height: 100vh; overflow: hidden;">
+    <section style="height: 100vh;">
         <div class="d-flex flex-column flex-md-row  mb-5">
             <div class="linear-register-bg w-100 xl-w-55 min-vh-100">
               <div class="d-flex align-items-center vh-100 justify-content-center">
