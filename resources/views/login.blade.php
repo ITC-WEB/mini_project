@@ -27,26 +27,26 @@
       <div class="bg-white w-100 xl-w-55">
         <div class="d-flex justify-content-center px-5 " style="margin-top: 100px;">
           <div class="justify-content-center col-10" style="margin-bottom: 100px;">
-            <h1 style="font-weight: 1000; margin-top: 40px; color: #071c4d;">Welcome to</h1>
-            <h1 style="font-weight: 1000; color: #071c4d;">Intermedia Trans!</h1>
-            <div class="fw-500" style="margin-top: 10px; color: #071c4d; font-size: 20px;">
-              Belum memiliki akun? <a href="{{ url('/register') }}" style="color: #ff9e53; text-decoration: underline;">Sign Up</a>
+            <h1 class="title-login">Welcome to</h1>
+            <h1 class="name-itc">Intermedia Trans!</h1>
+            <div class="fw-500 account-register" >
+              Belum memiliki akun? <a href="{{ url('/register') }}" class="signup" >Sign Up</a>
             </div>
             <form action="" method="post">
               @csrf
-              <div class="mb-3" style="margin-top: 20px;">
-                <label for="exampleInputEmail1" class="form-label fw-500" style="color: #3a3c3b; font-size: 16px;">Email <span class="text-danger">*</span></label>
-                <input type="email" class="form-control rounded-pill" autofocus required name="email" placeholder="Masukkan email" id="form3Example3" aria-describedby="emailHelp"/>
-                <div class="text-danger mt-2"></div>
+              <div class="mb-3 email-input " >
+                <label for="exampleInputEmail1" class="form-label fw-500 email-label" >Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control rounded-pill email-input1 " autofocus required name="email" placeholder="admin.gmail.com" id="form3Example3" aria-describedby="emailHelp" autocomplete="off"/>
+                
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label fw-500" style="color: #3a3c3b; font-size: 16px;">Password <span class="text-danger">*</span></label>
+                <label for="exampleInputPassword1" class="form-label fw-500 email-label">Password <span class="text-danger">*</span></label>
                 <div class="input-group">
-                  <input type="password" class="form-control rounded-pill" placeholder="Masukkan password" id="form3Example4" name="password" />
+                  <input type="password" class="form-control rounded-pill"  id="form3Example4" name="password" autocomplete="off" />
                 </div>
-                <div class="text-danger mt-2"></div>
+              
               </div>
-              <button style="margin-top: 20px; font-weight: 600; background-color: #ff9e53; border: 1px solid #ff9e53; " class="btn  w-100 rounded-pill" type="submit">Masuk</button>
+              <button  class="btn btn-masuk w-100 rounded-pill" type="submit">Masuk</button>
             </form>
           </div>
           
