@@ -14,18 +14,19 @@ class PeminjamanController extends Controller
 {
     public function pinjam(Request $request)
     {
+
         $mobil = Mobil::find($request->id);
-        $sopir = Sopir::all();
+        $sopir = Sopir::find(1);
         // return response()->json($request);
         return view('frontend.pages.peminjaman', compact('mobil', 'sopir'));
     }
     public function peminjaman(Request $request)
     {
+
         // return response()->json($request->all());
         $request->validate([
             'user_id' => 'required',
             'biaya' => 'required',
-
             'tanggal_mulai' => 'date',
             'tanggal_selesai' => 'date',
             'status' => '',
@@ -35,9 +36,8 @@ class PeminjamanController extends Controller
         }
 
 
-
         $cleanedString = preg_replace('/[^0-9]/', '', $request->biaya);
-        Peminjaman::create([
+        $peminjam = Peminjaman::insert([
             'user_id' => $request->user_id,
             'mobil_id' => $request->mobil_id,
             'sopir_id' => $request->sopir_id,
@@ -48,8 +48,6 @@ class PeminjamanController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-
-        return response()->json($request->all());
         return redirect('/pembayaran');
     }
 }

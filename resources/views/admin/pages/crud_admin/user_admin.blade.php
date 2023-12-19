@@ -26,7 +26,7 @@ Data Admin
                                 <th>Email</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Nomor Hp</th>
-                                <th class="text-truncate" style="max-width: 200px;white-space: normal;">Alamat</th>
+                                <th class="text-truncate" style="max-width: 150px;white-space: normal;">Alamat</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
