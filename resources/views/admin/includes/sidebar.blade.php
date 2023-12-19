@@ -179,14 +179,14 @@
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/auth">
-                        <i class="icon-grid menu-icon"></i>
+                        <i class="bi bi-columns-gap mr-3" aria-hidden="true" style=" font-size: 1.2rem;"></i>
+
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#user">
-                        <i class="bi bi-people-fill mr-3" aria-hidden="true"></i>
-
+                        <i class="bi bi-people-fill mr-3" aria-hidden="true" style=" font-size: 1.2rem;"></i>
                         <span class="menu-title">User Pages</span>
                         <i class="menu-arrow"></i>
                     </a>
@@ -203,7 +203,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="/data-mobil">
-                        <i class="bi bi-car-front-fill mr-3" aria-hidden="true"></i>
+                        <i class="bi bi-car-front-fill mr-3" aria-hidden="true" style=" font-size: 1.2rem;"></i>
 
                         <span class="menu-title">Mobil</span>
                     </a>
@@ -211,7 +211,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="/data-pinjam">
-                        <i class="bi bi-credit-card mr-3" aria-hidden="true"></i>
+                        <i class="bi bi-credit-card mr-3" aria-hidden="true" style=" font-size: 1.2rem;"></i>
 
                         <span class="menu-title">Peminjaman</span>
                     </a>
@@ -219,7 +219,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="/profile">
-                        <i class="bi bi-person-fill-gear mr-3" aria-hidden="true"></i>
+                        <i class="bi bi-person-fill-gear mr-3" aria-hidden="true" style=" font-size: 1.2rem;"></i>
                         <span class="menu-title">Profile</span>
                     </a>
                 </li>
