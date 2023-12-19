@@ -43,7 +43,7 @@ Data Driver
                                 <td> {{ $item->gender }}</td>
                                 <td> {{ $item->usia }}</td>
                                 <td class="harga"> {{ $item->tarif }}</td>
-                                <td>{{ $item->alamat }}</td>
+                                <td class="text-truncate" style="max-width: 150px;white-space: normal;">{{ $item->alamat }}</td>
                                 <td>
                                     <a href="{{ route('edit-sopir', ['id' => $item->id]) }}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="bi bi-pencil-square"></i></button></a>
                                     <a href="{{ route('data-sopir', ['id' => $item->id]) }}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>

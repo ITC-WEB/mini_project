@@ -185,7 +185,8 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#user">
-                        <i class="fa fa-address-book mr-3" aria-hidden="true"></i>
+                        <i class="bi bi-people-fill mr-3" aria-hidden="true"></i>
+
                         <span class="menu-title">User Pages</span>
                         <i class="menu-arrow"></i>
                     </a>
@@ -202,21 +203,23 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="/data-mobil">
-                        <i class="fa fa-car mr-3" aria-hidden="true"></i>
+                        <i class="bi bi-car-front-fill mr-3" aria-hidden="true"></i>
+
                         <span class="menu-title">Mobil</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="/data-pinjam">
-                        <i class="fa fa-cart-plus mr-3" aria-hidden="true"></i>
+                        <i class="bi bi-credit-card mr-3" aria-hidden="true"></i>
+
                         <span class="menu-title">Peminjaman</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="/profile">
-                        <i class="icon-head menu-icon"></i>
+                        <i class="bi bi-person-fill-gear mr-3" aria-hidden="true"></i>
                         <span class="menu-title">Profile</span>
                     </a>
                 </li>

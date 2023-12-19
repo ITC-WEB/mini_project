@@ -26,7 +26,7 @@ Data Admin
                                 <th>Email</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Nomor Hp</th>
-                                <th class="text-truncate" style="max-width: 150px;white-space: normal;">Alamat</th>
+                                <th>Alamat</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -38,7 +38,7 @@ Data Admin
                                 <td>{{ $item->email }}</td>
                                 <td> {{ $item->gender }}</td>
                                 <td>{{ $item->phone }}</td>
-                                <td>{{ $item->alamat }}</td>
+                                <td class="text-truncate" style="max-width: 150px;white-space: normal;">{{ $item->alamat }}</td>
                                 <td>
                                     <a href="{{route('editadmin',['id' => $item->id])}}"><button type="submit" style="border: none;" class="badge badge-primary"><i class="bi bi-pencil-square"></i></button></a>
                                     <form action="{{ route('delete', $item->id) }}" method="POST" id="delete-form-{{ $item->id }}" class="d-inline">

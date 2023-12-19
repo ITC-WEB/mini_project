@@ -30,7 +30,55 @@ Detail Peminjam
                                                 <p class="mb-0">Memakai Jasa Sopir</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <p class=" mb-0">: {{$dataPinjam->sopir->name}}</p>
+                                                <!-- Button trigger modal -->
+                                                <p class="text-primary" data-toggle="modal" data-target="#sopir" style="cursor: pointer;">
+                                                    : {{ $dataPinjam->sopir->name }}
+                                                </p>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="sopir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="sopir">Nama Sopir</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form class="forms-sample" method="POST" action="{{ route('update.sopir', ['id' => $dataPinjam->id]) }}">
+                                                                    @csrf
+                                                                    <div class="form-group">
+                                                                        <select class="custom-select" name="sopir_id" id="inputGroupSelect2">
+                                                                            <option value="{{ $dataPinjam->sopir->id }}">{{ $dataPinjam->sopir->name }}</option>
+                                                                            @if ($dataPinjam->sopir->name == 'Bagus')
+                                                                            <option value="2">Blabur</option>
+                                                                            <option value="3">Riyan</option>
+                                                                            <option value="4">Anton</option>
+                                                                            @elseif ($dataPinjam->sopir->name == 'Blabur')
+                                                                            <option value="1">Bagus</option>
+                                                                            <option value="3">Riyan</option>
+                                                                            <option value="4">Anton</option>
+                                                                            @elseif ($dataPinjam->sopir->name == 'Riyan')
+                                                                            <option value="1">Bagus</option>
+                                                                            <option value="2">Blabur</option>
+                                                                            <option value="4">Anton</option>
+                                                                            @else
+                                                                            <option value="1">Bagus</option>
+                                                                            <option value="2">Blabur</option>
+                                                                            <option value="3">Riyan</option>
+                                                                            @endif
+                                                                        </select>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-primary mr-2">Simpan</button>
+                                                                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                                                                </form>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 

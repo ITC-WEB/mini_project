@@ -17,27 +17,34 @@ class PinjamController extends Controller
         return view('admin.pages.crud_peminjaman.peminjaman', compact('pinjam'));
     }
 
-
     public function edit_sopir(Request $request)
     {
-        $pinjam = Peminjaman::find($request->id);
-        return view('admin.pages.crud_peminjaman.edit_peminjaman', compact('pinjam'));
+        $listsopir = Peminjaman::find($request->id);
+        return view('admin.pages.crud_peminjaman.edit_sopir', compact('listsopir'));
     }
+
     public function update_sopir(Request $request)
     {
-        $sopir = Peminjaman::find($request->id);
+        // Validasi request, pastikan 'sopir_id' adalah integer
+        $request->validate([
+            'sopir_id' => 'required|integer',
+        ]);
 
-        $sopir->sopir->name = $request->input('name');
+        // Menemukan Peminjaman berdasarkan ID atau kriteria lainnya
+        $peminjaman = Peminjaman::where('sopir_id', $request->sopir_id)->latest('id')->first();
 
-        $sopir->save();
-        return back();
+        // Periksa apakah Peminjaman ditemukan
+        if ($peminjaman) {
+            // Update 'sopir_id' pada model Peminjaman
+            $peminjaman->update(['sopir_id' => $request->sopir_id]);
+
+            return response()->json(['message' => 'sopir_id berhasil diperbarui', 'data' => $peminjaman]);
+        } else {
+            return response()->json(['message' => 'Peminjaman tidak ditemukan'], 404);
+        }
     }
 
-    public function edit_peminjaman(Request $request)
-    {
-        $pinjam = Peminjaman::find($request->id);
-        return view('admin.pages.crud_peminjaman.edit_peminjaman', compact('pinjam'));
-    }
+
     public function update_peminjaman(Request $request)
     {
         $data = Peminjaman::find($request->id);
@@ -56,6 +63,8 @@ class PinjamController extends Controller
     public function detail_pinjam(Request $request)
     {
         $dataPinjam = Peminjaman::find($request->id);
+
+
         return view('admin.pages.crud_peminjaman.detail_pinjam', compact('dataPinjam'));
     }
 

@@ -27,7 +27,7 @@ Data Driver
 
                                         <div class="row mb-2">
                                             <div class="col-sm-3">
-                                                <p class="mb-0">Nomor HP/Whatsapp</p>
+                                                <p class="mb-0">Nomor HP </p>
                                             </div>
                                             <div class="col-sm-9">
                                                 <p class=" mb-0">: {{ $dataSopir->phone }}</p>
@@ -77,7 +77,7 @@ Data Driver
                                                 <p class="mb-0">Data KTP</p>
                                             </div>
                                             <div class="col-sm-9">
-                                                <a href="{{ url('storage/' . $dataSopir->ktp) }}" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                                <a href="{{ url('storage/' . $dataSopir->ktp) }}" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-primary">Lihat Data</span></a>
                                             </div>
                                         </div>
 
@@ -86,7 +86,7 @@ Data Driver
                                                 <p class="mb-0">Data SIM</p>
                                             </div>
                                             <div class="col-sm-9">
-                                                <a href="{{ url('storage/' . $dataSopir->sim) }}" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                                <a href="{{ url('storage/' . $dataSopir->sim) }}" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-primary">Lihat Data</span></a>
                                             </div>
                                         </div>
                                     </div>

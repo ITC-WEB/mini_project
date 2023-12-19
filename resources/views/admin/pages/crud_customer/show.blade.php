@@ -66,8 +66,7 @@ Detail Customer
                                                 <p class="mb-0">Data KTP</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="{{url('storage/'.$detail->data->ktp)}}" 
-                                                target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                                <a href="{{url('storage/'.$detail->data->ktp)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-primary">Lihat Data</span></a>
                                             </div>
                                         </div>
 
@@ -76,7 +75,7 @@ Detail Customer
                                                 <p class="mb-0">Data SIM</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="{{url('storage/'.$detail->data->sim)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                                <a href="{{url('storage/'.$detail->data->sim)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-primary">Lihat Data</span></a>
                                             </div>
                                         </div>
                                     </div>

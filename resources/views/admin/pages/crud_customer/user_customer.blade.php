@@ -9,7 +9,7 @@ Data Customer
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Data Customer</h4>
-                    <table id="dataCustomer" class=" table">
+                    <table id="dataCustomer" class="display table">
                         <thead>
                             <tr class="bg-primary text-light">
                                 <th>No</th>
@@ -17,7 +17,7 @@ Data Customer
                                 <th>Email</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Nomor Hp</th>
-                                <th style="min-width: 150px; max-width: 200px; white-space: normal; word-wrap: break-word;">Alamat</th>
+                                <th>Alamat</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -29,7 +29,7 @@ Data Customer
                                 <td>{{ $item->email }}</td>
                                 <td> {{ $item->gender }}</td>
                                 <td>{{ $item->phone }}</td>
-                                <td>{{ $item->alamat }}</td>
+                                <td class="text-truncate" style="max-width: 150px;white-space: normal;">{{ $item->alamat }}</td>
                                 <td>
                                     <a href="{{ route('show',['id' => $item->id]) }}"><button type="submit" style="border: none;" class="badge badge-success"><i class="icon-eye menu-icon"></i></button></a>
                                     <form action="{{ route('delete-customer', $item->id) }}" method="POST" id="delete-form-{{ $item->id }}" class="d-inline">
