@@ -40,6 +40,16 @@ body {
     color: #ff9e53 !important;
 }
 
+.linear-bg {
+    background: linear-gradient(
+        160.7deg,
+        #ef8945 19.16%,
+        #ffa100 48.86%,
+        #ef8945 90.79%
+    );
+    height: 100vh;
+}
+
 .btn-login {
     background-color: #ff9e53;
     color: #fff;
@@ -137,7 +147,6 @@ header .btn-get-started:hover {
 .section-popular-content .section-popular-travel .card-travel .travel-location {
     font-size: 26px;
     color: #ffffff;
-
 }
 
 /*detail*/
@@ -927,26 +936,21 @@ header .btn-get-started:hover {
     margin-top: 20px;
 }
 
-.form-control{
+.form-control {
     border: none;
     border-bottom: 1px solid #ccc;
     box-sizing: border-box;
-    
 }
 
 .form-floating {
     position: relative;
     border: none;
     border-radius: 15px;
-  }
+}
 
 /*Register Background*/
 
 .fotolog {
     width: 100%;
     height: auto;
-    
 }
-
-    
-

@@ -26,7 +26,7 @@ Katalog
 <!--end catalog -->
 
 <!--form filter -->
-<div class="container">
+{{--  <div class="container">
     <div class="row justify-content-center mb-3">
         <div class="col-8">
             <div class="form-group">
@@ -40,10 +40,10 @@ Katalog
             </div>
         </div>
     </div>
-</div>
+</div>  --}}
 <!--end form filter -->
 <!--button -->
-<div class="container">
+{{--  <div class="container">
     <div class="row mb-3">
 
         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-center flex-wrap pt-3  ">
@@ -139,10 +139,43 @@ Katalog
         </div>
 
     </div>
-</div>
+</div>  --}}
 <!--end button-->
 <!--catalog1 -->
-<div class="container mt-5 p-5">
+
+<div class="row justify-content-between">
+        <div class=" col-lg-2">
+            <div class="container ml-5 mt-5 align-items-md-center">
+                <div class="mobils-wrap">
+                    <p><strong>Filter mobil kapasitas </strong></p>
+                    <form>
+                        <label><input type="checkbox" name="fl-kapasitas" value="4" id="4" />  4</label><br>
+                        <label><input type="checkbox" name="fl-kapasitas" value="6" id="6" />  6</label><br>
+                        <label><input type="checkbox" name="fl-kapasitas" value="8" id="8" />  8</label>
+
+                    </form>
+                    <p><strong>Filter mobil tipe</strong></p>
+                    <form>
+                        <label><input type="checkbox" name="fl-tipe" value="manual" id="tiny" />  Manual</label><br>
+                        <label><input type="checkbox" name="fl-tipe" value="matic" id="small" />  Matic</label><br>
+                    </form>
+                    <p><strong>Filter merek mobil:</strong></p>
+                    <form>
+                        <div><input type="checkbox" name="fl-merek" value="honda" id="honda" /> Honda </div>
+                        <div><input type="checkbox" name="fl-merek" value="Toyota" id="toyota" /> Toyota
+                        </div>
+                        <div><input type="checkbox" name="fl-merek" value="suzuki" id="suzuki" /> Suzuki
+                        </div>
+                        <div><input type="checkbox" name="fl-merek" value="daihatsu" id="daihatsu" /> Daihatsu
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <!--catalog1 -->
+            <div class="container mt-1 p-5">
     <div class="row text-left justify-content-between" data-aos="fade-up" data-aos-duration="900">
         @foreach ($mobil as $mobils)
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4 cardkatalog  ">
@@ -202,6 +235,11 @@ Katalog
         @endforeach
     </div>
 </div>
+            <!---catalog1 -->
+        </div>
+    </div>
+
+
 <!---catalog1 -->
 <!--pagination-->
 <div class="d-flex justify-content-center">
@@ -244,6 +282,42 @@ Katalog
     });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Memilih semua elemen dengan kelas 'cardkatalog'
+    const mobilCards = document.querySelectorAll('.cardkatalog');
 
+    // ... kode lainnya untuk format uang Rupiah
+
+    // Menangani perubahan pada checkbox filter
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', function() {
+            // Ambil nilai-nilai yang dipilih untuk setiap filter
+            const kapasitasChecked = document.querySelectorAll('input[name="fl-kapasitas"]:checked');
+            const tipeChecked = document.querySelectorAll('input[name="fl-tipe"]:checked');
+            const merekChecked = document.querySelectorAll('input[name="fl-merek"]:checked');
+
+            // Lakukan filtering terhadap mobil berdasarkan nilai-nilai yang dipilih
+            mobilCards.forEach((card) => {
+                const kapasitas = card.getAttribute('data-kapasitas');
+                const tipe = card.getAttribute('data-tipe');
+                const merek = card.getAttribute('data-merek');
+
+                // Implementasikan logika untuk menampilkan atau menyembunyikan kartu mobil sesuai dengan filter yang dipilih
+                const shouldShow = (
+                    (!kapasitasChecked.length || kapasitasChecked.some((elem) => elem.value === kapasitas)) &&
+                    (!tipeChecked.length || tipeChecked.some((elem) => elem.value === tipe)) &&
+                    (!merekChecked.length || merekChecked.some((elem) => elem.value === merek))
+                );
+
+                // Menampilkan atau menyembunyikan kartu mobil berdasarkan filter yang dipilih
+                card.style.display = shouldShow ? 'block' : 'none';
+            });
+        });
+    });
+});
+
+
+</script>
 
 @endpush

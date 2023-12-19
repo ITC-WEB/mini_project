@@ -248,7 +248,7 @@ Peminjaman
             $('.asuransi-td').text('Rp. ' + biayaAsuransi.toLocaleString('id-ID'));
             $('.total-biaya').text('Rp. ' + totalBiayaKeseluruhan.toLocaleString('id-ID'));
 
-            // ... (bagian lain dari logika perhitungan biaya, jika ada)
+        
         }
 
     });

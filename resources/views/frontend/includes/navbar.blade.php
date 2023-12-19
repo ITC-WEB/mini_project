@@ -42,11 +42,17 @@
 
             <div class="dropdown" id="avatarDropdown">
                 <span style="cursor: pointer;" onclick="toggleDropdown()">
+<<<<<<< HEAD
                     @if (Auth::user()->data->photo == NULL)
                     <img src="#" style="width: 50px;" alt="Avatar">
                     @elseif (Auth::user()->data->photo)
                     <img src="{{ asset('storage/'. Auth::user()->data->photo) }}" class="rounded-circle" style="width: 40px; height: 40px;" alt="">
                     @elseif (Auth::user()->gender == 'male')
+=======
+                  
+                    
+                    @if (Auth::user()->gender == 'male')
+>>>>>>> cbf5e99c8542db948225b0e99790e0fe6923a9c8
                     <img src="{{ asset('frontend/images/man.png') }}" style="width: 50px;" alt="">
                     @else
                     <img src="{{ asset('frontend/images/woman.png') }}" style="width: 50px;" alt="">
