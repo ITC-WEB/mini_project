@@ -69,11 +69,11 @@ Peminjaman
                                     <label for="inputUsername" class="font-weight-bold">Supir</label>
                                     <div class="supir-option d-flex justify-between">
                                         <div class="ya mr-4">
-                                            <input type="radio" id="flexRadioDefault1" name="sopir_id" value="{{ $sopir->id }}" />
+                                            <input type="radio" id="flexRadioDefault1" name="sopir_id" value="{{ $sopir->id }}" required /> 
                                             <label for="flexRadioDefault1">Ya</label>
                                         </div>
                                         <div class="tidak">
-                                            <input type="radio" id="flexRadioDefault2" name="sopir_id" value=" " />
+                                            <input type="radio" id="flexRadioDefault2" name="sopir_id" value=" " required />
                                             <label for="flexRadioDefault2">Tidak</label>
                                         </div>
 

@@ -6,6 +6,7 @@ editcustomer
 
 @section('content')
 <div class="main-panel">
+@include('sweetalert::alert')
   <div class="contetnt-wrapper">
     <div class="col-12 grid-margin stretch-card">
       <div class="card">
