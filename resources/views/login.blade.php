@@ -27,16 +27,15 @@
       <div class="bg-white w-100 xl-w-55">
         <div class="d-flex justify-content-center px-5 " style="margin-top: 100px;">
           <div class="justify-content-center col-10" style="margin-bottom: 100px;">
-            <h1 class="title-login">Welcome to</h1>
-            <h1 class="name-itc">Intermedia Trans!</h1>
-            <div class="fw-500 account-register" >
-              Belum memiliki akun? <a href="{{ url('/register') }}" class="signup" >Sign Up</a>
+            <h1 class="title-login">Welcome to Intermedia Trans!</h1>
+            <div class="fw-100 account-register" >
+              Belum memiliki akun? <a href="{{ url('/register') }}" class="signup" ><b>Sign Up</b></a>
             </div>
             <form action="" method="post">
               @csrf
               <div class="mb-3 email-input " >
                 <label for="exampleInputEmail1" class="form-label fw-500 email-label" >Email <span class="text-danger">*</span></label>
-                <input type="email" class="form-control rounded-pill email-input1 " autofocus required name="email" placeholder="admin.gmail.com" id="form3Example3" aria-describedby="emailHelp" autocomplete="off"/>
+                <input type="email" class="form-control rounded-pill email-input1 " autofocus required name="email" placeholder="user@gmail.com" id="form3Example3" aria-describedby="emailHelp" autocomplete="off"/>
                 
               </div>
               <div class="mb-3">

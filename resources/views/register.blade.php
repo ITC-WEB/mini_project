@@ -26,20 +26,19 @@
 </head>
 
 <body>
-    <section style="height: 100vh;">
-        <div class="d-flex flex-column flex-md-row  mb-5">
+    <section>
+        <div class="d-flex flex-column flex-md-row">
             <div class="linear-register-bg w-100 xl-w-55 min-vh-100">
               <div class="d-flex align-items-center vh-100 justify-content-center">
                 <img src="{{url('frontend/images/register.svg')}}" alt="" style="width: 100%; height: auto; max-width: 500px; max-height: 500px;" />
               </div>
             </div>
             <div class="bg-white w-100 xl-w-55">
-              <div class="d-flex justify-content-center px-5  " >
-                <div class="justify-content-center col-10" style="margin-bottom: 100px;">
-                  <h1 class="title-login">Registration to</h1>
-                  <h1 class="name-itc">Intermedia Trans!</h1>
+              <div class="d-flex justify-content-center" >
+                <div class="justify-content-center col-10" style="margin-bottom: 10px;">
+                  <h1 class="title-login">Registration to Intermedia Trans!</h1>
                   <div class="fw-500 account-register" >
-                    Sudah mempuyai akun ? <a href="{{ url('/login') }}" class="login" >Login</a>
+                    Sudah mempuyai akun ? <a href="{{ url('/log') }}" class="login" ><b>Login</b></a>
                   </div>
                   <form action="" method="post" enctype="multipart/form-data">
                     @csrf
@@ -55,7 +54,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="exampleInputEmail2" class="form-label fw-500 email-label">Email<span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control rounded-pill email-input2" autofocus required name="email" placeholder="admin@gmail.com" id="email" aria-describedby="emailHelp" autocomplete="off"/>
+                                    <input type="email" class="form-control rounded-pill email-input2" autofocus required name="email" placeholder="user@gmail.com" id="email" aria-describedby="emailHelp" autocomplete="off"/>
                                   </div>
                             </div>
                         
@@ -90,14 +89,14 @@
                               <div class="mb-3">
                                 <div class="mb-3">
                                     <label class="form-label fw-500 email-label">Jenis Kelamin <span class="text-danger">*</span></label>
-                                    <div class="row mt-4">
-                                        <div class="col-md-6">
+                                    <div class="row mt-2">
+                                        <div class="col-md-7">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="gender" id="male" value="male">
                                                 <label class="form-check-label" for="male">Laki-laki</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-5">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="gender" id="female" value="female">
                                                 <label class="form-check-label" for="female">Perempuan</label>
@@ -119,7 +118,7 @@
                             <div class="col-md-6">
                               <div class="mb-3">
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail4" class="form-label fw-500 email-label">nggah Surat Izin Mengemudi (SIM -
+                                    <label for="exampleInputEmail4" class="form-label fw-500 email-label">Unggah Surat Izin Mengemudi (SIM -
                                         A)<span class="text-danger">*</span></label>
                                     <input class="registra3 mt-2 mb-3" type="file" name="sim" required>
                                   </div>
@@ -131,7 +130,7 @@
                     data-callback="recaptchaDataCallbackRegister"
                     data-expired-callback="recaptchaExpireCallbackRegister" aria-required="true">
                 </div>
-                    <button  class="btn btn-masuk w-100 rounded-pill" type="submit">Daftar</button>
+                    <button  class="reg-btn btn btn-masuk w-100 rounded-pill" type="submit">Register</button>
                   </form>
                 </div>
                 

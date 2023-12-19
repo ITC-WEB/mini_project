@@ -42,23 +42,21 @@ body {
 
 /*login */
 .title-login {
+    font-size: 3em;
     font-weight: 1000;
-    margin-top: 40px;
+    margin-top: 10px;
     color: #071c4d;
 }
-.name-itc{
-   font-weight: 
-   1000; 
-   color: #071c4d;"
-}
+
 .account-register{
-margin-top: 10px; 
+margin-top: 5px; 
 color: #071c4d; 
-font-size: 20px;
+font-size: 16px;
 }
+
 .signup{
-   color: #ff9e53; 
-   text-decoration: underline;
+    text-decoration: underline;
+    color: #ff9e53; 
 }
 .email-input{
     margin-top: 20px;
@@ -85,6 +83,11 @@ font-size: 20px;
     border: 1px solid #ef8945;
 }
 /*registers*/
+
+.reg-btn{
+    background-color: #071c4d;
+    color: #fff;
+}
 .linear-register-bg{
     background: linear-gradient(
         160.7deg,
@@ -95,9 +98,14 @@ font-size: 20px;
     height: 100vh;
 }
 .login{
-    color: #071c4d; 
+    color: #ef8945; 
     text-decoration: underline;
  }
+ 
+.input-login {
+    border: solid #000000;
+}
+
 header {
     margin-top: -68px;
     padding: 180px 0 165px;
