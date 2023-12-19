@@ -35,6 +35,7 @@ Peminjaman
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <input type="hidden" name="harga_sewa" value="{{ ($mobil->harga_sewa) }}">
                                 <input type="hidden" name="mobil_id" value="{{ $mobil->id }}">
+
                                 <div class="form-group">
                                     <label for="inputUsername" class="font-weight-bold">Nama </label>
                                     <input type="text" class="form-control" id="inputUsername" value="{{ Auth::user()->name}}" />
@@ -68,11 +69,11 @@ Peminjaman
                                     <label for="inputUsername" class="font-weight-bold">Supir</label>
                                     <div class="supir-option d-flex justify-between">
                                         <div class="ya mr-4">
-                                            <input type="radio" id="flexRadioDefault1" name="flexRadioDefault" value="ya" />
+                                            <input type="radio" id="flexRadioDefault1" name="sopir_id" value="{{ $sopir->id }}" />
                                             <label for="flexRadioDefault1">Ya</label>
                                         </div>
                                         <div class="tidak">
-                                            <input type="radio" id="flexRadioDefault2" name="flexRadioDefault" value="tidak" />
+                                            <input type="radio" id="flexRadioDefault2" name="sopir_id" value=" " />
                                             <label for="flexRadioDefault2">Tidak</label>
                                         </div>
 
@@ -220,10 +221,10 @@ Peminjaman
             $('.harga').text('Rp. ' + totalBiaya.toLocaleString('id-ID'));
 
             // Tambahan logika biaya supir
-            var sopirSelected = $('input[name="flexRadioDefault"]:checked').val();
+            var sopirSelected = $('input[name="sopir_id"]:checked').val();
             var biayaSopir = 0;
 
-            if (sopirSelected === "ya") {
+            if (sopirSelected === "{{ $sopir->id }}") {
                 biayaSopir = 100000; // Biaya supir tambahan
             }
 

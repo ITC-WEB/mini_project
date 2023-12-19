@@ -14,16 +14,17 @@ ProfileCustumer
                         <div class="row ">
                             <div class="col-lg-4">
                                 <div class="card-body ml-5 d-flex flex-column align-items-center">
-                                    <a href="/">
-                                        @if (Auth::user()->data->photo)
-                                        <img src="{{asset('storage/'. Auth::user()->data->photo) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                                        @elseif (Auth::user()->gender == 'male')
-                                        <img src="{{asset('frontend/images/man.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                                        @else
-                                        <img src="{{asset('frontend/images/woman.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                                        @endif
+                                    @if (Auth::user()->data->photo == NULL)
+                                    <img src="#" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                    @elseif (Auth::user()->data->photo)
+                                    <img src="{{asset('storage/'. Auth::user()->data->photo) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px; height:150px">
+                                    @elseif (Auth::user()->gender == 'male')
+                                    <img src="{{asset('frontend/images/man.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                    @else
+                                    <img src="{{asset('frontend/images/woman.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                    @endif
 
-                                    </a>
+
                                     <h5 class="my-3">
                                         {{ Auth::user()->name }}
                                     </h5>

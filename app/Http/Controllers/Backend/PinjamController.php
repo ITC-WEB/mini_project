@@ -17,6 +17,22 @@ class PinjamController extends Controller
         return view('admin.pages.crud_peminjaman.peminjaman', compact('pinjam'));
     }
 
+
+    public function edit_sopir(Request $request)
+    {
+        $pinjam = Peminjaman::find($request->id);
+        return view('admin.pages.crud_peminjaman.edit_peminjaman', compact('pinjam'));
+    }
+    public function update_sopir(Request $request)
+    {
+        $sopir = Peminjaman::find($request->id);
+
+        $sopir->sopir->name = $request->input('name');
+
+        $sopir->save();
+        return back();
+    }
+
     public function edit_peminjaman(Request $request)
     {
         $pinjam = Peminjaman::find($request->id);

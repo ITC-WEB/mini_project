@@ -141,9 +141,8 @@ Route::post('/delete-mobil/{id}', [MobilController::class, 'mobil_delete'])->nam
 Route::get('/data-pinjam', [PinjamController::class, 'index']);
 //update status pinjam
 
-Route::get('/pinjam/{id}', [PinjamController::class, 'edit_peminjaman'])->name('edit');
-Route::post('/update', [PinjamController::class, 'update_peminjaman'])->name('update');
 
+Route::post('/update', [PinjamController::class, 'update_peminjaman'])->name('update');
 
 //show
 Route::get('/detail_pinjam/{id}', [PinjamController::class, 'detail_pinjam'])->name('detail_pinjam');

@@ -9,7 +9,7 @@ Data Customer
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Data Customer</h4>
-                    <table id="dataCustomer" class="display table" style="width:100%;">
+                    <table id="dataCustomer" class=" table">
                         <thead>
                             <tr class="bg-primary text-light">
                                 <th>No</th>
@@ -17,7 +17,7 @@ Data Customer
                                 <th>Email</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Nomor Hp</th>
-                                <th class="text-truncate" style="max-width: 150px;white-space: normal;">Alamat</th>
+                                <th style="min-width: 150px; max-width: 200px; white-space: normal; word-wrap: break-word;">Alamat</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>

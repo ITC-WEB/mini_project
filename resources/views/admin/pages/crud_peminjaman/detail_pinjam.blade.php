@@ -27,7 +27,7 @@ Detail Peminjam
                                         @if ($dataPinjam->sopir !=NULL)
                                         <div class="row mb-2">
                                             <div class="col-sm-6">
-                                                <p class="mb-0">Name Sopir</p>
+                                                <p class="mb-0">Memakai Jasa Sopir</p>
                                             </div>
                                             <div class="col-sm-6">
                                                 <p class=" mb-0">: {{$dataPinjam->sopir->name}}</p>
@@ -77,7 +77,7 @@ Detail Peminjam
                                                 <p class="mb-0">Data KTP</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="{{url('storage/'.$dataPinjam->user->data->ktp)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                                <a href="{{url('storage/'.$dataPinjam->user->data->ktp)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-primary">Lihat Data</span></a>
                                             </div>
                                         </div>
 
@@ -86,7 +86,7 @@ Detail Peminjam
                                                 <p class="mb-0">Data SIM</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="{{url('storage/'.$dataPinjam->user->data->sim)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-danger">Lihat Data</span></a>
+                                                <a href="{{url('storage/'.$dataPinjam->user->data->sim)}}" target="_blank" class="text-decoration-none mb-0">: <span class=" mb-0 font-weight-bold text-primary">Lihat Data</span></a>
                                             </div>
                                         </div>
                                         <div class="row mb-2">
@@ -209,7 +209,7 @@ Detail Peminjam
                                 <div class="card py-4 ">
                                     <div class="card-body text-center">
                                         @if($dataPinjam->user->data->photo != NULL )
-                                        <img src="{{asset('storage/'.$dataPinjam->user->data->photo) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 250px;">
+                                        <img src="{{asset('storage/'.$dataPinjam->user->data->photo) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 250px; height: 250px;">
                                         @elseif($dataPinjam->user->gender == 'male' )
                                         <img src="{{asset('frontend/images/man.png') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 250px;">
                                         @else
