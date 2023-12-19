@@ -17,50 +17,43 @@
 <body>
 
   <section>
-    <div class="container-fluid">
-      @include('sweetalert::alert')
-      <div class="row d-flex align-items-center">
-        <div class="linier-back col-lg-6 col-md-6 col-sm-6 vh-100"
-          style="background-color: #fd5d3b;">
-          <img src="{{url('frontend/images/login2.svg')}}" class="fotolog img-fluid justify-content-md-center mt-5 p-5"
-            alt="Sample image" />
+    @include('sweetalert::alert')
+    <div class="d-flex flex-column flex-md-row">
+      <div class="linear-bg w-100 xl-w-45">
+        <div class="d-flex align-items-center vh-100 justify-content-center">
+          <img src="{{url('frontend/images/Tablet login-cuate.svg')}}" alt="" style="width: 100%; height: auto; max-width: 500px; max-height: 500px;" />
         </div>
-        <div class="col-md-8 col-lg-6 col-xl-5 ml-5">
-          <form action="" method="post">
-            @csrf
-            <div
-              class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start align-content-lg-start selamat mt-5 ml-auto">
-              Welcome to</div>
-            <div
-              class="textlog d-flex flex-row align-items-center justify-content-center justify-content-lg-start selamat mb-4">
-              Intermedia Trans !</div>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input name="email" type="email" id="form3Example3" class="form-control form-control-lg custom-input"
-                placeholder="Email Address" autofocus required />
+      </div>
+      <div class="bg-white w-100 xl-w-55">
+        <div class="d-flex justify-content-center px-5 " style="margin-top: 100px;">
+          <div class="justify-content-center col-10" style="margin-bottom: 100px;">
+            <h1 style="font-weight: 1000; margin-top: 40px; color: #071c4d;">Welcome to</h1>
+            <h1 style="font-weight: 1000; color: #071c4d;">Intermedia Trans!</h1>
+            <div class="fw-500" style="margin-top: 10px; color: #071c4d; font-size: 20px;">
+              Belum memiliki akun? <a href="{{ url('/register') }}" style="color: #ff9e53; text-decoration: underline;">Sign Up</a>
             </div>
-
-            <!-- Password input -->
-            <div class="form-outline mb-3">
-              <input name="password" type="password" id="form3Example4"
-                class="form-control form-control-lg custom-input" placeholder="Password" required />
-            </div>
-            <div class="form-group form-check mt-2">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Remember Me ! <a href="#"
-                  class="link-masuk2 ml-5 ">Forgot Password</a></label>
-            </div>
-
-            <div class=" text-lg-start mt-4 pt-2 ">
-              <button type="submit" class="butonlog btn btn-lg"
-                style="padding-left: 2rem; padding-right: 2rem">Login</button>
-            </div>
-            <p class=mt-4>
-              Dont have an account ? <a href="{{ url('/register') }}" class="link-masuk"><b>Sign Up</b></a></p>
-          </form>
+            <form action="" method="post">
+              @csrf
+              <div class="mb-3" style="margin-top: 20px;">
+                <label for="exampleInputEmail1" class="form-label fw-500" style="color: #3a3c3b; font-size: 16px;">Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control rounded-pill" autofocus required name="email" placeholder="Masukkan email" id="form3Example3" aria-describedby="emailHelp"/>
+                <div class="text-danger mt-2"></div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label fw-500" style="color: #3a3c3b; font-size: 16px;">Password <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <input type="password" class="form-control rounded-pill" placeholder="Masukkan password" id="form3Example4" name="password" />
+                </div>
+                <div class="text-danger mt-2"></div>
+              </div>
+              <button style="margin-top: 20px; font-weight: 600; background-color: #ff9e53; border: 1px solid #ff9e53; " class="btn  w-100 rounded-pill" type="submit">Masuk</button>
+            </form>
+          </div>
+          
         </div>
       </div>
     </div>
+    
   </section>
   <script src="frontend/libraries/retina/retina.js"></script>
   <script src="frontend/libraries/jquery/jquery-3.4.1.min.js"></script>
