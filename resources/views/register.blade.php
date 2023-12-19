@@ -26,91 +26,121 @@
 </head>
 
 <body>
-    <div class="mathead" style="background-color: #071c4d;">
-        <div class="color-overlay d-flex justify-content-center align-items-center">
-            <section class="vh-100">
-                <div class="container">
-                    <form action="" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <h3 class="mb-2 mt-5 registra2">Registration to</h3>
-                                <h3 class="mb-5 registra2">Intermedia Trans</h3>
-
-                                <div class="form-floating rounded-form mb-3">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Nama Lengkap" autofocus>
-                                    <label class="floating-label" for="floatingInput"><span class="text-danger">*</span> Nama Lengkap</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="email" name="email" class="form-control"
-                                        placeholder="example@gmail.com" id="email" required>
-                                    <label for="floatingEmail"><span class="text-danger">*</span> Email</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="password" name="password" class="form-control" placeholder="Password"
-                                        id="password" required>
-                                    <label for="floatingPassword"><span class="text-danger">*</span> Password</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" name="phone" class="form-control" placeholder="08X-XXX-XXX-XXX"
-                                        id="phone" required>
-                                    <label for="floatingHp"><span class="text-danger">*</span> Nomor HP/WhatsApp</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" name="alamat" class="form-control" placeholder="Alamat Lengkap"
-                                        id="Alamat" required>
-                                    <label for="floatingAlamat"><span class="text-danger">*</span> Alamat</label>
-                                </div>
+    <section style="height: 100vh; overflow: hidden;">
+        <div class="d-flex flex-column flex-md-row  mb-5">
+            <div class="linear-register-bg w-100 xl-w-55 min-vh-100">
+              <div class="d-flex align-items-center vh-100 justify-content-center">
+                <img src="{{url('frontend/images/register.svg')}}" alt="" style="width: 100%; height: auto; max-width: 500px; max-height: 500px;" />
+              </div>
+            </div>
+            <div class="bg-white w-100 xl-w-55">
+              <div class="d-flex justify-content-center px-5  " >
+                <div class="justify-content-center col-10" style="margin-bottom: 100px;">
+                  <h1 class="title-login">Registration to</h1>
+                  <h1 class="name-itc">Intermedia Trans!</h1>
+                  <div class="fw-500 account-register" >
+                    Sudah mempuyai akun ? <a href="{{ url('/login') }}" class="login" >Login</a>
+                  </div>
+                  <form action="" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class=" mt-3">
+                        <div class="row justify-content-between">
+                            <div class="col-md-6">
+                              <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label fw-500 email-label">Nama<span class="text-danger">*</span></label>
+                                <input type="text" name="name" class="form-control rounded-pill" id="name" name="name" 
+                                placeholder="Nama Lengkap" autofocus>
+                              </div>
                             </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="mb-5 py-2 ">
-                                    <h6 class="registra3 mt-5 mb-0 me-4"><span class="text-danger">*</span><b> Jenis Kelamin </b></h6>
-                                    <div class="gender form-check form-check-inline mb-0 me-4 mt-3">
-                                        <input class="form-check-input" type="radio" name="gender" id="maleGender"
-                                            value="male" />
-                                        <label class="form-check-label" name="gender" for="male">Laki-laki</label>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail2" class="form-label fw-500 email-label">Email<span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control rounded-pill email-input2" autofocus required name="email" placeholder="admin@gmail.com" id="email" aria-describedby="emailHelp" autocomplete="off"/>
+                                  </div>
+                            </div>
+                        
+                            <!-- Pasangan 2 -->
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword3" class="form-label fw-500 email-label">Password<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                      <input type="password" class="form-control rounded-pill" id="password" name="password" autocomplete="off" />
                                     </div>
-                                    <div class="gender form-check form-check-inline mb-0 me-4 mt-3">
-                                        <input class="form-check-input" type="radio" name="gender" id="femaleGender"
-                                            value="female" />
-                                        <label class="form-check-label" name="gender" for="female">Perempuan</label>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col md-6 mt-4">
-                                            <label class="registra3" for="data_id"><span class="text-danger">*</span><b> Unggah Kartu Tanda Penduduk (KTP)</b></label>
-                                            <input class="registra3 mt-2" type="file" name="ktp" required>
+                                  </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="mb-3">
+                                <label for="exampleInputPassword2" class="form-label fw-500 email-label">Nomor Hp/ WhatsApp<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                 <input type="number" name="phone" class="form-control rounded-pill" placeholder="08X-XXX-XXX-XXX"
+                                        id="phone" required autocomplete="off" >
+                                </div>
+                              </div>
+                            </div>
+                        
+                            <!-- Pasangan 3 -->
+                            <div class="col-md-6">
+                              <div class="mb-3">
+                                <label for="exampleInputEmail3" class="form-label fw-500 email-label">Alamat <span class="text-danger">*</span></label>
+                                <input type="text" name="alamat" class="form-control rounded-pill" placeholder="Alamat Lengkap"
+                                id="Alamat" required autocomplete="off">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="mb-3">
+                                <div class="mb-3">
+                                    <label class="form-label fw-500 email-label">Jenis Kelamin <span class="text-danger">*</span></label>
+                                    <div class="row mt-4">
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                                <label class="form-check-label" for="male">Laki-laki</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                                <label class="form-check-label" for="female">Perempuan</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col md-6 mb-4">
-                                            <label class="registra3 mt-4" for="data_id"><span class="text-danger">*</span><b> Unggah Surat Izin Mengemudi (SIM -
-                                                A)</b></label>
-                                            <input class="registra3 mt-2 mb-3" type="file" name="sim" required>
-                                        </div>
-                                    </div>
-                                    <div class="g-recaptcha" data-sitekey="6LeZSSYpAAAAAF72fUhe4WhtUY4ILtm8IQSXKWZu"
-                                        data-callback="recaptchaDataCallbackRegister"
-                                        data-expired-callback="recaptchaExpireCallbackRegister" aria-required="true">
-                                    </div>
-                                    <input type="submit" class="btn butonlog btn-block btn-primary mt-3">
-
-                                    <p class="have-account mt-4"> have an account ? <a href="{{ url('/log') }}"
-                                            class="link-masuk "><b>Login</b></a></p>
                                 </div>
+                                
+                              </div>
                             </div>
-                        </div>
+                        
+                            <!-- Pasangan 4 -->
+                            <div class="col-md-6">
+                              <div class="mb-3">
+                                <label for="exampleInputEmail4" class="form-label fw-500 email-label">Unggah Kartu Tanda Penduduk (KTP)<span class="text-danger">*</span></label>
+                                <input class="registra3 mt-2 mb-3" type="file" name="ktp" required>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="mb-3">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail4" class="form-label fw-500 email-label">nggah Surat Izin Mengemudi (SIM -
+                                        A)<span class="text-danger">*</span></label>
+                                    <input class="registra3 mt-2 mb-3" type="file" name="sim" required>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LeZSSYpAAAAAF72fUhe4WhtUY4ILtm8IQSXKWZu"
+                    data-callback="recaptchaDataCallbackRegister"
+                    data-expired-callback="recaptchaExpireCallbackRegister" aria-required="true">
                 </div>
-                </form>
-            </section>
-        </div>
-    </div>
+                    <button  class="btn btn-masuk w-100 rounded-pill" type="submit">Daftar</button>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+
+    </section>
 </body>
 
 </html>
