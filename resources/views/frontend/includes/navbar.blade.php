@@ -43,6 +43,7 @@
             <div class="dropdown" id="avatarDropdown">
                 <span style="cursor: pointer;" onclick="toggleDropdown()">
 
+            
                     @if (Auth::user()->data->photo == NULL)
                     <img src="#" style="width: 50px;" alt="Avatar">
                     @elseif (Auth::user()->data->photo)

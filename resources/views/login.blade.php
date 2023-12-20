@@ -45,7 +45,7 @@
                 </div>
               
               </div>
-              <button  class="btn btn-masuk w-100 rounded-pill" type="submit">Masuk</button>
+              <button  class="btn btn-masuk w-100 btn-warning rounded-pill" type="submit">Masuk</button>
             </form>
           </div>
           

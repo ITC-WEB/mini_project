@@ -39,7 +39,10 @@ body {
     font-weight: bold;
     color: #ff9e53 !important;
 }
-
+.btn-login {
+    background-color: #ff9e53;
+    color: #fff;
+}
 /*login */
 .title-login {
     font-size: 3em;
@@ -48,17 +51,17 @@ body {
     color: #071c4d;
 }
 
-.account-register{
-margin-top: 5px; 
-color: #071c4d; 
-font-size: 16px;
+.account-register {
+    margin-top: 5px;
+    color: #071c4d;
+    font-size: 16px;
 }
 
-.signup{
+.signup {
     text-decoration: underline;
-    color: #ff9e53; 
+    color: #ff9e53;
 }
-.email-input{
+.email-input {
     margin-top: 20px;
 }
 
@@ -72,23 +75,37 @@ font-size: 16px;
     height: 100vh;
 }
 
-.email-label{
+.email-label {
     color: #071c4d;
-    font-size:16px;
+    font-size: 16px;
 }
-.btn-masuk{
-    margin-top: 20px; 
-    font-weight: 600; 
-    background-color: #ef8945; 
+.btn-masuk {
+    margin-top: 20px;
+    font-weight: 600;
+    background-color: #ef8945;
     border: 1px solid #ef8945;
+    color: white;
+}
+.btn-masuk:hover {
+    background-color: #ef8945;
 }
 /*registers*/
 
-.reg-btn{
+.btn-register {
+    margin-top: 20px;
+    font-weight: 600;
+    background-color: #071c4d;
+    border: 1px solid #071c4d;
+    color: white;
+}
+.btn-register:hover {
+    background-color: #071c4d;
+}
+.reg-btn {
     background-color: #071c4d;
     color: #fff;
 }
-.linear-register-bg{
+.linear-register-bg {
     background: linear-gradient(
         160.7deg,
         #071c4d 19.16%,
@@ -97,11 +114,11 @@ font-size: 16px;
     );
     height: 100vh;
 }
-.login{
-    color: #ef8945; 
+.login {
+    color: #ef8945;
     text-decoration: underline;
- }
- 
+}
+
 .input-login {
     border: solid #000000;
 }

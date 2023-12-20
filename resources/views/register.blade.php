@@ -130,7 +130,7 @@
                     data-callback="recaptchaDataCallbackRegister"
                     data-expired-callback="recaptchaExpireCallbackRegister" aria-required="true">
                 </div>
-                    <button  class="reg-btn btn btn-masuk w-100 rounded-pill" type="submit">Register</button>
+                    <button  class="reg-btn btn btn-primary btn-register w-100 rounded-pill" type="submit">Register</button>
                   </form>
                 </div>
                 
