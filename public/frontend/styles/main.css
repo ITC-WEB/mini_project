@@ -45,7 +45,8 @@ body {
 }
 /*login */
 .title-login {
-    font-size: 3em;
+    margin-bottom: 5%;
+    font-size: 2em;
     font-weight: 1000;
     margin-top: 10px;
     color: #071c4d;
