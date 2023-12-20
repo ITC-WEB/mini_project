@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="bg-white w-100 xl-w-55">
-              <div class="d-flex justify-content-center" >
+              <div class="d-flex justify-content-center mt-5" >
                 <div class="justify-content-center col-10" style="margin-bottom: 10px;">
                   <h1 class="title-login">Registration to Intermedia Trans!</h1>
                   <div class="fw-500 account-register" >
