@@ -62,9 +62,18 @@
                             <div class="col-12 col-lg-2">
                                 <h5 class="footertxt">KONTAK KAMI</h5>
                                 <ul class="list-unstyled footertxt">
-                                    <li>Malang, Indonesia</li>
-                                    <li>0821 - 2222 - 8888</li>
-                                    <li>support@nomads.id</li>
+                                    <li><a href="{{ url('/kontak') }}" style="text-decoration: none;">Call Me!! </a></li>
+                                    <li><a href="{{ url('/kontak') }}" style="text-decoration: none;">Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-lg-2">
+                                <h5 class="footertxt">
+                                    CONNECT WITH US </h5>
+                                <ul class="list-unstyled footertxt">
+                                    <li>
+                                        <p>Perumahan karangploso view, blok NA 4, Bumi Perkasa, Ngenep, Kec. Karang Ploso, Kabupaten Malang, Jawa Timur 65152</p>
+                                    </li>
+                                   
                                 </ul>
                             </div>
                         </div>
