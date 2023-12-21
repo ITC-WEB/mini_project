@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="bg-white w-100 xl-w-55">
-              <div class="d-flex justify-content-center" >
+              <div class="d-flex justify-content-center mt-3" >
                 <div class="justify-content-center col-10" style="margin-bottom: 10px;">
                   <h1 class="title-login">Registration to Intermedia Trans!</h1>
                   <div class="fw-500 account-register" >
@@ -92,13 +92,13 @@
                                     <div class="row mt-2">
                                         <div class="col-md-7">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
                                                 <label class="form-check-label" for="male">Laki-laki</label>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                                <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
                                                 <label class="form-check-label" for="female">Perempuan</label>
                                             </div>
                                         </div>
