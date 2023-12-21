@@ -26,15 +26,13 @@
                     <a class="nav-link {{ request()->is('kontak') ? 'active' : '' }}" href="{{ url('/kontak') }}">Kontak</a>
                 </li>
             </ul>
-            <!-- Mobile button -->
-            <!-- <form class="form-inline d-sm-block d-md-none">
-                <a href="{{url('/logout')}}" class="btn btn-login my-2 my-sm-0">Masuk</a>
-            </form> -->
-            <!-- Desktop Button -->
-            <!-- <form class="form-inline my-2 my-lg-0 d-none d-md-block">
-                <a href="{{url('/logout')}}" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Masuk</a>
-            </form> -->
+            
             @if (!Auth::user())
+            <!-- Mobile Button -->
+            <form class="form-inline d-sm-block d-md-none">
+                <a href="/log" class="btn btn-login my-2 my-sm-0">Masuk</a>
+            </form>
+            <!-- Desktop Button -->
             <form class="form-inline my-2 my-lg-0 d-none d-md-block">
                 <a href="/log" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" style="line-height: 40px; padding: 10px 0;">Masuk</a>
             </form>
@@ -44,11 +42,11 @@
                 <span style="cursor: pointer;" onclick="toggleDropdown()">
 
             
-                    {{--  @if (Auth::user()->data->photo == NULL)
+                    @if (Auth::user()->data->photo == NULL)
                     <img src="#" style="width: 50px;" alt="Avatar">
                     @elseif (Auth::user()->data->photo)
                     <img src="{{ asset('storage/'. Auth::user()->data->photo) }}" class="rounded-circle" style="width: 40px; height: 40px;" alt="">  --}}
-                    @if (Auth::user()->gender == 'male')
+                    @elseif (Auth::user()->gender == 'male')
                     <img src="{{ asset('frontend/images/man.png') }}" style="width: 50px;" alt="">
                     @else
                     <img src="{{ asset('frontend/images/woman.png') }}" style="width: 50px;" alt="">
