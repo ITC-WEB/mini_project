@@ -45,7 +45,7 @@
                     @if (Auth::user()->data->photo == NULL)
                     <img src="#" style="width: 50px;" alt="Avatar">
                     @elseif (Auth::user()->data->photo)
-                    <img src="{{ asset('storage/'. Auth::user()->data->photo) }}" class="rounded-circle" style="width: 40px; height: 40px;" alt="">  --}}
+                    <img src="{{ asset('storage/'. Auth::user()->data->photo) }}" class="rounded-circle" style="width: 40px; height: 40px;" alt="">
                     @elseif (Auth::user()->gender == 'male')
                     <img src="{{ asset('frontend/images/man.png') }}" style="width: 50px;" alt="">
                     @else
