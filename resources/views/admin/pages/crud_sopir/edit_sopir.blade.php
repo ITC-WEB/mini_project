@@ -16,27 +16,30 @@ Edit Data
 
                         <div class="form-group">
                             <label for="exampleInputName1">Nama Lengkap</label>
-                            <input name="name" type="text" class="form-control" id="exampleInputName1" value="{{ $sopir->name }}">
+                            <input name="name" type="text" class="form-control rounded-pill" id="exampleInputName1" value="{{ $sopir->name }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail3">Nomer Hanphone/WhatsApp </label>
-                            <input name="phone" type="text" class="form-control" id="exampleInputEmail3" value="{{ $sopir->phone }}">
+                            <input name="phone" type="text" class="form-control rounded-pill" id="exampleInputEmail3" value="{{ $sopir->phone }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Jenis Kelamin</label>
-                            <input name="gender" type="text" class="form-control" id="exampleInputName1" value="{{ $sopir->gender }}">
+                            <label for="exampleSelectGender">Jenis Kelamin</label>
+                            <select class="custom-select rounded-pill" name="gender" value="{{$sopir->gender}}" id="inputGroupSelect01" required>
+                                <option name="male" value="male">Laki-laki</option>
+                                <option name="female" value="female">Perempuan</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Usia</label>
-                            <input name="usia" type="text" class="form-control" id="exampleInputName1" value="{{ $sopir->usia }}">
+                            <input name="usia" type="text" class="form-control rounded-pill" id="exampleInputName1" value="{{ $sopir->usia }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Tarif Perhari</label>
-                            <input name="tarif" type="text" class="form-control" id="exampleInputName1" value="{{ $sopir->tarif }}">
+                            <input name="tarif" type="text" class="form-control rounded-pill" id="exampleInputName1" value="{{ $sopir->tarif }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Alamat</label>
-                            <input name="alamat" type="text" class="form-control" id="exampleInputName1" value="{{ $sopir->alamat }}">
+                            <input name="alamat" type="text" class="form-control rounded-pill" id="exampleInputName1" value="{{ $sopir->alamat }}">
                         </div>
                         <div class="form-group">
                             <label for="gambar">Foto KTP <span class="text-danger">*</span></label>

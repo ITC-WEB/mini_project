@@ -142,7 +142,7 @@ Route::get('/data-pinjam', [PinjamController::class, 'index']);
 //update status pinjam
 
 
-Route::post('/update-sopir', [PinjamController::class, 'update_sopir'])->name('update.sopir');
+
 
 Route::post('/update', [PinjamController::class, 'update_peminjaman'])->name('update');
 
