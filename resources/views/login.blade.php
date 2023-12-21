@@ -36,13 +36,13 @@
               @csrf
               <div class="mb-3 email-input " >
                 <label for="exampleInputEmail1" class="form-label fw-500 email-label" >Email <span class="text-danger">*</span></label>
-                <input type="email" class="form-control rounded-pill email-input1" autofocus required name="email" placeholder="user@gmail.com" id="form3Example3" aria-describedby="emailHelp" autocomplete="off" style="background-color: gray;"/>
+                <input type="email" class="form-control rounded-pill email-input1" autofocus required name="email" placeholder="user@gmail.com" id="form3Example3" aria-describedby="emailHelp" autocomplete="off" style="background-color: rgb(245, 244, 244);"/>
                 
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label fw-500 email-label">Password <span class="text-danger">*</span></label>
                 <div class="input-group">
-                  <input type="password" class="form-control rounded-pill"  id="form3Example4" name="password" autocomplete="off" />
+                  <input type="password" class="form-control rounded-pill"  id="form3Example4" name="password" autocomplete="off" style="background-color: rgb(245, 244, 244);"/>
                 </div>
               
               </div>

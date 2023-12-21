@@ -49,13 +49,13 @@
                               <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label fw-500 email-label">Nama<span class="text-danger">*</span></label>
                                 <input type="text" name="name" class="form-control rounded-pill" id="name" name="name" 
-                                placeholder="Nama Lengkap" autofocus>
+                                placeholder="Nama Lengkap" autofocus style="background-color: rgb(245, 244, 244);">
                               </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="exampleInputEmail2" class="form-label fw-500 email-label">Email<span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control rounded-pill email-input2" autofocus required name="email" placeholder="user@gmail.com" id="email" aria-describedby="emailHelp" autocomplete="off"/>
+                                    <input type="email" class="form-control rounded-pill email-input2" autofocus required name="email" placeholder="user@gmail.com" id="email" aria-describedby="emailHelp" autocomplete="off" style="background-color: rgb(245, 244, 244);"style="background-color: rgb(245, 244, 244);"/>
                                   </div>
                             </div>
                         
@@ -64,7 +64,7 @@
                                 <div class="mb-3">
                                     <label for="exampleInputPassword3" class="form-label fw-500 email-label">Password<span class="text-danger">*</span></label>
                                     <div class="input-group">
-                                      <input type="password" class="form-control rounded-pill" id="password" name="password" autocomplete="off" />
+                                      <input type="password" class="form-control rounded-pill" id="password" name="password" autocomplete="off" style="background-color: rgb(245, 244, 244);"/>
                                     </div>
                                   </div>
                             </div>
@@ -73,7 +73,7 @@
                                 <label for="exampleInputPassword2" class="form-label fw-500 email-label">Nomor Hp/ WhatsApp<span class="text-danger">*</span></label>
                                 <div class="input-group">
                                  <input type="number" name="phone" class="form-control rounded-pill" placeholder="08X-XXX-XXX-XXX"
-                                        id="phone" required autocomplete="off" >
+                                        id="phone" required autocomplete="off" style="background-color: rgb(245, 244, 244);" >
                                 </div>
                               </div>
                             </div>
@@ -83,7 +83,7 @@
                               <div class="mb-3">
                                 <label for="exampleInputEmail3" class="form-label fw-500 email-label">Alamat <span class="text-danger">*</span></label>
                                 <input type="text" name="alamat" class="form-control rounded-pill" placeholder="Alamat Lengkap"
-                                id="Alamat" required autocomplete="off">
+                                id="Alamat" required autocomplete="off" style="background-color: rgb(245, 244, 244);">
                               </div>
                             </div>
                             <div class="col-md-6">
@@ -93,13 +93,13 @@
                                     <div class="row mt-2">
                                         <div class="col-md-7">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required style="background-color: rgb(245, 244, 244);">
                                                 <label class="form-check-label" for="male">Laki-laki</label>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                                                <input class="form-check-input" type="radio" name="gender" id="female" value="female" required style="background-color: rgb(245, 244, 244);">
                                                 <label class="form-check-label" for="female">Perempuan</label>
                                             </div>
                                         </div>
