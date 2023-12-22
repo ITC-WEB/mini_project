@@ -46,7 +46,7 @@ Detail Peminjam
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form class="forms-sample" method="POST" action="{{ route('update.sopir', ['id' => $dataPinjam->id]) }}">
+                                                                <form class="forms-sample" method="POST" action="">
                                                                     @csrf
                                                                     <div class="form-group">
                                                                         <select class="custom-select" name="sopir_id" id="inputGroupSelect2">
