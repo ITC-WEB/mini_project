@@ -57,7 +57,7 @@ Create Data Sopir
                             <input name="sim" type="file" class="form-control-file" required>
                         </div>
                         <button type="submit" class="btn mr-2" style="background-color: #FD5D3B;color:#fff">SUBMIT</button>
-                        <a href="/add-admin" class="btn border" style="background-color: #fff;color:#000000">CLOSE</a>
+                        <a href="/add-sopir" class="btn border" style="background-color: #fff;color:#000000">CLOSE</a>
                     </form>
                 </div>
             </div>
