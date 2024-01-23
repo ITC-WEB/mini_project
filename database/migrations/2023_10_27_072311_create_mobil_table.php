@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mobil', function (Blueprint $table) {
             $table->id();
-            $table->string('noplat');
+            $table->string('noplat')->unique();
             $table->string('name');
             $table->string('gambar');
             $table->unsignedBigInteger('merek_id');
